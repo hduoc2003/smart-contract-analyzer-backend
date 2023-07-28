@@ -4,6 +4,7 @@ from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolError, ToolName
+from tools.utils import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, valid_swc
 
 class Mythril(Tool):
@@ -62,15 +63,28 @@ class Mythril(Tool):
 
     @classmethod
     def detect_errors(cls, raw_result_str: str) -> list[ToolError]:
-        raw_result_json = json.loads(raw_result_str)
         errors: list[ToolError] = []
-        raw_result_errors = raw_result_json['error']
-        if (isinstance(raw_result_errors, str) and
-            raw_result_json['error'].find("Solc experienced a fatal error") != -1
-        ):
+        try:
+            raw_result_json = json.loads(raw_result_str)
+        except Exception as e:
+            Log.info(f'Failed when parsing raw_result_json in function detect_errors:\n{raw_result_str}')
             errors.append(ToolError(
-                error=ErrorClassification.CompileError,
-                msg=raw_result_json['error']
+                error=ErrorClassification.UnknownError,
+                msg=raw_result_str
             ))
+            return errors
+
+        raw_result_errors = raw_result_json['error']
+        if (isinstance(raw_result_errors, str)):
+            if (raw_result_errors.find("Solc experienced a fatal error") != -1):
+                errors.append(ToolError(
+                    error=ErrorClassification.CompileError,
+                    msg=raw_result_errors
+                ))
+            else:
+                errors.append(ToolError(
+                    error=ErrorClassification.UnknownError,
+                    msg=raw_result_errors
+                ))
         return errors
 

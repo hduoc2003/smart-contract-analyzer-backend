@@ -26,6 +26,15 @@
         "documentation": {}
     },
     {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
         "label": "yaml",
         "kind": 6,
         "isExtraImport": true,
@@ -120,6 +129,23 @@
         "description": "tools.utils",
         "isExtraImport": true,
         "detail": "tools.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils",
+        "description": "tools.utils",
+        "isExtraImport": true,
+        "detail": "tools.utils",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
         "documentation": {}
     },
     {
@@ -457,7 +483,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ToolName(Enum):\n        Mythril = \"mythril\"\n        Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification",
+        "peekOfCode": "class ToolName(Enum):\n        Mythril = \"mythril\"\n        Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -466,7 +492,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:\n    contract: str",
+        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:",
         "detail": "tools.type",
         "documentation": {}
     },

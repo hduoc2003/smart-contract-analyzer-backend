@@ -3,4 +3,4 @@ containers:
     volumes:
       bind: /tmp
       mode: ro
-    timeout: 3600
+    timeout: 100

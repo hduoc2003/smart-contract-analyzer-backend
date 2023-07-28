@@ -1,6 +1,7 @@
 import os
 import docker
 from docker import errors
+import requests
 import yaml
 from tools.type import ErrorClassification, ToolError
 
@@ -69,15 +70,18 @@ class Docker:
         )
         try:
             container.wait(timeout=cls.__cfg_containers_run_timeout()) # type: ignore
-        except Exception as e:
+        except requests.exceptions.ConnectionError as e:
+            Log.info('#####################')
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
-                msg=f"Time out while running image {image} in {file_name}"
+                msg=f"Time out while running image {image} to analyze {file_name}"
             ))
-            Log.err(f"Time out while running image {image} in {file_name}")
-            Log.err(e)
+            Log.err(f"Time out while running image {image} to analyze {file_name}")
+            Log.print_except(e)
+
         # print(container.logs().decode("utf8"))
         logs: str = container.logs().decode("utf8").strip() # type: ignore
+        # Log.info(logs)
         container.remove() # type: ignore
         return (errors, logs)
 
