@@ -1,0 +1,14 @@
+{
+  "file_name": "swc-107.sol",
+  "tool_name": "mythril",
+  "duration": 6.485715389251709,
+  "analysis": {
+    "errors": [
+      {
+        "error": "compile error",
+        "msg": "Solc experienced a fatal error.\n\nParserError: Expected ';' but got '.'\n --> /tmp/swc-107.sol:1:11:\n  |\n1 | from tools.Tool import Tool\n  |           ^\n\n"
+      }
+    ],
+    "issues": []
+  }
+}
