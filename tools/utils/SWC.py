@@ -5,6 +5,13 @@ swc_regex: dict[str, str] = {
     "full": r"^[sS][wW][cC]-(1[0-2]\d|13[0-6])$"
 }
 
+map_slither_detectors_to_swc: dict[str, str] = {
+    'abiencoderv2-array': 'SWC',
+    'arbitrary-send-erc20': 'SWC',
+    'shadowing-state': 'SWC-119'
+    ''
+}
+
 map_to_swc_title: dict[str, str] = {
   'SWC-100': 'Function Default Visibility',
   'SWC-101': 'Integer Overflow and Underflow',
@@ -44,6 +51,8 @@ map_to_swc_title: dict[str, str] = {
   'SWC-135': 'Code With No Effects',
   'SWC-136': 'Unencrypted Private Data On-Chain'
 }
+
+
 
 def valid_swc(swc: str) -> tuple[bool, str]:
     """kiểm tra và lấy định dạng swc chuẩn
