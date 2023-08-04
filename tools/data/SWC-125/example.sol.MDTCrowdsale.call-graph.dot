@@ -1,0 +1,42 @@
+strict digraph {
+subgraph cluster_1113_CappedCrowdsale {
+label = "CappedCrowdsale"
+"1113_hasEnded" [label="hasEnded"]
+"1113_validPurchase" [label="validPurchase"]
+"1113_CappedCrowdsale" [label="CappedCrowdsale"]
+"1113_hasEnded" -> "1113_hasEnded"
+"1113_validPurchase" -> "1113_validPurchase"
+}subgraph cluster_1049_Crowdsale {
+label = "Crowdsale"
+"1049_forwardFunds" [label="forwardFunds"]
+"1049_fallback" [label="fallback"]
+"1049_validPurchase" [label="validPurchase"]
+"1049_hasEnded" [label="hasEnded"]
+"1049_Crowdsale" [label="Crowdsale"]
+"1049_buyTokens" [label="buyTokens"]
+"1049_createTokenContract" [label="createTokenContract"]
+"1049_fallback" -> "1049_buyTokens"
+"1049_Crowdsale" -> "1049_createTokenContract"
+"1049_buyTokens" -> "1049_forwardFunds"
+"1049_buyTokens" -> "1049_validPurchase"
+}subgraph cluster_1164_WhitelistedCrowdsale {
+label = "WhitelistedCrowdsale"
+"1164_validPurchase" [label="validPurchase"]
+"1164_addToWhitelist" [label="addToWhitelist"]
+"1164_validPurchase" -> "1164_validPurchase"
+"1164_validPurchase" -> "1164_hasEnded"
+}subgraph cluster_1200_MDTCrowdsale {
+label = "MDTCrowdsale"
+"1200_MDTCrowdsale" [label="MDTCrowdsale"]
+"1200_MDTCrowdsale" -> "1200_CappedCrowdsale"
+"1200_MDTCrowdsale" -> "1200_addToWhitelist"
+"1200_MDTCrowdsale" -> "1200_Crowdsale"
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"require(bool)" 
+"1113_CappedCrowdsale" -> "require(bool)"
+"1049_buyTokens" -> "require(bool)"
+"1049_Crowdsale" -> "require(bool)"
+"1164_addToWhitelist" -> "require(bool)"
+}
+}

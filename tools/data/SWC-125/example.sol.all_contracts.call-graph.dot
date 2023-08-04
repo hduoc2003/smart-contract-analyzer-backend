@@ -1,0 +1,126 @@
+strict digraph {
+subgraph cluster_1113_CappedCrowdsale {
+label = "CappedCrowdsale"
+"1113_validPurchase" [label="validPurchase"]
+"1113_hasEnded" [label="hasEnded"]
+"1113_CappedCrowdsale" [label="CappedCrowdsale"]
+"1113_hasEnded" -> "1113_hasEnded"
+"1113_validPurchase" -> "1113_validPurchase"
+}subgraph cluster_194_IERC20 {
+label = "IERC20"
+"194_transferFrom" [label="transferFrom"]
+"194_totalSupply" [label="totalSupply"]
+"194_allowance" [label="allowance"]
+"194_balanceOf" [label="balanceOf"]
+"194_transfer" [label="transfer"]
+"194_approve" [label="approve"]
+}subgraph cluster_838_ERC20Mintable {
+label = "ERC20Mintable"
+"838_mint" [label="mint"]
+"838_mint" -> "838__mint"
+"838_mint" -> "838_onlyMinter"
+}subgraph cluster_714_Roles {
+label = "Roles"
+"714_add" [label="add"]
+"714_has" [label="has"]
+"714_remove" [label="remove"]
+"714_add" -> "714_has"
+"714_remove" -> "714_has"
+}subgraph cluster_1164_WhitelistedCrowdsale {
+label = "WhitelistedCrowdsale"
+"1164_validPurchase" [label="validPurchase"]
+"1164_addToWhitelist" [label="addToWhitelist"]
+"1164_validPurchase" -> "1164_validPurchase"
+"1164_validPurchase" -> "1164_hasEnded"
+}subgraph cluster_622_ERC20 {
+label = "ERC20"
+"622__burn" [label="_burn"]
+"622_increaseAllowance" [label="increaseAllowance"]
+"622_decreaseAllowance" [label="decreaseAllowance"]
+"622__burnFrom" [label="_burnFrom"]
+"622_allowance" [label="allowance"]
+"622_transfer" [label="transfer"]
+"622_approve" [label="approve"]
+"622_transferFrom" [label="transferFrom"]
+"622_balanceOf" [label="balanceOf"]
+"622__mint" [label="_mint"]
+"622_totalSupply" [label="totalSupply"]
+"622__transfer" [label="_transfer"]
+"622_transfer" -> "622__transfer"
+"622__burnFrom" -> "622__burn"
+"622_transferFrom" -> "622__transfer"
+}subgraph cluster_814_MinterRole {
+label = "MinterRole"
+"814_renounceMinter" [label="renounceMinter"]
+"814_constructor" [label="constructor"]
+"814_addMinter" [label="addMinter"]
+"814__removeMinter" [label="_removeMinter"]
+"814__addMinter" [label="_addMinter"]
+"814_isMinter" [label="isMinter"]
+"814_renounceMinter" -> "814__removeMinter"
+"814_addMinter" -> "814__addMinter"
+"814_addMinter" -> "814_onlyMinter"
+"814_constructor" -> "814__addMinter"
+}subgraph cluster_1200_MDTCrowdsale {
+label = "MDTCrowdsale"
+"1200_MDTCrowdsale" [label="MDTCrowdsale"]
+"1200_MDTCrowdsale" -> "1200_CappedCrowdsale"
+"1200_MDTCrowdsale" -> "1200_addToWhitelist"
+"1200_MDTCrowdsale" -> "1200_Crowdsale"
+}subgraph cluster_1049_Crowdsale {
+label = "Crowdsale"
+"1049_forwardFunds" [label="forwardFunds"]
+"1049_fallback" [label="fallback"]
+"1049_validPurchase" [label="validPurchase"]
+"1049_hasEnded" [label="hasEnded"]
+"1049_Crowdsale" [label="Crowdsale"]
+"1049_buyTokens" [label="buyTokens"]
+"1049_createTokenContract" [label="createTokenContract"]
+"1049_fallback" -> "1049_buyTokens"
+"1049_Crowdsale" -> "1049_createTokenContract"
+"1049_buyTokens" -> "1049_forwardFunds"
+"1049_buyTokens" -> "1049_validPurchase"
+}subgraph cluster_127_SafeMath {
+label = "SafeMath"
+"127_add" [label="add"]
+"127_mul" [label="mul"]
+"127_sub" [label="sub"]
+"127_mod" [label="mod"]
+"127_div" [label="div"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"require(bool)" 
+"127_mod" -> "require(bool)"
+"622_decreaseAllowance" -> "require(bool)"
+"622_increaseAllowance" -> "require(bool)"
+"127_div" -> "require(bool)"
+"622__transfer" -> "require(bool)"
+"714_has" -> "require(bool)"
+"1049_buyTokens" -> "require(bool)"
+"622_approve" -> "require(bool)"
+"127_add" -> "require(bool)"
+"1049_Crowdsale" -> "require(bool)"
+"622__mint" -> "require(bool)"
+"1164_addToWhitelist" -> "require(bool)"
+"622__burn" -> "require(bool)"
+"1113_CappedCrowdsale" -> "require(bool)"
+"127_mul" -> "require(bool)"
+"714_remove" -> "require(bool)"
+"127_sub" -> "require(bool)"
+"714_add" -> "require(bool)"
+}"622_increaseAllowance" -> "127_add"
+"814__addMinter" -> "714_add"
+"622__burn" -> "127_sub"
+"1113_validPurchase" -> "127_add"
+"622__mint" -> "127_add"
+"814__removeMinter" -> "714_remove"
+"814_isMinter" -> "714_has"
+"1049_buyTokens" -> "838_mint"
+"622_decreaseAllowance" -> "127_sub"
+"622_transferFrom" -> "127_sub"
+"622__transfer" -> "127_add"
+"1049_buyTokens" -> "127_add"
+"1049_buyTokens" -> "127_mul"
+"622__burnFrom" -> "127_sub"
+"622__transfer" -> "127_sub"
+}

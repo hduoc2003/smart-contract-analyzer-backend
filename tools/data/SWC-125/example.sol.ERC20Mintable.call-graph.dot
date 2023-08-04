@@ -1,0 +1,54 @@
+strict digraph {
+subgraph cluster_194_IERC20 {
+label = "IERC20"
+"194_transferFrom" [label="transferFrom"]
+"194_totalSupply" [label="totalSupply"]
+"194_allowance" [label="allowance"]
+"194_balanceOf" [label="balanceOf"]
+"194_transfer" [label="transfer"]
+"194_approve" [label="approve"]
+}subgraph cluster_622_ERC20 {
+label = "ERC20"
+"622__burn" [label="_burn"]
+"622_increaseAllowance" [label="increaseAllowance"]
+"622_decreaseAllowance" [label="decreaseAllowance"]
+"622__burnFrom" [label="_burnFrom"]
+"622_allowance" [label="allowance"]
+"622_transfer" [label="transfer"]
+"622_transferFrom" [label="transferFrom"]
+"622__transfer" [label="_transfer"]
+"622_balanceOf" [label="balanceOf"]
+"622__mint" [label="_mint"]
+"622_totalSupply" [label="totalSupply"]
+"622_approve" [label="approve"]
+"622_transfer" -> "622__transfer"
+"622__burnFrom" -> "622__burn"
+"622_transferFrom" -> "622__transfer"
+}subgraph cluster_814_MinterRole {
+label = "MinterRole"
+"814_constructor" [label="constructor"]
+"814_addMinter" [label="addMinter"]
+"814__removeMinter" [label="_removeMinter"]
+"814_renounceMinter" [label="renounceMinter"]
+"814__addMinter" [label="_addMinter"]
+"814_isMinter" [label="isMinter"]
+"814_renounceMinter" -> "814__removeMinter"
+"814_addMinter" -> "814__addMinter"
+"814_addMinter" -> "814_onlyMinter"
+"814_constructor" -> "814__addMinter"
+}subgraph cluster_838_ERC20Mintable {
+label = "ERC20Mintable"
+"838_mint" [label="mint"]
+"838_mint" -> "838__mint"
+"838_mint" -> "838_onlyMinter"
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"require(bool)" 
+"622_decreaseAllowance" -> "require(bool)"
+"622_increaseAllowance" -> "require(bool)"
+"622__transfer" -> "require(bool)"
+"622_approve" -> "require(bool)"
+"622__mint" -> "require(bool)"
+"622__burn" -> "require(bool)"
+}
+}

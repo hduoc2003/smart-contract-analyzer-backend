@@ -1,0 +1,18 @@
+strict digraph {
+subgraph cluster_127_SafeMath {
+label = "SafeMath"
+"127_add" [label="add"]
+"127_mul" [label="mul"]
+"127_sub" [label="sub"]
+"127_mod" [label="mod"]
+"127_div" [label="div"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"require(bool)" 
+"127_mod" -> "require(bool)"
+"127_div" -> "require(bool)"
+"127_mul" -> "require(bool)"
+"127_add" -> "require(bool)"
+"127_sub" -> "require(bool)"
+}
+}

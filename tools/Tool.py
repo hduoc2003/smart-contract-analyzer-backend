@@ -106,4 +106,3 @@ class Tool(ABC):
                 Log.err(f'Error occured when export final_result of file {file_name}:\n{final_result}')
                 Log.err(e)
     
-    

@@ -1,0 +1,17 @@
+strict digraph {
+subgraph cluster_89_TokenSaleChallenge {
+label = "TokenSaleChallenge"
+"89_buy" [label="buy"]
+"89_sell" [label="sell"]
+"89_TokenSaleChallenge" [label="TokenSaleChallenge"]
+"89_isComplete" [label="isComplete"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"require(bool)" 
+"balance(address)" 
+"89_buy" -> "require(bool)"
+"89_sell" -> "require(bool)"
+"89_TokenSaleChallenge" -> "require(bool)"
+"89_isComplete" -> "balance(address)"
+}
+}

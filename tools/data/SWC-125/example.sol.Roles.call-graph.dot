@@ -1,0 +1,16 @@
+strict digraph {
+subgraph cluster_714_Roles {
+label = "Roles"
+"714_add" [label="add"]
+"714_has" [label="has"]
+"714_remove" [label="remove"]
+"714_add" -> "714_has"
+"714_remove" -> "714_has"
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"require(bool)" 
+"714_has" -> "require(bool)"
+"714_remove" -> "require(bool)"
+"714_add" -> "require(bool)"
+}
+}

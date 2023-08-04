@@ -29,7 +29,7 @@ class Mythril(Tool):
                 line_no=raw_issue['lineno'],
                 code=raw_issue['code'],
                 description=raw_issue['description'],
-                hint="chưa làm phần hint",
+                hint= "chưa làm phần hint".decode("utf-8"),
                 issue_title=raw_issue['title'],
                 swcID=swcID,
                 swc_title=get_swc_title(swcID, validated=True),
