@@ -2,3 +2,4 @@
 
 Thông báo phiên bản solc được sử dụng lên FE
 Phiên bản solc được chấp nhận từ 0.4.11 đến 0.8.21
+Khi file dịch lỗi thì slither sẽ bị chậm vì chọn tất cả phiên bản để chạy
