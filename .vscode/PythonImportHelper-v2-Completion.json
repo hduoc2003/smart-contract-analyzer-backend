@@ -1,5 +1,37 @@
 [
     {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -100,6 +132,14 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
         "label": "FinalResult",
         "importPath": "tools.type",
         "description": "tools.type",
@@ -158,6 +198,22 @@
     },
     {
         "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -240,6 +296,30 @@
     },
     {
         "label": "RawResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "RawResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
         "importPath": "tools.Tool",
         "description": "tools.Tool",
         "isExtraImport": true,
@@ -390,11 +470,114 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "login_route",
+        "importPath": "server.route.login.login",
+        "description": "server.route.login.login",
+        "isExtraImport": true,
+        "detail": "server.route.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "signup_route",
+        "importPath": "server.route.signup.signup",
+        "description": "server.route.signup.signup",
+        "isExtraImport": true,
+        "detail": "server.route.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "importPath": "server.route.tool.tool",
+        "description": "server.route.tool.tool",
+        "isExtraImport": true,
+        "detail": "server.route.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "Mythril",
         "importPath": "tools.Mythril",
         "description": "tools.Mythril",
         "isExtraImport": true,
         "detail": "tools.Mythril",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "tools.Slither",
+        "description": "tools.Slither",
+        "isExtraImport": true,
+        "detail": "tools.Slither",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "server.route.login.login",
+        "description": "server.route.login.login",
+        "peekOfCode": "def response():\n    return {\n    }",
+        "detail": "server.route.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "login_route",
+        "kind": 5,
+        "importPath": "server.route.login.login",
+        "description": "server.route.login.login",
+        "peekOfCode": "login_route = Blueprint(\"login\", __name__, url_prefix=\"/login\")\n@login_route.route(\"/\")\ndef response():\n    return {\n    }",
+        "detail": "server.route.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "server.route.signup.signup",
+        "description": "server.route.signup.signup",
+        "peekOfCode": "def response():\n    return {\n    }",
+        "detail": "server.route.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "signup_route",
+        "kind": 5,
+        "importPath": "server.route.signup.signup",
+        "description": "server.route.signup.signup",
+        "peekOfCode": "signup_route = Blueprint(\"signup\", __name__, url_prefix=\"/signup\")\n@signup_route.route(\"/\")\ndef response():\n    return {\n    }",
+        "detail": "server.route.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "server.route.tool.tool",
+        "description": "server.route.tool.tool",
+        "peekOfCode": "def response():\n    return {\n    }",
+        "detail": "server.route.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "kind": 5,
+        "importPath": "server.route.tool.tool",
+        "description": "server.route.tool.tool",
+        "peekOfCode": "tool_route = Blueprint(\"tool\", __name__, url_prefix=\"/tool\")\n@tool_route.route(\"/\")\ndef response():\n    return {\n    }",
+        "detail": "server.route.tool.tool",
         "documentation": {}
     },
     {
@@ -461,6 +644,15 @@
         "documentation": {}
     },
     {
+        "label": "Slither",
+        "kind": 6,
+        "importPath": "tools.Slither",
+        "description": "tools.Slither",
+        "peekOfCode": "class Slither(Tool):\n    tool_name = ToolName.Slither\n    def __init__(self):\n        pass\n    @classmethod\n    def parse_raw_result(\n            cls, \n            raw_result: dict, \n            duration: float = \"1\", file_name: str = \"1\") -> FinalResult:\n        if not raw_result[\"success\"]:",
+        "detail": "tools.Slither",
+        "documentation": {}
+    },
+    {
         "label": "Tool",
         "kind": 6,
         "importPath": "tools.Tool",
@@ -483,7 +675,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ToolName(Enum):\n        Mythril = \"mythril\"\n        Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:",
+        "peekOfCode": "class ToolName(Enum):\n    Mythril = \"mythril\"\n    Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@unique \nclass IssueType(Enum):",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -492,7 +684,16 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:",
+        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@unique \nclass IssueType(Enum):\n    Contract = \"contract\"\n    Function = \"function\"\n    Variable = \"variable\"\n    Node = \"node\"",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "IssueType",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class IssueType(Enum):\n    Contract = \"contract\"\n    Function = \"function\"\n    Variable = \"variable\"\n    Node = \"node\"\n    Pragma = \"pragma\"\n    Enum = \"enum\"\n    Struct = \"struct\"\n    Event = \"event\"\n@dataclass",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -515,11 +716,29 @@
         "documentation": {}
     },
     {
+        "label": "SlitherAnalysisDetectorElement",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class SlitherAnalysisDetectorElement:\n    type: str #[check] property in raw object\n    name: str\n    lines_no: list[int]\n    type_specific_fields: str\n@dataclass\nclass SlitherAnalysisDetector:\n    detect_type: str\n    confidence: str\n    impact: str",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "SlitherAnalysisDetector",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class SlitherAnalysisDetector:\n    detect_type: str\n    confidence: str\n    impact: str\n    description: str\n    elements: list[SlitherAnalysisDetectorElement]\n@dataclass\nclass AnalysisResult:\n    errors: list[ToolError]\n    #combine here",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
         "label": "AnalysisResult",
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class AnalysisResult:\n    errors: list[ToolError]\n    issues: list[AnalysisIssue]\n@dataclass\nclass FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float\n    analysis: AnalysisResult",
+        "peekOfCode": "class AnalysisResult:\n    errors: list[ToolError]\n    #combine here\n    issues: list[AnalysisIssue]\n    list[SlitherAnalysisDetector]\n@dataclass\nclass FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -782,6 +1001,42 @@
         "description": "venv.Scripts.pywin32_testall",
         "peekOfCode": "failures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.\n    cmd = [sys.executable, \"-u\", scriptname] + cmdline_extras\n    print(\"--- Running '%s' ---\" % script)\n    sys.stdout.flush()",
         "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "PORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)\napp.register_blueprint(login_route)\napp.register_blueprint(signup_route)\napp.register_blueprint(tool_route)\n@app.route(\"/\")\ndef response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\napp.register_blueprint(login_route)\napp.register_blueprint(signup_route)\napp.register_blueprint(tool_route)\n@app.route(\"/\")\ndef response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "dataPath",
+        "kind": 5,
+        "importPath": "test_tool",
+        "description": "test_tool",
+        "peekOfCode": "dataPath = pathlib.Path(__file__).parent.resolve()\n(final, raw) = Mythril.analyze(\n    r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    'swc-107.sol'\n)",
+        "detail": "test_tool",
         "documentation": {}
     }
 ]

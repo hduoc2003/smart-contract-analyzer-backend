@@ -1,29 +1,24 @@
 import sys
 import os
-import pathlib
-import json
+from dotenv import load_dotenv
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from tools.Mythril import Mythril
-from tools.Slither import *
-dataPath = pathlib.Path(__file__).parent.resolve()
+from flask import Flask
+from server.route.login.login import login_route
+from server.route.signup.signup import signup_route
+from server.route.tool.tool import tool_route
 
-(final, raw) = Mythril.analyze(
-    r'D:\SE_LAB\SE_Task\blockchain\tool\test-mythril\bugs',
-    'swc-107.sol'
-)
+load_dotenv()
+PORT = int(os.getenv("PORT") or 5000)
 
-try:  
-    with open('./tools/results/slither/raw_slither.json') as raw_slither_json:
-        raw_json = json.load(raw_slither_json)
-        print(type(raw_json))
-    (final, raw) = Slither.analyze(
-        dataPath, 'raw_slither.json'
-    )
-except FileNotFoundError:
-    print("Error: File not found.")
-except json.JSONDecodeError:
-    print("Error: Unable to parse JSON.")
-except Exception as e:
-    print(f"Error: {e}")
-Mythril.export_result('swc-107.sol', raw, final)
+app = Flask(__name__)
+app.register_blueprint(login_route)
+app.register_blueprint(signup_route)
+app.register_blueprint(tool_route)
+
+@app.route("/")
+def response():
+    return "hello"
+
+if __name__ == "__main__":
+    app.run(debug=True, port=PORT)
