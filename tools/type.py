@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from enum import Enum, unique
-from typing import List, Union
 
 @unique
 class ToolName(Enum):
@@ -12,8 +11,8 @@ class ErrorClassification(Enum):
     RuntimeOut = "runtime out"
     CompileError = "compile error"
     UnknownError = "unknown error"
- 
-@unique 
+
+@unique
 class IssueType(Enum):
     Contract = "contract"
     Function = "function"
@@ -23,7 +22,7 @@ class IssueType(Enum):
     Enum = "enum"
     Struct = "struct"
     Event = "event"
-    
+
 @dataclass
 class ToolError:
     error: ErrorClassification
@@ -42,14 +41,14 @@ class AnalysisIssue:
     swc_title: str
     swc_link: str
     severity: str
-   
+
 @dataclass
 class SlitherAnalysisDetectorElement:
     type: str #[check] property in raw object
     name: str
     lines_no: list[int]
     type_specific_fields: str
-       
+
 @dataclass
 class SlitherAnalysisDetector:
     detect_type: str

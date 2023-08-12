@@ -1,13 +1,16 @@
 from abc import ABC, abstractmethod
+import asyncio
 import json
 import os
 from time import time
-from typing import Any
+from types import coroutine
+from typing import Any, Callable
 from tools.type import FinalResult, ToolError, ToolName
 import yaml
 
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 from tools.docker.Docker import Docker
+from tools.utils.Async import Async
 from tools.utils.Log import Log
 from tools.utils.parsers import obj_to_jsonstr
 
@@ -88,6 +91,68 @@ class Tool(ABC):
         return (final_result, raw_result_json)
 
     @classmethod
+    async def analyze_async(
+        cls,
+        file_dir_path: str,
+        file_name: str,
+        docker_image: str="",
+        analyze_cmd: str="",
+        options: str=""
+    ) -> tuple[FinalResult, RawResult]:
+        return cls.analyze(file_dir_path, file_name, docker_image, analyze_cmd, options)
+
+    @classmethod
+    def run_tools_async(
+        cls,
+        file_dir_path: str,
+        file_name: str,
+        tools: list[ToolName] = [ToolName.Mythril]
+    ) -> FinalResult:
+        """Analyze single file by running multiple tools asynchronously
+
+        Args:
+            file_dir_path (str): dir to folder which contains files
+            file_name (str): name of the file
+            tools (list[ToolName], optional): name of tools used to analyze. Defaults to [ToolName.Mythril].
+
+        Returns:
+            FinalResult: merged result of all tools
+        """
+        Log.info(f"Analyzing {file_name} ..................")
+        from tools.Mythril import Mythril
+        from tools.Slither import Slither
+        tasks: list[Callable] = []
+        arr_args: list[list] = []
+        for tool_name in tools:
+            match tool_name:
+                case ToolName.Mythril:
+                    tasks.append(Mythril.analyze)
+                case ToolName.Slither:
+                    tasks.append(Slither.analyze)
+                case _:
+                    Log.warn(f'Tool.run_tools_async: There are no tool named {tool_name}')
+            arr_args.append([file_dir_path, file_name])
+        if (len(tasks) != len(tools)):
+            raise Exception(f"Tool.run_tools_async: the length of tasks is {len(tasks)} \
+                            is not equal to the length of tools which is {len(tools)}")
+
+        result: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
+        Log.info(f"Analyzing {file_name} finished ..............")
+        return result[0]
+        # Log.info(result)
+
+    @classmethod
+    async def analyze_files_async(
+        cls,
+        file_dir_path: str,
+        files_names: list[str]
+    ) -> list[FinalResult]:
+        return Async.run_single_func(
+            func=cls.run_tools_async,
+            arr_args=[[file_dir_path, file_name] for file_name in files_names]
+        )
+
+    @classmethod
     def export_result(cls, file_name: str, raw_result: RawResult, final_result: FinalResult) -> None:
         path: str = os.path.dirname(__file__)
         path = os.path.join(path, 'results', cls.tool_name.value)
@@ -105,5 +170,5 @@ class Tool(ABC):
             except Exception as e:
                 Log.err(f'Error occured when export final_result of file {file_name}:\n{final_result}')
                 Log.err(e)
-    
-    
+
+
