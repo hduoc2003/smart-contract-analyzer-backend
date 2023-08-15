@@ -32,6 +32,134 @@
         "documentation": {}
     },
     {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "make_response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -88,12 +216,167 @@
         "documentation": {}
     },
     {
+        "label": "PyMongo",
+        "importPath": "flask_pymongo",
+        "description": "flask_pymongo",
+        "isExtraImport": true,
+        "detail": "flask_pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "PyMongo",
+        "importPath": "flask_pymongo",
+        "description": "flask_pymongo",
+        "isExtraImport": true,
+        "detail": "flask_pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "ObjectId",
+        "importPath": "bson",
+        "description": "bson",
+        "isExtraImport": true,
+        "detail": "bson",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -701,15 +984,6 @@
         "documentation": {}
     },
     {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
         "label": "sysconfig",
         "kind": 6,
         "isExtraImport": true,
@@ -746,11 +1020,35 @@
         "documentation": {}
     },
     {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
+        "label": "login_route",
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
         "isExtraImport": true,
-        "detail": "dotenv",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "signup_route",
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "isExtraImport": true,
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "importPath": "server.routes.client.tool.tool",
+        "description": "server.routes.client.tool.tool",
+        "isExtraImport": true,
+        "detail": "server.routes.client.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "user_route",
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "isExtraImport": true,
+        "detail": "server.routes.admin.user.user",
         "documentation": {}
     },
     {
@@ -857,6 +1155,258 @@
         "documentation": {}
     },
     {
+        "label": "get_all_users",
+        "kind": 2,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "def get_all_users():\n    try:\n        query = {}  # Your query goes here\n        result = collection.find(query)\n        data = [item for item in result]\n        return jsonify(data)\n    except Exception as e:\n        return str(e), 500\n@user_route.route(\"/<string:user_id>\", methods=[\"GET\"])\ndef search_user(user_id):",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "search_user",
+        "kind": 2,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "def search_user(user_id):\n    try:\n        query = {'_id': user_id}\n        user = collection.find_one(query)\n        if user:\n            user['_id'] = str(user['_id'])\n            return jsonify(user)\n        else:\n            return jsonify({'message': 'User not found', 'user_id': user_id}), 404\n    except Exception as e:",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "delete_user",
+        "kind": 2,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "def delete_user(user_id):\n    try:\n        query = {'_id': user_id}\n        user = collection.find_one(query)\n        if user:\n            collection.delete_one(query)\n            return jsonify({'message': 'User deleted successfully'}), 200\n        else:\n            return jsonify({'message': 'User not found'}), 404\n    except Exception as e:",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "update_user",
+        "kind": 2,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "def update_user(user_id):\n    try:\n        query = {'_id': user_id}\n        user = collection.find_one(query)\n        if user:\n            # Assuming you have a JSON payload with updated user data\n            updated_data = request.get_json()  # Make sure to import 'request' from Flask\n            collection.update_one(query, {'$set': updated_data})\n            return jsonify({'message': 'User updated successfully'}), 200\n        else:",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "CONNECTION_STRING",
+        "kind": 5,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "CONNECTION_STRING = os.getenv(\"MONGO_CONNECTION_STRING\")\nDATABASE_NAME = \"TOOL\"\nuser_route = Blueprint(\"user\", __name__, url_prefix=\"/user\")\n# MongoDB connection\n# Replace with your MongoDB connection URL\nclient = MongoClient(\n    'mongodb+srv://shodydosh:dT8NJQfeB25rAtj@cluster0.l96vywb.mongodb.net/?retryWrites=true&w=majority')\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\n@user_route.route(\"/\", methods=[\"GET\"])",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "kind": 5,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "DATABASE_NAME = \"TOOL\"\nuser_route = Blueprint(\"user\", __name__, url_prefix=\"/user\")\n# MongoDB connection\n# Replace with your MongoDB connection URL\nclient = MongoClient(\n    'mongodb+srv://shodydosh:dT8NJQfeB25rAtj@cluster0.l96vywb.mongodb.net/?retryWrites=true&w=majority')\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\n@user_route.route(\"/\", methods=[\"GET\"])\ndef get_all_users():",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "user_route",
+        "kind": 5,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "user_route = Blueprint(\"user\", __name__, url_prefix=\"/user\")\n# MongoDB connection\n# Replace with your MongoDB connection URL\nclient = MongoClient(\n    'mongodb+srv://shodydosh:dT8NJQfeB25rAtj@cluster0.l96vywb.mongodb.net/?retryWrites=true&w=majority')\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\n@user_route.route(\"/\", methods=[\"GET\"])\ndef get_all_users():\n    try:",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "client = MongoClient(\n    'mongodb+srv://shodydosh:dT8NJQfeB25rAtj@cluster0.l96vywb.mongodb.net/?retryWrites=true&w=majority')\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\n@user_route.route(\"/\", methods=[\"GET\"])\ndef get_all_users():\n    try:\n        query = {}  # Your query goes here\n        result = collection.find(query)\n        data = [item for item in result]",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "db = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\n@user_route.route(\"/\", methods=[\"GET\"])\ndef get_all_users():\n    try:\n        query = {}  # Your query goes here\n        result = collection.find(query)\n        data = [item for item in result]\n        return jsonify(data)\n    except Exception as e:",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "server.routes.admin.user.user",
+        "description": "server.routes.admin.user.user",
+        "peekOfCode": "collection = db['USERS']  # Replace with your collection name\n@user_route.route(\"/\", methods=[\"GET\"])\ndef get_all_users():\n    try:\n        query = {}  # Your query goes here\n        result = collection.find(query)\n        data = [item for item in result]\n        return jsonify(data)\n    except Exception as e:\n        return str(e), 500",
+        "detail": "server.routes.admin.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "def login():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    username = data.get('username')\n    password = data.get('password')\n    existing_user = collection.find_one({\"username\": username})\n    # return jsonify(existing_user)\n    if not existing_user:\n        return jsonify({\"message\": \"Username not exists\"}), 409",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "login_route",
+        "kind": 5,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "login_route = Blueprint(\"login\", __name__, url_prefix=\"/login\")\nload_dotenv()\nCONNECTION_STRING = os.getenv(\"MONGO_CONNECTION_STRING\")\nDATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@login_route.route(\"/\", methods=['POST'])\n@cross_origin()",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "CONNECTION_STRING",
+        "kind": 5,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "CONNECTION_STRING = os.getenv(\"MONGO_CONNECTION_STRING\")\nDATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@login_route.route(\"/\", methods=['POST'])\n@cross_origin()\ndef login():\n    data = request.json",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "kind": 5,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "DATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@login_route.route(\"/\", methods=['POST'])\n@cross_origin()\ndef login():\n    data = request.json\n    if data is None:",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "client = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@login_route.route(\"/\", methods=['POST'])\n@cross_origin()\ndef login():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "db = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@login_route.route(\"/\", methods=['POST'])\n@cross_origin()\ndef login():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    username = data.get('username')",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "collection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@login_route.route(\"/\", methods=['POST'])\n@cross_origin()\ndef login():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    username = data.get('username')\n    password = data.get('password')",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "users_DB",
+        "kind": 5,
+        "importPath": "server.routes.client.login.login",
+        "description": "server.routes.client.login.login",
+        "peekOfCode": "users_DB = collection['USERS']  # Replace with yo\n@login_route.route(\"/\", methods=['POST'])\n@cross_origin()\ndef login():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    username = data.get('username')\n    password = data.get('password')\n    existing_user = collection.find_one({\"username\": username})",
+        "detail": "server.routes.client.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "signup",
+        "kind": 2,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "def signup():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    user_id = str(uuid.uuid4())\n    name = data.get('name')\n    email = data.get('email')\n    username = data.get('username')\n    password = data.get('password')\n    current_time = datetime.datetime.utcnow()",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "signup_route",
+        "kind": 5,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "signup_route = Blueprint(\"signup\", __name__, url_prefix=\"/signup\")\nload_dotenv()\nCONNECTION_STRING = os.getenv(\"MONGO_CONNECTION_STRING\")\nDATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@signup_route.route(\"/\", methods=['POST'])\ndef signup():",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "CONNECTION_STRING",
+        "kind": 5,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "CONNECTION_STRING = os.getenv(\"MONGO_CONNECTION_STRING\")\nDATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@signup_route.route(\"/\", methods=['POST'])\ndef signup():\n    data = request.json\n    if data is None:",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "kind": 5,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "DATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@signup_route.route(\"/\", methods=['POST'])\ndef signup():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "client = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@signup_route.route(\"/\", methods=['POST'])\ndef signup():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    user_id = str(uuid.uuid4())",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "db = client['TOOL']  # Replace with your database name\ncollection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@signup_route.route(\"/\", methods=['POST'])\ndef signup():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    user_id = str(uuid.uuid4())\n    name = data.get('name')",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "collection = db['USERS']  # Replace with your collection name\nusers_DB = collection['USERS']  # Replace with yo\n@signup_route.route(\"/\", methods=['POST'])\ndef signup():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    user_id = str(uuid.uuid4())\n    name = data.get('name')\n    email = data.get('email')",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "users_DB",
+        "kind": 5,
+        "importPath": "server.routes.client.signup.signup",
+        "description": "server.routes.client.signup.signup",
+        "peekOfCode": "users_DB = collection['USERS']  # Replace with yo\n@signup_route.route(\"/\", methods=['POST'])\ndef signup():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    user_id = str(uuid.uuid4())\n    name = data.get('name')\n    email = data.get('email')\n    username = data.get('username')",
+        "detail": "server.routes.client.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "server.routes.client.tool.tool",
+        "description": "server.routes.client.tool.tool",
+        "peekOfCode": "def response():\n    return {\n    }",
+        "detail": "server.routes.client.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "kind": 5,
+        "importPath": "server.routes.client.tool.tool",
+        "description": "server.routes.client.tool.tool",
+        "peekOfCode": "tool_route = Blueprint(\"tool\", __name__, url_prefix=\"/tool\")\n@tool_route.route(\"/\")\ndef response():\n    return {\n    }",
+        "detail": "server.routes.client.tool.tool",
+        "documentation": {}
+    },
+    {
         "label": "Docker",
         "kind": 6,
         "importPath": "tools.docker.Docker",
@@ -897,7 +1447,7 @@
         "kind": 2,
         "importPath": "tools.utils.SWC",
         "description": "tools.utils.SWC",
-        "peekOfCode": "def get_swc_no(check: str) -> str:\n    if map_slither_check_to_swc[check] != 'N/A':\n        return map_slither_check_to_swc[check]\n    return 'N/A'\ndef link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check] \ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:",
+        "peekOfCode": "def get_swc_no(check: str) -> str:\n    if map_slither_check_to_swc[check] != 'N/A':\n        return map_slither_check_to_swc[check]\n    return 'N/A'\ndef link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check]\ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:",
         "detail": "tools.utils.SWC",
         "documentation": {}
     },
@@ -906,7 +1456,7 @@
         "kind": 2,
         "importPath": "tools.utils.SWC",
         "description": "tools.utils.SWC",
-        "peekOfCode": "def link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check] \ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:\n        swc (str): _description_\n    Returns:\n        tuple[bool, str]: _description_\n    \"\"\"",
+        "peekOfCode": "def link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check]\ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:\n        swc (str): _description_\n    Returns:\n        tuple[bool, str]: _description_\n    \"\"\"",
         "detail": "tools.utils.SWC",
         "documentation": {}
     },
@@ -1334,11 +1884,119 @@
         "documentation": {}
     },
     {
+        "label": "setup_app_config",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def setup_app_config(app):\n    CORS(app, resources={r\"/*\": {\"origins\": \"*\"}},  supports_credentials=True)\nload_dotenv()\nPORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)\nsetup_app_config(app)\n# app.register_blueprint(user_route)\n# app.register_blueprint(login_route)\n# app.register_blueprint(signup_route)\n# app.register_blueprint(tool_route)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def home():\n    return render_template('home.html')\n@app.route(\"/login\", methods=['POST'])\n@cross_origin()\ndef login():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    username = data.get('username')\n    password = data.get('password')",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def login():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    username = data.get('username')\n    password = data.get('password')\n    existing_user = collection.find_one({\"username\": username})\n    # return jsonify(existing_user)\n    if not existing_user:\n        return jsonify({\"message\": \"Username not exists\"}), 200",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "signup",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def signup():\n    data = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), 400\n    user_id = str(uuid.uuid4())\n    name = data.get('name')\n    email = data.get('email')\n    username = data.get('username')\n    password = data.get('password')\n    current_time = datetime.datetime.utcnow()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
         "label": "response",
         "kind": 2,
         "importPath": "app",
         "description": "app",
         "peekOfCode": "def response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "CONNECTION_STRING",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "CONNECTION_STRING = os.getenv(\"MONGO_CONNECTION_STRING\")\nDATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']\ncollection = db['USERS']\nusers_DB = collection['USERS']\nsys.path.append(os.path.abspath(os.path.dirname(__file__)))\ndef setup_app_config(app):\n    CORS(app, resources={r\"/*\": {\"origins\": \"*\"}},  supports_credentials=True)\nload_dotenv()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "DATABASE_NAME = \"TOOL\"\nclient = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']\ncollection = db['USERS']\nusers_DB = collection['USERS']\nsys.path.append(os.path.abspath(os.path.dirname(__file__)))\ndef setup_app_config(app):\n    CORS(app, resources={r\"/*\": {\"origins\": \"*\"}},  supports_credentials=True)\nload_dotenv()\nPORT = int(os.getenv(\"PORT\") or 5000)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "client = MongoClient(CONNECTION_STRING)\ndb = client['TOOL']\ncollection = db['USERS']\nusers_DB = collection['USERS']\nsys.path.append(os.path.abspath(os.path.dirname(__file__)))\ndef setup_app_config(app):\n    CORS(app, resources={r\"/*\": {\"origins\": \"*\"}},  supports_credentials=True)\nload_dotenv()\nPORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "db = client['TOOL']\ncollection = db['USERS']\nusers_DB = collection['USERS']\nsys.path.append(os.path.abspath(os.path.dirname(__file__)))\ndef setup_app_config(app):\n    CORS(app, resources={r\"/*\": {\"origins\": \"*\"}},  supports_credentials=True)\nload_dotenv()\nPORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)\nsetup_app_config(app)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "collection = db['USERS']\nusers_DB = collection['USERS']\nsys.path.append(os.path.abspath(os.path.dirname(__file__)))\ndef setup_app_config(app):\n    CORS(app, resources={r\"/*\": {\"origins\": \"*\"}},  supports_credentials=True)\nload_dotenv()\nPORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)\nsetup_app_config(app)\n# app.register_blueprint(user_route)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "users_DB",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "users_DB = collection['USERS']\nsys.path.append(os.path.abspath(os.path.dirname(__file__)))\ndef setup_app_config(app):\n    CORS(app, resources={r\"/*\": {\"origins\": \"*\"}},  supports_credentials=True)\nload_dotenv()\nPORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)\nsetup_app_config(app)\n# app.register_blueprint(user_route)\n# app.register_blueprint(login_route)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "PORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)\nsetup_app_config(app)\n# app.register_blueprint(user_route)\n# app.register_blueprint(login_route)\n# app.register_blueprint(signup_route)\n# app.register_blueprint(tool_route)\n@app.route(\"/\")\n@cross_origin()\ndef home():",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\nsetup_app_config(app)\n# app.register_blueprint(user_route)\n# app.register_blueprint(login_route)\n# app.register_blueprint(signup_route)\n# app.register_blueprint(tool_route)\n@app.route(\"/\")\n@cross_origin()\ndef home():\n    return render_template('home.html')",
         "detail": "app",
         "documentation": {}
     },

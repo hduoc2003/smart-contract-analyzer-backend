@@ -226,7 +226,7 @@ def get_swc_no(check: str) -> str:
 
 def link_hint(check: str) -> str:
     url = "https://github.com/crytic/slither/wiki/Detector-Documentation"
-    return map_check_to_issue[check] 
+    return map_check_to_issue[check]
 
 def valid_swc(swc: str) -> tuple[bool, str]:
     """kiểm tra và lấy định dạng swc chuẩn
