@@ -65,6 +65,7 @@ class Tool(ABC):
         analyze_cmd: str="",
         options: str=""
     ) -> tuple[FinalResult, RawResult]:
+        
         start = time()
         Tool.load_default_cfg(cls.tool_name)
         if (docker_image == ""):
@@ -74,14 +75,17 @@ class Tool(ABC):
         if (options == ""):
             options = cls.tool_cfg['options']
         (errors, raw_result_str) = Docker.run(docker_image, analyze_cmd, file_name, options, file_dir_path)
+        print (docker_image +' ' +  analyze_cmd + ' ' +  options + ' ' + raw_result_str)
         errors += cls.detect_errors(raw_result_str)
         final_result: FinalResult
         raw_result_json: RawResult
         end = time()
         if not cls.any_error(errors):
+            print("TRUEEEE")
             raw_result_json = json.loads(raw_result_str)
             final_result = cls.parse_raw_result(raw_result_json, duration=end - start, file_name=file_name)
         else:
+            print("FALSEEE")
             final_result = cls.parse_error_result(errors, duration=end - start, file_name=file_name)
             raw_result_json = final_result
 

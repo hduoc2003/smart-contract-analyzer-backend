@@ -20,12 +20,11 @@ class ToolError:
 
 @dataclass
 class AnalysisIssue:
-    contract: str #slither
-    source_map: str #slither
-    line_no: str #slither
-    source_mapping: 
+    contract: str 
+    source_map: str 
+    line_no: list[int] | int
     code: str #??
-    description: str #slither
+    description: str 
     hint: str
     issue_title: str
     swcID: str
@@ -52,18 +51,7 @@ class SlitherDetectorElement:
     type: str #[check] property in raw object
     name: str
     lines_no: list[int]
-    contract: str #find by contractFinderFunction
-#     For function/event type elements:
-# parent (result-element): Refers to the parent contract of this definition.
-# signature (string): Refers to the full signature of this function
-# For enum/struct type elements:
-# parent (result-element): Refers to the parent contract of this definition.
-# For variable type elements:
-# parent (result-element): Refers to the parent contract if this variable is a state variable. Refers to the parent function if this variable is a local variable.
-# For node type elements:
-# parent (result-element): Refers to the parent function of this node.
-# For pragma type elements:
-# directive (string array): Fully serialized pragma directive (ie: ["solidity", "^", "0.4", ".9"])
+    contract: str
     hint: str
     sample_code: str
     additional_fields: dict
@@ -76,8 +64,5 @@ class SlitherDetector:
     description: str
     elements: list[SlitherDetectorElement]
     
-@dataclass
-class SlitherUpgradeability:
-
-    
-    
+# @dataclass
+# class SlitherUpgradeability:

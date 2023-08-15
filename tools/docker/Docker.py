@@ -78,10 +78,10 @@ class Docker:
             ))
             Log.err(f"Time out while running image {image} to analyze {file_name}")
             Log.print_except(e)
-
+        
+        
         # print(container.logs().decode("utf8"))
         logs: str = container.logs().decode("utf8").strip() # type: ignore
         # Log.info(logs)
-        container.remove() # type: ignore
+        # container.remove() # type: ignore
         return (errors, logs)
-
