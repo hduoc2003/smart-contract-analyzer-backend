@@ -83,5 +83,5 @@ class Docker:
         # print(container.logs().decode("utf8"))
         logs: str = container.logs().decode("utf8").strip() # type: ignore
         # Log.info(logs)
-        # container.remove() # type: ignore
+        container.remove() # type: ignore
         return (errors, logs)

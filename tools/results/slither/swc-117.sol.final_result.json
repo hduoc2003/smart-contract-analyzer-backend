@@ -1,0 +1,451 @@
+{
+  "file_name": "transaction_malleablity.sol",
+  "tool_name": "slither",
+  "duration": 2.665381908416748,
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1745:540:0",
+        "line_no": [
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "transaction_malleablity.ecrecoverFromSig(bytes32,bytes) (../../../tmp/transaction_malleablity.sol#67-86) is declared view but contains assembly code\n",
+        "hint": "constant-functions-using-assembly-code",
+        "issue_title": "constant-function-asm",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Medium"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1986:156:0",
+        "line_no": [
+          76,
+          77,
+          78,
+          79,
+          80,
+          81
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "transaction_malleablity.ecrecoverFromSig(bytes32,bytes) (../../../tmp/transaction_malleablity.sol#67-86) uses assembly\n\t- INLINE ASM (../../../tmp/transaction_malleablity.sol#76-81)\n",
+        "hint": "assembly-usage",
+        "issue_title": "assembly",
+        "swcID": "SWC-127",
+        "swc_title": "Arbitrary Jump with Function Type Variable",
+        "swc_link": "https://swcregistry.io/docs/SWC-127/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.25 is not recommended for deployment\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "0:25:0",
+        "line_no": [
+          1
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version>=0.4.24 (../../../tmp/transaction_malleablity.sol#1) allows old versions\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "995:11:0",
+        "line_no": [
+          37
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.recoverTransferPreSigned(bytes,address,uint256,uint256,uint256)._to (../../../tmp/transaction_malleablity.sol#37) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1303:11:0",
+        "line_no": [
+          49
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.getTransferHash(address,uint256,uint256,uint256)._to (../../../tmp/transaction_malleablity.sol#49) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "470:14:0",
+        "line_no": [
+          19
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.transfer(bytes,address,uint256,uint256,uint256)._nonce (../../../tmp/transaction_malleablity.sol#19) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "368:16:0",
+        "line_no": [
+          15
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.transfer(bytes,address,uint256,uint256,uint256)._signature (../../../tmp/transaction_malleablity.sol#15) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1581:13:0",
+        "line_no": [
+          59
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.getSignHash(bytes32)._hash (../../../tmp/transaction_malleablity.sol#59) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "395:11:0",
+        "line_no": [
+          16
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.transfer(bytes,address,uint256,uint256,uint256)._to (../../../tmp/transaction_malleablity.sol#16) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1042:17:0",
+        "line_no": [
+          39
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.recoverTransferPreSigned(bytes,address,uint256,uint256,uint256)._gasPrice (../../../tmp/transaction_malleablity.sol#39) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1070:14:0",
+        "line_no": [
+          40
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.recoverTransferPreSigned(bytes,address,uint256,uint256,uint256)._nonce (../../../tmp/transaction_malleablity.sol#40) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "974:10:0",
+        "line_no": [
+          36
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.recoverTransferPreSigned(bytes,address,uint256,uint256,uint256)._sig (../../../tmp/transaction_malleablity.sol#36) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1325:14:0",
+        "line_no": [
+          50
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.getTransferHash(address,uint256,uint256,uint256)._value (../../../tmp/transaction_malleablity.sol#50) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1350:17:0",
+        "line_no": [
+          51
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.getTransferHash(address,uint256,uint256,uint256)._gasPrice (../../../tmp/transaction_malleablity.sol#51) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "442:17:0",
+        "line_no": [
+          18
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.transfer(bytes,address,uint256,uint256,uint256)._gasPrice (../../../tmp/transaction_malleablity.sol#18) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "29:2259:0",
+        "line_no": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Contract transaction_malleablity (../../../tmp/transaction_malleablity.sol#3-88) is not in CapWords\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1378:14:0",
+        "line_no": [
+          52
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.getTransferHash(address,uint256,uint256,uint256)._nonce (../../../tmp/transaction_malleablity.sol#52) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "1017:14:0",
+        "line_no": [
+          38
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.recoverTransferPreSigned(bytes,address,uint256,uint256,uint256)._value (../../../tmp/transaction_malleablity.sol#38) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "417:14:0",
+        "line_no": [
+          17
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter transaction_malleablity.transfer(bytes,address,uint256,uint256,uint256)._value (../../../tmp/transaction_malleablity.sol#17) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "transaction_malleablity",
+        "source_map": "340:582:0",
+        "line_no": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "transfer(bytes,address,uint256,uint256,uint256) should be declared external:\n\t- transaction_malleablity.transfer(bytes,address,uint256,uint256,uint256) (../../../tmp/transaction_malleablity.sol#14-33)\n",
+        "hint": "public-function-that-could-be-declared-external",
+        "issue_title": "external-function",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Optimization"
+      }
+    ]
+  }
+}

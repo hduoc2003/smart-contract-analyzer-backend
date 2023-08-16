@@ -32,14 +32,15 @@ class Slither(Tool):
     # comment   
     @staticmethod
     def get_contract(element: dict) -> str:
+        if (element == {}): return ''
         if element.get("type") == "pragma":
             return ""
         else:
             if element.get("type") == "contract":
                 return element["name"]
             else:
-                print (element["type_specific_fields"]
-                                                ["parent"])
+                # print (element["type_specific_fields"]
+                #                                 ["parent"])
                 contract = Slither.get_contract(element["type_specific_fields"]
                                                 ["parent"])
                 return contract
@@ -55,20 +56,20 @@ class Slither(Tool):
         issues: list[AnalysisIssue] = []
         detectors = raw_result["results"]["detectors"]
         for detector in detectors:
-            elements = detector.get("elements")
+            elements = detector.get("elements")                
             element = Slither.get_smallest_element(elements)
             swcID= get_swc_no(detector['check'])
             issue = AnalysisIssue(
-                contract= Slither.get_contract(element),
-                source_map= Slither.convert_source_map_represent(element["source_mapping"]),
-                line_no=element["source_mapping"]["lines"],
+                contract= Slither.get_contract(element) if element else "",
+                source_map= Slither.convert_source_map_represent(element["source_mapping"]) if element else "",
+                line_no=element["source_mapping"]["lines"] if element else [],
                 code="Không có source code :(, FE tự điền ứng với sourcemap nhé",
-                description=detector['description'],
+                description=detector['description'] ,
                 hint= link_hint(detector["check"]),
                 issue_title= detector['check'],
                 swcID= swcID,
-                swc_title=get_swc_title(swcID, validated=True),
-                swc_link=get_swc_link(swcID, validated=True),
+                swc_title=get_swc_title(swcID),
+                swc_link=get_swc_link(swcID),
                 severity= detector['impact']
             )
             issues.append(issue)
@@ -82,6 +83,7 @@ class Slither(Tool):
                 issues= issues
             )
         )
+        return final_result
     @classmethod
     def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str) -> FinalResult:
         final_result = FinalResult(

@@ -164,7 +164,7 @@ map_slither_check_to_swc: dict[str, str] = {
   "naming-convention": "N/A",
   "pragma": "SWC-103",
   "redundant-statements": "SWC-135",
-  "solc-version": "N/A",
+  "solc-version": "SWC-102",
   "unimplemented-functions": "N/A",
   "unused-state": "SWC-131",
   "costly-loop": "N/A",
@@ -245,11 +245,15 @@ def valid_swc(swc: str) -> tuple[bool, str]:
 
 
 def get_swc_link(swc: str, validated: bool = False) -> str:
+    if (swc == 'N/A'):
+        return "N/A"
     if (validated or valid_swc(swc)[0]):
         return f'https://swcregistry.io/docs/{swc.upper()}/'
     raise Exception(f"{swc} is not a valid SWC, see more details https://swcregistry.io/")
 
 def get_swc_title(swc: str, validated: bool = False) -> str:
+    if (swc == 'N/A'):
+        return "N/A"
     if (validated or valid_swc(swc)[0]):
         return map_to_swc_title[swc.upper()]
     raise Exception(f"{swc} is not a valid SWC, see more details https://swcregistry.io/")
