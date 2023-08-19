@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from enum import Enum, unique
-from typing import List, Union
 
 @unique
 class ToolName(Enum):
@@ -31,6 +30,21 @@ class AnalysisIssue:
     swc_title: str
     swc_link: str
     severity: str
+
+@dataclass
+class SlitherAnalysisDetectorElement:
+    type: str #[check] property in raw object
+    name: str
+    lines_no: list[int]
+    type_specific_fields: str
+
+@dataclass
+class SlitherAnalysisDetector:
+    detect_type: str
+    confidence: str
+    impact: str
+    description: str
+    elements: list[SlitherAnalysisDetectorElement]
 
 @dataclass
 class AnalysisResult:

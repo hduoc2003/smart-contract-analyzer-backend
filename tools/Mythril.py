@@ -1,10 +1,9 @@
 import json
-from math import e
 from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolError, ToolName
-from tools.utils import Log
+from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, valid_swc
 
 class Mythril(Tool):
@@ -66,7 +65,7 @@ class Mythril(Tool):
         errors: list[ToolError] = []
         try:
             raw_result_json = json.loads(raw_result_str)
-        except Exception as e:
+        except Exception:
             Log.info(f'Failed when parsing raw_result_json in function detect_errors:\n{raw_result_str}')
             errors.append(ToolError(
                 error=ErrorClassification.UnknownError,

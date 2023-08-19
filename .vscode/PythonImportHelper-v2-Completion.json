@@ -1,5 +1,85 @@
 [
     {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "venv",
+        "description": "venv",
+        "isExtraImport": true,
+        "detail": "venv",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -100,6 +180,14 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
         "label": "FinalResult",
         "importPath": "tools.type",
         "description": "tools.type",
@@ -124,19 +212,78 @@
         "documentation": {}
     },
     {
-        "label": "Log",
-        "importPath": "tools.utils",
-        "description": "tools.utils",
+        "label": "concurrent.futures",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "tools.utils",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "detail": "concurrent.futures",
         "documentation": {}
     },
     {
-        "label": "Log",
-        "importPath": "tools.utils",
-        "description": "tools.utils",
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
         "isExtraImport": true,
-        "detail": "tools.utils",
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -146,22 +293,6 @@
         "importPath": "traceback",
         "description": "traceback",
         "detail": "traceback",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
         "documentation": {}
     },
     {
@@ -197,29 +328,12 @@
         "documentation": {}
     },
     {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "re",
         "description": "re",
         "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "e",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
         "documentation": {}
     },
     {
@@ -240,6 +354,38 @@
     },
     {
         "label": "RawResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "RawResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
         "importPath": "tools.Tool",
         "description": "tools.Tool",
         "isExtraImport": true,
@@ -287,11 +433,37 @@
         "documentation": {}
     },
     {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
         "label": "time",
         "importPath": "time",
         "description": "time",
         "isExtraImport": true,
         "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "coroutine",
+        "importPath": "types",
+        "description": "types",
+        "isExtraImport": true,
+        "detail": "types",
         "documentation": {}
     },
     {
@@ -303,11 +475,27 @@
         "documentation": {}
     },
     {
-        "label": "Log",
-        "importPath": "tools.utils.Log",
-        "description": "tools.utils.Log",
+        "label": "Docker",
+        "importPath": "tools.docker.Docker",
+        "description": "tools.docker.Docker",
         "isExtraImport": true,
-        "detail": "tools.utils.Log",
+        "detail": "tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "Async",
+        "importPath": "tools.utils.Async",
+        "description": "tools.utils.Async",
+        "isExtraImport": true,
+        "detail": "tools.utils.Async",
+        "documentation": {}
+    },
+    {
+        "label": "Async",
+        "importPath": "tools.utils.Async",
+        "description": "tools.utils.Async",
+        "isExtraImport": true,
+        "detail": "tools.utils.Async",
         "documentation": {}
     },
     {
@@ -390,11 +578,98 @@
         "documentation": {}
     },
     {
-        "label": "Mythril",
-        "importPath": "tools.Mythril",
-        "description": "tools.Mythril",
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
         "isExtraImport": true,
-        "detail": "tools.Mythril",
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "login_route",
+        "importPath": "server.route.login.login",
+        "description": "server.route.login.login",
+        "isExtraImport": true,
+        "detail": "server.route.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "signup_route",
+        "importPath": "server.route.signup.signup",
+        "description": "server.route.signup.signup",
+        "isExtraImport": true,
+        "detail": "server.route.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "importPath": "server.route.tool.tool",
+        "description": "server.route.tool.tool",
+        "isExtraImport": true,
+        "detail": "server.route.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "server.route.login.login",
+        "description": "server.route.login.login",
+        "peekOfCode": "def response():\n    return {\n    }",
+        "detail": "server.route.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "login_route",
+        "kind": 5,
+        "importPath": "server.route.login.login",
+        "description": "server.route.login.login",
+        "peekOfCode": "login_route = Blueprint(\"login\", __name__, url_prefix=\"/login\")\n@login_route.route(\"/\")\ndef response():\n    return {\n    }",
+        "detail": "server.route.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "server.route.signup.signup",
+        "description": "server.route.signup.signup",
+        "peekOfCode": "def response():\n    return {\n    }",
+        "detail": "server.route.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "signup_route",
+        "kind": 5,
+        "importPath": "server.route.signup.signup",
+        "description": "server.route.signup.signup",
+        "peekOfCode": "signup_route = Blueprint(\"signup\", __name__, url_prefix=\"/signup\")\n@signup_route.route(\"/\")\ndef response():\n    return {\n    }",
+        "detail": "server.route.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "server.route.tool.tool",
+        "description": "server.route.tool.tool",
+        "peekOfCode": "def response():\n    saved_file_dir: str = r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs'\n    files_names: list[str] = ['swc-107.sol', 'swc-117.sol']\n    return \"hehe\"",
+        "detail": "server.route.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "kind": 5,
+        "importPath": "server.route.tool.tool",
+        "description": "server.route.tool.tool",
+        "peekOfCode": "tool_route = Blueprint(\"tool\", __name__, url_prefix=\"/tool\")\n@tool_route.post(\"/\")\ndef response():\n    saved_file_dir: str = r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs'\n    files_names: list[str] = ['swc-107.sol', 'swc-117.sol']\n    return \"hehe\"",
+        "detail": "server.route.tool.tool",
         "documentation": {}
     },
     {
@@ -404,6 +679,15 @@
         "description": "tools.docker.Docker",
         "peekOfCode": "class Docker:\n    client = docker.from_env()\n    cfg_path = os.path.abspath(os.path.join(os.path.dirname(__file__), \"config.yaml\"))\n    with open(os.path.abspath(cfg_path), 'r', encoding='utf-8') as ymlfile:\n        try:\n            cfg = yaml.safe_load(ymlfile)\n        except yaml.YAMLError as exc:\n            Log.err(exc)\n    @classmethod\n    def __cfg_containers(cls):",
         "detail": "tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "Async",
+        "kind": 6,
+        "importPath": "tools.utils.Async",
+        "description": "tools.utils.Async",
+        "peekOfCode": "class Async:\n    @classmethod\n    def run_functions(cls, arr_func: list[Callable], arr_args: list[list]) -> list:\n        \"\"\"Run multiple functions with each arguments separately asynchronously\n        Args:\n            arr_func (list[Callable]): list of functions need to run\n            arr_args (list[list]): arguments for each function\n        Raises:\n            Exception: the length of arr_func is not equal to the length of arr_args\n        Returns:",
+        "detail": "tools.utils.Async",
         "documentation": {}
     },
     {
@@ -461,6 +745,15 @@
         "documentation": {}
     },
     {
+        "label": "Slither",
+        "kind": 6,
+        "importPath": "tools.Slither",
+        "description": "tools.Slither",
+        "peekOfCode": "class Slither(Tool):\n    tool_name = ToolName.Slither\n    def __init__(self):\n        pass\n    @classmethod\n    def parse_raw_result(\n            cls, \n            raw_result: dict, \n            duration: float = \"1\", file_name: str = \"1\") -> FinalResult:\n        if not raw_result[\"success\"]:",
+        "detail": "tools.Slither",
+        "documentation": {}
+    },
+    {
         "label": "Tool",
         "kind": 6,
         "importPath": "tools.Tool",
@@ -483,7 +776,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ToolName(Enum):\n        Mythril = \"mythril\"\n        Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:",
+        "peekOfCode": "class ToolName(Enum):\n    Mythril = \"mythril\"\n    Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@unique\nclass IssueType(Enum):",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -492,7 +785,16 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:",
+        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@unique\nclass IssueType(Enum):\n    Contract = \"contract\"\n    Function = \"function\"\n    Variable = \"variable\"\n    Node = \"node\"",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "IssueType",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class IssueType(Enum):\n    Contract = \"contract\"\n    Function = \"function\"\n    Variable = \"variable\"\n    Node = \"node\"\n    Pragma = \"pragma\"\n    Enum = \"enum\"\n    Struct = \"struct\"\n    Event = \"event\"\n@dataclass",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -515,11 +817,29 @@
         "documentation": {}
     },
     {
+        "label": "SlitherAnalysisDetectorElement",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class SlitherAnalysisDetectorElement:\n    type: str #[check] property in raw object\n    name: str\n    lines_no: list[int]\n    type_specific_fields: str\n@dataclass\nclass SlitherAnalysisDetector:\n    detect_type: str\n    confidence: str\n    impact: str",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "SlitherAnalysisDetector",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class SlitherAnalysisDetector:\n    detect_type: str\n    confidence: str\n    impact: str\n    description: str\n    elements: list[SlitherAnalysisDetectorElement]\n@dataclass\nclass AnalysisResult:\n    errors: list[ToolError]\n    #combine here",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
         "label": "AnalysisResult",
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class AnalysisResult:\n    errors: list[ToolError]\n    issues: list[AnalysisIssue]\n@dataclass\nclass FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float\n    analysis: AnalysisResult",
+        "peekOfCode": "class AnalysisResult:\n    errors: list[ToolError]\n    #combine here\n    issues: list[AnalysisIssue]\n    list[SlitherAnalysisDetector]\n@dataclass\nclass FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -782,6 +1102,60 @@
         "description": "venv.Scripts.pywin32_testall",
         "peekOfCode": "failures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.\n    cmd = [sys.executable, \"-u\", scriptname] + cmdline_extras\n    print(\"--- Running '%s' ---\" % script)\n    sys.stdout.flush()",
         "detail": "venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "PORT = int(os.getenv(\"PORT\") or 5000)\napp = Flask(__name__)\napp.register_blueprint(login_route)\napp.register_blueprint(signup_route)\napp.register_blueprint(tool_route)\n@app.route(\"/\")\ndef response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\napp.register_blueprint(login_route)\napp.register_blueprint(signup_route)\napp.register_blueprint(tool_route)\n@app.route(\"/\")\ndef response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "start",
+        "kind": 5,
+        "importPath": "test_tool",
+        "description": "test_tool",
+        "peekOfCode": "start = time.time()\nresult = [t.duration for t in asyncio.run(Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-107.sol']*10\n))]\n# result = Async.run_single_func(Tool.ru)\nend = time.time()\nprint(end - start)\nprint(result)",
+        "detail": "test_tool",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "test_tool",
+        "description": "test_tool",
+        "peekOfCode": "result = [t.duration for t in asyncio.run(Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-107.sol']*10\n))]\n# result = Async.run_single_func(Tool.ru)\nend = time.time()\nprint(end - start)\nprint(result)",
+        "detail": "test_tool",
+        "documentation": {}
+    },
+    {
+        "label": "end",
+        "kind": 5,
+        "importPath": "test_tool",
+        "description": "test_tool",
+        "peekOfCode": "end = time.time()\nprint(end - start)\nprint(result)",
+        "detail": "test_tool",
         "documentation": {}
     }
 ]

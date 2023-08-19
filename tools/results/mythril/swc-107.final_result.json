@@ -1,27 +1,14 @@
 {
   "file_name": "swc-107.sol",
   "tool_name": "mythril",
-  "duration": 43.9368577003479,
+  "duration": 37.89831757545471,
   "analysis": {
     "errors": [],
     "issues": [
       {
-        "contract": "Proxy",
-        "source_map": "800:26:0",
-        "line_no": 35,
-        "code": "callee.delegatecall(_data)",
-        "description": "The contract delegates execution to another contract with a user-supplied address.\nThe smart contract delegates execution to a user-supplied address.This could allow an attacker to execute arbitrary code in the context of this contract account and manipulate the state of the contract account or execute actions on its behalf.",
-        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
-        "issue_title": "Delegatecall to user-supplied address",
-        "swcID": "SWC-112",
-        "swc_title": "Delegatecall to Untrusted Callee",
-        "swc_link": "https://swcregistry.io/docs/SWC-112/",
-        "severity": "High"
-      },
-      {
         "contract": "SimpleDAO",
-        "source_map": "451:31",
-        "line_no": 16,
+        "source_map": "450:31",
+        "line_no": 17,
         "code": "msg.sender.call.value(amount)()",
         "description": "A call to a user-supplied address is executed.\nAn external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.",
         "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
@@ -33,8 +20,8 @@
       },
       {
         "contract": "SimpleDAO",
-        "source_map": "451:31",
-        "line_no": 16,
+        "source_map": "450:31",
+        "line_no": 17,
         "code": "msg.sender.call.value(amount)()",
         "description": "Any sender can withdraw Ether from the contract account.\nArbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.",
         "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
@@ -47,7 +34,7 @@
       {
         "contract": "SimpleDAO",
         "source_map": ":26",
-        "line_no": 17,
+        "line_no": 18,
         "code": "credit[msg.sender]-=amount",
         "description": "Read of persistent state following external call\nThe contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.",
         "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
@@ -60,7 +47,7 @@
       {
         "contract": "SimpleDAO",
         "source_map": ":26",
-        "line_no": 17,
+        "line_no": 18,
         "code": "credit[msg.sender]-=amount",
         "description": "Write to persistent state following external call\nThe contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.",
         "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",

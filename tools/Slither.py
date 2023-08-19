@@ -8,7 +8,6 @@ from tools.utils import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, map_slither_check_to_swc,get_swc_no
     
 
-
 class Slither(Tool):
 
     tool_name = ToolName.Slither
@@ -122,7 +121,11 @@ class Slither(Tool):
                     msg=raw_result_errors
                 ))
         return errors
+
+    # # @override 
+    # # def analyze() {
+        
+    # # }
             
-            
-        return errors
-        #TODO: if raw_result has error then classify error and append into errors 
+    #     return errors
+    #     #TODO: if raw_result has error then classify error and append into errors 

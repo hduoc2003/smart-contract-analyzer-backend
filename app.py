@@ -1,20 +1,24 @@
 import sys
 import os
-import pathlib
-import json
+from dotenv import load_dotenv
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from tools.Mythril import Mythril
-from tools.Slither import *
-dataPath = pathlib.Path(__file__).parent.resolve()
+from flask import Flask
+from server.route.login.login import login_route
+from server.route.signup.signup import signup_route
+from server.route.tool.tool import tool_route
 
-# (final, raw) = Mythril.analyze(
-#     r'D:\University\Laboratory\Blockchain\Tool Intergrating\ReBuild\BE\tools\data\SWC-107',
-#     'transaction_malleablity.sol'
-# )
+load_dotenv()
+PORT = int(os.getenv("PORT") or 5000)
 
-(final, raw) = Slither.analyze(
-    r'D:\University\Laboratory\Blockchain\Tool Intergrating\ReBuild\BE\tools\data\SWC-117',
-    'transaction_malleablity.sol'
-)
-Slither.export_result('swc-117.sol', raw, final)
+app = Flask(__name__)
+app.register_blueprint(login_route)
+app.register_blueprint(signup_route)
+app.register_blueprint(tool_route)
+
+@app.route("/")
+def response():
+    return "hello"
+
+if __name__ == "__main__":
+    app.run(debug=True, port=PORT)

@@ -4,9 +4,7 @@ from docker import errors
 import requests
 import yaml
 from tools.type import ErrorClassification, ToolError
-
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from tools.utils import Log
+from tools.utils.Log import Log
 
 # sys.path.append()
 class Docker:
@@ -83,5 +81,12 @@ class Docker:
         # print(container.logs().decode("utf8"))
         logs: str = container.logs().decode("utf8").strip() # type: ignore
         # Log.info(logs)
+        #if My
         container.remove() # type: ignore
+        # #else 
+        # {
+        #     #TODO: Giu container, de chay chung solc-select
+        #     list solc-select = 
+        #     add 
+        # }
         return (errors, logs)

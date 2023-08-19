@@ -1,4 +1,4 @@
-pragma solidity >=0.4.24;
+pragma solidity 0.8.11;
 
 contract transaction_malleablity{
   mapping(address => uint256) balances;
