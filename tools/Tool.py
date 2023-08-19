@@ -5,7 +5,7 @@ import os
 from time import time
 from types import coroutine
 from typing import Any, Callable
-from tools.type import FinalResult, ToolError, ToolName
+from tools.type import FinalResult, ImageConfig, ImageVolume, ToolError, ToolName
 import yaml
 
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
@@ -20,7 +20,7 @@ class Tool(ABC):
 
     tool_name: ToolName
     image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "docker/image-config"))
-    tool_cfg = {}
+    tool_cfg: ImageConfig
 
     def __init__(
         self
@@ -28,12 +28,22 @@ class Tool(ABC):
         pass
 
     @classmethod
-    def load_default_cfg(cls, tool_name: ToolName) -> None:
-        if (cls.tool_cfg != {}):
-            return
+    def load_default_cfg(cls, tool_name: ToolName) -> ImageConfig:
         tool_config_path = os.path.join(cls.image_config_path, f"{tool_name.value}.yaml")
+        # print(cls.tool_name)
         with open(tool_config_path, "r") as yaml_file:
-            cls.tool_cfg = yaml.safe_load(yaml_file)
+            cfg = yaml.safe_load(yaml_file)
+            tool_cfg = ImageConfig(
+                docker_image=cfg['docker_image'],
+                analyze_cmd=cfg['analyze_cmd'],
+                options=cfg['options'],
+                volumes=ImageVolume(
+                    bind=cfg['volumes']['bind'],
+                    mode=cfg['volumes']['mode']
+                ),
+                timeout=cfg['timeout']
+            ) # type: ignore
+        return tool_cfg
 
     @classmethod
     @abstractmethod
@@ -60,25 +70,32 @@ class Tool(ABC):
         return len(errors) > 0
 
     @classmethod
+    @abstractmethod
+    def run_core(
+        cls,
+        file_dir_path: str,
+        file_name: str,
+        docker_image: str,
+        options: str
+    ) -> tuple[list[ToolError], str]:
+        pass
+
+    @classmethod
     def analyze(
         cls,
         file_dir_path: str,
         file_name: str,
-        docker_image: str="",
-        analyze_cmd: str="",
-        options: str=""
+        docker_image: str | None = None,
+        options: str | None = None
     ) -> tuple[FinalResult, RawResult]:
-        
+        Log.info(f'Running {cls.tool_name.value}')
         start = time()
-        Tool.load_default_cfg(cls.tool_name)
-        if (docker_image == ""):
-            docker_image = cls.tool_cfg['docker_image']['default']
-        if (analyze_cmd == ""):
-            analyze_cmd = cls.tool_cfg['analyze_cmd']
-        if (options == ""):
-            options = cls.tool_cfg['options']
-        (errors, raw_result_str) = Docker.run(docker_image, analyze_cmd, file_name, options, file_dir_path)
-        print (docker_image +' ' +  analyze_cmd + ' ' +  options + ' ' + raw_result_str)
+        (errors, raw_result_str) = cls.run_core(
+            file_dir_path,
+            file_name,
+            docker_image or cls.tool_cfg.docker_image,
+            options or cls.tool_cfg.options
+        )
         errors += cls.detect_errors(raw_result_str)
         final_result: FinalResult
         raw_result_json: RawResult
@@ -93,22 +110,11 @@ class Tool(ABC):
         return (final_result, raw_result_json)
 
     @classmethod
-    async def analyze_async(
-        cls,
-        file_dir_path: str,
-        file_name: str,
-        docker_image: str="",
-        analyze_cmd: str="",
-        options: str=""
-    ) -> tuple[FinalResult, RawResult]:
-        return cls.analyze(file_dir_path, file_name, docker_image, analyze_cmd, options)
-
-    @classmethod
     def run_tools_async(
         cls,
         file_dir_path: str,
         file_name: str,
-        tools: list[ToolName] = [ToolName.Slither]
+        tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]
     ) -> FinalResult:
         """Analyze single file by running multiple tools asynchronously
 
@@ -144,14 +150,15 @@ class Tool(ABC):
         # Log.info(result)
 
     @classmethod
-    async def analyze_files_async(
+    def analyze_files_async(
         cls,
         file_dir_path: str,
-        files_names: list[str]
+        files_names: list[str],
+        tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]
     ) -> list[FinalResult]:
         return Async.run_single_func(
             func=cls.run_tools_async,
-            arr_args=[[file_dir_path, file_name] for file_name in files_names]
+            arr_args=[[file_dir_path, file_name, tools] for file_name in files_names],
         )
 
     @classmethod

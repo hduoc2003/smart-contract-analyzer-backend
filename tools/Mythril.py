@@ -1,7 +1,12 @@
 import json
+from pydoc import doc
+from typing_extensions import override
+
+import requests
 from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
+from tools.docker.Docker import Docker
 from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, valid_swc
@@ -9,10 +14,12 @@ from tools.utils.SWC import get_swc_link, get_swc_title, valid_swc
 class Mythril(Tool):
 
     tool_name = ToolName.Mythril
+    tool_cfg = Tool.load_default_cfg(tool_name)
 
     def __init__(self) -> None:
         super().__init__()
 
+    @override
     @classmethod
     def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str) -> FinalResult:
 
@@ -28,7 +35,7 @@ class Mythril(Tool):
                 line_no=raw_issue['lineno'],
                 code=raw_issue['code'],
                 description=raw_issue['description'],
-                hint= "chưa làm phần hint".decode("utf-8"),
+                hint= "chưa làm phần hint",
                 issue_title=raw_issue['title'],
                 swcID=swcID,
                 swc_title=get_swc_title(swcID, validated=True),
@@ -47,6 +54,7 @@ class Mythril(Tool):
         )
         return final_result
 
+    @override
     @classmethod
     def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str) -> FinalResult:
         final_result = FinalResult(
@@ -60,6 +68,7 @@ class Mythril(Tool):
         )
         return final_result
 
+    @override
     @classmethod
     def detect_errors(cls, raw_result_str: str) -> list[ToolError]:
         errors: list[ToolError] = []
@@ -87,3 +96,37 @@ class Mythril(Tool):
                 ))
         return errors
 
+    @override
+    @classmethod
+    def run_core(cls, file_dir_path: str, file_name: str, docker_image: str, options: str) -> tuple[list[ToolError], str]:
+        errors: list[ToolError] = []
+        logs: str = ""
+        cmd = f"{cls.tool_cfg.analyze_cmd} {cls.tool_cfg.volumes.bind}/{file_name} {options}"
+        container = Docker.client.containers.run(
+            image=docker_image,
+            command=cmd,
+            detach=True,
+            volumes=Docker.create_volumes(
+                [file_dir_path],
+                [cls.tool_cfg.volumes.bind]
+            )
+        )
+        try:
+            container.wait(timeout=cls.tool_cfg.timeout) # type: ignore
+        except requests.exceptions.ConnectionError as e:
+            Log.info('#####################')
+            errors.append(ToolError(
+                error=ErrorClassification.RuntimeOut,
+                msg=f"Time out while running image {docker_image} to analyze {file_name}"
+            ))
+            Log.err(f"Time out while running image {docker_image} to analyze {file_name}")
+            Log.print_except(e)
+
+
+        # print(container.logs().decode("utf8"))
+        logs: str = container.logs().decode("utf8").strip() # type: ignore
+        # Log.info(logs)
+        #if My
+        container.remove() # type: ignore
+
+        return (errors, logs)

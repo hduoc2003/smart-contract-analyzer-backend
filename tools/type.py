@@ -11,7 +11,7 @@ class ErrorClassification(Enum):
     RuntimeOut = "runtime out"
     CompileError = "compile error"
     UnknownError = "unknown error"
- 
+
 @dataclass
 class ToolError:
     error: ErrorClassification
@@ -19,11 +19,11 @@ class ToolError:
 
 @dataclass
 class AnalysisIssue:
-    contract: str 
-    source_map: str 
+    contract: str
+    source_map: str
     line_no: list[int] | int
     code: str #??
-    description: str 
+    description: str
     hint: str
     issue_title: str
     swcID: str
@@ -51,7 +51,7 @@ class AnalysisResult:
     errors: list[ToolError]
     #combine here
     issues: list[AnalysisIssue]
-    
+
 @dataclass
 class FinalResult:
     file_name: str
@@ -69,7 +69,7 @@ class SlitherDetectorElement:
     hint: str
     sample_code: str
     additional_fields: dict
-       
+
 @dataclass
 class SlitherDetector:
     detect_type: str
@@ -77,6 +77,16 @@ class SlitherDetector:
     confidence: str
     description: str
     elements: list[SlitherDetectorElement]
-    
-# @dataclass
-# class SlitherUpgradeability:
+
+@dataclass
+class ImageVolume:
+    bind: str
+    mode: str
+@dataclass
+class ImageConfig:
+    docker_image: str
+    analyze_cmd: str
+    options: str
+    volumes: ImageVolume
+    timeout: int
+

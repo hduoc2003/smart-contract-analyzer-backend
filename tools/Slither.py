@@ -4,9 +4,9 @@ from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolError, ToolName
-from tools.utils import Log
+from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, map_slither_check_to_swc,get_swc_no
-    
+
 
 class Slither(Tool):
 
@@ -25,10 +25,10 @@ class Slither(Tool):
             for element in elements:
                 # TODO:will add more
                 if element["type"] == "node":
-                    return element       
+                    return element
         return elements[0]
- 
-    # comment   
+
+    # comment
     @staticmethod
     def get_contract(element: dict) -> str:
         if (element == {}): return ''
@@ -43,19 +43,19 @@ class Slither(Tool):
                 contract = Slither.get_contract(element["type_specific_fields"]
                                                 ["parent"])
                 return contract
-    
+
     @staticmethod
     def convert_source_map_represent(source_map: dict) -> str:
         start = source_map["start"]
         len = source_map["length"]
         return f'{start}:{len}:0'
-    
+
     @classmethod
     def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str) -> FinalResult:
         issues: list[AnalysisIssue] = []
         detectors = raw_result["results"]["detectors"]
         for detector in detectors:
-            elements = detector.get("elements")                
+            elements = detector.get("elements")
             element = Slither.get_smallest_element(elements)
             swcID= get_swc_no(detector['check'])
             issue = AnalysisIssue(
@@ -72,7 +72,7 @@ class Slither(Tool):
                 severity= detector['impact']
             )
             issues.append(issue)
-            
+
         final_result = FinalResult(
             file_name=file_name,
             tool_name=Slither.tool_name.value,
@@ -99,7 +99,7 @@ class Slither(Tool):
     @classmethod
     def detect_errors(cls, raw_result_str: str) -> list[ToolError]:
         errors: list[ToolError] = []
-        try: 
+        try:
             raw_result_json = json.loads(raw_result_str)
         except Exception as e:
             Log.info(f'Failed when parsing raw_result_json in function detect_errors:\n{raw_result_str}')
@@ -122,10 +122,10 @@ class Slither(Tool):
                 ))
         return errors
 
-    # # @override 
+    # # @override
     # # def analyze() {
-        
+
     # # }
-            
+
     #     return errors
-    #     #TODO: if raw_result has error then classify error and append into errors 
+    #     #TODO: if raw_result has error then classify error and append into errors

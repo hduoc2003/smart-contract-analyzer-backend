@@ -80,6 +80,14 @@
         "documentation": {}
     },
     {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -180,7 +188,39 @@
         "documentation": {}
     },
     {
-        "label": "*",
+        "label": "AnalysisIssue",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisResult",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorClassification",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ToolError",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ToolName",
         "importPath": "tools.type",
         "description": "tools.type",
         "isExtraImport": true,
@@ -196,7 +236,31 @@
         "documentation": {}
     },
     {
+        "label": "ImageConfig",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ImageVolume",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
         "label": "ToolError",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ToolName",
         "importPath": "tools.type",
         "description": "tools.type",
         "isExtraImport": true,
@@ -337,6 +401,22 @@
         "documentation": {}
     },
     {
+        "label": "doc",
+        "importPath": "pydoc",
+        "description": "pydoc",
+        "isExtraImport": true,
+        "detail": "pydoc",
+        "documentation": {}
+    },
+    {
+        "label": "override",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
         "label": "Tool",
         "importPath": "tools.Tool",
         "description": "tools.Tool",
@@ -369,7 +449,7 @@
         "documentation": {}
     },
     {
-        "label": "RawResult",
+        "label": "FinalResult",
         "importPath": "tools.Tool",
         "description": "tools.Tool",
         "isExtraImport": true,
@@ -377,7 +457,7 @@
         "documentation": {}
     },
     {
-        "label": "FinalResult",
+        "label": "RawResult",
         "importPath": "tools.Tool",
         "description": "tools.Tool",
         "isExtraImport": true,
@@ -390,6 +470,30 @@
         "description": "tools.Tool",
         "isExtraImport": true,
         "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Docker",
+        "importPath": "tools.docker.Docker",
+        "description": "tools.docker.Docker",
+        "isExtraImport": true,
+        "detail": "tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "Docker",
+        "importPath": "tools.docker.Docker",
+        "description": "tools.docker.Docker",
+        "isExtraImport": true,
+        "detail": "tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "Docker",
+        "importPath": "tools.docker.Docker",
+        "description": "tools.docker.Docker",
+        "isExtraImport": true,
+        "detail": "tools.docker.Docker",
         "documentation": {}
     },
     {
@@ -414,6 +518,54 @@
         "description": "tools.utils.SWC",
         "isExtraImport": true,
         "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_link",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_title",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "link_hint",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "map_slither_check_to_swc",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_no",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "e",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
         "documentation": {}
     },
     {
@@ -464,22 +616,6 @@
         "description": "types",
         "isExtraImport": true,
         "detail": "types",
-        "documentation": {}
-    },
-    {
-        "label": "Docker",
-        "importPath": "tools.docker.Docker",
-        "description": "tools.docker.Docker",
-        "isExtraImport": true,
-        "detail": "tools.docker.Docker",
-        "documentation": {}
-    },
-    {
-        "label": "Docker",
-        "importPath": "tools.docker.Docker",
-        "description": "tools.docker.Docker",
-        "isExtraImport": true,
-        "detail": "tools.docker.Docker",
         "documentation": {}
     },
     {
@@ -619,6 +755,14 @@
         "documentation": {}
     },
     {
+        "label": "Mythril",
+        "importPath": "tools.Mythril",
+        "description": "tools.Mythril",
+        "isExtraImport": true,
+        "detail": "tools.Mythril",
+        "documentation": {}
+    },
+    {
         "label": "response",
         "kind": 2,
         "importPath": "server.route.login.login",
@@ -677,7 +821,7 @@
         "kind": 6,
         "importPath": "tools.docker.Docker",
         "description": "tools.docker.Docker",
-        "peekOfCode": "class Docker:\n    client = docker.from_env()\n    cfg_path = os.path.abspath(os.path.join(os.path.dirname(__file__), \"config.yaml\"))\n    with open(os.path.abspath(cfg_path), 'r', encoding='utf-8') as ymlfile:\n        try:\n            cfg = yaml.safe_load(ymlfile)\n        except yaml.YAMLError as exc:\n            Log.err(exc)\n    @classmethod\n    def __cfg_containers(cls):",
+        "peekOfCode": "class Docker:\n    client = docker.from_env()\n    @classmethod\n    def pull_image(cls, image: str) -> None:\n        try:\n            Log.info('pulling ' + image + ' image, this may take a while...')\n            image = cls.client.images.pull(image) # type: ignore\n            Log.info(f'image {image} pulled')\n        except errors.APIError as err:\n            Log.err('Errors occurred when pulling image ' + image)",
         "detail": "tools.docker.Docker",
         "documentation": {}
     },
@@ -709,6 +853,24 @@
         "documentation": {}
     },
     {
+        "label": "get_swc_no",
+        "kind": 2,
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "peekOfCode": "def get_swc_no(check: str) -> str:\n    if map_slither_check_to_swc[check] != 'N/A':\n        return map_slither_check_to_swc[check]\n    return 'N/A'\ndef link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check] \ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:",
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "link_hint",
+        "kind": 2,
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "peekOfCode": "def link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check] \ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:\n        swc (str): _description_\n    Returns:\n        tuple[bool, str]: _description_\n    \"\"\"",
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
         "label": "valid_swc",
         "kind": 2,
         "importPath": "tools.utils.SWC",
@@ -722,7 +884,7 @@
         "kind": 2,
         "importPath": "tools.utils.SWC",
         "description": "tools.utils.SWC",
-        "peekOfCode": "def get_swc_link(swc: str, validated: bool = False) -> str:\n    if (validated or valid_swc(swc)[0]):\n        return f'https://swcregistry.io/docs/{swc.upper()}/'\n    raise Exception(f\"{swc} is not a valid SWC, see more details https://swcregistry.io/\")\ndef get_swc_title(swc: str, validated: bool = False) -> str:\n    if (validated or valid_swc(swc)[0]):\n        return map_to_swc_title[swc.upper()]\n    raise Exception(f\"{swc} is not a valid SWC, see more details https://swcregistry.io/\")",
+        "peekOfCode": "def get_swc_link(swc: str, validated: bool = False) -> str:\n    if (swc == 'N/A'):\n        return \"N/A\"\n    if (validated or valid_swc(swc)[0]):\n        return f'https://swcregistry.io/docs/{swc.upper()}/'\n    raise Exception(f\"{swc} is not a valid SWC, see more details https://swcregistry.io/\")\ndef get_swc_title(swc: str, validated: bool = False) -> str:\n    if (swc == 'N/A'):\n        return \"N/A\"\n    if (validated or valid_swc(swc)[0]):",
         "detail": "tools.utils.SWC",
         "documentation": {}
     },
@@ -731,7 +893,7 @@
         "kind": 2,
         "importPath": "tools.utils.SWC",
         "description": "tools.utils.SWC",
-        "peekOfCode": "def get_swc_title(swc: str, validated: bool = False) -> str:\n    if (validated or valid_swc(swc)[0]):\n        return map_to_swc_title[swc.upper()]\n    raise Exception(f\"{swc} is not a valid SWC, see more details https://swcregistry.io/\")",
+        "peekOfCode": "def get_swc_title(swc: str, validated: bool = False) -> str:\n    if (swc == 'N/A'):\n        return \"N/A\"\n    if (validated or valid_swc(swc)[0]):\n        return map_to_swc_title[swc.upper()]\n    raise Exception(f\"{swc} is not a valid SWC, see more details https://swcregistry.io/\")",
         "detail": "tools.utils.SWC",
         "documentation": {}
     },
@@ -740,7 +902,7 @@
         "kind": 6,
         "importPath": "tools.Mythril",
         "description": "tools.Mythril",
-        "peekOfCode": "class Mythril(Tool):\n    tool_name = ToolName.Mythril\n    def __init__(self) -> None:\n        super().__init__()\n    @classmethod\n    def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str) -> FinalResult:\n        issues: list[AnalysisIssue] = []\n        for raw_issue in raw_result['issues']:\n            (is_valid_swc, swcID) = valid_swc(raw_issue['swc-id'])\n            contract=raw_issue['contract']",
+        "peekOfCode": "class Mythril(Tool):\n    tool_name = ToolName.Mythril\n    tool_cfg = Tool.load_default_cfg(tool_name)\n    def __init__(self) -> None:\n        super().__init__()\n    @override\n    @classmethod\n    def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str) -> FinalResult:\n        issues: list[AnalysisIssue] = []\n        for raw_issue in raw_result['issues']:",
         "detail": "tools.Mythril",
         "documentation": {}
     },
@@ -749,7 +911,7 @@
         "kind": 6,
         "importPath": "tools.Slither",
         "description": "tools.Slither",
-        "peekOfCode": "class Slither(Tool):\n    tool_name = ToolName.Slither\n    def __init__(self):\n        pass\n    @classmethod\n    def parse_raw_result(\n            cls, \n            raw_result: dict, \n            duration: float = \"1\", file_name: str = \"1\") -> FinalResult:\n        if not raw_result[\"success\"]:",
+        "peekOfCode": "class Slither(Tool):\n    tool_name = ToolName.Slither\n    def __init__(self) -> None:\n        super().__init__()\n    @classmethod\n    def get_smallest_element(cls, elements: list[dict]) -> dict:\n        if (len(elements) == 0):\n            return {}\n        elif (len(elements) == 1):\n            return elements[0]",
         "detail": "tools.Slither",
         "documentation": {}
     },
@@ -758,7 +920,7 @@
         "kind": 6,
         "importPath": "tools.Tool",
         "description": "tools.Tool",
-        "peekOfCode": "class Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    tool_cfg = {}\n    def __init__(\n        self\n    ) -> None:\n        pass\n    @classmethod\n    def load_default_cfg(cls, tool_name: ToolName) -> None:",
+        "peekOfCode": "class Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    tool_cfg: ImageConfig\n    def __init__(\n        self\n    ) -> None:\n        pass\n    @classmethod\n    def load_default_cfg(cls, tool_name: ToolName) -> ImageConfig:",
         "detail": "tools.Tool",
         "documentation": {}
     },
@@ -767,7 +929,7 @@
         "kind": 5,
         "importPath": "tools.Tool",
         "description": "tools.Tool",
-        "peekOfCode": "RawResult = Any\nclass Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    tool_cfg = {}\n    def __init__(\n        self\n    ) -> None:\n        pass\n    @classmethod",
+        "peekOfCode": "RawResult = Any\nclass Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    tool_cfg: ImageConfig\n    def __init__(\n        self\n    ) -> None:\n        pass\n    @classmethod",
         "detail": "tools.Tool",
         "documentation": {}
     },
@@ -776,7 +938,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ToolName(Enum):\n    Mythril = \"mythril\"\n    Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@unique\nclass IssueType(Enum):",
+        "peekOfCode": "class ToolName(Enum):\n    Mythril = \"mythril\"\n    Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -785,16 +947,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@unique\nclass IssueType(Enum):\n    Contract = \"contract\"\n    Function = \"function\"\n    Variable = \"variable\"\n    Node = \"node\"",
-        "detail": "tools.type",
-        "documentation": {}
-    },
-    {
-        "label": "IssueType",
-        "kind": 6,
-        "importPath": "tools.type",
-        "description": "tools.type",
-        "peekOfCode": "class IssueType(Enum):\n    Contract = \"contract\"\n    Function = \"function\"\n    Variable = \"variable\"\n    Node = \"node\"\n    Pragma = \"pragma\"\n    Enum = \"enum\"\n    Struct = \"struct\"\n    Event = \"event\"\n@dataclass",
+        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -803,7 +956,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:\n    contract: str\n    source_map: str\n    line_no: str\n    code: str\n    description: str",
+        "peekOfCode": "class ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:\n    contract: str\n    source_map: str\n    line_no: list[int] | int\n    code: str #??\n    description: str",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -812,7 +965,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class AnalysisIssue:\n    contract: str\n    source_map: str\n    line_no: str\n    code: str\n    description: str\n    hint: str\n    issue_title: str\n    swcID: str\n    swc_title: str",
+        "peekOfCode": "class AnalysisIssue:\n    contract: str\n    source_map: str\n    line_no: list[int] | int\n    code: str #??\n    description: str\n    hint: str\n    issue_title: str\n    swcID: str\n    swc_title: str",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -839,7 +992,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class AnalysisResult:\n    errors: list[ToolError]\n    #combine here\n    issues: list[AnalysisIssue]\n    list[SlitherAnalysisDetector]\n@dataclass\nclass FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float",
+        "peekOfCode": "class AnalysisResult:\n    errors: list[ToolError]\n    #combine here\n    issues: list[AnalysisIssue]\n@dataclass\nclass FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float\n    analysis: AnalysisResult",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -848,7 +1001,43 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float\n    analysis: AnalysisResult",
+        "peekOfCode": "class FinalResult:\n    file_name: str\n    tool_name: str\n    duration: float\n    analysis: AnalysisResult\n@dataclass\nclass SlitherDetectorElement:\n    type: str #[check] property in raw object\n    name: str\n    lines_no: list[int]",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "SlitherDetectorElement",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class SlitherDetectorElement:\n    type: str #[check] property in raw object\n    name: str\n    lines_no: list[int]\n    contract: str\n    hint: str\n    sample_code: str\n    additional_fields: dict\n@dataclass\nclass SlitherDetector:",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "SlitherDetector",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class SlitherDetector:\n    detect_type: str\n    impact: str\n    confidence: str\n    description: str\n    elements: list[SlitherDetectorElement]\n@dataclass\nclass ImageVolume:\n    bind: str\n    mode: str",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ImageVolume",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class ImageVolume:\n    bind: str\n    mode: str\n@dataclass\nclass ImageConfig:\n    docker_image: str\n    analyze_cmd: str\n    options: str\n    volumes: ImageVolume\n    timeout: int",
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ImageConfig",
+        "kind": 6,
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "peekOfCode": "class ImageConfig:\n    docker_image: str\n    analyze_cmd: str\n    options: str\n    volumes: ImageVolume\n    timeout: int",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -1136,7 +1325,7 @@
         "kind": 5,
         "importPath": "test_tool",
         "description": "test_tool",
-        "peekOfCode": "start = time.time()\nresult = [t.duration for t in asyncio.run(Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-107.sol']*10\n))]\n# result = Async.run_single_func(Tool.ru)\nend = time.time()\nprint(end - start)\nprint(result)",
+        "peekOfCode": "start = time.time()\nresult = [t for t in (Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-106.sol']*1,\n    tools=[ToolName.Mythril]\n))]\nend = time.time()\nprint(end - start)\nprint(result)\n# print(Mythril.tool_cfg)",
         "detail": "test_tool",
         "documentation": {}
     },
@@ -1145,7 +1334,7 @@
         "kind": 5,
         "importPath": "test_tool",
         "description": "test_tool",
-        "peekOfCode": "result = [t.duration for t in asyncio.run(Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-107.sol']*10\n))]\n# result = Async.run_single_func(Tool.ru)\nend = time.time()\nprint(end - start)\nprint(result)",
+        "peekOfCode": "result = [t for t in (Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-106.sol']*1,\n    tools=[ToolName.Mythril]\n))]\nend = time.time()\nprint(end - start)\nprint(result)\n# print(Mythril.tool_cfg)",
         "detail": "test_tool",
         "documentation": {}
     },
@@ -1154,7 +1343,7 @@
         "kind": 5,
         "importPath": "test_tool",
         "description": "test_tool",
-        "peekOfCode": "end = time.time()\nprint(end - start)\nprint(result)",
+        "peekOfCode": "end = time.time()\nprint(end - start)\nprint(result)\n# print(Mythril.tool_cfg)",
         "detail": "test_tool",
         "documentation": {}
     }
