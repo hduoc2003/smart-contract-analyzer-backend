@@ -5,6 +5,7 @@ import requests
 import yaml
 from tools.type import ErrorClassification, ToolError
 from tools.utils.Log import Log
+from docker.models.containers import ExecResult
 
 # sys.path.append()
 class Docker:
@@ -32,4 +33,12 @@ class Docker:
                 'mode': 'ro'
             }   for i, host_path in enumerate(host_paths)
         }
+
+    @classmethod
+    def exists_container(cls, container_name: str):
+        return any(container_name == container.name for container in cls.client.containers.list(all=True)) # type: ignore
+
+    @staticmethod
+    def exec_run(container, **kwargs) -> ExecResult:
+        return container.exec_run(**kwargs)
 

@@ -7,15 +7,15 @@ from colorama import Fore
 class Log:
     @staticmethod
     def info(msg: Any) -> None:
-        print(Fore.GREEN + str(msg))
+        print(Fore.GREEN + "INFO: " + str(msg))
 
     @staticmethod
     def warn(msg: Any) -> None:
-        print(Fore.YELLOW + str(msg))
+        print(Fore.YELLOW + "WARNING: " + str(msg))
 
     @staticmethod
     def err(msg: Any) -> None:
-        print(Fore.RED + str(msg))
+        print(Fore.RED + "ERROR: " + str(msg))
 
     @staticmethod
     def print_except(e: Exception) -> None:

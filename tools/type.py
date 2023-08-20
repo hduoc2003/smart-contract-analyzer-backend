@@ -10,6 +10,7 @@ class ToolName(Enum):
 class ErrorClassification(Enum):
     RuntimeOut = "runtime out"
     CompileError = "compile error"
+    UnsupportedSolc = "unsupported solc"
     UnknownError = "unknown error"
 
 @dataclass

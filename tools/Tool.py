@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 import asyncio
 import json
 import os
-from time import time
+import time
 from types import coroutine
 from typing import Any, Callable
-from tools.type import FinalResult, ImageConfig, ImageVolume, ToolError, ToolName
+from tools.type import AnalysisIssue, AnalysisResult, FinalResult, ImageConfig, ImageVolume, ToolError, ToolName
 import yaml
 
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
@@ -20,6 +20,7 @@ class Tool(ABC):
 
     tool_name: ToolName
     image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "docker/image-config"))
+    storage_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "storage"))
     tool_cfg: ImageConfig
 
     def __init__(
@@ -73,33 +74,37 @@ class Tool(ABC):
     @abstractmethod
     def run_core(
         cls,
-        file_dir_path: str,
+        container_file_path: str,
         file_name: str,
         docker_image: str,
-        options: str
+        options: str,
+        timeout: int = -1
     ) -> tuple[list[ToolError], str]:
         pass
 
     @classmethod
     def analyze(
         cls,
-        file_dir_path: str,
+        sub_container_file_path: str,
         file_name: str,
-        docker_image: str | None = None,
-        options: str | None = None
+        docker_image: str="",
+        options: str="",
+        timeout: int = -1
     ) -> tuple[FinalResult, RawResult]:
         Log.info(f'Running {cls.tool_name.value}')
-        start = time()
+        start = time.time()
+        container_file_path = f"{cls.tool_cfg.volumes.bind}/{sub_container_file_path}"
         (errors, raw_result_str) = cls.run_core(
-            file_dir_path,
+            container_file_path,
             file_name,
             docker_image or cls.tool_cfg.docker_image,
-            options or cls.tool_cfg.options
+            options or cls.tool_cfg.options,
+            timeout if timeout > -1 else cls.tool_cfg.timeout
         )
         errors += cls.detect_errors(raw_result_str)
         final_result: FinalResult
         raw_result_json: RawResult
-        end = time()
+        end = time.time()
         if not cls.any_error(errors):
             raw_result_json = json.loads(raw_result_str)
             final_result = cls.parse_raw_result(raw_result_json, duration=end - start, file_name=file_name)
@@ -109,23 +114,44 @@ class Tool(ABC):
 
         return (final_result, raw_result_json)
 
+    @staticmethod
+    def merge_results(results: list[FinalResult], duration: float) -> FinalResult:
+        file_name: str = results[0].file_name
+        tool_name: str = results[0].tool_name
+        errors: list[ToolError] = results[0].analysis.errors
+        issues: list[AnalysisIssue] = results[0].analysis.issues
+        for i in range(1, len(results)):
+            tool_name += f", {results[i].tool_name}"
+            errors += results[i].analysis.errors
+            issues += results[i].analysis.issues
+        return FinalResult(
+            file_name=file_name,
+            tool_name=tool_name,
+            duration=duration,
+            analysis=AnalysisResult(
+                errors=errors,
+                issues=issues
+            )
+        )
+
     @classmethod
     def run_tools_async(
         cls,
-        file_dir_path: str,
+        sub_container_file_path: str,
         file_name: str,
         tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]
     ) -> FinalResult:
         """Analyze single file by running multiple tools asynchronously
 
         Args:
-            file_dir_path (str): dir to folder which contains files
+            sub_container_file_path (str): sub dir to folder which contains files (from storage folder)
             file_name (str): name of the file
             tools (list[ToolName], optional): name of tools used to analyze. Defaults to [ToolName.Mythril].
 
         Returns:
             FinalResult: merged result of all tools
         """
+        start = time.time()
         Log.info(f"Analyzing {file_name} ..................")
         from tools.Mythril import Mythril
         from tools.Slither import Slither
@@ -139,34 +165,32 @@ class Tool(ABC):
                     tasks.append(Slither.analyze)
                 case _:
                     Log.warn(f'Tool.run_tools_async: There are no tool named {tool_name}')
-            arr_args.append([file_dir_path, file_name])
+            arr_args.append([sub_container_file_path, file_name])
         if (len(tasks) != len(tools)):
             raise Exception(f"Tool.run_tools_async: the length of tasks is {len(tasks)} \
                             is not equal to the length of tools which is {len(tools)}")
 
-        result: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
+        results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
         Log.info(f"Analyzing {file_name} finished ..............")
-        return result[0]
+
+        end = time.time()
+        return cls.merge_results(results, duration=end-start)
         # Log.info(result)
 
     @classmethod
     def analyze_files_async(
         cls,
-        file_dir_path: str,
+        sub_container_file_path: str,
         files_names: list[str],
         tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]
     ) -> list[FinalResult]:
         return Async.run_single_func(
             func=cls.run_tools_async,
-            arr_args=[[file_dir_path, file_name, tools] for file_name in files_names],
+            arr_args=[[sub_container_file_path, file_name, tools] for file_name in files_names],
         )
 
     @classmethod
-    def export_result(cls, file_name: str, raw_result: RawResult, final_result: FinalResult) -> None:
-        path: str = os.path.dirname(__file__)
-        path = os.path.join(path, 'results', cls.tool_name.value)
-        if not os.path.exists(path):
-            os.makedirs(path)
+    def export_result(cls, file_name: str, raw_result: RawResult, final_result: FinalResult, path: str) -> None:
         with open(os.path.join(path, file_name + ".raw_result.json"), "w") as f:
             try:
                 f.write(obj_to_jsonstr(raw_result))

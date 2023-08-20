@@ -84,7 +84,12 @@ class Mythril(Tool):
 
         raw_result_errors = raw_result_json['error']
         if (isinstance(raw_result_errors, str)):
-            if (raw_result_errors.find("Solc experienced a fatal error") != -1):
+            if (raw_result_errors.find('Source file requires different compiler version') != -1):
+                errors.append(ToolError(
+                    error=ErrorClassification.UnsupportedSolc,
+                    msg="We only support Solidity from version 0.4.11, please use Solidity newer version in source code"
+                ))
+            elif (raw_result_errors.find("Solc experienced a fatal error") != -1):
                 errors.append(ToolError(
                     error=ErrorClassification.CompileError,
                     msg=raw_result_errors
@@ -98,21 +103,28 @@ class Mythril(Tool):
 
     @override
     @classmethod
-    def run_core(cls, file_dir_path: str, file_name: str, docker_image: str, options: str) -> tuple[list[ToolError], str]:
+    def run_core(
+        cls,
+        container_file_path: str,
+        file_name: str,
+        docker_image: str,
+        options: str,
+        timeout: int
+    ) -> tuple[list[ToolError], str]:
         errors: list[ToolError] = []
         logs: str = ""
-        cmd = f"{cls.tool_cfg.analyze_cmd} {cls.tool_cfg.volumes.bind}/{file_name} {options}"
+        cmd = f"{cls.tool_cfg.analyze_cmd} {container_file_path}/{file_name} {options}"
         container = Docker.client.containers.run(
             image=docker_image,
             command=cmd,
             detach=True,
             volumes=Docker.create_volumes(
-                [file_dir_path],
+                [Tool.storage_path],
                 [cls.tool_cfg.volumes.bind]
             )
         )
         try:
-            container.wait(timeout=cls.tool_cfg.timeout) # type: ignore
+            container.wait(timeout=timeout) # type: ignore
         except requests.exceptions.ConnectionError as e:
             Log.info('#####################')
             errors.append(ToolError(

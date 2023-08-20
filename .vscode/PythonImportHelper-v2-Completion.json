@@ -228,6 +228,22 @@
         "documentation": {}
     },
     {
+        "label": "AnalysisIssue",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisResult",
+        "importPath": "tools.type",
+        "description": "tools.type",
+        "isExtraImport": true,
+        "detail": "tools.type",
+        "documentation": {}
+    },
+    {
         "label": "FinalResult",
         "importPath": "tools.type",
         "description": "tools.type",
@@ -273,6 +289,14 @@
         "description": "tools.type",
         "isExtraImport": true,
         "detail": "tools.type",
+        "documentation": {}
+    },
+    {
+        "label": "ExecResult",
+        "importPath": "docker.models.containers",
+        "description": "docker.models.containers",
+        "isExtraImport": true,
+        "detail": "docker.models.containers",
         "documentation": {}
     },
     {
@@ -328,6 +352,14 @@
     },
     {
         "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Container",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -406,6 +438,14 @@
         "description": "pydoc",
         "isExtraImport": true,
         "detail": "pydoc",
+        "documentation": {}
+    },
+    {
+        "label": "override",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
         "documentation": {}
     },
     {
@@ -603,14 +643,6 @@
         "documentation": {}
     },
     {
-        "label": "time",
-        "importPath": "time",
-        "description": "time",
-        "isExtraImport": true,
-        "detail": "time",
-        "documentation": {}
-    },
-    {
         "label": "coroutine",
         "importPath": "types",
         "description": "types",
@@ -627,11 +659,11 @@
         "documentation": {}
     },
     {
-        "label": "Async",
-        "importPath": "tools.utils.Async",
-        "description": "tools.utils.Async",
+        "label": "obj_to_jsonstr",
+        "importPath": "tools.utils.parsers",
+        "description": "tools.utils.parsers",
         "isExtraImport": true,
-        "detail": "tools.utils.Async",
+        "detail": "tools.utils.parsers",
         "documentation": {}
     },
     {
@@ -763,6 +795,14 @@
         "documentation": {}
     },
     {
+        "label": "Slither",
+        "importPath": "tools.Slither",
+        "description": "tools.Slither",
+        "isExtraImport": true,
+        "detail": "tools.Slither",
+        "documentation": {}
+    },
+    {
         "label": "response",
         "kind": 2,
         "importPath": "server.route.login.login",
@@ -839,7 +879,7 @@
         "kind": 6,
         "importPath": "tools.utils.Log",
         "description": "tools.utils.Log",
-        "peekOfCode": "class Log:\n    @staticmethod\n    def info(msg: Any) -> None:\n        print(Fore.GREEN + str(msg))\n    @staticmethod\n    def warn(msg: Any) -> None:\n        print(Fore.YELLOW + str(msg))\n    @staticmethod\n    def err(msg: Any) -> None:\n        print(Fore.RED + str(msg))",
+        "peekOfCode": "class Log:\n    @staticmethod\n    def info(msg: Any) -> None:\n        print(Fore.GREEN + \"INFO: \" + str(msg))\n    @staticmethod\n    def warn(msg: Any) -> None:\n        print(Fore.YELLOW + \"WARNING: \" + str(msg))\n    @staticmethod\n    def err(msg: Any) -> None:\n        print(Fore.RED + \"ERROR: \" + str(msg))",
         "detail": "tools.utils.Log",
         "documentation": {}
     },
@@ -911,7 +951,7 @@
         "kind": 6,
         "importPath": "tools.Slither",
         "description": "tools.Slither",
-        "peekOfCode": "class Slither(Tool):\n    tool_name = ToolName.Slither\n    def __init__(self) -> None:\n        super().__init__()\n    @classmethod\n    def get_smallest_element(cls, elements: list[dict]) -> dict:\n        if (len(elements) == 0):\n            return {}\n        elif (len(elements) == 1):\n            return elements[0]",
+        "peekOfCode": "class Slither(Tool):\n    tool_name = ToolName.Slither\n    tool_cfg = Tool.load_default_cfg(tool_name)\n    valid_solcs: list[str] = ['0.8.21', '0.8.20', '0.8.19', '0.8.18', '0.8.17', '0.8.16', '0.8.15', '0.8.14', '0.8.13', '0.8.12', '0.8.11', '0.8.10', '0.8.9', '0.8.8', '0.8.7', '0.8.6', '0.8.5', '0.8.4', '0.8.3', '0.8.2', '0.8.1', '0.8.0', '0.7.6', '0.7.5', '0.7.4', '0.7.3', '0.7.2', '0.7.1', '0.7.0', '0.6.12', '0.6.11', '0.6.10', '0.6.9', '0.6.8', '0.6.7', '0.6.6', '0.6.5', '0.6.4', '0.6.3', '0.6.2', '0.6.1', '0.6.0', '0.5.17', '0.5.16', '0.5.15', '0.5.14', '0.5.13', '0.5.12', '0.5.11', '0.5.10', '0.5.9', '0.5.8', '0.5.7', '0.5.6', '0.5.5', '0.5.4', '0.5.3', '0.5.2', '0.5.1', '0.5.0', '0.4.26', '0.4.25', '0.4.24', '0.4.23', '0.4.22', '0.4.21', '0.4.20', '0.4.19', '0.4.18', '0.4.17', '0.4.16', '0.4.15', '0.4.14', '0.4.13', '0.4.12', '0.4.11', '0.4.10', '0.4.9', '0.4.8', '0.4.7', '0.4.6', '0.4.5', '0.4.3', '0.4.2', '0.4.1', '0.4.0']\n    solc_solcs_select = \",\".join(valid_solcs)\n    container_name = \"slither-tool\"\n    # create container\n    container = Docker.client.containers.get(container_name) \\\n            if Docker.exists_container(container_name) \\\n            else Docker.client.containers.run(",
         "detail": "tools.Slither",
         "documentation": {}
     },
@@ -920,7 +960,7 @@
         "kind": 6,
         "importPath": "tools.Tool",
         "description": "tools.Tool",
-        "peekOfCode": "class Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    tool_cfg: ImageConfig\n    def __init__(\n        self\n    ) -> None:\n        pass\n    @classmethod\n    def load_default_cfg(cls, tool_name: ToolName) -> ImageConfig:",
+        "peekOfCode": "class Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    storage_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"storage\"))\n    tool_cfg: ImageConfig\n    def __init__(\n        self\n    ) -> None:\n        pass\n    @classmethod",
         "detail": "tools.Tool",
         "documentation": {}
     },
@@ -929,7 +969,7 @@
         "kind": 5,
         "importPath": "tools.Tool",
         "description": "tools.Tool",
-        "peekOfCode": "RawResult = Any\nclass Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    tool_cfg: ImageConfig\n    def __init__(\n        self\n    ) -> None:\n        pass\n    @classmethod",
+        "peekOfCode": "RawResult = Any\nclass Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    storage_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"storage\"))\n    tool_cfg: ImageConfig\n    def __init__(\n        self\n    ) -> None:\n        pass",
         "detail": "tools.Tool",
         "documentation": {}
     },
@@ -938,7 +978,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ToolName(Enum):\n    Mythril = \"mythril\"\n    Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:",
+        "peekOfCode": "class ToolName(Enum):\n    Mythril = \"mythril\"\n    Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnsupportedSolc = \"unsupported solc\"\n    UnknownError = \"unknown error\"\n@dataclass",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -947,7 +987,7 @@
         "kind": 6,
         "importPath": "tools.type",
         "description": "tools.type",
-        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:",
+        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnsupportedSolc = \"unsupported solc\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass",
         "detail": "tools.type",
         "documentation": {}
     },
@@ -1318,33 +1358,6 @@
         "description": "app",
         "peekOfCode": "app = Flask(__name__)\napp.register_blueprint(login_route)\napp.register_blueprint(signup_route)\napp.register_blueprint(tool_route)\n@app.route(\"/\")\ndef response():\n    return \"hello\"\nif __name__ == \"__main__\":\n    app.run(debug=True, port=PORT)",
         "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "start",
-        "kind": 5,
-        "importPath": "test_tool",
-        "description": "test_tool",
-        "peekOfCode": "start = time.time()\nresult = [t for t in (Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-106.sol']*1,\n    tools=[ToolName.Mythril]\n))]\nend = time.time()\nprint(end - start)\nprint(result)\n# print(Mythril.tool_cfg)",
-        "detail": "test_tool",
-        "documentation": {}
-    },
-    {
-        "label": "result",
-        "kind": 5,
-        "importPath": "test_tool",
-        "description": "test_tool",
-        "peekOfCode": "result = [t for t in (Tool.analyze_files_async(\n    file_dir_path=r'D:\\SE_LAB\\SE_Task\\blockchain\\tool\\test-mythril\\bugs',\n    files_names=['swc-106.sol']*1,\n    tools=[ToolName.Mythril]\n))]\nend = time.time()\nprint(end - start)\nprint(result)\n# print(Mythril.tool_cfg)",
-        "detail": "test_tool",
-        "documentation": {}
-    },
-    {
-        "label": "end",
-        "kind": 5,
-        "importPath": "test_tool",
-        "description": "test_tool",
-        "peekOfCode": "end = time.time()\nprint(end - start)\nprint(result)\n# print(Mythril.tool_cfg)",
-        "detail": "test_tool",
         "documentation": {}
     }
 ]

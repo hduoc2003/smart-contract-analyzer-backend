@@ -1,1 +1,4 @@
 - Enum không có __dict__, khi dùng sẽ báo lỗi 'mappingproxy' object has no attribute '__dict__'
+
+Thông báo phiên bản solc được sử dụng lên FE
+Phiên bản solc được chấp nhận từ 0.4.11 đến 0.8.21

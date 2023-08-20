@@ -1,0 +1,109 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "sudicideAnyone",
+            "source_mapping": {
+              "start": 57,
+              "length": 63,
+              "filename_relative": "../../../tmp/user1/contract/swc-106.sol",
+              "filename_absolute": "/tmp/user1/contract/swc-106.sol",
+              "filename_short": "../../../tmp/user1/contract/swc-106.sol",
+              "is_dependency": false,
+              "lines": [
+                5,
+                6,
+                7
+              ],
+              "starting_column": 3,
+              "ending_column": 4
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "SimpleSuicide",
+                "source_mapping": {
+                  "start": 27,
+                  "length": 98,
+                  "filename_relative": "../../../tmp/user1/contract/swc-106.sol",
+                  "filename_absolute": "/tmp/user1/contract/swc-106.sol",
+                  "filename_short": "../../../tmp/user1/contract/swc-106.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "sudicideAnyone()"
+            }
+          }
+        ],
+        "description": "SimpleSuicide.sudicideAnyone() (../../../tmp/user1/contract/swc-106.sol#5-7) allows anyone to destruct the contract\n",
+        "markdown": "[SimpleSuicide.sudicideAnyone()](../../../tmp/user1/contract/swc-106.sol#L5-L7) allows anyone to destruct the contract\n",
+        "first_markdown_element": "../../../tmp/user1/contract/swc-106.sol#L5-L7",
+        "id": "69eb6b7405159092b2daa327018c42016cb70a30fb833f163e8c8e863c2b938e",
+        "check": "suicidal",
+        "impact": "High",
+        "confidence": "High"
+      },
+      {
+        "elements": [],
+        "description": "solc-0.4.24 is not recommended for deployment\n",
+        "markdown": "solc-0.4.24 is not recommended for deployment\n",
+        "first_markdown_element": "",
+        "id": "4fdaa1943fda7c6196f21cde2a89972a5de2e49314548f4161996d6ef6af4a38",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "pragma",
+            "name": "0.4.24",
+            "source_mapping": {
+              "start": 0,
+              "length": 23,
+              "filename_relative": "../../../tmp/user1/contract/swc-106.sol",
+              "filename_absolute": "/tmp/user1/contract/swc-106.sol",
+              "filename_short": "../../../tmp/user1/contract/swc-106.sol",
+              "is_dependency": false,
+              "lines": [
+                1
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "0.4",
+                ".24"
+              ]
+            }
+          }
+        ],
+        "description": "Pragma version0.4.24 (../../../tmp/user1/contract/swc-106.sol#1) allows old versions\n",
+        "markdown": "Pragma version[0.4.24](../../../tmp/user1/contract/swc-106.sol#L1) allows old versions\n",
+        "first_markdown_element": "../../../tmp/user1/contract/swc-106.sol#L1",
+        "id": "9098519c5078738be1ee94b5db2640b12c462bf96cb331ffc5e244cee848ea07",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      }
+    ]
+  }
+}
