@@ -1,4 +1,4 @@
-pragma solidity >=0.4.11; //fsew
+pragma solidity >=0.8.11; //fsew
 
 contract SimpleSuicide {
 

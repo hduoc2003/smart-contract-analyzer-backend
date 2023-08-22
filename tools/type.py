@@ -11,6 +11,7 @@ class ErrorClassification(Enum):
     RuntimeOut = "runtime out"
     CompileError = "compile error"
     UnsupportedSolc = "unsupported solc"
+    UndefinedSolc = "undefined solc"
     UnknownError = "unknown error"
 
 @dataclass
@@ -58,6 +59,7 @@ class FinalResult:
     file_name: str
     tool_name: str
     duration: float
+    solc: str
     analysis: AnalysisResult
 
 
@@ -91,3 +93,11 @@ class ImageConfig:
     volumes: ImageVolume
     timeout: int
 
+@dataclass
+class ToolAnalyzeArgs:
+    sub_container_file_path: str
+    file_name: str
+    solc: str = ""
+    docker_image: str = ""
+    options: str = ""
+    timeout: int = -1

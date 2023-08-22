@@ -7,7 +7,7 @@ from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.docker.Docker import Docker
-from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolError, ToolName
+from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, valid_swc
 
@@ -21,7 +21,7 @@ class Mythril(Tool):
 
     @override
     @classmethod
-    def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str) -> FinalResult:
+    def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str, solc: str) -> FinalResult:
 
         issues: list[AnalysisIssue] = []
         for raw_issue in raw_result['issues']:
@@ -47,6 +47,7 @@ class Mythril(Tool):
             file_name=file_name,
             tool_name=Mythril.tool_name.value,
             duration=duration,
+            solc=solc,
             analysis=AnalysisResult(
                 errors=[],
                 issues=issues
@@ -56,11 +57,12 @@ class Mythril(Tool):
 
     @override
     @classmethod
-    def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str) -> FinalResult:
+    def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str, solc: str) -> FinalResult:
         final_result = FinalResult(
             file_name=file_name,
             tool_name=Mythril.tool_name.value,
             duration=duration,
+            solc=solc,
             analysis=AnalysisResult(
                 errors=errors,
                 issues=[]
@@ -85,9 +87,8 @@ class Mythril(Tool):
         raw_result_errors = raw_result_json['error']
         if (isinstance(raw_result_errors, str)):
             if (raw_result_errors.find('Source file requires different compiler version') != -1):
-                errors.append(ToolError(
-                    error=ErrorClassification.UnsupportedSolc,
-                    msg="We only support Solidity from version 0.4.11, please use Solidity newer version in source code"
+                errors.append(Tool.get_tool_error(
+                    ErrorClassification.UnsupportedSolc
                 ))
             elif (raw_result_errors.find("Solc experienced a fatal error") != -1):
                 errors.append(ToolError(
@@ -105,17 +106,17 @@ class Mythril(Tool):
     @classmethod
     def run_core(
         cls,
-        container_file_path: str,
-        file_name: str,
-        docker_image: str,
-        options: str,
-        timeout: int
+        args: ToolAnalyzeArgs
     ) -> tuple[list[ToolError], str]:
+        if (args.options.find(r"{solc}") != -1):
+            args.options = args.options.replace(r"{solc}", args.solc)
+
         errors: list[ToolError] = []
         logs: str = ""
-        cmd = f"{cls.tool_cfg.analyze_cmd} {container_file_path}/{file_name} {options}"
+        container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
+        cmd = f"{cls.tool_cfg.analyze_cmd} {container_file_path}/{args.file_name} {args.options}"
         container = Docker.client.containers.run(
-            image=docker_image,
+            image=args.docker_image,
             command=cmd,
             detach=True,
             volumes=Docker.create_volumes(
@@ -124,14 +125,14 @@ class Mythril(Tool):
             )
         )
         try:
-            container.wait(timeout=timeout) # type: ignore
+            container.wait(timeout=args.timeout) # type: ignore
         except requests.exceptions.ConnectionError as e:
             Log.info('#####################')
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
-                msg=f"Time out while running image {docker_image} to analyze {file_name}"
+                msg=f"Time out while running image {args.docker_image} to analyze {args.file_name}"
             ))
-            Log.err(f"Time out while running image {docker_image} to analyze {file_name}")
+            Log.err(f"Time out while running image {args.docker_image} to analyze {args.file_name}")
             Log.print_except(e)
 
 

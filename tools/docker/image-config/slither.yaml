@@ -1,6 +1,6 @@
 docker_image: phu2112/slither-tool
 analyze_cmd: slither
-options: --solc-solcs-select {solcs} --json -
+options: --solc-solcs-select {solc} --json -
 volumes:
   bind: /tmp
   mode: ro

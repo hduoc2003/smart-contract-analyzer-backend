@@ -2,10 +2,11 @@ from abc import ABC, abstractmethod
 import asyncio
 import json
 import os
+import re
 import time
 from types import coroutine
 from typing import Any, Callable
-from tools.type import AnalysisIssue, AnalysisResult, FinalResult, ImageConfig, ImageVolume, ToolError, ToolName
+from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, FinalResult, ImageConfig, ImageVolume, ToolAnalyzeArgs, ToolError, ToolName
 import yaml
 
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
@@ -22,6 +23,9 @@ class Tool(ABC):
     image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "docker/image-config"))
     storage_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "storage"))
     tool_cfg: ImageConfig
+
+    valid_solcs: list[str] = ['0.8.21', '0.8.20', '0.8.19', '0.8.18', '0.8.17', '0.8.16', '0.8.15', '0.8.14', '0.8.13', '0.8.12', '0.8.11', '0.8.10', '0.8.9', '0.8.8', '0.8.7', '0.8.6', '0.8.5', '0.8.4', '0.8.3', '0.8.2', '0.8.1', '0.8.0', '0.7.6', '0.7.5', '0.7.4', '0.7.3', '0.7.2', '0.7.1', '0.7.0', '0.6.12', '0.6.11', '0.6.10', '0.6.9', '0.6.8', '0.6.7', '0.6.6', '0.6.5', '0.6.4', '0.6.3', '0.6.2', '0.6.1', '0.6.0', '0.5.17', '0.5.16', '0.5.15', '0.5.14', '0.5.13', '0.5.12', '0.5.11', '0.5.10', '0.5.9', '0.5.8', '0.5.7', '0.5.6', '0.5.5', '0.5.4', '0.5.3', '0.5.2', '0.5.1', '0.5.0', '0.4.26', '0.4.25', '0.4.24', '0.4.23', '0.4.22', '0.4.21', '0.4.20', '0.4.19', '0.4.18', '0.4.17', '0.4.16', '0.4.15', '0.4.14', '0.4.13', '0.4.12', '0.4.11', '0.4.10', '0.4.9', '0.4.8', '0.4.7', '0.4.6', '0.4.5', '0.4.3', '0.4.2', '0.4.1', '0.4.0']
+    valid_solcs_str = ",".join(valid_solcs)
 
     def __init__(
         self
@@ -53,12 +57,19 @@ class Tool(ABC):
         raw_result: RawResult,
         duration: float,
         file_name: str,
+        solc: str
     ) -> FinalResult:
         pass
 
     @classmethod
     @abstractmethod
-    def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str) -> FinalResult:
+    def parse_error_result(
+        cls,
+        errors: list[ToolError],
+        duration: float,
+        file_name: str,
+        solc: str
+    ) -> FinalResult:
         pass
 
     @classmethod
@@ -74,42 +85,35 @@ class Tool(ABC):
     @abstractmethod
     def run_core(
         cls,
-        container_file_path: str,
-        file_name: str,
-        docker_image: str,
-        options: str,
-        timeout: int = -1
+        args: ToolAnalyzeArgs
     ) -> tuple[list[ToolError], str]:
         pass
 
     @classmethod
     def analyze(
         cls,
-        sub_container_file_path: str,
-        file_name: str,
-        docker_image: str="",
-        options: str="",
-        timeout: int = -1
+        args: ToolAnalyzeArgs
     ) -> tuple[FinalResult, RawResult]:
         Log.info(f'Running {cls.tool_name.value}')
         start = time.time()
-        container_file_path = f"{cls.tool_cfg.volumes.bind}/{sub_container_file_path}"
-        (errors, raw_result_str) = cls.run_core(
-            container_file_path,
-            file_name,
-            docker_image or cls.tool_cfg.docker_image,
-            options or cls.tool_cfg.options,
-            timeout if timeout > -1 else cls.tool_cfg.timeout
-        )
+        solc = args.solc or Tool.get_solc_version(args.sub_container_file_path, args.file_name)
+        (errors, raw_result_str) = cls.run_core(ToolAnalyzeArgs(
+            sub_container_file_path=args.sub_container_file_path,
+            file_name=args.file_name,
+            solc=solc,
+            docker_image=args.docker_image or cls.tool_cfg.docker_image,
+            options=args.options or cls.tool_cfg.options,
+            timeout=args.timeout if args.timeout > -1 else cls.tool_cfg.timeout
+        ))
         errors += cls.detect_errors(raw_result_str)
         final_result: FinalResult
         raw_result_json: RawResult
         end = time.time()
         if not cls.any_error(errors):
             raw_result_json = json.loads(raw_result_str)
-            final_result = cls.parse_raw_result(raw_result_json, duration=end - start, file_name=file_name)
+            final_result = cls.parse_raw_result(raw_result_json, duration=end - start, file_name=args.file_name, solc=solc)
         else:
-            final_result = cls.parse_error_result(errors, duration=end - start, file_name=file_name)
+            final_result = cls.parse_error_result(errors, duration=end - start, file_name=args.file_name, solc=solc)
             raw_result_json = final_result
 
         return (final_result, raw_result_json)
@@ -118,6 +122,7 @@ class Tool(ABC):
     def merge_results(results: list[FinalResult], duration: float) -> FinalResult:
         file_name: str = results[0].file_name
         tool_name: str = results[0].tool_name
+        solc: str = results[0].solc
         errors: list[ToolError] = results[0].analysis.errors
         issues: list[AnalysisIssue] = results[0].analysis.issues
         for i in range(1, len(results)):
@@ -128,6 +133,7 @@ class Tool(ABC):
             file_name=file_name,
             tool_name=tool_name,
             duration=duration,
+            solc=solc,
             analysis=AnalysisResult(
                 errors=errors,
                 issues=issues
@@ -135,58 +141,82 @@ class Tool(ABC):
         )
 
     @classmethod
-    def run_tools_async(
-        cls,
-        sub_container_file_path: str,
-        file_name: str,
-        tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]
-    ) -> FinalResult:
-        """Analyze single file by running multiple tools asynchronously
-
-        Args:
-            sub_container_file_path (str): sub dir to folder which contains files (from storage folder)
-            file_name (str): name of the file
-            tools (list[ToolName], optional): name of tools used to analyze. Defaults to [ToolName.Mythril].
-
-        Returns:
-            FinalResult: merged result of all tools
-        """
-        start = time.time()
-        Log.info(f"Analyzing {file_name} ..................")
-        from tools.Mythril import Mythril
-        from tools.Slither import Slither
-        tasks: list[Callable] = []
-        arr_args: list[list] = []
-        for tool_name in tools:
-            match tool_name:
-                case ToolName.Mythril:
-                    tasks.append(Mythril.analyze)
-                case ToolName.Slither:
-                    tasks.append(Slither.analyze)
-                case _:
-                    Log.warn(f'Tool.run_tools_async: There are no tool named {tool_name}')
-            arr_args.append([sub_container_file_path, file_name])
-        if (len(tasks) != len(tools)):
-            raise Exception(f"Tool.run_tools_async: the length of tasks is {len(tasks)} \
-                            is not equal to the length of tools which is {len(tools)}")
-
-        results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
-        Log.info(f"Analyzing {file_name} finished ..............")
-
-        end = time.time()
-        return cls.merge_results(results, duration=end-start)
-        # Log.info(result)
+    def get_tool_error(cls, error: ErrorClassification, **kwargs) -> ToolError:
+        match error:
+            case ErrorClassification.RuntimeOut:
+                return
+            case ErrorClassification.CompileError:
+                return ToolError(
+                    error=error,
+                    msg=kwargs['msg']
+                )
+            case ErrorClassification.UnsupportedSolc:
+                return ToolError(
+                    error=error,
+                    msg=f"We only support Solidity from version {cls.valid_solcs[-1]} to {cls.valid_solcs[0]}, please use another Solidity version in source code."
+                )
+            case ErrorClassification.UndefinedSolc:
+                return ToolError(
+                    error=error,
+                    msg=f"The solidity version you declared does not exist, please check again."
+                )
+            case ErrorClassification.UnknownError:
+                return
+            case _:
+                raise Exception(f"Tool.get_tool_error: {error} is not processed yet.")
 
     @classmethod
     def analyze_files_async(
         cls,
-        sub_container_file_path: str,
-        files_names: list[str],
+        files: list[ToolAnalyzeArgs],
         tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]
     ) -> list[FinalResult]:
+
+        def analyze_single_file(args: ToolAnalyzeArgs) -> FinalResult:
+            start = time.time()
+            from tools.Mythril import Mythril
+            from tools.Slither import Slither
+            solc = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
+            if (isinstance(solc, ErrorClassification)):
+                return FinalResult(
+                    file_name=args.file_name,
+                    tool_name="",
+                    duration=time.time() - start,
+                    solc="",
+                    analysis=AnalysisResult(
+                        errors=[cls.get_tool_error(solc)],
+                        issues=[]
+                    )
+                )
+            Log.info(f"Analyzing {args.file_name} using solc {solc} ..................")
+            tasks: list[Callable] = []
+            arr_args: list[list] = []
+            for tool_name in tools:
+                match tool_name:
+                    case ToolName.Mythril:
+                        tasks.append(Mythril.analyze)
+                    case ToolName.Slither:
+                        tasks.append(Slither.analyze)
+                    case _:
+                        Log.warn(f'Function analyze_single_file: There are no tool named {tool_name}')
+                arr_args.append([ToolAnalyzeArgs(
+                    sub_container_file_path=args.sub_container_file_path,
+                    file_name=args.file_name,
+                    solc=solc
+                )])
+            if (len(tasks) != len(tools)):
+                raise Exception(f"Function analyze_single_file: the length of tasks is {len(tasks)} \
+                                is not equal to the length of tools which is {len(tools)}")
+
+            results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
+            Log.info(f"Analyzing {args.file_name} finished ..............")
+
+            end = time.time()
+            return cls.merge_results(results, duration=end-start)
+
         return Async.run_single_func(
-            func=cls.run_tools_async,
-            arr_args=[[sub_container_file_path, file_name, tools] for file_name in files_names],
+            func=analyze_single_file,
+            arr_args=[[file] for file in files],
         )
 
     @classmethod
@@ -204,4 +234,67 @@ class Tool(ABC):
                 Log.err(f'Error occured when export final_result of file {file_name}:\n{final_result}')
                 Log.err(e)
 
+    @classmethod
+    def get_solc_version(
+        cls,
+        sub_container_file_path: str,
+        file_name: str
+    ) -> str | ErrorClassification:
+        """Xác định phiên bản solidity được khai báo trong mã nguồn
+
+        Args:
+            sub_container_file_path (str): _description_
+            file_name (str): _description_
+
+        Returns:
+            str | int: -1 Nếu không thể xác định được phiên bản
+                        0 Nếu phiên bản xác định được không được hỗ trợ
+        """
+        file_path = os.path.join(cls.storage_path, sub_container_file_path, file_name)
+        solc: str = ""
+        with open(file_path, "r") as file:
+            source_code: str = file.read()
+
+            # Loại bỏ khối comment
+            source_code = re.sub(r"/\*.*?\*/", "", source_code, flags=re.DOTALL)
+            lines = source_code.splitlines()
+            for line in lines:
+                line = line.split(r"//")[0]
+                match = re.search(r"pragma\s+solidity\s+([<>=^]*[\d]+.[\d]+.[\d]+)", line)
+                if match:
+                    solc = match.group(1)
+                    break
+            if (solc == ""):
+                return ErrorClassification.UndefinedSolc
+            res: str = ""
+            match solc[0]:
+                case '^':
+                    res = solc[1:]
+                    if (res not in cls.valid_solcs):
+                        return ErrorClassification.UnsupportedSolc
+                case '>':
+                    if (solc[1] == '='):
+                        res = solc[2:]
+                    else:
+                        try:
+                            i: int = cls.valid_solcs.index(solc[1:])
+                            if (i == 0):
+                                return ErrorClassification.UnsupportedSolc
+                            res = cls.valid_solcs[i-1]
+                        except ValueError:
+                            return ErrorClassification.UnsupportedSolc
+                case '<':
+                    if (solc[1] == '='):
+                        res = solc[2:]
+                    else:
+                        try:
+                            i: int = cls.valid_solcs.index(solc[1:])
+                            if (i == len(cls.valid_solcs) - 1):
+                                return ErrorClassification.UnsupportedSolc
+                            res = cls.valid_solcs[i+1]
+                        except ValueError:
+                            return ErrorClassification.UnsupportedSolc
+                case _:
+                    return solc if solc in cls.valid_solcs else ErrorClassification.UndefinedSolc
+            return res
 
