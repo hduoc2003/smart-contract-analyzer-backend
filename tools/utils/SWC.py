@@ -63,6 +63,7 @@ map_check_to_issue: dict[str, str] = {
    'incorrect-unary': 'dangerous-unary-expressions',
    'missing-zero-check': 'missing-zero-address-validation',
    'timestamp': 'block-timestamp',
+   'reentrancy-no-eth': 'reentrancy-vulnerabilities',
    'assembly': 'assembly-usage',
    'assert-state-change': 'assert-state-change',
    'boolean-equal': 'boolean-equality',
@@ -88,6 +89,8 @@ map_check_to_issue: dict[str, str] = {
    'external-function': 'public-function-that-could-be-declared-external',
    'immutable-states': 'state-variables-that-could-be-declared-immutable',
    'var-read-using-this': 'public-variable-read-in-external-context',
+   "reentrancy-eth": "reentrancy-vulnerabilities",
+   "reentrancy-events": "reentrancy-vulnerabilities"
 }
 map_slither_check_to_swc: dict[str, str] = {
   "abiencoderv2-array": "N/A",
@@ -226,7 +229,7 @@ def get_swc_no(check: str) -> str:
 
 def link_hint(check: str) -> str:
     url = "https://github.com/crytic/slither/wiki/Detector-Documentation"
-    return map_check_to_issue[check]
+    return map_check_to_issue[check] 
 
 def valid_swc(swc: str) -> tuple[bool, str]:
     """kiểm tra và lấy định dạng swc chuẩn

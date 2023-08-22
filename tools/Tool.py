@@ -4,7 +4,7 @@ import json
 import os
 import time
 from types import coroutine
-from typing import Any, Callable
+from typing import Any, Callable, List
 from tools.type import AnalysisIssue, AnalysisResult, FinalResult, ImageConfig, ImageVolume, ToolError, ToolName
 import yaml
 
@@ -13,7 +13,7 @@ from tools.docker.Docker import Docker
 from tools.utils.Async import Async
 from tools.utils.Log import Log
 from tools.utils.parsers import obj_to_jsonstr
-
+from tools.utils.mergeTools import DuplicateIssue
 RawResult = Any
 
 class Tool(ABC):
@@ -116,6 +116,23 @@ class Tool(ABC):
 
     @staticmethod
     def merge_results(results: list[FinalResult], duration: float) -> FinalResult:
+        
+        file_name: str = results[0].file_name
+        tool_name: str = results[0].tool_name
+        analysisResult: AnalysisResult = DuplicateIssue.merge(results[0], results[1])
+        return FinalResult(
+            file_name=file_name,
+            tool_name=tool_name, #co van de 
+            duration=duration,
+            analysis=AnalysisResult(
+                errors=analysisResult.errors,
+                issues=analysisResult.issues
+            )
+        )
+        
+    #Giữ lại để đối chiếu với kết quả sau merge thật, TODO: xong merge tool thì xoá
+    @staticmethod
+    def merge_results_raw(results: list[FinalResult], duration: float) -> FinalResult:
         file_name: str = results[0].file_name
         tool_name: str = results[0].tool_name
         errors: list[ToolError] = results[0].analysis.errors
@@ -133,7 +150,6 @@ class Tool(ABC):
                 issues=issues
             )
         )
-
     @classmethod
     def run_tools_async(
         cls,
@@ -172,8 +188,12 @@ class Tool(ABC):
 
         results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
         Log.info(f"Analyzing {file_name} finished ..............")
-
         end = time.time()
+
+        #chỉ dùng để check TODO: Xong thì xoá
+        cls.export_merge_result(file_name, cls.merge_results(results, duration=end-start), duration= end-start)
+        cls.export_raw_result(file_name, cls.merge_results_raw(results, duration=end-start), duration= end-start)
+        
         return cls.merge_results(results, duration=end-start)
         # Log.info(result)
 
@@ -203,5 +223,42 @@ class Tool(ABC):
             except Exception as e:
                 Log.err(f'Error occured when export final_result of file {file_name}:\n{final_result}')
                 Log.err(e)
+    
+    @classmethod
+    def export_merge_result(cls, file_name: str, result, duration):
+        split_parts = file_name.split("-")
+        swc_number = ''.join(filter(str.isdigit, split_parts[1]))
+        directory_path = os.path.join("BE","tools","utils", "duplicateIssue", f"swc-{swc_number}", f"{os.path.splitext(file_name)[0]}")
+        os.makedirs(directory_path, exist_ok=True)  # Create directories if they don't exist
+        try: 
+            if isinstance(result, FinalResult):
+                file_name1 = os.path.splitext(file_name)[0] + '-merged-result.json'
+                file_path1 = os.path.join(directory_path, file_name1)
+                with open(file_path1, 'w') as json_file:
+                    json_file.write(obj_to_jsonstr(result))
+                Log.info("Export merge successful" )
+        except Exception as e:
+            Log.err(f'Error occured when export raw_result of file {os.path.join(directory_path, file_name)}')
+            Log.err(e)
+         
+    @classmethod
+    def export_raw_result(cls, file_name: str, result, duration):
+        split_parts = file_name.split("-")
+        swc_number = ''.join(filter(str.isdigit, split_parts[1]))
 
+        print("SWC_NUMBER", swc_number)
+        directory_path = os.path.join("BE","tools","utils", "duplicateIssue", f"swc-{swc_number}", f"{os.path.splitext(file_name)[0]}")
+        os.makedirs(directory_path, exist_ok=True)  # Create directories if they don't exist
+        try:
+            if isinstance(result, FinalResult):
+                file_name1 = os.path.splitext(file_name)[0] + '-raw-result.json'
+                file_path1 = os.path.join(directory_path, file_name1)
+                with open(file_path1, 'w') as json_file:
+                    json_file.write(obj_to_jsonstr(result))
+                Log.info("Export raw successful")
 
+        except Exception as e:
+            Log.err(f'Error occured when export raw_result of file {os.path.join(directory_path, file_name)}')
+            Log.err(e)
+        
+    
