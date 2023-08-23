@@ -4,5 +4,5 @@ options: -o json
 volumes:
   bind: /tmp
   mode: ro
-timeout: 100
+timeout: 1000
 info: Mythril analyses EVM bytecode using symbolic analysis, taint analysis and control flow checking to detect a variety of security vulnerabilities.

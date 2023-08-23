@@ -6,7 +6,7 @@ from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.docker.Docker import Docker
-from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolError, ToolName
+from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, map_slither_check_to_swc,get_swc_no
 
@@ -15,8 +15,6 @@ class Slither(Tool):
 
     tool_name = ToolName.Slither
     tool_cfg = Tool.load_default_cfg(tool_name)
-    valid_solcs: list[str] = ['0.8.21', '0.8.20', '0.8.19', '0.8.18', '0.8.17', '0.8.16', '0.8.15', '0.8.14', '0.8.13', '0.8.12', '0.8.11', '0.8.10', '0.8.9', '0.8.8', '0.8.7', '0.8.6', '0.8.5', '0.8.4', '0.8.3', '0.8.2', '0.8.1', '0.8.0', '0.7.6', '0.7.5', '0.7.4', '0.7.3', '0.7.2', '0.7.1', '0.7.0', '0.6.12', '0.6.11', '0.6.10', '0.6.9', '0.6.8', '0.6.7', '0.6.6', '0.6.5', '0.6.4', '0.6.3', '0.6.2', '0.6.1', '0.6.0', '0.5.17', '0.5.16', '0.5.15', '0.5.14', '0.5.13', '0.5.12', '0.5.11', '0.5.10', '0.5.9', '0.5.8', '0.5.7', '0.5.6', '0.5.5', '0.5.4', '0.5.3', '0.5.2', '0.5.1', '0.5.0', '0.4.26', '0.4.25', '0.4.24', '0.4.23', '0.4.22', '0.4.21', '0.4.20', '0.4.19', '0.4.18', '0.4.17', '0.4.16', '0.4.15', '0.4.14', '0.4.13', '0.4.12', '0.4.11', '0.4.10', '0.4.9', '0.4.8', '0.4.7', '0.4.6', '0.4.5', '0.4.3', '0.4.2', '0.4.1', '0.4.0']
-    solc_solcs_select = ",".join(valid_solcs)
     container_name = "slither-tool"
 
     # create container
@@ -88,7 +86,7 @@ class Slither(Tool):
         return f'{start}:{len}:0'
 
     @classmethod
-    def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str) -> FinalResult:
+    def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str, solc: str) -> FinalResult:
         issues: list[AnalysisIssue] = []
         detectors = raw_result["results"]["detectors"]
         for detector in detectors:
@@ -114,6 +112,7 @@ class Slither(Tool):
             file_name=file_name,
             tool_name=Slither.tool_name.value,
             duration = duration,
+            solc=solc,
             analysis=AnalysisResult(
                 errors=[],
                 issues= issues
@@ -121,11 +120,12 @@ class Slither(Tool):
         )
         return final_result
     @classmethod
-    def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str) -> FinalResult:
+    def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str, solc:str) -> FinalResult:
         final_result = FinalResult(
             file_name=file_name,
             tool_name=Slither.tool_name.value,
             duration=duration,
+            solc=solc,
             analysis=AnalysisResult(
                 errors=errors,
                 issues=[]
@@ -146,8 +146,13 @@ class Slither(Tool):
             ))
             return errors
         raw_result_errors = raw_result_json["error"]
+        print(raw_result_errors)
         if (isinstance(raw_result_errors, str)):
-            if (raw_result_errors.find("Solc experienced a fatal error") != -1):
+            if (raw_result_errors.find('Source file requires different compiler version') != -1):
+                errors.append(Tool.get_tool_error(
+                    error=ErrorClassification.UnsupportedSolc,
+                ))
+            elif (raw_result_errors.find("Solc experienced a fatal error") != -1):
                 errors.append(ToolError(
                     error=ErrorClassification.CompileError,
                     msg=raw_result_errors
@@ -163,17 +168,14 @@ class Slither(Tool):
     @classmethod
     def run_core(
         cls,
-        container_file_path: str,
-        file_name: str,
-        docker_image: str,
-        options: str,
-        timeout: int,
+        args: ToolAnalyzeArgs
     ) -> tuple[list[ToolError], str]:
-        if (options.find(r"{solcs}") != -1):
-            options = options.replace(r"{solcs}", cls.solc_solcs_select)
+        if (args.options.find(r"{solc}") != -1):
+            args.options = args.options.replace(r"{solc}", args.solc)
         errors: list[ToolError] = []
         logs: str = ""
-        cmd = f"timeout {timeout}s {cls.tool_cfg.analyze_cmd} {container_file_path}/{file_name} {options}"
+        container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
+        cmd = f"timeout {args.timeout}s {cls.tool_cfg.analyze_cmd} {container_file_path}/{args.file_name} {args.options}"
         # print(cmd)
 
         logs = Docker.exec_run(
@@ -184,6 +186,6 @@ class Slither(Tool):
         if (len(logs) == 0):
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
-                msg=f"Timeout while analyzing {container_file_path}/{file_name} using Slither: timeout={timeout}"
+                msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Slither: timeout={args.timeout}"
             ))
         return (errors, logs)

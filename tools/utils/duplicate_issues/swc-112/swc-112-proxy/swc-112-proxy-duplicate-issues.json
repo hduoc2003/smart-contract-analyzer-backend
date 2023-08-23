@@ -1,0 +1,15 @@
+[
+  {
+    "contract": "Proxy",
+    "source_map": "198:26:0",
+    "line_no": 12,
+    "code": "callee.delegatecall(_data)",
+    "description": "Proxy.forward(address,bytes) (../../../tmp/user1/contracts/swc-112-proxy.sol#11-13) uses delegatecall to a input-controlled function id\n\t- require(bool)(callee.delegatecall(_data)) (../../../tmp/user1/contracts/swc-112-proxy.sol#12)\n\nThe contract delegates execution to another contract with a user-supplied address.\nThe smart contract delegates execution to a user-supplied address.This could allow an attacker to execute arbitrary code in the context of this contract account and manipulate the state of the contract account or execute actions on its behalf.",
+    "hint": "controlled-delegatecall",
+    "issue_title": "controlled-delegatecall",
+    "swcID": "SWC-112",
+    "swc_title": "Delegatecall to Untrusted Callee",
+    "swc_link": "https://swcregistry.io/docs/SWC-112/",
+    "severity": "chua lam"
+  }
+]

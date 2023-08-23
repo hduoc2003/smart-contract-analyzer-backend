@@ -1,8 +1,8 @@
 docker_image: phu2112/slither-tool
 analyze_cmd: slither
-options: --solc-solcs-select {solcs} --json -
+options: --solc-solcs-select {solc} --json -
 volumes:
   bind: /tmp
   mode: ro
-timeout: 10
+timeout: 1000
 info: Slither is a Solidity static analysis framework written in Python 3. It runs a suite of vulnerability detectors and prints visual information about contract details. Slither enables developers to find vulnerabilities, enhance their code comphrehension, and quickly prototype custom analyses.

@@ -1,0 +1,15 @@
+[
+  {
+    "contract": "FunctionTypes",
+    "source_map": ":::i",
+    "line_no": 27,
+    "code": "func.f()",
+    "description": "FunctionTypes.breakIt() (../../../tmp/user1/contracts/swc-127.sol#22-28) uses assembly\n\t- INLINE ASM (../../../tmp/user1/contracts/swc-127.sol#26-27)\n\nThe caller can redirect execution to arbitrary bytecode locations.\nIt is possible to redirect the control flow to arbitrary locations in the code. This may allow an attacker to bypass security controls or manipulate the business logic of the smart contract. Avoid using low-level-operations and assembly to prevent this issue.",
+    "hint": "assembly-usage",
+    "issue_title": "assembly",
+    "swcID": "SWC-127",
+    "swc_title": "Arbitrary Jump with Function Type Variable",
+    "swc_link": "https://swcregistry.io/docs/SWC-127/",
+    "severity": "chua lam"
+  }
+]
