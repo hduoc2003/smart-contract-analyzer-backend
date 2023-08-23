@@ -11,7 +11,6 @@ import uuid
 import sys
 import os
 from dotenv import load_dotenv
-from flask_pymongo import PyMongo
 
 load_dotenv()
 CONNECTION_STRING = os.getenv("MONGO_CONNECTION_STRING")
