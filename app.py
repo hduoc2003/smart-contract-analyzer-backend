@@ -33,7 +33,7 @@ app = Flask(__name__)
 setup_app_config(app)
 # app.register_blueprint(user_route)
 # app.register_blueprint(login_route)
-# app.register_blueprint(signup_route)
+app.register_blueprint(signup_route)
 # app.register_blueprint(tool_route)
 
 @app.route("/")

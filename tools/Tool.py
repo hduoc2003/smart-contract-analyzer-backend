@@ -15,6 +15,7 @@ from tools.utils.Async import Async
 from tools.utils.Log import Log
 from tools.utils.parsers import obj_to_jsonstr
 from tools.utils.merge_tools import DuplicateIssue
+
 RawResult = Any
 
 class Tool(ABC):
