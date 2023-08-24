@@ -177,7 +177,7 @@ class Slither(Tool):
         container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
         cmd = f"timeout {args.timeout}s {cls.tool_cfg.analyze_cmd} {container_file_path}/{args.file_name} {args.options}"
         # print(cmd)
-
+        print("CONTAINER ", cls.container)
         logs = Docker.exec_run(
             container=cls.container,
             cmd=cmd

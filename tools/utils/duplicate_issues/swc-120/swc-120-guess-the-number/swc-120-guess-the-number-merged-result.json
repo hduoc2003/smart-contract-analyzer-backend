@@ -1,7 +1,7 @@
 {
   "file_name": "swc-120-guess-the-number.sol",
   "tool_name": "slither",
-  "duration": 45.37041139602661,
+  "duration": 51.07249402999878,
   "solc": "0.4.21",
   "analysis": {
     "errors": [],

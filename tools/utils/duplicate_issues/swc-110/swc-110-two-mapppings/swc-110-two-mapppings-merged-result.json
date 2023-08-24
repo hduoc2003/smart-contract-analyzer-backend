@@ -1,7 +1,7 @@
 {
   "file_name": "swc-110-two-mapppings.sol",
   "tool_name": "slither",
-  "duration": 32.70392680168152,
+  "duration": 28.23607587814331,
   "solc": "0.4.22",
   "analysis": {
     "errors": [],

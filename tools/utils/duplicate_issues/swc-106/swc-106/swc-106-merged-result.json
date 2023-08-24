@@ -1,7 +1,7 @@
 {
   "file_name": "swc-106.sol",
   "tool_name": "slither",
-  "duration": 26.091307640075684,
+  "duration": 20.19509768486023,
   "solc": "0.4.11",
   "analysis": {
     "errors": [],

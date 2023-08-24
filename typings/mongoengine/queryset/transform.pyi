@@ -1,0 +1,6 @@
+from _typeshed import Incomplete
+
+STRING_OPERATORS: Incomplete
+
+def query(_doc_cls: Incomplete | None = ..., **kwargs): ...
+def update(_doc_cls: Incomplete | None = ..., **update): ...

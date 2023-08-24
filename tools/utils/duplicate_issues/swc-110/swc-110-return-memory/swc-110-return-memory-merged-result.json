@@ -1,7 +1,7 @@
 {
   "file_name": "swc-110-return-memory.sol",
   "tool_name": "slither",
-  "duration": 63.106943130493164,
+  "duration": 75.23707246780396,
   "solc": "0.8.8",
   "analysis": {
     "errors": [],

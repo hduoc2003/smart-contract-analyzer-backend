@@ -5,6 +5,7 @@ import datetime
 import uuid
 import os
 
+from server.models.user import User
 signup_route = Blueprint("signup", __name__, url_prefix="/signup")
 load_dotenv()
 CONNECTION_STRING = os.getenv("MONGO_CONNECTION_STRING")
@@ -39,7 +40,15 @@ def signup():
         "created_at": current_time,
         "last_modified_at": current_time
     }
-
+    user = User(
+        name = name,
+        user_name = username,
+        password = password,
+        email = email,
+        email_verified = False,
+        last_online = current_time,
+    ).save()
+    
     # Check if username already exists in the collection
     existing_user = collection.find_one({"username": username})
     if existing_user:

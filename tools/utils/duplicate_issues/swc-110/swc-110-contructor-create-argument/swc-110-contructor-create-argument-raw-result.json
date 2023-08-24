@@ -1,7 +1,7 @@
 {
   "file_name": "swc-110-contructor-create-argument.sol",
   "tool_name": "slither, mythril",
-  "duration": 34.90850567817688,
+  "duration": 8.148398876190186,
   "solc": "0.4.22",
   "analysis": {
     "errors": [],

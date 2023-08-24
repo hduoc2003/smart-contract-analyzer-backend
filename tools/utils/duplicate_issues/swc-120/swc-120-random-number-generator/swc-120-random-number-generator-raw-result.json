@@ -1,7 +1,7 @@
 {
   "file_name": "swc-120-random-number-generator.sol",
   "tool_name": "slither, mythril",
-  "duration": 19.10806894302368,
+  "duration": 24.894901990890503,
   "solc": "0.4.25",
   "analysis": {
     "errors": [],

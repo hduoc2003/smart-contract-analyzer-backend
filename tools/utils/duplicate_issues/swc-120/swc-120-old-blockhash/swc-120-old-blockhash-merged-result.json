@@ -1,7 +1,7 @@
 {
   "file_name": "swc-120-old-blockhash.sol",
   "tool_name": "slither",
-  "duration": 60.01184034347534,
+  "duration": 71.12116765975952,
   "solc": "0.4.24",
   "analysis": {
     "errors": [],

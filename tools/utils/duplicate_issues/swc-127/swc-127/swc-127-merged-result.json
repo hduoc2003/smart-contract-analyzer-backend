@@ -1,7 +1,7 @@
 {
   "file_name": "swc-127.sol",
   "tool_name": "slither",
-  "duration": 30.643131256103516,
+  "duration": 30.88587498664856,
   "solc": "0.4.25",
   "analysis": {
     "errors": [],

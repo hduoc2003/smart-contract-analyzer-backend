@@ -1,7 +1,7 @@
 {
   "file_name": "swc-112-proxy.sol",
   "tool_name": "slither",
-  "duration": 54.17586970329285,
+  "duration": 60.64287829399109,
   "solc": "0.4.24",
   "analysis": {
     "errors": [],

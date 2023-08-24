@@ -1,7 +1,7 @@
 {
   "file_name": "swc-107-simple-dao.sol",
   "tool_name": "slither",
-  "duration": 69.94239497184753,
+  "duration": 86.31819152832031,
   "solc": "0.4.24",
   "analysis": {
     "errors": [],

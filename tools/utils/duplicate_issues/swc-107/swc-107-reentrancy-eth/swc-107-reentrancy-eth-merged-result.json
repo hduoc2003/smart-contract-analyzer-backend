@@ -1,7 +1,7 @@
 {
   "file_name": "swc-107-reentrancy-eth.sol",
   "tool_name": "slither",
-  "duration": 92.03382420539856,
+  "duration": 119.2543351650238,
   "solc": "0.4.15",
   "analysis": {
     "errors": [],

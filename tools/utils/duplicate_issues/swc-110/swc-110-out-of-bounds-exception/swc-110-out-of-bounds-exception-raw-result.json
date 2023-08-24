@@ -1,7 +1,7 @@
 {
   "file_name": "swc-110-out-of-bounds-exception.sol",
   "tool_name": "slither, mythril",
-  "duration": 28.062154531478882,
+  "duration": 15.679737329483032,
   "solc": "0.5.0",
   "analysis": {
     "errors": [],

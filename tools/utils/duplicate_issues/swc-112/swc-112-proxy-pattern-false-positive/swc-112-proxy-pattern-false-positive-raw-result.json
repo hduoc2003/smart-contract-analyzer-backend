@@ -1,7 +1,7 @@
 {
   "file_name": "swc-112-proxy-pattern-false-positive.sol",
   "tool_name": "slither, mythril",
-  "duration": 35.18049883842468,
+  "duration": 42.43310570716858,
   "solc": "0.4.24",
   "analysis": {
     "errors": [],
