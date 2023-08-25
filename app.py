@@ -1,8 +1,8 @@
 from flask import Flask, render_template, make_response, jsonify, request
-from server.routes.client.login.login import login_route
-from server.routes.client.signup.signup import signup_route
-from server.routes.client.tool.tool import tool_route
-from server.routes.admin.user.user import user_route
+# from server.routes.client.login.login import login_route
+# from server.routes.client.signup.signup import signup_route
+# from server.routes.client.tool.tool import tool_route
+# from server.routes.admin.user.user import user_route
 from server.config.corsOptions import setup_app_config
 from server.routes.api.auth import auth_bp
 from server.config.dbConnection import connect_to_database
