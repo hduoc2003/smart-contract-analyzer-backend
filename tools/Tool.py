@@ -96,7 +96,9 @@ class Tool(ABC):
     ) -> tuple[FinalResult, RawResult]:
         Log.info(f'Running {cls.tool_name.value}')
         start = time.time()
-        solc = args.solc or Tool.get_solc_version(args.sub_container_file_path, args.file_name)
+        solc: str | ErrorClassification = args.solc or Tool.get_solc_version(args.sub_container_file_path, args.file_name)
+        if (isinstance(solc, ErrorClassification)):
+            raise Exception(f"Tool:analyze: {solc}")
         (errors, raw_result_str) = cls.run_core(ToolAnalyzeArgs(
             sub_container_file_path=args.sub_container_file_path,
             file_name=args.file_name,

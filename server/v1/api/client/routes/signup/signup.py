@@ -1,5 +1,5 @@
 from typing import Any
-from flask import Blueprint, Response, request
+from flask import Blueprint, Response, jsonify, request
 from datetime import datetime
 import uuid
 from server.v1.api.client.models.users_collection import UserDoc
@@ -11,14 +11,14 @@ signup_route = Blueprint("signup", __name__, url_prefix="/signup")
 def handle_signup() -> tuple[Response, int] | Response:
     data: Any | None = request.json
     if data is None:
-        return {"message": "Invalid JSON data"}, StatusCode.BadRequest.value
+        return jsonify({"message": "Invalid JSON data"}), StatusCode.BadRequest.value
 
     username = data.get('username')
     current_time: datetime = datetime.utcnow()
 
     # Check if username already exists in the collection
     if UserDoc.username_exists(username):
-        return {"message": "Username already exists"}, StatusCode.Conflict.value
+        return jsonify({"message": "Username already exists"}), StatusCode.Conflict.value
 
     # FlaskLog.info(f"role = {data.get('role')}")
     # Insert user_data into MongoDB
@@ -44,4 +44,4 @@ def handle_signup() -> tuple[Response, int] | Response:
         "last_modified_at": current_time
     }
 
-    return response_data
+    return jsonify(response_data)
