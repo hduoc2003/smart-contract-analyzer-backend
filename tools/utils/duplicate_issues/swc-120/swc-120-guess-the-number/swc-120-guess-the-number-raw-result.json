@@ -1,0 +1,127 @@
+{
+  "file_name": "swc-120-guess-the-number.sol",
+  "tool_name": "slither, mythril",
+  "duration": 51.07249402999878,
+  "solc": "0.4.21",
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "GuessTheRandomNumberChallenge",
+        "source_map": "638:28:0",
+        "line_no": [
+          24
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "GuessTheRandomNumberChallenge.guess(uint8) (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#20-26) sends eth to arbitrary user\n\tDangerous calls:\n\t- msg.sender.transfer(2000000000000000000) (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#24)\n",
+        "hint": "functions-that-send-ether-to-arbitrary-destinations",
+        "issue_title": "arbitrary-send-eth",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "High"
+      },
+      {
+        "contract": "GuessTheRandomNumberChallenge",
+        "source_map": "610:11:0",
+        "line_no": [
+          23
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "GuessTheRandomNumberChallenge.guess(uint8) (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#20-26) uses a dangerous strict equality:\n\t- n == answer (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#23)\n",
+        "hint": "dangerous-strict-equalities",
+        "issue_title": "incorrect-equality",
+        "swcID": "SWC-132",
+        "swc_title": "Unexpected Ether balance",
+        "swc_link": "https://swcregistry.io/docs/SWC-132/",
+        "severity": "Medium"
+      },
+      {
+        "contract": "GuessTheRandomNumberChallenge",
+        "source_map": "465:33:0",
+        "line_no": [
+          17
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "GuessTheRandomNumberChallenge.isComplete() (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#16-18) uses a dangerous strict equality:\n\t- address(this).balance == 0 (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#17)\n",
+        "hint": "dangerous-strict-equalities",
+        "issue_title": "incorrect-equality",
+        "swcID": "SWC-132",
+        "swc_title": "Unexpected Ether balance",
+        "swc_link": "https://swcregistry.io/docs/SWC-132/",
+        "severity": "Medium"
+      },
+      {
+        "contract": "GuessTheRandomNumberChallenge",
+        "source_map": "610:11:0",
+        "line_no": [
+          23
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "GuessTheRandomNumberChallenge.guess(uint8) (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#20-26) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- n == answer (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#23)\n",
+        "hint": "block-timestamp",
+        "issue_title": "timestamp",
+        "swcID": "SWC-116",
+        "swc_title": "Block values as a proxy for time",
+        "swc_link": "https://swcregistry.io/docs/SWC-116/",
+        "severity": "Low"
+      },
+      {
+        "contract": "GuessTheRandomNumberChallenge",
+        "source_map": "324:65:0",
+        "line_no": [
+          13
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Deprecated standard detected answer = uint8(keccak256()(block.blockhash(block.number - 1),now)) (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#13):\n\t- Usage of \"block.blockhash()\" should be replaced with \"blockhash()\"\n",
+        "hint": "deprecated-standards",
+        "issue_title": "deprecated-standards",
+        "swcID": "SWC-111",
+        "swc_title": "Use of Deprecated Solidity Functions",
+        "swc_link": "https://swcregistry.io/docs/SWC-111/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.21 is not recommended for deployment\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "122:24:0",
+        "line_no": [
+          6
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version^0.4.21 (../../../tmp/user1/contracts/swc-120-guess-the-number.sol#6) allows old versions\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "GuessTheRandomNumberChallenge",
+        "source_map": "638:28",
+        "line_no": 24,
+        "code": "msg.sender.transfer(2 ether)",
+        "description": "Any sender can withdraw Ether from the contract account.\nArbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Unprotected Ether Withdrawal",
+        "swcID": "SWC-105",
+        "swc_title": "Unprotected Ether Withdrawal",
+        "swc_link": "https://swcregistry.io/docs/SWC-105/",
+        "severity": "High"
+      }
+    ]
+  }
+}

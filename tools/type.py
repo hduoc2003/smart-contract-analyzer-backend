@@ -23,8 +23,8 @@ class ToolError:
 class AnalysisIssue:
     contract: str
     source_map: str
-    line_no: list[int] | int
-    code: str #??
+    line_no: list[int]
+    code: str
     description: str
     hint: str
     issue_title: str
@@ -32,21 +32,6 @@ class AnalysisIssue:
     swc_title: str
     swc_link: str
     severity: str
-
-@dataclass
-class SlitherAnalysisDetectorElement:
-    type: str #[check] property in raw object
-    name: str
-    lines_no: list[int]
-    type_specific_fields: str
-
-@dataclass
-class SlitherAnalysisDetector:
-    detect_type: str
-    confidence: str
-    impact: str
-    description: str
-    elements: list[SlitherAnalysisDetectorElement]
 
 @dataclass
 class AnalysisResult:
@@ -64,24 +49,6 @@ class FinalResult:
 
 
 @dataclass
-class SlitherDetectorElement:
-    type: str #[check] property in raw object
-    name: str
-    lines_no: list[int]
-    contract: str
-    hint: str
-    sample_code: str
-    additional_fields: dict
-
-@dataclass
-class SlitherDetector:
-    detect_type: str
-    impact: str
-    confidence: str
-    description: str
-    elements: list[SlitherDetectorElement]
-
-@dataclass
 class ImageVolume:
     bind: str
     mode: str
@@ -93,11 +60,3 @@ class ImageConfig:
     volumes: ImageVolume
     timeout: int
 
-@dataclass
-class ToolAnalyzeArgs:
-    sub_container_file_path: str
-    file_name: str
-    solc: str = ""
-    docker_image: str = ""
-    options: str = ""
-    timeout: int = -1

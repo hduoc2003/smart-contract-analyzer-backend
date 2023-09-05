@@ -28,6 +28,32 @@ class UserDoc(Document):
     def username_exists(cls, username: str) -> bool:
         return len(cls.objects(username=username)) > 0
 
+    @classmethod    
+    def update_last_online(cls, username):
+        
+        user = UserDoc.objects(username=username).first()
+        # uk_users = User.objects(country='uk')
+        if user:
+            user.last_online = datetime.now()
+            user.save()
+            
+    @classmethod
+    def get_field_value(cls, username, field_name):
+        """
+        Dùng cái này gán tên người dùng và field cần lấy, đỡ viết nhiều hàm get quá
+        Args:
+            username (str): tên người dùng
+            field_name (str): email, created_at, etc
+
+        Returns:
+            Giá trị của field_name
+        """    
+        #example: user = User.objects(last_online="john123").first()
+        user = UserDoc.objects(**{field_name: username}).first()    
+        if user:
+            return getattr(user, field_name)
+        return None
+
 
     # def __init__(
     #     self,
@@ -72,6 +98,5 @@ class UserDoc(Document):
     #     self.email_verified=email_verified,
     #     self.created_at=created_at,
     #     self.last_modified_at=last_modified_at
-
 
 

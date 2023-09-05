@@ -1,0 +1,213 @@
+{
+  "file_name": "swc-107-reentrancy-eth.sol",
+  "tool_name": "slither, mythril",
+  "duration": 119.2543351650238,
+  "solc": "0.4.15",
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "Reentrance",
+        "source_map": "481:53:0",
+        "line_no": [
+          17
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Reentrancy in Reentrance.withdrawBalance() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#14-21):\n\tExternal calls:\n\t- ! (msg.sender.call.value(userBalance[msg.sender])()) (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#17)\n\tState variables written after the call(s):\n\t- userBalance[msg.sender] = 0 (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#20)\n\tReentrance.userBalance (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#4) can be used in cross function reentrancies:\n\t- Reentrance.addToBalance() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#10-12)\n\t- Reentrance.getBalance(address) (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#6-8)\n\t- Reentrance.withdrawBalance() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#14-21)\n\t- Reentrance.withdrawBalance_fixed() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#23-31)\n\t- Reentrance.withdrawBalance_fixed_2() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#33-40)\n",
+        "hint": "reentrancy-vulnerabilities",
+        "issue_title": "reentrancy-eth",
+        "swcID": "SWC-107",
+        "swc_title": "Reentrancy",
+        "swc_link": "https://swcregistry.io/docs/SWC-107/",
+        "severity": "High"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "551:5:0",
+        "line_no": [
+          18
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Deprecated standard detected THROW (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#18):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+        "hint": "deprecated-standards",
+        "issue_title": "deprecated-standards",
+        "swcID": "SWC-111",
+        "swc_title": "Use of Deprecated Solidity Functions",
+        "swc_link": "https://swcregistry.io/docs/SWC-111/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "918:5:0",
+        "line_no": [
+          29
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Deprecated standard detected THROW (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#29):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+        "hint": "deprecated-standards",
+        "issue_title": "deprecated-standards",
+        "swcID": "SWC-111",
+        "swc_title": "Use of Deprecated Solidity Functions",
+        "swc_link": "https://swcregistry.io/docs/SWC-111/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.15 is not recommended for deployment\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "0:24:0",
+        "line_no": [
+          1
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version^0.4.15 (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#1) allows old versions\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "481:53:0",
+        "line_no": [
+          17
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Low level call in Reentrance.withdrawBalance() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#14-21):\n\t- ! (msg.sender.call.value(userBalance[msg.sender])()) (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#17)\n",
+        "hint": "low-level-calls",
+        "issue_title": "low-level-calls",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "865:36:0",
+        "line_no": [
+          28
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Low level call in Reentrance.withdrawBalance_fixed() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#23-31):\n\t- ! (msg.sender.call.value(amount)()) (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#28)\n",
+        "hint": "low-level-calls",
+        "issue_title": "low-level-calls",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "953:386:0",
+        "line_no": [
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Function Reentrance.withdrawBalance_fixed_2() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#33-40) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "624:318:0",
+        "line_no": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Function Reentrance.withdrawBalance_fixed() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#23-31) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "1249:44:0",
+        "line_no": [
+          38
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Reentrancy in Reentrance.withdrawBalance_fixed_2() (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#33-40):\n\tExternal calls:\n\t- msg.sender.transfer(userBalance[msg.sender]) (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#38)\n\tState variables written after the call(s):\n\t- userBalance[msg.sender] = 0 (../../../tmp/user1/contracts/swc-107-reentrancy-eth.sol#39)\n",
+        "hint": "reentrancy-vulnerabilities",
+        "issue_title": "reentrancy-unlimited-gas",
+        "swcID": "SWC-134",
+        "swc_title": "Message call with hardcoded gas amount",
+        "swc_link": "https://swcregistry.io/docs/SWC-134/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "868:31",
+        "line_no": 28,
+        "code": "msg.sender.call.value(amount)()",
+        "description": "A call to a user-supplied address is executed.\nAn external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "External Call To User-Supplied Address",
+        "swcID": "SWC-107",
+        "swc_title": "Reentrancy",
+        "swc_link": "https://swcregistry.io/docs/SWC-107/",
+        "severity": "Low"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": "484:48",
+        "line_no": 17,
+        "code": "msg.sender.call.value(userBalance[msg.sender])()",
+        "description": "A call to a user-supplied address is executed.\nAn external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "External Call To User-Supplied Address",
+        "swcID": "SWC-107",
+        "swc_title": "Reentrancy",
+        "swc_link": "https://swcregistry.io/docs/SWC-107/",
+        "severity": "Low"
+      },
+      {
+        "contract": "Reentrance",
+        "source_map": ":27",
+        "line_no": 20,
+        "code": "userBalance[msg.sender] = 0",
+        "description": "Write to persistent state following external call\nThe contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "State access after external call",
+        "swcID": "SWC-107",
+        "swc_title": "Reentrancy",
+        "swc_link": "https://swcregistry.io/docs/SWC-107/",
+        "severity": "Medium"
+      }
+    ]
+  }
+}

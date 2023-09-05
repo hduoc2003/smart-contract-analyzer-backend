@@ -1,0 +1,15 @@
+[
+  {
+    "contract": "SimpleDAO",
+    "source_map": "477:31",
+    "line_no": 17,
+    "code": "msg.sender.call.value(amount)()",
+    "description": "Reentrancy in SimpleDAO.withdraw(uint256) (../../../tmp/user1/contracts/swc-107-simple-dao.sol#15-20):\n\tExternal calls:\n\t- require(bool)(msg.sender.call.value(amount)()) (../../../tmp/user1/contracts/swc-107-simple-dao.sol#17)\n\tState variables written after the call(s):\n\t- credit[msg.sender] -= amount (../../../tmp/user1/contracts/swc-107-simple-dao.sol#18)\n\tSimpleDAO.credit (../../../tmp/user1/contracts/swc-107-simple-dao.sol#9) can be used in cross function reentrancies:\n\t- SimpleDAO.credit (../../../tmp/user1/contracts/swc-107-simple-dao.sol#9)\n\t- SimpleDAO.queryCredit(address) (../../../tmp/user1/contracts/swc-107-simple-dao.sol#22-24)\n\t- SimpleDAO.withdraw(uint256) (../../../tmp/user1/contracts/swc-107-simple-dao.sol#15-20)\n\nA call to a user-supplied address is executed.\nAn external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.",
+    "hint": "reentrancy-vulnerabilities",
+    "issue_title": "reentrancy-eth",
+    "swcID": "SWC-107",
+    "swc_title": "Reentrancy",
+    "swc_link": "https://swcregistry.io/docs/SWC-107/",
+    "severity": "chua lam"
+  }
+]

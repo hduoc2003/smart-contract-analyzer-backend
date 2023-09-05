@@ -1,0 +1,15 @@
+{
+  "file_name": "swc-107-modifier-reentrancy.sol",
+  "tool_name": "slither, mythril",
+  "duration": 13.229298114776611,
+  "solc": "0.5.0",
+  "analysis": {
+    "errors": [
+      {
+        "error": "unknown error",
+        "msg": "Traceback (most recent call last):\n  File \"/home/slither/.local/lib/python3.10/site-packages/slither/__main__.py\", line 814, in main_impl\n    ) = process_all(filename, args, detector_classes, printer_classes)\n  File \"/home/slither/.local/lib/python3.10/site-packages/slither/__main__.py\", line 91, in process_all\n    compilations = compile_all(target, **vars(args))\n  File \"/home/slither/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py\", line 646, in compile_all\n    compilations.append(CryticCompile(target, **kwargs))\n  File \"/home/slither/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py\", line 131, in __init__\n    self._compile(**kwargs)\n  File \"/home/slither/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py\", line 553, in _compile\n    self._platform.compile(self, **kwargs)\n  File \"/home/slither/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py\", line 149, in compile\n    targets_json = _get_targets_json(compilation_unit, self._target, **kwargs)\n  File \"/home/slither/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py\", line 266, in _get_targets_json\n    return _run_solcs_env(\n  File \"/home/slither/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py\", line 750, in _run_solcs_env\n    raise InvalidCompilation(\ncrytic_compile.platform.exceptions.InvalidCompilation: Invalid solc compilation, none of the solc versions provided worked:\n0.5.0: \nSolidity version not found:\nSTDOUT:\n\nSTDERR:\nTraceback (most recent call last):\n  File \"/home/slither/.local/bin/solc\", line 8, in <module>\n    sys.exit(solc())\n  File \"/home/slither/.local/lib/python3.10/site-packages/solc_select/__main__.py\", line 94, in solc\n    subprocess.run(\n  File \"/usr/lib/python3.10/subprocess.py\", line 503, in run\n    with Popen(*popenargs, **kwargs) as process:\n  File \"/usr/lib/python3.10/subprocess.py\", line 971, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"/usr/lib/python3.10/subprocess.py\", line 1863, in _execute_child\n    raise child_exception_type(errno_num, err_msg, err_filename)\nPermissionError: [Errno 13] Permission denied: '/home/slither/.solc-select/artifacts/solc-0.5.0/solc-0.5.0'\n\n"
+      }
+    ],
+    "issues": []
+  }
+}

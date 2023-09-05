@@ -1,12 +1,12 @@
-from server.v1.api.utils.FlaskLog import FlaskLog
-from server.v1.api.utils.server_env import get_env
+import os
 from mongoengine import connect
+from server.v1.api.utils.server_env import get_env
 
-def init_database() -> None:
-    CONNECTION_STRING: str = get_env("MONGO_CONNECTION_STRING")
-    DATABASE_NAME: str = get_env("DATABASE_NAME")
+CONNECTION_STRING = os.getenv("MONGO_CONNECTION_STRING")
+DATABASE_NAME = os.getenv("DATABASE_NAME")
 
+def init_database():
     connect(
-        db=DATABASE_NAME,
-        host=CONNECTION_STRING
+        DATABASE_NAME,
+        host=CONNECTION_STRING,
     )
