@@ -60,3 +60,11 @@ class ImageConfig:
     volumes: ImageVolume
     timeout: int
 
+@dataclass
+class ToolAnalyzeArgs:
+    sub_container_file_path: str
+    file_name: str
+    solc: str = ""
+    docker_image: str = ""
+    options: str = ""
+    timeout: int = -1

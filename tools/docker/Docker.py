@@ -3,7 +3,7 @@ import docker
 from docker import errors
 import requests
 import yaml
-from tools.type import ErrorClassification, ToolError
+from tools.types import ErrorClassification, ToolError
 from tools.utils.Log import Log
 from docker.models.containers import ExecResult
 

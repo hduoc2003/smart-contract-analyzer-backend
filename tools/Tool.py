@@ -6,7 +6,7 @@ import re
 import time
 from types import coroutine
 from typing import Any, Callable
-from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, FinalResult, ImageConfig, ImageVolume, ToolAnalyzeArgs, ToolError, ToolName
+from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, FinalResult, ImageConfig, ImageVolume, ToolAnalyzeArgs, ToolError, ToolName
 import yaml
 
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
@@ -24,10 +24,10 @@ class Tool(ABC):
     image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "docker/image-config"))
     storage_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "storage"))
     tool_cfg: ImageConfig
-    
+
     valid_solcs: list[str] = ['0.8.21', '0.8.20', '0.8.19', '0.8.18', '0.8.17', '0.8.16', '0.8.15', '0.8.14', '0.8.13', '0.8.12', '0.8.11', '0.8.10', '0.8.9', '0.8.8', '0.8.7', '0.8.6', '0.8.5', '0.8.4', '0.8.3', '0.8.2', '0.8.1', '0.8.0', '0.7.6', '0.7.5', '0.7.4', '0.7.3', '0.7.2', '0.7.1', '0.7.0', '0.6.12', '0.6.11', '0.6.10', '0.6.9', '0.6.8', '0.6.7', '0.6.6', '0.6.5', '0.6.4', '0.6.3', '0.6.2', '0.6.1', '0.6.0', '0.5.17', '0.5.16', '0.5.15', '0.5.14', '0.5.13', '0.5.12', '0.5.11', '0.5.10', '0.5.9', '0.5.8', '0.5.7', '0.5.6', '0.5.5', '0.5.4', '0.5.3', '0.5.2', '0.5.1', '0.5.0', '0.4.26', '0.4.25', '0.4.24', '0.4.23', '0.4.22', '0.4.21', '0.4.20', '0.4.19', '0.4.18', '0.4.17', '0.4.16', '0.4.15', '0.4.14', '0.4.13', '0.4.12', '0.4.11', '0.4.10', '0.4.9', '0.4.8', '0.4.7', '0.4.6', '0.4.5', '0.4.3', '0.4.2', '0.4.1', '0.4.0']
     valid_solcs_str = ",".join(valid_solcs)
-    
+
     def __init__(
         self
     ) -> None:
@@ -65,10 +65,10 @@ class Tool(ABC):
     @classmethod
     @abstractmethod
     def parse_error_result(
-        cls, 
-        errors: list[ToolError], 
-        duration: float, 
-        file_name: str, 
+        cls,
+        errors: list[ToolError],
+        duration: float,
+        file_name: str,
         solc: str
     ) -> FinalResult:
         pass
@@ -118,19 +118,19 @@ class Tool(ABC):
         else:
             final_result = cls.parse_error_result(errors, duration=end - start, file_name=args.file_name, solc=solc) #type: ignore
             raw_result_json = final_result
-        
+
         return (final_result, raw_result_json)
 
     @staticmethod
     def merge_results(results: list[FinalResult], duration: float) -> FinalResult:
-        
+
         file_name: str = results[0].file_name
         tool_name: str = results[0].tool_name
         solc: str = results[0].solc
         analysisResult: AnalysisResult = DuplicateIssue.merge(results[0], results[1])
         return FinalResult(
             file_name=file_name,
-            tool_name=tool_name, 
+            tool_name=tool_name,
             duration=duration,
             solc=solc,
             analysis=AnalysisResult(
@@ -138,7 +138,7 @@ class Tool(ABC):
                 issues=analysisResult.issues
             )
         )
-        
+
     #Giữ lại để đối chiếu với kết quả sau merge thật, TODO: xong merge tool thì xoá
     @staticmethod
     def merge_results_raw(results: list[FinalResult], duration: float) -> FinalResult:
@@ -163,7 +163,7 @@ class Tool(ABC):
                 issues=issues
             )
         )
-        
+
     @classmethod
     def get_tool_error(cls, error: ErrorClassification, **kwargs) -> ToolError:
         match error:
@@ -194,7 +194,7 @@ class Tool(ABC):
                 )
             case _:
                 raise Exception(f"Tool.get_tool_error: {error} is not processed yet.")
-            
+
     @classmethod
     def analyze_files_async(
         cls,
@@ -203,10 +203,10 @@ class Tool(ABC):
     ) -> list[FinalResult]:
 
         def analyze_single_file(args: ToolAnalyzeArgs) -> FinalResult:
-            start = time.time()
+            start: float = time.time()
             from tools.Mythril import Mythril
             from tools.Slither import Slither
-            solc = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
+            solc: str | ErrorClassification = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
             if (isinstance(solc, ErrorClassification)):
                 return FinalResult(
                     file_name=args.file_name,
@@ -240,18 +240,19 @@ class Tool(ABC):
 
             results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
             Log.info(f"Analyzing {args.file_name} finished ..............")
-            end = time.time()
+            end: float = time.time()
             #chỉ dùng để check TODO: Xong thì xoá
-            cls.export_merge_result(args.file_name, cls.merge_results(results, duration=end-start), duration= end-start)
-            cls.export_raw_result(args.file_name, cls.merge_results_raw(results, duration=end-start), duration= end-start)
-        
-            return cls.merge_results(results, duration=end-start)
+            # cls.export_merge_result(args.file_name, cls.merge_results(results, duration=end-start), duration= end-start)
+            # cls.export_raw_result(args.file_name, cls.merge_results_raw(results, duration=end-start), duration= end-start)
+
+            # return cls.merge_results(results, duration=end-start)
+            return results[0]
 
         return Async.run_single_func(
             func=analyze_single_file,
             arr_args=[[file] for file in files],
         )
-    
+
 
     @classmethod
     def export_result(cls, file_name: str, raw_result: RawResult, final_result: FinalResult, path: str) -> None:
@@ -267,7 +268,7 @@ class Tool(ABC):
             except Exception as e:
                 Log.err(f'Error occured when export final_result of file {file_name}:\n{final_result}')
                 Log.err(e)
-    
+
     #NOTE: For testing
     @classmethod
     def export_merge_result(cls, file_name: str, result, duration):
@@ -275,7 +276,7 @@ class Tool(ABC):
         swc_number = ''.join(filter(str.isdigit, split_parts[1]))
         directory_path = os.path.join("tools","utils", "duplicate_issues", f"swc-{swc_number}", f"{os.path.splitext(file_name)[0]}")
         os.makedirs(directory_path, exist_ok=True)  # Create directories if they don't exist
-        try: 
+        try:
             if isinstance(result, FinalResult):
                 file_name1 = os.path.splitext(file_name)[0] + '-merged-result.json'
                 file_path1 = os.path.join(directory_path, file_name1)
@@ -285,7 +286,7 @@ class Tool(ABC):
         except Exception as e:
             Log.err(f'Error occured when export raw_result of file {os.path.join(directory_path, file_name)}')
             Log.err(e)
-         
+
     @classmethod
     def export_raw_result(cls, file_name: str, result, duration):
         split_parts = file_name.split("-")
@@ -305,7 +306,7 @@ class Tool(ABC):
         except Exception as e:
             Log.err(f'Error occured when export raw_result of file {os.path.join(directory_path, file_name)}')
             Log.err(e)
-        
+
     @classmethod
     def get_solc_version(
         cls,
@@ -329,10 +330,10 @@ class Tool(ABC):
 
             # Loại bỏ khối comment
             source_code = re.sub(r"/\*.*?\*/", "", source_code, flags=re.DOTALL)
-            lines = source_code.splitlines()
+            lines: list[str] = source_code.splitlines()
             for line in lines:
-                line = line.split(r"//")[0]
-                match = re.search(r"pragma\s+solidity\s+([<>=^]*[\d]+.[\d]+.[\d]+)", line)
+                line: str = line.split(r"//")[0]
+                match: re.Match[str] | None = re.search(r"pragma\s+solidity\s+([<>=^]*[\d]+.[\d]+.[\d]+)", line)
                 if match:
                     solc = match.group(1)
                     break

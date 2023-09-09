@@ -6,7 +6,7 @@ from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.docker.Docker import Docker
-from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
+from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, map_slither_check_to_swc,get_swc_no
 
