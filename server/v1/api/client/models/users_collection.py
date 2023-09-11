@@ -1,6 +1,8 @@
 from enum import Enum
+from typing import Any
 from mongoengine import Document, StringField, BooleanField, DateTimeField, EnumField
 from datetime import datetime
+import uuid
 
 from server.v1.api.utils.FlaskLog import FlaskLog
 
@@ -24,79 +26,59 @@ class UserDoc(Document):
         'collection': 'users'
     }
 
-    @classmethod
-    def username_exists(cls, username: str) -> bool:
-        return len(cls.objects(username=username)) > 0
+def username_exists(username: str) -> bool:
+    user = UserDoc.objects(username=username).first()
+    
+    # If a user with the given username is found, return True; otherwise, return False
+    return user is not None
 
-    @classmethod    
-    def update_last_online(cls, username):
+def update_last_online(username):
         
-        user = UserDoc.objects(username=username).first()
+    user = UserDoc.objects(username=username).first()
         # uk_users = User.objects(country='uk')
-        if user:
-            user.last_online = datetime.now()
-            user.save()
-            
-    @classmethod
-    def get_field_value(cls, username, field_name):
-        """
-        Dùng cái này gán tên người dùng và field cần lấy, đỡ viết nhiều hàm get quá
-        Args:
-            username (str): tên người dùng
-            field_name (str): email, created_at, etc
+    if user:
+        user.last_online = datetime.now()
+        user.save()
+        
+def get_field_value(username, field_name):
+    """
+    Dùng cái này gán tên người dùng và field cần lấy, đỡ viết nhiều hàm get quá
+    Args:
+        username (str): tên người dùng
+        field_name (str): email, created_at, etc
 
-        Returns:
-            Giá trị của field_name
-        """    
-        #example: user = User.objects(last_online="john123").first()
-        user = UserDoc.objects(**{field_name: username}).first()    
-        if user:
-            return getattr(user, field_name)
-        return None
+    Returns:
+        Giá trị của field_name
+    """    
+    #example: user = User.objects(last_online="john123").first()
+    user = UserDoc.objects(**{field_name: username}).first()    
+    if user:
+        return getattr(user, field_name)
+    return None
+    
+def create_new_user(data: Any, username: str):
+    current_time: datetime = datetime.utcnow()
+    new_user = UserDoc(
+        id=str(uuid.uuid4()),
+        name=data.get('name'),
+        username=username,
+        password=data.get('password'),
+        email=data.get('email'),
+        role=data.get("role")
+    ).save()
+    return new_user
 
-
-    # def __init__(
-    #     self,
-    #     id: str,
-    #     name: str,
-    #     username: str,
-    #     password: str,
-    #     email: str,
-    #     role: str,
-    #     last_online: datetime | None = None,
-    #     email_verified: bool = False,
-    #     created_at: datetime | None = None,
-    #     last_modified_at: datetime | None = None,
-    #     *args, **kwargs
-    # ) -> None:
-    #     super(UserDoc, self).__init__(*args, **kwargs)
-    #     cur_time: datetime = datetime.utcnow()
-    #     if (not last_online):
-    #         last_online = cur_time
-    #     if (not created_at):
-    #         created_at = cur_time
-    #     if (not last_modified_at):
-    #         last_modified_at = cur_time
-    #     if (role == "user"):
-    #         _role: UserRole = UserRole.USER
-    #     else:
-    #         if (role == "admin"):
-    #             _role = UserRole.ADMIN
-    #         else:
-    #             # FlaskLog.info(role)
-    #             raise Exception(f"Has no role {role} for User")
-    #             # _role = UserRole.USER'
-    #     FlaskLog.info(args)
-    #     FlaskLog.info(kwargs)
-    #     self.id=id,
-    #     self.name=name,
-    #     self.username=username,
-    #     self.password=password,
-    #     self.email=email,
-    #     self.role = _role
-    #     self.last_online=last_online,
-    #     self.email_verified=email_verified,
-    #     self.created_at=created_at,
-    #     self.last_modified_at=last_modified_at
-
+def format_sign_up_response(new_user: UserDoc, username: str, current_time: datetime) -> dict:
+    return {
+        "message": "Sign Up successful",
+        "_id": new_user.id,
+        "name": new_user.name,
+        "username": username,
+        "password": new_user.password,
+        "email": new_user.email,
+        "email_verified": False,
+        "last_online": current_time,
+        "created_at": current_time,
+        "last_modified_at": current_time  # TODO: Not current time
+}
 
