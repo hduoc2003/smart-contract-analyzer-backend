@@ -35,6 +35,8 @@ def create_file_doc(result: dict):
         (file_name, tool_name, duration, analysis) = extract_file_res(file)
         issues = []
         count = 0
+        
+            
         for issue_data in analysis["issues"]:
             issue = {
                 "id": count,
@@ -59,7 +61,7 @@ def create_file_doc(result: dict):
             duration=duration,
             analysis=[
                 {
-                    "errors": "null"
+                    "errors": analysis["errors"]
                 },
                 {
                     "issues": issues
@@ -68,22 +70,16 @@ def create_file_doc(result: dict):
         )
         new_file.save()
 
-def extract_file_res(result: dict) ->(str, float, str, dict):
+def extract_file_res(result: dict) ->tuple[str, float, str, dict]:
     file_name = result["file_name"]
     duration = result["duration"]
     tool_name = result["tool_name"]
     analysis = result["analysis"]
     return (file_name, tool_name,duration, analysis)
 
-def save_file_to_local_storage(file_name, file_content, user_name):
+def save_file(file_name, file_data, user_name):
     user_storage = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, "contracts")
     if not os.path.exists(user_storage):
         os.makedirs(user_storage)
-    
-    file_path = os.path.join(user_storage, file_name)
-    
-    try:
-        with open(file_path, 'wb') as file:
-            file.write(file_content)
-    except Exception as e:
-        FlaskLog.err(f"Cannot write into contract file: {e}")
+        
+    file_data.save(os.path.join(user_storage, file_name))

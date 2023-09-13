@@ -8,12 +8,12 @@ from types import coroutine
 from typing import Any, Callable
 from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, FinalResult, ImageConfig, ImageVolume, ToolAnalyzeArgs, ToolError, ToolName
 import yaml
-
+from typing import List
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 from tools.docker.Docker import Docker
 from tools.utils.Async import Async
 from tools.utils.Log import Log
-from tools.utils.parsers import obj_to_jsonstr
+from tools.utils.parsers import obj_to_jsonstr, obj_to_jsondict
 from tools.utils.merge_tools import DuplicateIssue
 
 RawResult = Any
@@ -125,7 +125,6 @@ class Tool(ABC):
     def merge_results(results: list[FinalResult], duration: float) -> FinalResult:
 
         file_name: str = results[0].file_name
-        # tool_name: str = results[0].tool_name
         tool_name: str = "Mythril, Slither"
         solc: str = results[0].solc
         analysisResult: AnalysisResult = DuplicateIssue.merge(results[0], results[1])
@@ -369,7 +368,7 @@ class Tool(ABC):
             return res
         
     @classmethod
-    def run_tools(cls, files_name: List[str], tools: List[str], username: str) ->str:
+    def run_tools(cls, files_name: List[str], tools: List[str], username: str) ->dict:
         tools_literal = cls.convert_str_to_enum(tools)
         files_directory = []
         for file_name in files_name:
@@ -378,7 +377,7 @@ class Tool(ABC):
                 file_name = file_name
             )
             files_directory.append(file)
-        return obj_to_jsonstr(cls.analyze_files_async(files_directory, tools_literal))
+        return obj_to_jsondict(cls.analyze_files_async(files_directory, tools_literal))
             
     @staticmethod
     def convert_str_to_enum(tools: List[str]) -> List[ToolName]:

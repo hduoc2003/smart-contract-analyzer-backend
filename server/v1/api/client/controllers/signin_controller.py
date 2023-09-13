@@ -4,8 +4,7 @@ import logging
 import flask_pyjwt
 from flask import Blueprint, request, jsonify, current_app, make_response
 from flask_bcrypt import Bcrypt
-from server.v1.api.client.models.users_collection import UserDoc
-
+from server.v1.api.client.models.users_collection import *
 from server.v1.api.utils.FlaskLog import FlaskLog
 from server.v1.api.utils.StatusCode import StatusCode
 bcrypt = Bcrypt()
@@ -33,7 +32,7 @@ def handle_login():
         logging.error(f'No {username} or {password}')
         return jsonify({'message': 'Missing email or password'}), StatusCode.BadRequest.value
     
-    user = UserDoc.get_field_value(username, "username")
+    user = get_field_value(username, "username")
     if user is None:
         logging.error(f"No {username} username in DB")
         return jsonify({'message': 'No username found, please sign up or contact the admin'}), StatusCode.NotFound.value
@@ -41,7 +40,7 @@ def handle_login():
     #TODO: Làm JWT ở đây
     if user and bcrypt.check_password_hash(user.password, password):
         token = generate_token()
-        UserDoc.update_last_online(username)
+        update_last_online(username)
         return jsonify({"message": "Login successful", "token": token}), StatusCode.OK.value
 
     return jsonify({"message": "Invalid credentials"}), StatusCode.NotFound.value

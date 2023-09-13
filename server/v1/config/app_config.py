@@ -24,9 +24,17 @@ def setup_app_config(app: Flask):
 
     #stop automate sorting dict response
     app.json.sort_keys = False
-    app.register_blueprint(auth_route)
-    app.register_blueprint(tool_route)
-    app.register_blueprint(user_route)
+    
+    client_route = Blueprint("client", __name__, url_prefix="/api/v1/client")
+    client_route.register_blueprint(auth_route)
+    client_route.register_blueprint(tool_route)
+
+    admin_route = Blueprint("admin", __name__, url_prefix="/api/v1/admin")
+    admin_route.register_blueprint(user_route)
+    
+    app.register_blueprint(client_route)
+    app.register_blueprint(admin_route)
+    
 
 def get_local_storage_path():
     return storage_path
