@@ -1,19 +1,15 @@
 from abc import ABC, abstractmethod
-import asyncio
 import json
 import os
 import re
 import time
-from types import coroutine
-from typing import Any, Callable
+from typing import Any, Callable, Generator
 from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, FinalResult, ImageConfig, ImageVolume, ToolAnalyzeArgs, ToolError, ToolName
 import yaml
-from typing import List
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
-from tools.docker.Docker import Docker
 from tools.utils.Async import Async
 from tools.utils.Log import Log
-from tools.utils.parsers import obj_to_jsonstr, obj_to_jsondict
+from tools.utils.parsers import obj_to_jsonstr
 from tools.utils.merge_tools import DuplicateIssue
 
 RawResult = Any
@@ -199,8 +195,9 @@ class Tool(ABC):
     def analyze_files_async(
         cls,
         files: list[ToolAnalyzeArgs],
-        tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]
-    ) -> list[FinalResult]:
+        tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither],
+        stream: bool = False
+    ) -> Generator | list[FinalResult]:
 
         def analyze_single_file(args: ToolAnalyzeArgs) -> FinalResult:
             start: float = time.time()
@@ -241,14 +238,21 @@ class Tool(ABC):
             results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
             Log.info(f"Analyzing {args.file_name} finished ..............")
             end:float = time.time()
-                    
+            # print(results)
+
             return cls.merge_results(results, duration=end-start)
             # return results[0]
 
+        if (stream):
+            return Async.run_single_func_stream(
+                func=analyze_single_file,
+                arr_args=[[file] for file in files]
+            )
+
         return Async.run_single_func(
-            func=analyze_single_file,
-            arr_args=[[file] for file in files],
-        )
+                func=analyze_single_file,
+                arr_args=[[file] for file in files]
+            )
 
 
     @classmethod
@@ -265,7 +269,7 @@ class Tool(ABC):
             except Exception as e:
                 Log.err(f'Error occured when export final_result of file {file_name}:\n{final_result}')
                 Log.err(e)
-    
+
     #NOTE: For testing
     @classmethod
     def export_merge_result(cls, file_name: str, result, duration, directory_path):
@@ -366,24 +370,24 @@ class Tool(ABC):
                 case _:
                     return solc if solc in cls.valid_solcs else ErrorClassification.UndefinedSolc
             return res
-        
-    @classmethod
-    def run_tools(cls, files_name: List[str], tools: List[str], username: str) ->dict:
-        tools_literal = cls.convert_str_to_enum(tools)
-        files_directory = []
-        for file_name in files_name:
-            file = ToolAnalyzeArgs(
-                sub_container_file_path = f"{username}/contracts",
-                file_name = file_name
-            )
-            files_directory.append(file)
-        return obj_to_jsondict(cls.analyze_files_async(files_directory, tools_literal))
-            
-    @staticmethod
-    def convert_str_to_enum(tools: List[str]) -> List[ToolName]:
-        tools_literal = []
-        for tool in tools:
-            if tool in ToolName.__members__:
-                tool_literal = ToolName[tool]
-                tools_literal.append(tool_literal)
-        return tools_literal
+
+    # @classmethod
+    # def run_tools(cls, files_name: List[str], tools: List[str], username: str) ->dict:
+    #     tools_literal = cls.convert_str_to_enum(tools)
+    #     files_directory = []
+    #     for file_name in files_name:
+    #         file = ToolAnalyzeArgs(
+    #             sub_container_file_path = f"{username}/contracts",
+    #             file_name = file_name
+    #         )
+    #         files_directory.append(file)
+    #     return obj_to_jsondict(cls.analyze_files_async(files_directory, tools_literal))
+
+    # @staticmethod
+    # def convert_str_to_enum(tools: List[str]) -> List[ToolName]:
+    #     tools_literal = []
+    #     for tool in tools:
+    #         if tool in ToolName.__members__:
+    #             tool_literal = ToolName[tool]
+    #             tools_literal.append(tool_literal)
+    #     return tools_literal

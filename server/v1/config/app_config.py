@@ -1,4 +1,4 @@
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from flask import Blueprint, Flask
 from typing import Any
 
@@ -19,22 +19,22 @@ def get_app_config(key: str) -> Any:
         raise Exception(f"APP_CONFIG with key {key} is not exists")
     return value
 
-def setup_app_config(app: Flask):
+def setup_app_config(app: Flask) -> None:
     CORS(app, origins=get_app_config("ALLOWED_ORIGINS"),  supports_credentials=True)
 
     #stop automate sorting dict response
-    app.json.sort_keys = False
-    
+    app.json.sort_keys = False # type: ignore
+
     client_route = Blueprint("client", __name__, url_prefix="/api/v1/client")
     client_route.register_blueprint(auth_route)
     client_route.register_blueprint(tool_route)
 
     admin_route = Blueprint("admin", __name__, url_prefix="/api/v1/admin")
     admin_route.register_blueprint(user_route)
-    
+
     app.register_blueprint(client_route)
     app.register_blueprint(admin_route)
-    
 
-def get_local_storage_path():
+
+def get_local_storage_path() -> str:
     return storage_path

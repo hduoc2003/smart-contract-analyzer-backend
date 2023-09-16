@@ -1,6 +1,4 @@
 import json
-from math import e
-from typing import Container
 from typing_extensions import override
 from tools.Tool import Tool
 from tools.Tool import FinalResult
@@ -8,7 +6,7 @@ from tools.Tool import RawResult
 from tools.docker.Docker import Docker
 from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
-from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, map_slither_check_to_swc,get_swc_no
+from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, get_swc_no
 
 
 class Slither(Tool):

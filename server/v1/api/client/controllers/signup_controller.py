@@ -16,7 +16,7 @@ def handle_signup() -> tuple[Response, int] | Response:
         return jsonify({"message": "Username already exists"}), StatusCode.Conflict.value
 
     new_user = create_new_user(data, username)
-    current_time = datetime.utcnow()
+    current_time: datetime = datetime.utcnow()
     response_data = format_sign_up_response(new_user, username, current_time)
 
     return jsonify(response_data)

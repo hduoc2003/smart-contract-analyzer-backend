@@ -1,11 +1,8 @@
-from enum import Enum
-from mongoengine import Document, StringField, FloatField,BooleanField, DateTimeField, EnumField, IntField, FileField, ListField, EmbeddedDocumentField, EmbeddedDocument, DictField
-from datetime import datetime
-from bson import ObjectId  # Import ObjectId for generating unique IDs
+from mongoengine import Document, StringField, FloatField,ListField
 import json
-from server.v1.api.utils.FlaskLog import FlaskLog
 import os
 import server.v1.config.app_config
+from werkzeug.datastructures.file_storage import FileStorage
 
 import uuid
 
@@ -15,28 +12,29 @@ class FileDoc(Document):
     tool_name = StringField(required=True)
     duration = FloatField(required=True)
     analysis = ListField(required=True)
-    meta = {
+    meta: dict[str, str] = {
         "collection": "files"
     }
-    
+
 def str_to_dict(data: str)->dict:
     return json.loads(data)
-def add_issue_ids(data: dict) ->dict:
+
+def add_issue_ids(data: dict) -> None:
     for file in data:
         count = 0
         # Ensure there are issues in the JSON data
-        issues = file["analysis"]["issues"]    
+        issues = file["analysis"]["issues"]
         for issue in issues:
             issue["id"] =  count # Generate a unique ObjectId and convert it to a string
             count +=1
 
-def create_file_doc(result: dict):
+def create_file_doc(result: dict) -> None:
     for file in result:
         (file_name, tool_name, duration, analysis) = extract_file_res(file)
         issues = []
         count = 0
-        
-            
+
+
         for issue_data in analysis["issues"]:
             issue = {
                 "id": count,
@@ -77,9 +75,9 @@ def extract_file_res(result: dict) ->tuple[str, float, str, dict]:
     analysis = result["analysis"]
     return (file_name, tool_name,duration, analysis)
 
-def save_file(file_name, file_data, user_name):
-    user_storage = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, "contracts")
+def save_file(file_name: str, file_data: FileStorage, user_name: str) -> None:
+    user_storage: str = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, "contracts")
     if not os.path.exists(user_storage):
         os.makedirs(user_storage)
-        
+
     file_data.save(os.path.join(user_storage, file_name))

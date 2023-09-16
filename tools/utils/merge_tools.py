@@ -1,8 +1,7 @@
 
-from typing import Union, List
+from typing import List
 from tools.types import FinalResult, AnalysisIssue, AnalysisResult
 import os
-import json
 from tools.utils.Log import Log
 from tools.utils.parsers import obj_to_jsonstr
 import copy

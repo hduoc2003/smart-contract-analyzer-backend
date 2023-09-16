@@ -22,25 +22,25 @@ class UserDoc(Document):
     created_at = DateTimeField(default=datetime.utcnow())
     last_modified_at = DateTimeField(default=datetime.utcnow())
 
-    meta = {
+    meta: dict[str, str] = {
         'collection': 'users'
     }
 
 def username_exists(username: str) -> bool:
     user = UserDoc.objects(username=username).first()
-    
+
     # If a user with the given username is found, return True; otherwise, return False
     return user is not None
 
-def update_last_online(username):
-        
+def update_last_online(username) -> None:
+
     user = UserDoc.objects(username=username).first()
         # uk_users = User.objects(country='uk')
     if user:
         user.last_online = datetime.now()
         user.save()
-        
-def get_field_value(username, field_name):
+
+def get_field_value(username, field_name) -> Any | None:
     """
     Dùng cái này gán tên người dùng và field cần lấy, đỡ viết nhiều hàm get quá
     Args:
@@ -49,13 +49,13 @@ def get_field_value(username, field_name):
 
     Returns:
         Giá trị của field_name
-    """    
+    """
     #example: user = User.objects(last_online="john123").first()
-    user = UserDoc.objects(**{field_name: username}).first()    
+    user = UserDoc.objects(**{field_name: username}).first()
     if user:
         return getattr(user, field_name)
     return None
-    
+
 def create_new_user(data: Any, username: str):
     current_time: datetime = datetime.utcnow()
     new_user = UserDoc(

@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint
 from server.v1.api.client.controllers.signin_controller import handle_login
 from server.v1.api.client.controllers.signup_controller import handle_signup
 
