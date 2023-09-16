@@ -31,6 +31,7 @@ map_check_to_issue: dict[str, str] = {
    'unchecked-transfer': 'unchecked-transfer',
    'weak-prng': 'weak-prng',
    'codex': 'codex',
+   'reentrancy-benign': 'reentrancy-vulnerabilities',
    'domain-separator-collision': 'domain-separator-collision',
    'enum-conversion': 'dangerous-enum-conversion',
    'erc20-interface': 'incorrect-erc20-interface',
