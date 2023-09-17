@@ -116,8 +116,6 @@ class DuplicateIssue():
         analysis_issues.extend(slither_issues_left)
         analysis_issues.extend(mythril_issues_left)
 
-        #export duplicate_issues_detected ra file
-        cls.export_duplicate_result(file_name, duplicate_issues_detected)
         return analysis_issues
 
     @classmethod

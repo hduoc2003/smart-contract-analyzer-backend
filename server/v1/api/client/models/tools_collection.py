@@ -1,3 +1,4 @@
+from flask import jsonify
 from mongoengine import Document, StringField, FloatField,ListField
 import json
 import os
@@ -75,9 +76,13 @@ def extract_file_res(result: dict) ->tuple[str, float, str, dict]:
     analysis = result["analysis"]
     return (file_name, tool_name,duration, analysis)
 
-def save_file(file_name: str, file_data: FileStorage, user_name: str) -> None:
+def save_file(id: str, file_name: str, file_data: FileStorage, user_name: str) -> None:
     user_storage: str = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, "contracts")
     if not os.path.exists(user_storage):
         os.makedirs(user_storage)
 
     file_data.save(os.path.join(user_storage, file_name))
+
+def get_file_by_id(id):
+    file = FileDoc.objects(id = id).first()
+    return jsonify(file)

@@ -20,6 +20,8 @@ def get_app_config(key: str) -> Any:
     return value
 
 def setup_app_config(app: Flask) -> None:
+    app.secret_key = "abc"
+
     CORS(app, origins=get_app_config("ALLOWED_ORIGINS"),  supports_credentials=True)
 
     #stop automate sorting dict response
