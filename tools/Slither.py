@@ -6,7 +6,7 @@ from tools.Tool import RawResult
 from tools.docker.Docker import Docker
 from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
-from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, get_swc_no
+from tools.utils.SWC import get_swc_link, get_swc_no, get_swc_title, get_title_name, link_hint
 
 
 class Slither(Tool):
@@ -81,8 +81,9 @@ class Slither(Tool):
     def convert_source_map_represent(source_map: dict) -> str:
         start = source_map["start"]
         len = source_map["length"]
-        return f'{start}:{len}:0'
+        return f'{start}:{len}'
 
+    @override
     @classmethod
     def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str, solc: str) -> FinalResult:
         issues: list[AnalysisIssue] = []
@@ -95,10 +96,10 @@ class Slither(Tool):
                 contract= Slither.get_contract(element) if element else "",
                 source_map= Slither.convert_source_map_represent(element["source_mapping"]) if element else "",
                 line_no=element["source_mapping"]["lines"] if element else [],
-                code="Không có source code :(, FE tự điền ứng với sourcemap nhé",
+                code="",
                 description=detector['description'] ,
                 hint= link_hint(detector["check"]),
-                issue_title= detector['check'],
+                issue_title= get_title_name(detector['check']),
                 swcID= swcID,
                 swc_title=get_swc_title(swcID),
                 swc_link=get_swc_link(swcID),

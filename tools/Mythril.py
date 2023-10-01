@@ -30,7 +30,7 @@ class Mythril(Tool):
                 raise Exception(f"{contract} in {file_name} has wrong swc-id: {swcID}")
             issues.append(AnalysisIssue(
                 contract=contract,
-                source_map=raw_issue['sourceMap'],
+                source_map=parse_source_map(raw_issue['sourceMap']),
                 line_no=raw_issue['lineno'],
                 code=raw_issue['code'],
                 description=raw_issue['description'],
@@ -142,3 +142,7 @@ class Mythril(Tool):
         container.remove() # type: ignore
 
         return (errors, logs)
+
+def parse_source_map(source_map) -> str:
+    src_map_shorten = source_map[:4]
+    return src_map_shorten

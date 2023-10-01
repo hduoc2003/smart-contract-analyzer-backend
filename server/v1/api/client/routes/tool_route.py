@@ -14,7 +14,6 @@ from tools.utils.parsers import obj_to_jsonstr, obj_to_json
 from tools.types import FinalResult
 from typing import Generator
 from flask import current_app
-
 from server.v1.api.utils.StatusCode import StatusCode
 
 tool_route = Blueprint("tool_bp", __name__, url_prefix="/tool")
@@ -23,35 +22,41 @@ tool_route = Blueprint("tool_bp", __name__, url_prefix="/tool")
 @cross_origin(supports_credentials=True)
 def handle_files():
     user_name = "tung123"
-    #TODO:gen_id
-    id = generate_request_id()
-    id_str = str(id)
-    
+    id = str(generate_request_id())
+        
     if request is None:
         return jsonify({"message": "Nothing requested"}), StatusCode.BadRequest.value
+    
     files_data: ImmutableMultiDict[str, FileStorage] = request.files
     file_keys: dict_keys[str, FileStorage] = files_data.keys()
-    files_list:list[str] = []
+    
+    response_data = {'uuid': id}
 
     for file_key in file_keys:
         file_data: FileStorage = files_data[file_key]
+        file_id: str = str(generate_request_id())
         file_name: str | None = file_data.filename
         if (file_name is None):
             continue
-        save_file(id_str, file_name, file_data, user_name)
-
-        files_list.append(file_name)
-    session["id"] = id_str
-    session["files_list"] = files_list
-    response_data = {'uuid': id_str}
+        save_file(id, file_id, file_data, user_name)
+        response_data[file_name] = file_id
+        
+    session["id"] = id
     print("SESSION ID", session.get('id'))
 
     return jsonify(response_data)
 
+@tool_route.route("/handle_results",methods=["GET"])
+@cross_origin(supports_credentials=True)
+def handle_get_result_id():
+    if request.method == "GET":
+        # Handle the GET request here
+        return "This is a GET request."
 
 @tool_route.route("/handle_results",methods=["POST"])
 @cross_origin(supports_credentials=True)
 def handle_result_id():
+    print("HANDLE ID")
     user_name = "tung123"
 
     id_param = request.args.get('id')
@@ -62,7 +67,8 @@ def handle_result_id():
     if id_param != session.get('id'):
         return "Nope wrong id matching", 400
 
-    files_list = session["files_list"]
+    files_list =  get_all_files(id_param, user_name)
+    print("files_list", files_list)
     result_stream: Generator = Tool.analyze_files_async(
         files=[
             ToolAnalyzeArgs(
@@ -78,7 +84,7 @@ def handle_result_id():
             create_file_doc_background(final_result)
             
             yield obj_to_jsonstr(final_result)
-    # session.pop('id', None)
+    session.pop('id', None)
     # session.pop('files_list', None)
     return Response(temp())
 
@@ -98,3 +104,27 @@ def create_file_doc_background(result:FinalResult) -> None:
 def generate_request_id():
     new_id = uuid.uuid4()
     return new_id
+
+def get_all_files(id: str, username: str) -> list[str]:
+    files_path = os.path.join(server.v1.config.app_config.get_local_storage_path(), username, id, "contracts")
+    file_list = os.listdir(files_path)
+
+    return file_list
+    
+    
+
+@tool_route.route('/handle_file_id',methods=["GET"])
+@cross_origin(supports_credentials=True)
+def handle_file_id():
+    id_param = request.args.get('id');
+    file = get_file_by_id(id_param)
+    file_dict = {
+        "file_id": file.file_id,
+        "file_name": file.file_name,
+        "tool_name": file.tool_name,
+        "duration": file.duration,
+        "analysis": file.analysis,
+        # Add more fields as needed
+    }
+    file_json = obj_to_json(file_dict)  # Use indent for pretty formatting
+    return file_json
