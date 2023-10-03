@@ -18,6 +18,8 @@ from server.v1.api.utils.StatusCode import StatusCode
 
 tool_route = Blueprint("tool_bp", __name__, url_prefix="/tool")
 
+file_name_queue = []
+file_id_queue = []
 @tool_route.route("/handle_files",methods=["POST"])
 @cross_origin(supports_credentials=True)
 def handle_files():
@@ -40,7 +42,8 @@ def handle_files():
             continue
         save_file(id, file_id, file_data, user_name)
         response_data[file_name] = file_id
-        # session["file_name"].append(file_name)
+        file_name_queue.append(file_name)
+        file_id_queue.append(file_id)
         
     session["id"] = id
 
@@ -134,3 +137,45 @@ def handle_file_id():
         return file_json
     else:
         return "File not found", 404  # Return a 404 Not Found status code
+def create_file_doc(result: FinalResult) -> list[str]:
+    # (file_name, tool_name, duration, analysis) = extract_file_res(result)
+    file_name = result.file_name
+    tool_name = result.tool_name
+    duration = result.duration
+    analysis = result.analysis
+    issues = []
+    count = 0
+    files_id: list[str] = [] 
+    for issue_data in analysis.issues:
+        issue = {
+            "id": count,
+            "contract": issue_data.contract,
+            "source_map": issue_data.source_map,
+            "line_no": issue_data.line_no,
+            "code": issue_data.code,
+            "description": issue_data.description,
+            "hint": issue_data.hint,
+            "issue_title": issue_data.issue_title,
+            "swcID": issue_data.swcID,
+            "swc_title": issue_data.swc_title,
+            "swc_link": issue_data.swc_link,
+            "severity": issue_data.severity
+        }
+        count += 1
+        issues.append(issue)
+    new_file = FileDoc(
+        file_id=file_id_queue.pop(0),
+        file_name=file_name_queue.pop(0),
+        tool_name=tool_name,
+        duration=duration,
+        analysis=[
+            {
+                "errors": analysis.errors
+            },
+            {
+                "issues": issues
+            }
+        ]
+    )
+    new_file.save()
+    return files_id

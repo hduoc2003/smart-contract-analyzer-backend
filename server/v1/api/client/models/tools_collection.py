@@ -30,49 +30,6 @@ def str_to_dict(data: str)->dict:
 #             issue["id"] =  count # Generate a unique ObjectId and convert it to a string
 #             count +=1
 
-def create_file_doc(result: FinalResult) -> list[str]:
-    # (file_name, tool_name, duration, analysis) = extract_file_res(result)
-    file_name = result.file_name
-    tool_name = result.tool_name
-    duration = result.duration
-    analysis = result.analysis
-    issues = []
-    count = 0
-    files_id: list[str] = [] 
-    for issue_data in analysis.issues:
-        issue = {
-            "id": count,
-            "contract": issue_data.contract,
-            "source_map": issue_data.source_map,
-            "line_no": issue_data.line_no,
-            "code": issue_data.code,
-            "description": issue_data.description,
-            "hint": issue_data.hint,
-            "issue_title": issue_data.issue_title,
-            "swcID": issue_data.swcID,
-            "swc_title": issue_data.swc_title,
-            "swc_link": issue_data.swc_link,
-            "severity": issue_data.severity
-        }
-        count += 1
-        issues.append(issue)
-    root, extention = os.path.splitext(file_name)
-    new_file = FileDoc(
-        file_id=str(root),
-        file_name=file_name,
-        tool_name=tool_name,
-        duration=duration,
-        analysis=[
-            {
-                "errors": analysis.errors
-            },
-            {
-                "issues": issues
-            }
-        ]
-    )
-    new_file.save()
-    return files_id
 
 # def extract_file_res(result: dict) ->tuple[str, float, str, dict]:
 #     file_name = result["file_name"]
