@@ -56,9 +56,9 @@ def create_file_doc(result: FinalResult) -> list[str]:
         }
         count += 1
         issues.append(issue)
-    file_id = str(uuid.uuid4())
+    root, extention = os.path.splitext(file_name)
     new_file = FileDoc(
-        file_id=file_id,
+        file_id=str(root),
         file_name=file_name,
         tool_name=tool_name,
         duration=duration,
@@ -100,3 +100,6 @@ def get_file_by_id(id) -> FileDoc:
         # If the specified ID is not found, you can raise an exception or return None
         # Here, we'll return None for simplicity
         return None # type: ignore
+    
+    
+    

@@ -40,8 +40,10 @@ def handle_files():
             continue
         save_file(id, file_id, file_data, user_name)
         response_data[file_name] = file_id
+        # session["file_name"].append(file_name)
         
     session["id"] = id
+
     print("SESSION ID", session.get('id'))
 
     return jsonify(response_data)
