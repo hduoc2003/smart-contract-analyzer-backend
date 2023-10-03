@@ -113,18 +113,22 @@ def get_all_files(id: str, username: str) -> list[str]:
     
     
 
-@tool_route.route('/handle_file_id',methods=["GET"])
+@tool_route.route('/handle_file_id', methods=["GET"])
 @cross_origin(supports_credentials=True)
 def handle_file_id():
-    id_param = request.args.get('id');
+    id_param = request.args.get('id')
     file = get_file_by_id(id_param)
-    file_dict = {
-        "file_id": file.file_id,
-        "file_name": file.file_name,
-        "tool_name": file.tool_name,
-        "duration": file.duration,
-        "analysis": file.analysis,
-        # Add more fields as needed
-    }
-    file_json = obj_to_json(file_dict)  # Use indent for pretty formatting
-    return file_json
+    
+    if file is not None:
+        file_dict = {
+            "file_id": file.file_id,
+            "file_name": file.file_name,
+            "tool_name": file.tool_name,
+            "duration": file.duration,
+            "analysis": file.analysis,
+            # Add more fields as needed
+        }
+        file_json = obj_to_json(file_dict)  # Use indent for pretty formatting
+        return file_json
+    else:
+        return "File not found", 404  # Return a 404 Not Found status code

@@ -92,5 +92,11 @@ def save_file(id: str, file_id: str, file_data: FileStorage, user_name: str) -> 
         print("File not exist")
         
 def get_file_by_id(id) -> FileDoc:
-    file = FileDoc.objects(file_id = id).first()
-    return file
+    file = FileDoc.objects(file_id=id).first()
+    
+    if file is not None:
+        return file
+    else:
+        # If the specified ID is not found, you can raise an exception or return None
+        # Here, we'll return None for simplicity
+        return None # type: ignore
