@@ -13,6 +13,7 @@ class FileDoc(Document):
     file_name = StringField(required=True)
     tool_name = StringField(required=True)
     duration = FloatField(required=True)
+    solc= StringField(required=True)
     analysis = ListField(required=True)
     meta: dict[str, str] = {
         "collection": "files"

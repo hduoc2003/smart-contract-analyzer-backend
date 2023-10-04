@@ -41,6 +41,7 @@ class AnalysisResult:
 
 @dataclass
 class FinalResult:
+    file_id: str
     file_name: str
     tool_name: str
     duration: float

@@ -125,6 +125,7 @@ class Tool(ABC):
         solc: str = results[0].solc
         analysisResult: AnalysisResult = DuplicateIssue.merge(results[0], results[1])
         return FinalResult(
+            file_id="",
             file_name=file_name,
             tool_name=tool_name,
             duration=duration,
@@ -150,6 +151,7 @@ class Tool(ABC):
             errors += results[i].analysis.errors
             issues += results[i].analysis.issues
         return FinalResult(
+            file_id="",
             file_name=file_name,
             tool_name=tool_name,
             duration=duration,
@@ -206,6 +208,7 @@ class Tool(ABC):
             solc: str | ErrorClassification = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
             if (isinstance(solc, ErrorClassification)):
                 return FinalResult(
+                    file_id="",
                     file_name=args.file_name,
                     tool_name="",
                     duration=time.time() - start,

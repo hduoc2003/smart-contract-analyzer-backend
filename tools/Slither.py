@@ -108,6 +108,7 @@ class Slither(Tool):
             issues.append(issue)
 
         final_result = FinalResult(
+            file_id="",
             file_name=file_name,
             tool_name=Slither.tool_name.value,
             duration = duration,
@@ -121,6 +122,7 @@ class Slither(Tool):
     @classmethod
     def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str, solc: str) -> FinalResult:
         final_result = FinalResult(
+            file_id="",
             file_name=file_name,
             tool_name=Slither.tool_name.value,
             duration=duration,

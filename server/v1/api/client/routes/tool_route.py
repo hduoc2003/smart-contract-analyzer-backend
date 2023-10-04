@@ -86,6 +86,8 @@ def handle_result_id():
     def temp() -> Generator[str, Any, None]:
         for final_result in result_stream:
             # final_result: FinalResult
+            final_result.file_id = file_id_queue[0]
+            final_result.file_name = file_name_queue[0]
             create_file_doc_background(final_result)
             
             yield obj_to_jsonstr(final_result)
@@ -130,6 +132,7 @@ def handle_file_id():
             "file_name": file.file_name,
             "tool_name": file.tool_name,
             "duration": file.duration,
+            "solc": file.solc,
             "analysis": file.analysis,
             # Add more fields as needed
         }
@@ -142,6 +145,7 @@ def create_file_doc(result: FinalResult) -> list[str]:
     file_name = result.file_name
     tool_name = result.tool_name
     duration = result.duration
+    solc = result.solc
     analysis = result.analysis
     issues = []
     count = 0
@@ -168,6 +172,7 @@ def create_file_doc(result: FinalResult) -> list[str]:
         file_name=file_name_queue.pop(0),
         tool_name=tool_name,
         duration=duration,
+        solc = solc,
         analysis=[
             {
                 "errors": analysis.errors
