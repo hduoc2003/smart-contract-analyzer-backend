@@ -56,7 +56,7 @@ def check_existed_id_in_volume(submit_id,user_name)-> bool:
     return False
 def get_file_by_id(id) -> FileDoc:
     file = FileDoc.objects(file_id=id).first()
-    
+    print("FILE ", file)
     if file is not None:
         return file
     else:

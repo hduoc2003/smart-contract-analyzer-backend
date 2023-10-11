@@ -140,14 +140,7 @@ def handle_file_id():
     if id_param is None:
         return jsonify({"message:", "Missing file id param"})
     #NOTE: Neu dang tinh toan-> tra ve status
-    if id_param +'.sol' in current_files_state:
-        for file in submit_format:
-            print("File[file_id]", file["file_id"])
-            print("file_id", id_param)
-            if file["file_id"] == id_param:
-                return jsonify(file)
-        # return jsonify({"file_state": current_files_state[id_param]}), 200
-    
+
     file = get_file_by_id(id_param)
     if file is not None:
         file_dict = {
@@ -159,11 +152,19 @@ def handle_file_id():
             "analysis": file.analysis,
         }
         # file_json = obj_to_json(file_dict)  # Use indent for pretty formatting
-        response = {"file_state": "Completed"}
+        response = {"file_status": "Completed"}
         # file_tuple = [(key, value) for key, value in file_dict]
         response.update(file_dict)
         return response
     else:
+        if id_param +'.sol' in current_files_state:
+            for file in submit_format:
+                print("File[file_id]", file["file_id"])
+                print("file_id", id_param)
+                if file["file_id"] == id_param:
+                    return jsonify(file)
+        # return jsonify({"file_state": current_files_state[id_param]}), 200
+    
         return "File not found", 404  # Return a 404 Not Found status code
 
 @tool_route.route('/handle_submit_id',methods=['GET'])
@@ -176,6 +177,9 @@ def handle_submit_id():
     if (current_files_state == {}):
         print("current_files_state is empty")
         submit_id =get_submit_by_id(id)
+        if submit_id is None:
+            return "submit_it doesn't exist", 404 # Return
+            
         response_file = {}
         response_submit = []
         for file in submit_id:
