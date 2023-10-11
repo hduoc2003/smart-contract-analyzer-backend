@@ -193,6 +193,51 @@ class Tool(ABC):
             case _:
                 raise Exception(f"Tool.get_tool_error: {error} is not processed yet.")
 
+
+    @classmethod
+    def analyze_single_file(cls, args: ToolAnalyzeArgs,tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]) -> FinalResult:
+            start: float = time.time()
+            from tools.Mythril import Mythril
+            from tools.Slither import Slither
+            solc: str | ErrorClassification = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
+            if (isinstance(solc, ErrorClassification)):
+                return FinalResult(
+                    file_id="",
+                    file_name=args.file_name,
+                    tool_name="",
+                    duration=time.time() - start,
+                    solc="",
+                    analysis=AnalysisResult(
+                        errors=[cls.get_tool_error(solc)],
+                        issues=[]
+                    )
+                )
+            Log.info(f"Analyzing {args.file_name} using solc {solc} ..................")
+            tasks: list[Callable] = []
+            arr_args: list[list] = []
+            for tool_name in tools:
+                match tool_name:
+                    case ToolName.Mythril:
+                        tasks.append(Mythril.analyze)
+                    case ToolName.Slither:
+                        tasks.append(Slither.analyze)
+                    case _:
+                        Log.warn(f'Function analyze_single_file: There are no tool named {tool_name}')
+                arr_args.append([ToolAnalyzeArgs(
+                    sub_container_file_path=args.sub_container_file_path,
+                    file_name=args.file_name,
+                    solc=solc
+                )])
+            if (len(tasks) != len(tools)):
+                raise Exception(f"Function analyze_single_file: the length of tasks is {len(tasks)} \
+                                is not equal to the length of tools which is {len(tools)}")
+
+            results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
+            Log.info(f"Analyzing {args.file_name} finished ..............")
+            end:float = time.time()
+            # print(results)
+
+            return cls.merge_results(results, duration=end-start)
     @classmethod
     def analyze_files_async(
         cls,

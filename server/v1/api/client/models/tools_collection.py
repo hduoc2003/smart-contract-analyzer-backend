@@ -9,6 +9,7 @@ import uuid
 from tools.types import FinalResult
 
 class FileDoc(Document):
+    submit_id = StringField()
     file_id = StringField(unique=True)  # Remove default value
     file_name = StringField(required=True)
     tool_name = StringField(required=True)
@@ -48,7 +49,11 @@ def save_file(id: str, file_id: str, file_data: FileStorage, user_name: str) -> 
         file_data.save(os.path.join(user_storage, file_id))
     except Exception as e:
         print("File not exist")
-        
+def check_existed_id_in_volume(submit_id,user_name)-> bool:
+    directory = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name)
+    if submit_id in os.listdir(directory):
+        return True
+    return False
 def get_file_by_id(id) -> FileDoc:
     file = FileDoc.objects(file_id=id).first()
     
@@ -60,4 +65,11 @@ def get_file_by_id(id) -> FileDoc:
         return None # type: ignore
     
     
-    
+def get_submit_by_id(id) -> list[FileDoc]:
+    submit = FileDoc.objects(submit_id=id)
+    if submit:
+        return submit
+    else:
+        return None # type: ignore
+
+
