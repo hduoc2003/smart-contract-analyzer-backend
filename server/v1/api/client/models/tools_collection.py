@@ -18,7 +18,7 @@ class FileDoc(Document):
     analysis = ListField(required=True)
     source_code = StringField(required=True)
     meta: dict[str, str] = {
-        "collection": "files"
+        "collection": "files_v2"
     }
 
 def str_to_dict(data: str)->dict:

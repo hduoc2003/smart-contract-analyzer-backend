@@ -115,7 +115,7 @@ def handle_result_id():
     print(f"files_list: {files_list}")
     for file_format in submit_format:
         print(file_format["file_id"])
-    submit_format = [file_format for file_format in submit_format if file_format["file_id"] +'.sol' in files_list]
+    # submit_format = [file_format for file_format in submit_format if file_format["file_id"] +'.sol' in files_list]
     for file_id in files_list:
         if file_id not in results:  
             thread = threading.Thread(target=analyze_file, args=(user_name, id_param, file_id))
