@@ -52,7 +52,7 @@ def handle_files():
             "file_status": "Not started"
         }
         submit_format.append(file_status)
-        
+    print(submit_format)
     session["id"] = id
     print("SESSION ID", session.get('id'))
     return jsonify(response_data)
@@ -86,6 +86,7 @@ count_enter = {}
 @tool_route.route("/handle_results",methods=["GET"])
 @cross_origin(supports_credentials=True)
 def handle_result_id():
+    global submit_format
     print("file_id", file_id_queue)
     print("file_name", file_name_queue)
     user_name = "tung123"
@@ -111,6 +112,10 @@ def handle_result_id():
         return redirect(url_for('client.tool_bp.handle_submit_id', id = id_param))    
 
     files_list =  get_all_files(id_param, user_name)
+    print(f"files_list: {files_list}")
+    for file_format in submit_format:
+        print(file_format["file_id"])
+    submit_format = [file_format for file_format in submit_format if file_format["file_id"] +'.sol' in files_list]
     for file_id in files_list:
         if file_id not in results:  
             thread = threading.Thread(target=analyze_file, args=(user_name, id_param, file_id))
@@ -119,6 +124,8 @@ def handle_result_id():
             for file in submit_format:
                 if file["file_id"] == extract_file_type(file_id):
                     file["file_status"] = "Continue"
+    # submit_format = [item for item in submit_format if item["file_status"] != "Not started"]
+    # print(submit_format)
 
     return jsonify(submit_format)
     # return jsonify("Analyze started for files:\n" + "\n\t".join(files_list))
@@ -150,6 +157,7 @@ def handle_file_id():
             "duration": file.duration,
             "solc": file.solc,
             "analysis": file.analysis,
+            "source_code":file.source_code,
         }
         # file_json = obj_to_json(file_dict)  # Use indent for pretty formatting
         response = {"file_status": "Completed"}
@@ -165,7 +173,7 @@ def handle_file_id():
                     return jsonify(file)
         # return jsonify({"file_state": current_files_state[id_param]}), 200
     
-        return "File not found", 404  # Return a 404 Not Found status code
+    return "File not found", 404  # Return a 404 Not Found status code
 
 @tool_route.route('/handle_submit_id',methods=['GET'])
 @cross_origin(supports_credentials=True)
@@ -178,7 +186,7 @@ def handle_submit_id():
         print("current_files_state is empty")
         submit_id =get_submit_by_id(id)
         if submit_id is None:
-            return "submit_it doesn't exist", 404 # Return
+            return jsonify({"message": "submit_id doesn't exist"}), 404 # Return
             
         response_file = {}
         response_submit = []
@@ -238,6 +246,8 @@ def create_file_doc(id, result: FinalResult) -> list[str]:
     issues = []
     count = 0
     files_id: list[str] = [] 
+    source_code = get_source_code(id, file_id_queue[0], user_name="tung123")
+    
     for issue_data in analysis.issues:
         issue = {
             "id": count,
@@ -269,7 +279,8 @@ def create_file_doc(id, result: FinalResult) -> list[str]:
             {
                 "issues": issues
             }
-        ]
+        ],
+        source_code=source_code
     )
     new_file.save()
     return files_id
@@ -277,4 +288,19 @@ def extract_file_type(file_id) ->str:
     filename = os.path.basename(file_id)
     name_without_extension, _ = os.path.splitext(filename)
     return name_without_extension
+
+import os
+
+def get_source_code(submit_id, file_id, user_name) -> str:
+    try:
+        file_path = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, submit_id,'contracts', file_id +'.sol')
+        
+        with open(file_path, "r") as f:
+            file_content = f.read()
+        return file_content
+    except IOError as e:
+        print(f"Error reading file: {str(e)}")
+        return "An error occurred while reading the file"
+
+
     

@@ -16,6 +16,7 @@ class FileDoc(Document):
     duration = FloatField(required=True)
     solc= StringField(required=True)
     analysis = ListField(required=True)
+    source_code = StringField(required=True)
     meta: dict[str, str] = {
         "collection": "files"
     }
