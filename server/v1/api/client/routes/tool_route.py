@@ -15,7 +15,7 @@ from tools.types import FinalResult
 from typing import Generator
 from flask import current_app
 from server.v1.api.utils.StatusCode import StatusCode
-
+import os
 tool_route = Blueprint("tool_bp", __name__, url_prefix="/tool")
 file_name_queue = []
 file_id_queue = []
@@ -289,7 +289,6 @@ def extract_file_type(file_id) ->str:
     name_without_extension, _ = os.path.splitext(filename)
     return name_without_extension
 
-import os
 
 def get_source_code(submit_id, file_id, user_name) -> str:
     try:
