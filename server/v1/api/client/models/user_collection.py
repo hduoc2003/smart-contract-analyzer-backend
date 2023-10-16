@@ -4,7 +4,6 @@ from mongoengine import Document, StringField, BooleanField, DateTimeField, Enum
 from datetime import datetime
 import uuid
 
-from server.v1.api.utils.FlaskLog import FlaskLog
 
 class UserRole(Enum):
     ADMIN = "admin"

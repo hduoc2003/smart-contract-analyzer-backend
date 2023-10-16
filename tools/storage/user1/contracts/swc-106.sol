@@ -1,9 +1,18 @@
-pragma solidity >=0.4.11; //fsew
+pragma solidity ^0.4.23;
 
-contract SimpleSuicide {
+contract SuicideMultiTxFeasible {
+    uint256 private initialized = 0;
+    uint256 public count = 1;
 
-  function sudicideAnyone() {
-    selfdestruct(msg.sender);
-  }
+    function init() public {
+        initialized = 1;
+    }
 
+    function run(uint256 input) {
+        if (initialized == 0) {
+            return;
+        }
+
+        selfdestruct(msg.sender);
+    }
 }

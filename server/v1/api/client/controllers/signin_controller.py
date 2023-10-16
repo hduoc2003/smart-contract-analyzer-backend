@@ -3,7 +3,7 @@ from typing import Any
 import logging
 from flask import request, jsonify
 from flask_bcrypt import Bcrypt
-from server.v1.api.client.models.users_collection import *
+from server.v1.api.client.models.user_collection import *
 from server.v1.api.utils.StatusCode import StatusCode
 bcrypt = Bcrypt()
 

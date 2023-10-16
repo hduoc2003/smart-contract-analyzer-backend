@@ -1,5 +1,5 @@
 from flask import Blueprint, Response, request, jsonify
-from server.v1.api.client.models.users_collection import UserDoc
+from server.v1.api.client.models.user_collection import UserDoc
 from server.v1.api.utils.DBCollection import update_one
 from server.v1.api.utils.FlaskLog import FlaskLog
 from server.v1.api.utils.StatusCode import StatusCode

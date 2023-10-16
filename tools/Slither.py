@@ -108,7 +108,6 @@ class Slither(Tool):
             issues.append(issue)
 
         final_result = FinalResult(
-            file_id="",
             file_name=file_name,
             tool_name=Slither.tool_name.value,
             duration = duration,
@@ -122,7 +121,6 @@ class Slither(Tool):
     @classmethod
     def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str, solc: str) -> FinalResult:
         final_result = FinalResult(
-            file_id="",
             file_name=file_name,
             tool_name=Slither.tool_name.value,
             duration=duration,
@@ -147,7 +145,7 @@ class Slither(Tool):
             ))
             return errors
         raw_result_errors = raw_result_json["error"]
-        print(raw_result_errors)
+        # print(raw_result_errors)
         if (isinstance(raw_result_errors, str)):
             if (raw_result_errors.find('Source file requires different compiler version') != -1):
                 errors.append(Tool.get_tool_error(
@@ -178,7 +176,7 @@ class Slither(Tool):
         container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
         cmd = f"timeout {args.timeout}s {cls.tool_cfg.analyze_cmd} {container_file_path}/{args.file_name} {args.options}"
         # print(cmd)
-        print("CONTAINER ", cls.container)
+        # print("CONTAINER ", cls.container)
         logs = Docker.exec_run(
             container=cls.container,
             cmd=cmd
