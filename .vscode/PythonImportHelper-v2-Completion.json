@@ -1,0 +1,2680 @@
+[
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "current_app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "UserDoc",
+        "importPath": "server.v1.api.client.models.users_collection",
+        "description": "server.v1.api.client.models.users_collection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "server.v1.api.client.models.users_collection",
+        "description": "server.v1.api.client.models.users_collection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "server.v1.api.client.models.users_collection",
+        "description": "server.v1.api.client.models.users_collection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "UserDoc",
+        "importPath": "server.v1.api.client.models.users_collection",
+        "description": "server.v1.api.client.models.users_collection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "UserDoc",
+        "importPath": "server.v1.api.client.models.users_collection",
+        "description": "server.v1.api.client.models.users_collection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "username_exists",
+        "importPath": "server.v1.api.client.models.users_collection",
+        "description": "server.v1.api.client.models.users_collection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "update_one",
+        "importPath": "server.v1.api.utils.DBCollection",
+        "description": "server.v1.api.utils.DBCollection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.DBCollection",
+        "documentation": {}
+    },
+    {
+        "label": "FlaskLog",
+        "importPath": "server.v1.api.utils.FlaskLog",
+        "description": "server.v1.api.utils.FlaskLog",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.FlaskLog",
+        "documentation": {}
+    },
+    {
+        "label": "FlaskLog",
+        "importPath": "server.v1.api.utils.FlaskLog",
+        "description": "server.v1.api.utils.FlaskLog",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.FlaskLog",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "server.v1.api.utils.FlaskLog",
+        "description": "server.v1.api.utils.FlaskLog",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.FlaskLog",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "importPath": "server.v1.api.utils.StatusCode",
+        "description": "server.v1.api.utils.StatusCode",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "importPath": "server.v1.api.utils.StatusCode",
+        "description": "server.v1.api.utils.StatusCode",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "importPath": "server.v1.api.utils.StatusCode",
+        "description": "server.v1.api.utils.StatusCode",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "importPath": "server.v1.api.utils.StatusCode",
+        "description": "server.v1.api.utils.StatusCode",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "importPath": "server.v1.api.utils.StatusCode",
+        "description": "server.v1.api.utils.StatusCode",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "importPath": "server.v1.api.utils.StatusCode",
+        "description": "server.v1.api.utils.StatusCode",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "importPath": "server.v1.api.utils.StatusCode",
+        "description": "server.v1.api.utils.StatusCode",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Type",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "Bcrypt",
+        "importPath": "flask_bcrypt",
+        "description": "flask_bcrypt",
+        "isExtraImport": true,
+        "detail": "flask_bcrypt",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "FloatField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "ListField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "BooleanField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "DateTimeField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "EnumField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "connect",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "server.v1.config.app_config",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "server.v1.config.app_config",
+        "description": "server.v1.config.app_config",
+        "detail": "server.v1.config.app_config",
+        "documentation": {}
+    },
+    {
+        "label": "setup_app_config",
+        "importPath": "server.v1.config.app_config",
+        "description": "server.v1.config.app_config",
+        "isExtraImport": true,
+        "detail": "server.v1.config.app_config",
+        "documentation": {}
+    },
+    {
+        "label": "FileStorage",
+        "importPath": "werkzeug.datastructures.file_storage",
+        "description": "werkzeug.datastructures.file_storage",
+        "isExtraImport": true,
+        "detail": "werkzeug.datastructures.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "FileStorage",
+        "importPath": "werkzeug.datastructures.file_storage",
+        "description": "werkzeug.datastructures.file_storage",
+        "isExtraImport": true,
+        "detail": "werkzeug.datastructures.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolAnalyzeArgs",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisIssue",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisIssue",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorClassification",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolAnalyzeArgs",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolError",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolName",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisIssue",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorClassification",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolAnalyzeArgs",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolError",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolName",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisIssue",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorClassification",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ImageConfig",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ImageVolume",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolAnalyzeArgs",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolError",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolName",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolAnalyzeArgs",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolName",
+        "importPath": "tools.types",
+        "description": "tools.types",
+        "isExtraImport": true,
+        "detail": "tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "unique",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "unique",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "handle_login",
+        "importPath": "server.v1.api.client.controllers.signin_controller",
+        "description": "server.v1.api.client.controllers.signin_controller",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.controllers.signin_controller",
+        "documentation": {}
+    },
+    {
+        "label": "handle_signup",
+        "importPath": "server.v1.api.client.controllers.signup_controller",
+        "description": "server.v1.api.client.controllers.signup_controller",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.controllers.signup_controller",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "flask_session",
+        "description": "flask_session",
+        "isExtraImport": true,
+        "detail": "flask_session",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "flask_session",
+        "description": "flask_session",
+        "isExtraImport": true,
+        "detail": "flask_session",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "tools.Tool",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "RawResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "RawResult",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "tools.Tool",
+        "description": "tools.Tool",
+        "isExtraImport": true,
+        "detail": "tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "server.v1.api.client.models.tools_collection",
+        "description": "server.v1.api.client.models.tools_collection",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.models.tools_collection",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "ImmutableMultiDict",
+        "importPath": "werkzeug.datastructures.structures",
+        "description": "werkzeug.datastructures.structures",
+        "isExtraImport": true,
+        "detail": "werkzeug.datastructures.structures",
+        "documentation": {}
+    },
+    {
+        "label": "dict_keys",
+        "importPath": "_collections_abc",
+        "description": "_collections_abc",
+        "isExtraImport": true,
+        "detail": "_collections_abc",
+        "documentation": {}
+    },
+    {
+        "label": "obj_to_jsonstr",
+        "importPath": "tools.utils.parsers",
+        "description": "tools.utils.parsers",
+        "isExtraImport": true,
+        "detail": "tools.utils.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "obj_to_json",
+        "importPath": "tools.utils.parsers",
+        "description": "tools.utils.parsers",
+        "isExtraImport": true,
+        "detail": "tools.utils.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "obj_to_jsonstr",
+        "importPath": "tools.utils.parsers",
+        "description": "tools.utils.parsers",
+        "isExtraImport": true,
+        "detail": "tools.utils.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "obj_to_jsonstr",
+        "importPath": "tools.utils.parsers",
+        "description": "tools.utils.parsers",
+        "isExtraImport": true,
+        "detail": "tools.utils.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "obj_to_jsonstr",
+        "importPath": "tools.utils.parsers",
+        "description": "tools.utils.parsers",
+        "isExtraImport": true,
+        "detail": "tools.utils.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "Fore",
+        "importPath": "colorama",
+        "description": "colorama",
+        "isExtraImport": true,
+        "detail": "colorama",
+        "documentation": {}
+    },
+    {
+        "label": "Fore",
+        "importPath": "colorama",
+        "description": "colorama",
+        "isExtraImport": true,
+        "detail": "colorama",
+        "documentation": {}
+    },
+    {
+        "label": "auth_route",
+        "importPath": "server.v1.api.client.routes.auth_route",
+        "description": "server.v1.api.client.routes.auth_route",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.routes.auth_route",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "importPath": "server.v1.api.client.routes.tool_route",
+        "description": "server.v1.api.client.routes.tool_route",
+        "isExtraImport": true,
+        "detail": "server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "user_route",
+        "importPath": "server.v1.api.admin.routes.user.user",
+        "description": "server.v1.api.admin.routes.user.user",
+        "isExtraImport": true,
+        "detail": "server.v1.api.admin.routes.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "get_env",
+        "importPath": "server.v1.api.utils.server_env",
+        "description": "server.v1.api.utils.server_env",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.server_env",
+        "documentation": {}
+    },
+    {
+        "label": "get_env",
+        "importPath": "server.v1.api.utils.server_env",
+        "description": "server.v1.api.utils.server_env",
+        "isExtraImport": true,
+        "detail": "server.v1.api.utils.server_env",
+        "documentation": {}
+    },
+    {
+        "label": "docker",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "docker",
+        "description": "docker",
+        "detail": "docker",
+        "documentation": {}
+    },
+    {
+        "label": "errors",
+        "importPath": "docker",
+        "description": "docker",
+        "isExtraImport": true,
+        "detail": "docker",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "importPath": "tools.utils.Log",
+        "description": "tools.utils.Log",
+        "isExtraImport": true,
+        "detail": "tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "ExecResult",
+        "importPath": "docker.models.containers",
+        "description": "docker.models.containers",
+        "isExtraImport": true,
+        "detail": "docker.models.containers",
+        "documentation": {}
+    },
+    {
+        "label": "concurrent.futures",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "override",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "override",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "Docker",
+        "importPath": "tools.docker.Docker",
+        "description": "tools.docker.Docker",
+        "isExtraImport": true,
+        "detail": "tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "Docker",
+        "importPath": "tools.docker.Docker",
+        "description": "tools.docker.Docker",
+        "isExtraImport": true,
+        "detail": "tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "Docker",
+        "importPath": "tools.docker.Docker",
+        "description": "tools.docker.Docker",
+        "isExtraImport": true,
+        "detail": "tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_link",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_title",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "valid_swc",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_link",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_no",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_title",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_title_name",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "link_hint",
+        "importPath": "tools.utils.SWC",
+        "description": "tools.utils.SWC",
+        "isExtraImport": true,
+        "detail": "tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "Async",
+        "importPath": "tools.utils.Async",
+        "description": "tools.utils.Async",
+        "isExtraImport": true,
+        "detail": "tools.utils.Async",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateIssue",
+        "importPath": "tools.utils.merge_tools",
+        "description": "tools.utils.merge_tools",
+        "isExtraImport": true,
+        "detail": "tools.utils.merge_tools",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "sysconfig",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sysconfig",
+        "description": "sysconfig",
+        "detail": "sysconfig",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "init_database",
+        "importPath": "server.v1.config.database_config",
+        "description": "server.v1.config.database_config",
+        "isExtraImport": true,
+        "detail": "server.v1.config.database_config",
+        "documentation": {}
+    },
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Mythril",
+        "importPath": "tools.Mythril",
+        "description": "tools.Mythril",
+        "isExtraImport": true,
+        "detail": "tools.Mythril",
+        "documentation": {}
+    },
+    {
+        "label": "Slither",
+        "importPath": "tools.Slither",
+        "description": "tools.Slither",
+        "isExtraImport": true,
+        "detail": "tools.Slither",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_users",
+        "kind": 2,
+        "importPath": "app.server.v1.api.admin.routes.user.user",
+        "description": "app.server.v1.api.admin.routes.user.user",
+        "peekOfCode": "def get_all_users() -> Response | tuple[str, int]:\n    try:\n        result = UserDoc.objects.all()\n        data = [item for item in result]\n        return jsonify(data)\n    except Exception as e:\n        return str(e), StatusCode.InternalServerError.value\n@user_route.route(\"/<string:user_id>\", methods=[\"GET\"])\ndef search_user(user_id) -> Response | tuple[Response, int]:\n    try:",
+        "detail": "app.server.v1.api.admin.routes.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "search_user",
+        "kind": 2,
+        "importPath": "app.server.v1.api.admin.routes.user.user",
+        "description": "app.server.v1.api.admin.routes.user.user",
+        "peekOfCode": "def search_user(user_id) -> Response | tuple[Response, int]:\n    try:\n        user = UserDoc.objects(id=user_id).first()\n        if user:\n            # user['_id'] = str(user['_id'])\n            return jsonify(user)\n        else:\n            return jsonify({'message': 'User not found', 'user_id': user_id}), StatusCode.NotFound.value\n    except Exception as e:\n        return jsonify({'message': str(e)}), StatusCode.InternalServerError.value",
+        "detail": "app.server.v1.api.admin.routes.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "delete_user",
+        "kind": 2,
+        "importPath": "app.server.v1.api.admin.routes.user.user",
+        "description": "app.server.v1.api.admin.routes.user.user",
+        "peekOfCode": "def delete_user(user_id) -> tuple[Response, int]:\n    try:\n        delete_user = UserDoc.objects(id=user_id).delete()\n        if delete_user:\n            return jsonify({'message': f'User {user_id} deleted successfully'}), StatusCode.OK.value\n        else:\n            return jsonify({'message': 'User not found'}), StatusCode.NotFound.value\n    except Exception as e:\n        return jsonify({'message': str(e)}), StatusCode.InternalServerError.value\n@user_route.route('/update/<string:user_id>', methods=[\"PUT\"])",
+        "detail": "app.server.v1.api.admin.routes.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "update_user",
+        "kind": 2,
+        "importPath": "app.server.v1.api.admin.routes.user.user",
+        "description": "app.server.v1.api.admin.routes.user.user",
+        "peekOfCode": "def update_user(user_id) -> tuple[Response, int]:\n    try:\n        updated_data = request.get_json()\n        user_updated: int = update_one(UserDoc, updated_data, id=user_id)\n        if (user_updated > 0):\n            return jsonify({'message': 'User updated successfully'}), StatusCode.OK.value\n        # else:\n        return jsonify({'message': 'User not found'}), StatusCode.NotFound.value # user_updated = 0 => user not found\n    except Exception as e:\n        return jsonify({'message': str(e)}), StatusCode.InternalServerError.value",
+        "detail": "app.server.v1.api.admin.routes.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "user_route",
+        "kind": 5,
+        "importPath": "app.server.v1.api.admin.routes.user.user",
+        "description": "app.server.v1.api.admin.routes.user.user",
+        "peekOfCode": "user_route = Blueprint(\"user\", __name__, url_prefix=\"/user\")\n@user_route.route(\"/\", methods=[\"GET\"])\ndef get_all_users() -> Response | tuple[str, int]:\n    try:\n        result = UserDoc.objects.all()\n        data = [item for item in result]\n        return jsonify(data)\n    except Exception as e:\n        return str(e), StatusCode.InternalServerError.value\n@user_route.route(\"/<string:user_id>\", methods=[\"GET\"])",
+        "detail": "app.server.v1.api.admin.routes.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "generate_token",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.controllers.signin_controller",
+        "description": "app.server.v1.api.client.controllers.signin_controller",
+        "peekOfCode": "def generate_token() -> None:\n    # You can use any method to generate a token (JWT, session, etc.)\n    # For simplicity, we'll return a dummy token here\n    return # In a real application, you'd use a library like PyJWT\ndef handle_login():\n    logging.info(\"Received a POST request to login\")\n    data: Any | None = request.json\n    # FlaskLog.info(data)\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), StatusCode.BadRequest.value",
+        "detail": "app.server.v1.api.client.controllers.signin_controller",
+        "documentation": {}
+    },
+    {
+        "label": "handle_login",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.controllers.signin_controller",
+        "description": "app.server.v1.api.client.controllers.signin_controller",
+        "peekOfCode": "def handle_login():\n    logging.info(\"Received a POST request to login\")\n    data: Any | None = request.json\n    # FlaskLog.info(data)\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), StatusCode.BadRequest.value\n    data = request.get_json()\n    username = data.get('username') #type: ignore\n    password = data.get('password') #type: ignore\n    if not username or not password:",
+        "detail": "app.server.v1.api.client.controllers.signin_controller",
+        "documentation": {}
+    },
+    {
+        "label": "bcrypt",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.controllers.signin_controller",
+        "description": "app.server.v1.api.client.controllers.signin_controller",
+        "peekOfCode": "bcrypt = Bcrypt()\n#set để dùng ưu tiên logging.info\nlogging.basicConfig(level=logging.INFO)\ndef generate_token() -> None:\n    # You can use any method to generate a token (JWT, session, etc.)\n    # For simplicity, we'll return a dummy token here\n    return # In a real application, you'd use a library like PyJWT\ndef handle_login():\n    logging.info(\"Received a POST request to login\")\n    data: Any | None = request.json",
+        "detail": "app.server.v1.api.client.controllers.signin_controller",
+        "documentation": {}
+    },
+    {
+        "label": "handle_signup",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.controllers.signup_controller",
+        "description": "app.server.v1.api.client.controllers.signup_controller",
+        "peekOfCode": "def handle_signup() -> tuple[Response, int] | Response:\n    data: Any = request.json\n    if not validate_json_data(data):\n        return jsonify({\"message\": \"Invalid JSON data\"}), StatusCode.BadRequest.value\n    username = data.get('username')\n    if username_exists(username):\n        return jsonify({\"message\": \"Username already exists\"}), StatusCode.Conflict.value\n    new_user = create_new_user(data, username)\n    current_time: datetime = datetime.utcnow()\n    response_data = format_sign_up_response(new_user, username, current_time)",
+        "detail": "app.server.v1.api.client.controllers.signup_controller",
+        "documentation": {}
+    },
+    {
+        "label": "validate_json_data",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.controllers.signup_controller",
+        "description": "app.server.v1.api.client.controllers.signup_controller",
+        "peekOfCode": "def validate_json_data(data: Any) -> bool:\n    return data is not None",
+        "detail": "app.server.v1.api.client.controllers.signup_controller",
+        "documentation": {}
+    },
+    {
+        "label": "FileDoc",
+        "kind": 6,
+        "importPath": "app.server.v1.api.client.models.tools_collection",
+        "description": "app.server.v1.api.client.models.tools_collection",
+        "peekOfCode": "class FileDoc(Document):\n    submit_id = StringField()\n    file_id = StringField(unique=True)  # Remove default value\n    file_name = StringField(required=True)\n    tool_name = StringField(required=True)\n    duration = FloatField(required=True)\n    solc= StringField(required=True)\n    analysis = ListField(required=True)\n    source_code = StringField(required=True)\n    meta: dict[str, str] = {",
+        "detail": "app.server.v1.api.client.models.tools_collection",
+        "documentation": {}
+    },
+    {
+        "label": "str_to_dict",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.tools_collection",
+        "description": "app.server.v1.api.client.models.tools_collection",
+        "peekOfCode": "def str_to_dict(data: str)->dict:\n    return json.loads(data)\n# def add_issue_ids(data) -> None:\n#     for file in data:\n#         count = 0\n#         # Ensure there are issues in the JSON data\n#         issues = file[\"analysis\"][\"issues\"]\n#         for issue in issues:\n#             issue[\"id\"] =  count # Generate a unique ObjectId and convert it to a string\n#             count +=1",
+        "detail": "app.server.v1.api.client.models.tools_collection",
+        "documentation": {}
+    },
+    {
+        "label": "save_file",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.tools_collection",
+        "description": "app.server.v1.api.client.models.tools_collection",
+        "peekOfCode": "def save_file(id: str, file_id: str, file_data: FileStorage, user_name: str) -> None:\n    try:\n        user_storage: str = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, id,\"contracts\")\n        if not os.path.exists(user_storage):\n            os.makedirs(user_storage)\n        file_id = file_id +'.sol'\n        file_data.save(os.path.join(user_storage, file_id))\n    except Exception as e:\n        print(\"File not exist\")\ndef check_existed_id_in_volume(submit_id,user_name)-> bool:",
+        "detail": "app.server.v1.api.client.models.tools_collection",
+        "documentation": {}
+    },
+    {
+        "label": "check_existed_id_in_volume",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.tools_collection",
+        "description": "app.server.v1.api.client.models.tools_collection",
+        "peekOfCode": "def check_existed_id_in_volume(submit_id,user_name)-> bool:\n    directory = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name)\n    if submit_id in os.listdir(directory):\n        return True\n    return False\ndef get_file_by_id(id) -> FileDoc:\n    file = FileDoc.objects(file_id=id).first()\n    print(\"FILE \", file)\n    if file is not None:\n        return file",
+        "detail": "app.server.v1.api.client.models.tools_collection",
+        "documentation": {}
+    },
+    {
+        "label": "get_file_by_id",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.tools_collection",
+        "description": "app.server.v1.api.client.models.tools_collection",
+        "peekOfCode": "def get_file_by_id(id) -> FileDoc:\n    file = FileDoc.objects(file_id=id).first()\n    print(\"FILE \", file)\n    if file is not None:\n        return file\n    else:\n        # If the specified ID is not found, you can raise an exception or return None\n        # Here, we'll return None for simplicity\n        return None # type: ignore\ndef get_submit_by_id(id) -> list[FileDoc]:",
+        "detail": "app.server.v1.api.client.models.tools_collection",
+        "documentation": {}
+    },
+    {
+        "label": "get_submit_by_id",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.tools_collection",
+        "description": "app.server.v1.api.client.models.tools_collection",
+        "peekOfCode": "def get_submit_by_id(id) -> list[FileDoc]:\n    submit = FileDoc.objects(submit_id=id)\n    if submit:\n        return submit\n    else:\n        return None # type: ignore",
+        "detail": "app.server.v1.api.client.models.tools_collection",
+        "documentation": {}
+    },
+    {
+        "label": "UserRole",
+        "kind": 6,
+        "importPath": "app.server.v1.api.client.models.users_collection",
+        "description": "app.server.v1.api.client.models.users_collection",
+        "peekOfCode": "class UserRole(Enum):\n    ADMIN = \"admin\"\n    USER = \"user\"\nclass UserDoc(Document):\n    id = StringField(required=True, primary_key=True)\n    name = StringField(required=True)\n    username = StringField(required=True)\n    password = StringField(required=True)\n    role = EnumField(UserRole, required=True)\n    email = StringField(required=True)",
+        "detail": "app.server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "UserDoc",
+        "kind": 6,
+        "importPath": "app.server.v1.api.client.models.users_collection",
+        "description": "app.server.v1.api.client.models.users_collection",
+        "peekOfCode": "class UserDoc(Document):\n    id = StringField(required=True, primary_key=True)\n    name = StringField(required=True)\n    username = StringField(required=True)\n    password = StringField(required=True)\n    role = EnumField(UserRole, required=True)\n    email = StringField(required=True)\n    email_verified = BooleanField(required=True, default=False)\n    last_online = DateTimeField(default=datetime.utcnow())\n    created_at = DateTimeField(default=datetime.utcnow())",
+        "detail": "app.server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "username_exists",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.users_collection",
+        "description": "app.server.v1.api.client.models.users_collection",
+        "peekOfCode": "def username_exists(username: str) -> bool:\n    user = UserDoc.objects(username=username).first()\n    # If a user with the given username is found, return True; otherwise, return False\n    return user is not None\ndef update_last_online(username) -> None:\n    user = UserDoc.objects(username=username).first()\n        # uk_users = User.objects(country='uk')\n    if user:\n        user.last_online = datetime.now()\n        user.save()",
+        "detail": "app.server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "update_last_online",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.users_collection",
+        "description": "app.server.v1.api.client.models.users_collection",
+        "peekOfCode": "def update_last_online(username) -> None:\n    user = UserDoc.objects(username=username).first()\n        # uk_users = User.objects(country='uk')\n    if user:\n        user.last_online = datetime.now()\n        user.save()\ndef get_field_value(username, field_name) -> Any | None:\n    \"\"\"\n    Dùng cái này gán tên người dùng và field cần lấy, đỡ viết nhiều hàm get quá\n    Args:",
+        "detail": "app.server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "get_field_value",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.users_collection",
+        "description": "app.server.v1.api.client.models.users_collection",
+        "peekOfCode": "def get_field_value(username, field_name) -> Any | None:\n    \"\"\"\n    Dùng cái này gán tên người dùng và field cần lấy, đỡ viết nhiều hàm get quá\n    Args:\n        username (str): tên người dùng\n        field_name (str): email, created_at, etc\n    Returns:\n        Giá trị của field_name\n    \"\"\"\n    #example: user = User.objects(last_online=\"john123\").first()",
+        "detail": "app.server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "create_new_user",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.users_collection",
+        "description": "app.server.v1.api.client.models.users_collection",
+        "peekOfCode": "def create_new_user(data: Any, username: str):\n    current_time: datetime = datetime.utcnow()\n    new_user = UserDoc(\n        id=str(uuid.uuid4()),\n        name=data.get('name'),\n        username=username,\n        password=data.get('password'),\n        email=data.get('email'),\n        role=data.get(\"role\")\n    ).save()",
+        "detail": "app.server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "format_sign_up_response",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.models.users_collection",
+        "description": "app.server.v1.api.client.models.users_collection",
+        "peekOfCode": "def format_sign_up_response(new_user: UserDoc, username: str, current_time: datetime) -> dict:\n    return {\n        \"message\": \"Sign Up successful\",\n        \"_id\": new_user.id,\n        \"name\": new_user.name,\n        \"username\": username,\n        \"password\": new_user.password,\n        \"email\": new_user.email,\n        \"email_verified\": False,\n        \"last_online\": current_time,",
+        "detail": "app.server.v1.api.client.models.users_collection",
+        "documentation": {}
+    },
+    {
+        "label": "handle_login",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.login.login",
+        "description": "app.server.v1.api.client.routes.login.login",
+        "peekOfCode": "def handle_login() -> tuple[Response, int] | Response:\n    data: Any | None = request.json\n    # FlaskLog.info(data)\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), StatusCode.BadRequest.value\n    username = data.get('username')\n    password = data.get('password')\n    existing_user: UserDoc = UserDoc.objects(username=username).first()\n    if not existing_user:\n        return jsonify({\"message\": \"Username not exists\"}), StatusCode.Conflict.value",
+        "detail": "app.server.v1.api.client.routes.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "login_route",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.login.login",
+        "description": "app.server.v1.api.client.routes.login.login",
+        "peekOfCode": "login_route = Blueprint(\"login\", __name__, url_prefix=\"/login\")\n@login_route.post(\"\")\ndef handle_login() -> tuple[Response, int] | Response:\n    data: Any | None = request.json\n    # FlaskLog.info(data)\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), StatusCode.BadRequest.value\n    username = data.get('username')\n    password = data.get('password')\n    existing_user: UserDoc = UserDoc.objects(username=username).first()",
+        "detail": "app.server.v1.api.client.routes.login.login",
+        "documentation": {}
+    },
+    {
+        "label": "handle_signup",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.signup.signup",
+        "description": "app.server.v1.api.client.routes.signup.signup",
+        "peekOfCode": "def handle_signup() -> tuple[Response, int] | Response:\n    data: Any | None = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), StatusCode.BadRequest.value\n    username = data.get('username')\n    current_time: datetime = datetime.utcnow()\n    # Check if username already exists in the collection\n    if username_exists(username):\n        return jsonify({\"message\": \"Username already exists\"}), StatusCode.Conflict.value\n    # FlaskLog.info(f\"role = {data.get('role')}\")",
+        "detail": "app.server.v1.api.client.routes.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "signup_route",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.signup.signup",
+        "description": "app.server.v1.api.client.routes.signup.signup",
+        "peekOfCode": "signup_route = Blueprint(\"signup\", __name__, url_prefix=\"/signup\")\n@signup_route.post(\"\")\ndef handle_signup() -> tuple[Response, int] | Response:\n    data: Any | None = request.json\n    if data is None:\n        return jsonify({\"message\": \"Invalid JSON data\"}), StatusCode.BadRequest.value\n    username = data.get('username')\n    current_time: datetime = datetime.utcnow()\n    # Check if username already exists in the collection\n    if username_exists(username):",
+        "detail": "app.server.v1.api.client.routes.signup.signup",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool.tool",
+        "description": "app.server.v1.api.client.routes.tool.tool",
+        "peekOfCode": "def response():\n    return {\n    }",
+        "detail": "app.server.v1.api.client.routes.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.tool.tool",
+        "description": "app.server.v1.api.client.routes.tool.tool",
+        "peekOfCode": "tool_route = Blueprint(\"tool\", __name__, url_prefix=\"/tool\")\n@tool_route.route(\"\")\ndef response():\n    return {\n    }",
+        "detail": "app.server.v1.api.client.routes.tool.tool",
+        "documentation": {}
+    },
+    {
+        "label": "auth_route",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.auth_route",
+        "description": "app.server.v1.api.client.routes.auth_route",
+        "peekOfCode": "auth_route = Blueprint(\"auth_bp\", __name__, url_prefix=\"/auth\")\nauth_route.route(\"/login\", methods=[\"POST\"])(handle_login)\nauth_route.route(\"/signup\", methods=[\"POST\"])(handle_signup)",
+        "detail": "app.server.v1.api.client.routes.auth_route",
+        "documentation": {}
+    },
+    {
+        "label": "handle_files",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def handle_files():\n    user_name = \"tung123\"\n    id = str(generate_request_id())\n    if request is None:\n        return jsonify({\"message\": \"Nothing requested\"}), StatusCode.BadRequest.value\n    files_data: ImmutableMultiDict[str, FileStorage] = request.files\n    file_keys: dict_keys[str, FileStorage] = files_data.keys()\n    response_data = {'uuid': id}\n    for file_key in file_keys:\n        file_data: FileStorage = files_data[file_key]",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "analyze_file",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def analyze_file(user_name, id, file_id):        \n    global current_files_state\n    global submit_format\n    resultFinalResult = Tool.analyze_single_file(\n        args=\n            ToolAnalyzeArgs(\n                sub_container_file_path=f\"{user_name}/{id}/contracts/\",\n                file_name=file_id,\n            )\n        )",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "handle_result_id",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def handle_result_id():\n    global submit_format\n    print(\"file_id\", file_id_queue)\n    print(\"file_name\", file_name_queue)\n    user_name = \"tung123\"\n    id_param = request.args.get('id')\n    print(\"ID_PARAM\", id_param)\n    print(\"SESSION ID\", session.get('id'))\n    if not id_param:\n        return \"The 'id' query parameter is missing.\"",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "print_session",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def print_session():\n    session_values = {key: session[key] for key in session}\n    return jsonify(session_values)\n@tool_route.route('/handle_file_id', methods=[\"GET\"])\n@cross_origin(supports_credentials=True)\ndef handle_file_id():\n    id_param = request.args.get('id')\n    FlaskLog.info(f\"current_files_state: {current_files_state}\")\n    if id_param is None:\n        return jsonify({\"message:\", \"Missing file id param\"})",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "handle_file_id",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def handle_file_id():\n    id_param = request.args.get('id')\n    FlaskLog.info(f\"current_files_state: {current_files_state}\")\n    if id_param is None:\n        return jsonify({\"message:\", \"Missing file id param\"})\n    #NOTE: Neu dang tinh toan-> tra ve status\n    file = get_file_by_id(id_param)\n    if file is not None:\n        file_dict = {\n            \"file_id\": file.file_id,",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "handle_submit_id",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def handle_submit_id():\n    #TODO: Check if all file are done\n    print(\"into handle submit id\")\n    id = request.args.get('id')\n    print(id)\n    if (current_files_state == {}):\n        print(\"current_files_state is empty\")\n        submit_id =get_submit_by_id(id)\n        if submit_id is None:\n            return jsonify({\"message\": \"submit_id doesn't exist\"}), 404 # Return",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "create_file_doc_background",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def create_file_doc_background(id, result:FinalResult) -> None:\n    # Run create_file_doc asynchronously in a background thread\n    thread = threading.Thread(target=create_file_doc, args=(id, result,))\n    thread.start()\ndef generate_request_id():\n    new_id = uuid.uuid4()\n    return new_id\ndef get_all_files(id: str, username: str) -> list[str]:\n    files_path = os.path.join(server.v1.config.app_config.get_local_storage_path(), username, id, \"contracts\")\n    file_list = os.listdir(files_path)",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "generate_request_id",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def generate_request_id():\n    new_id = uuid.uuid4()\n    return new_id\ndef get_all_files(id: str, username: str) -> list[str]:\n    files_path = os.path.join(server.v1.config.app_config.get_local_storage_path(), username, id, \"contracts\")\n    file_list = os.listdir(files_path)\n    return file_list\ndef create_file_doc(id, result: FinalResult) -> list[str]:\n    # (file_name, tool_name, duration, analysis) = extract_file_res(result)\n    file_name = result.file_name",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_files",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def get_all_files(id: str, username: str) -> list[str]:\n    files_path = os.path.join(server.v1.config.app_config.get_local_storage_path(), username, id, \"contracts\")\n    file_list = os.listdir(files_path)\n    return file_list\ndef create_file_doc(id, result: FinalResult) -> list[str]:\n    # (file_name, tool_name, duration, analysis) = extract_file_res(result)\n    file_name = result.file_name\n    tool_name = result.tool_name\n    duration = result.duration\n    solc = result.solc",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "create_file_doc",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def create_file_doc(id, result: FinalResult) -> list[str]:\n    # (file_name, tool_name, duration, analysis) = extract_file_res(result)\n    file_name = result.file_name\n    tool_name = result.tool_name\n    duration = result.duration\n    solc = result.solc\n    analysis = result.analysis\n    issues = []\n    count = 0\n    files_id: list[str] = [] ",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "extract_file_type",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def extract_file_type(file_id) ->str:\n    filename = os.path.basename(file_id)\n    name_without_extension, _ = os.path.splitext(filename)\n    return name_without_extension\ndef get_source_code(submit_id, file_id, user_name) -> str:\n    try:\n        file_path = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, submit_id,'contracts', file_id +'.sol')\n        with open(file_path, \"r\") as f:\n            file_content = f.read()\n        return file_content",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "get_source_code",
+        "kind": 2,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "def get_source_code(submit_id, file_id, user_name) -> str:\n    try:\n        file_path = os.path.join(server.v1.config.app_config.get_local_storage_path(), user_name, submit_id,'contracts', file_id +'.sol')\n        with open(file_path, \"r\") as f:\n            file_content = f.read()\n        return file_content\n    except IOError as e:\n        print(f\"Error reading file: {str(e)}\")\n        return \"An error occurred while reading the file\"",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "tool_route",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "tool_route = Blueprint(\"tool_bp\", __name__, url_prefix=\"/tool\")\nfile_name_queue = []\nfile_id_queue = []\nsubmit_format = []\n@tool_route.route(\"/handle_files\",methods=[\"POST\"])\n@cross_origin(supports_credentials=True)\ndef handle_files():\n    user_name = \"tung123\"\n    id = str(generate_request_id())\n    if request is None:",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "file_name_queue",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "file_name_queue = []\nfile_id_queue = []\nsubmit_format = []\n@tool_route.route(\"/handle_files\",methods=[\"POST\"])\n@cross_origin(supports_credentials=True)\ndef handle_files():\n    user_name = \"tung123\"\n    id = str(generate_request_id())\n    if request is None:\n        return jsonify({\"message\": \"Nothing requested\"}), StatusCode.BadRequest.value",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "file_id_queue",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "file_id_queue = []\nsubmit_format = []\n@tool_route.route(\"/handle_files\",methods=[\"POST\"])\n@cross_origin(supports_credentials=True)\ndef handle_files():\n    user_name = \"tung123\"\n    id = str(generate_request_id())\n    if request is None:\n        return jsonify({\"message\": \"Nothing requested\"}), StatusCode.BadRequest.value\n    files_data: ImmutableMultiDict[str, FileStorage] = request.files",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "submit_format",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "submit_format = []\n@tool_route.route(\"/handle_files\",methods=[\"POST\"])\n@cross_origin(supports_credentials=True)\ndef handle_files():\n    user_name = \"tung123\"\n    id = str(generate_request_id())\n    if request is None:\n        return jsonify({\"message\": \"Nothing requested\"}), StatusCode.BadRequest.value\n    files_data: ImmutableMultiDict[str, FileStorage] = request.files\n    file_keys: dict_keys[str, FileStorage] = files_data.keys()",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "results",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "results = {}\ncurrent_files_state={}\ndef analyze_file(user_name, id, file_id):        \n    global current_files_state\n    global submit_format\n    resultFinalResult = Tool.analyze_single_file(\n        args=\n            ToolAnalyzeArgs(\n                sub_container_file_path=f\"{user_name}/{id}/contracts/\",\n                file_name=file_id,",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "count_enter",
+        "kind": 5,
+        "importPath": "app.server.v1.api.client.routes.tool_route",
+        "description": "app.server.v1.api.client.routes.tool_route",
+        "peekOfCode": "count_enter = {}\n@tool_route.route(\"/handle_results\",methods=[\"GET\"])\n@cross_origin(supports_credentials=True)\ndef handle_result_id():\n    global submit_format\n    print(\"file_id\", file_id_queue)\n    print(\"file_name\", file_name_queue)\n    user_name = \"tung123\"\n    id_param = request.args.get('id')\n    print(\"ID_PARAM\", id_param)",
+        "detail": "app.server.v1.api.client.routes.tool_route",
+        "documentation": {}
+    },
+    {
+        "label": "update_one",
+        "kind": 2,
+        "importPath": "app.server.v1.api.utils.DBCollection",
+        "description": "app.server.v1.api.utils.DBCollection",
+        "peekOfCode": "def update_one(doc: Type[Document], data: dict, **query) -> int:\n    \"\"\"return the number of updated successfully document\n    Args:\n        doc (Type[Document]): class that extends Document\n        data (dict): new value of fields need to updated\n    Returns:\n        int: _description_\n    \"\"\"\n    return doc.objects(**query).update_one(**{\"set__\" + key: value for key, value in data.items()})",
+        "detail": "app.server.v1.api.utils.DBCollection",
+        "documentation": {}
+    },
+    {
+        "label": "FlaskLog",
+        "kind": 6,
+        "importPath": "app.server.v1.api.utils.FlaskLog",
+        "description": "app.server.v1.api.utils.FlaskLog",
+        "peekOfCode": "class FlaskLog:\n    @staticmethod\n    def info(msg: Any) -> None:\n        print(Fore.GREEN + \"INFO: \" + str(msg), flush=True)\n    @staticmethod\n    def warn(msg: Any) -> None:\n        print(Fore.YELLOW + \"WARNING: \" + str(msg), flush=True)\n    @staticmethod\n    def err(msg: Any) -> None:\n        print(Fore.RED + \"ERROR: \" + str(msg), flush=True)",
+        "detail": "app.server.v1.api.utils.FlaskLog",
+        "documentation": {}
+    },
+    {
+        "label": "get_env",
+        "kind": 2,
+        "importPath": "app.server.v1.api.utils.server_env",
+        "description": "app.server.v1.api.utils.server_env",
+        "peekOfCode": "def get_env(key: str) -> str:\n    value: str | None = os.getenv(key)\n    print(value)\n    if (not value):\n        raise Exception(f\"Enviroment variable with key {key} is not exists\")\n    return value",
+        "detail": "app.server.v1.api.utils.server_env",
+        "documentation": {}
+    },
+    {
+        "label": "StatusCode",
+        "kind": 6,
+        "importPath": "app.server.v1.api.utils.StatusCode",
+        "description": "app.server.v1.api.utils.StatusCode",
+        "peekOfCode": "class StatusCode(Enum):\n    OK = 200\n    BadRequest = 400\n    NotFound = 404\n    Conflict = 409\n    InternalServerError = 500",
+        "detail": "app.server.v1.api.utils.StatusCode",
+        "documentation": {}
+    },
+    {
+        "label": "get_app_config",
+        "kind": 2,
+        "importPath": "app.server.v1.config.app_config",
+        "description": "app.server.v1.config.app_config",
+        "peekOfCode": "def get_app_config(key: str) -> Any:\n    value = APP_CONFIG[key]\n    if (not value):\n        raise Exception(f\"APP_CONFIG with key {key} is not exists\")\n    return value\ndef setup_app_config(app: Flask) -> None:\n    CORS(app, origins=get_app_config(\"ALLOWED_ORIGINS\"),  supports_credentials=True)    \n    app.secret_key = \"Can't be hack Password\"\n    app.config['SESSION_TYPE'] = 'filesystem'  # You can choose a different backend\n    app.permanent_session_lifetime= timedelta(days=5)",
+        "detail": "app.server.v1.config.app_config",
+        "documentation": {}
+    },
+    {
+        "label": "setup_app_config",
+        "kind": 2,
+        "importPath": "app.server.v1.config.app_config",
+        "description": "app.server.v1.config.app_config",
+        "peekOfCode": "def setup_app_config(app: Flask) -> None:\n    CORS(app, origins=get_app_config(\"ALLOWED_ORIGINS\"),  supports_credentials=True)    \n    app.secret_key = \"Can't be hack Password\"\n    app.config['SESSION_TYPE'] = 'filesystem'  # You can choose a different backend\n    app.permanent_session_lifetime= timedelta(days=5)\n    app.config.update(SESSION_COOKIE_SAMESITE=\"None\", SESSION_COOKIE_SECURE=True)\n    Session(app)\n    #stop automate sorting dict response\n    app.json.sort_keys = False # type: ignore\n    client_route = Blueprint(\"client\", __name__, url_prefix=\"/api/v1/client\")",
+        "detail": "app.server.v1.config.app_config",
+        "documentation": {}
+    },
+    {
+        "label": "get_local_storage_path",
+        "kind": 2,
+        "importPath": "app.server.v1.config.app_config",
+        "description": "app.server.v1.config.app_config",
+        "peekOfCode": "def get_local_storage_path() -> str:\n    return storage_path",
+        "detail": "app.server.v1.config.app_config",
+        "documentation": {}
+    },
+    {
+        "label": "init_database",
+        "kind": 2,
+        "importPath": "app.server.v1.config.database_config",
+        "description": "app.server.v1.config.database_config",
+        "peekOfCode": "def init_database() -> None:\n    connect(\n        DATABASE_NAME,\n        host=CONNECTION_STRING,\n    )",
+        "detail": "app.server.v1.config.database_config",
+        "documentation": {}
+    },
+    {
+        "label": "Docker",
+        "kind": 6,
+        "importPath": "app.tools.docker.Docker",
+        "description": "app.tools.docker.Docker",
+        "peekOfCode": "class Docker:\n    client = docker.from_env()\n    @classmethod\n    def pull_image(cls, image: str) -> None:\n        try:\n            Log.info('pulling ' + image + ' image, this may take a while...')\n            image = cls.client.images.pull(image) # type: ignore\n            Log.info(f'image {image} pulled')\n        except errors.APIError as err:\n            Log.err('Errors occurred when pulling image ' + image)",
+        "detail": "app.tools.docker.Docker",
+        "documentation": {}
+    },
+    {
+        "label": "Async",
+        "kind": 6,
+        "importPath": "app.tools.utils.Async",
+        "description": "app.tools.utils.Async",
+        "peekOfCode": "class Async:\n    @classmethod\n    def run_functions(\n        cls,\n        arr_func: list[Callable],\n        arr_args: list[list]\n    ) -> list:\n        \"\"\"Run multiple functions with each arguments separately asynchronously\n        Args:\n            arr_func (list[Callable]): list of functions need to run",
+        "detail": "app.tools.utils.Async",
+        "documentation": {}
+    },
+    {
+        "label": "Log",
+        "kind": 6,
+        "importPath": "app.tools.utils.Log",
+        "description": "app.tools.utils.Log",
+        "peekOfCode": "class Log:\n    @staticmethod\n    def info(msg: Any) -> None:\n        print(Fore.GREEN + \"INFO: \" + str(msg))\n    @staticmethod\n    def warn(msg: Any) -> None:\n        print(Fore.YELLOW + \"WARNING: \" + str(msg))\n    @staticmethod\n    def err(msg: Any) -> None:\n        print(Fore.RED + \"ERROR: \" + str(msg))",
+        "detail": "app.tools.utils.Log",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateIssue",
+        "kind": 6,
+        "importPath": "app.tools.utils.merge_tools",
+        "description": "app.tools.utils.merge_tools",
+        "peekOfCode": "class DuplicateIssue():\n    dup_issues = [\n        {\"slither\": \"suicidal\", \"mythril\": \"Unprotected Selfdestruct\"},\n        {\"slither\": \"reentrancy-eth\", \"mythril\": \"External Call To User-Supplied Address\"},\n        {\"slither\": \"reentrancy-event\", \"mythril\": \"External Call To User-Supplied Address\"},\n        {\"slither\": \"controlled-delegatecall\", \"mythril\": \"Delegatecall to user-supplied address\"},\n        {\"slither\": \"controlled-delegatecall\", \"mythril\": \"\"},#false positive\n        {\"slither\": \"assembly\", \"mythril\": \"Jump to an arbitrary instruction\"}\n        # Add more mappings here\n    ]",
+        "detail": "app.tools.utils.merge_tools",
+        "documentation": {}
+    },
+    {
+        "label": "obj_to_jsonstr",
+        "kind": 2,
+        "importPath": "app.tools.utils.parsers",
+        "description": "app.tools.utils.parsers",
+        "peekOfCode": "def obj_to_jsonstr(obj: object) -> str:\n    return json.dumps(\n        obj,\n        default=lambda o:\n            o.value if isinstance(o, Enum) else o.__dict__,\n        indent=2)\ndef obj_to_json(o: object) -> dict[str, Any]:\n    return json.loads(obj_to_jsonstr(o))",
+        "detail": "app.tools.utils.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "obj_to_json",
+        "kind": 2,
+        "importPath": "app.tools.utils.parsers",
+        "description": "app.tools.utils.parsers",
+        "peekOfCode": "def obj_to_json(o: object) -> dict[str, Any]:\n    return json.loads(obj_to_jsonstr(o))",
+        "detail": "app.tools.utils.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "get_title_name",
+        "kind": 2,
+        "importPath": "app.tools.utils.SWC",
+        "description": "app.tools.utils.SWC",
+        "peekOfCode": "def get_title_name(check:str) -> str:\n    return map_check_to_title[check]\ndef get_swc_no(check: str) -> str:\n    if map_slither_check_to_swc[check] != 'N/A':\n        return map_slither_check_to_swc[check]\n    return 'N/A'\ndef link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check] \ndef valid_swc(swc: str) -> tuple[bool, str]:",
+        "detail": "app.tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_no",
+        "kind": 2,
+        "importPath": "app.tools.utils.SWC",
+        "description": "app.tools.utils.SWC",
+        "peekOfCode": "def get_swc_no(check: str) -> str:\n    if map_slither_check_to_swc[check] != 'N/A':\n        return map_slither_check_to_swc[check]\n    return 'N/A'\ndef link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check] \ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:",
+        "detail": "app.tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "link_hint",
+        "kind": 2,
+        "importPath": "app.tools.utils.SWC",
+        "description": "app.tools.utils.SWC",
+        "peekOfCode": "def link_hint(check: str) -> str:\n    url = \"https://github.com/crytic/slither/wiki/Detector-Documentation\"\n    return map_check_to_issue[check] \ndef valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:\n        swc (str): _description_\n    Returns:\n        tuple[bool, str]: _description_\n    \"\"\"",
+        "detail": "app.tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "valid_swc",
+        "kind": 2,
+        "importPath": "app.tools.utils.SWC",
+        "description": "app.tools.utils.SWC",
+        "peekOfCode": "def valid_swc(swc: str) -> tuple[bool, str]:\n    \"\"\"kiểm tra và lấy định dạng swc chuẩn\n    Args:\n        swc (str): _description_\n    Returns:\n        tuple[bool, str]: _description_\n    \"\"\"\n    if (re.match(swc_regex['only_number'], swc)):\n        return (True, \"SWC-\"+swc)\n    if (re.match(swc_regex['full'], swc)):",
+        "detail": "app.tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_link",
+        "kind": 2,
+        "importPath": "app.tools.utils.SWC",
+        "description": "app.tools.utils.SWC",
+        "peekOfCode": "def get_swc_link(swc: str, validated: bool = False) -> str:\n    if (swc == 'N/A'):\n        return \"N/A\"\n    if (validated or valid_swc(swc)[0]):\n        return f'https://swcregistry.io/docs/{swc.upper()}/'\n    raise Exception(f\"{swc} is not a valid SWC, see more details https://swcregistry.io/\")\ndef get_swc_title(swc: str, validated: bool = False) -> str:\n    if (swc == 'N/A'):\n        return \"N/A\"\n    if (validated or valid_swc(swc)[0]):",
+        "detail": "app.tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "get_swc_title",
+        "kind": 2,
+        "importPath": "app.tools.utils.SWC",
+        "description": "app.tools.utils.SWC",
+        "peekOfCode": "def get_swc_title(swc: str, validated: bool = False) -> str:\n    if (swc == 'N/A'):\n        return \"N/A\"\n    if (validated or valid_swc(swc)[0]):\n        return map_to_swc_title[swc.upper()]\n    raise Exception(f\"{swc} is not a valid SWC, see more details https://swcregistry.io/\")",
+        "detail": "app.tools.utils.SWC",
+        "documentation": {}
+    },
+    {
+        "label": "Mythril",
+        "kind": 6,
+        "importPath": "app.tools.Mythril",
+        "description": "app.tools.Mythril",
+        "peekOfCode": "class Mythril(Tool):\n    tool_name = ToolName.Mythril\n    tool_cfg = Tool.load_default_cfg(tool_name)\n    def __init__(self) -> None:\n        super().__init__()\n    @override\n    @classmethod\n    def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str, solc: str) -> FinalResult:\n        issues: list[AnalysisIssue] = []\n        for raw_issue in raw_result['issues']:",
+        "detail": "app.tools.Mythril",
+        "documentation": {}
+    },
+    {
+        "label": "parse_source_map",
+        "kind": 2,
+        "importPath": "app.tools.Mythril",
+        "description": "app.tools.Mythril",
+        "peekOfCode": "def parse_source_map(source_map) -> str:\n    src_map_shorten = source_map[:4]\n    return src_map_shorten",
+        "detail": "app.tools.Mythril",
+        "documentation": {}
+    },
+    {
+        "label": "Slither",
+        "kind": 6,
+        "importPath": "app.tools.Slither",
+        "description": "app.tools.Slither",
+        "peekOfCode": "class Slither(Tool):\n    tool_name = ToolName.Slither\n    tool_cfg = Tool.load_default_cfg(tool_name)\n    container_name = \"slither-tool\"\n    # create container\n    container = Docker.client.containers.get(container_name) \\\n            if Docker.exists_container(container_name) \\\n            else Docker.client.containers.run(\n                image=tool_cfg.docker_image,\n                command=\"\",",
+        "detail": "app.tools.Slither",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "kind": 6,
+        "importPath": "app.tools.Tool",
+        "description": "app.tools.Tool",
+        "peekOfCode": "class Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    storage_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"storage\"))\n    tool_cfg: ImageConfig\n    valid_solcs: list[str] = ['0.8.21', '0.8.20', '0.8.19', '0.8.18', '0.8.17', '0.8.16', '0.8.15', '0.8.14', '0.8.13', '0.8.12', '0.8.11', '0.8.10', '0.8.9', '0.8.8', '0.8.7', '0.8.6', '0.8.5', '0.8.4', '0.8.3', '0.8.2', '0.8.1', '0.8.0', '0.7.6', '0.7.5', '0.7.4', '0.7.3', '0.7.2', '0.7.1', '0.7.0', '0.6.12', '0.6.11', '0.6.10', '0.6.9', '0.6.8', '0.6.7', '0.6.6', '0.6.5', '0.6.4', '0.6.3', '0.6.2', '0.6.1', '0.6.0', '0.5.17', '0.5.16', '0.5.15', '0.5.14', '0.5.13', '0.5.12', '0.5.11', '0.5.10', '0.5.9', '0.5.8', '0.5.7', '0.5.6', '0.5.5', '0.5.4', '0.5.3', '0.5.2', '0.5.1', '0.5.0', '0.4.26', '0.4.25', '0.4.24', '0.4.23', '0.4.22', '0.4.21', '0.4.20', '0.4.19', '0.4.18', '0.4.17', '0.4.16', '0.4.15', '0.4.14', '0.4.13', '0.4.12', '0.4.11', '0.4.10', '0.4.9', '0.4.8', '0.4.7', '0.4.6', '0.4.5', '0.4.3', '0.4.2', '0.4.1', '0.4.0']\n    valid_solcs_str = \",\".join(valid_solcs)\n    def __init__(\n        self\n    ) -> None:",
+        "detail": "app.tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "RawResult",
+        "kind": 5,
+        "importPath": "app.tools.Tool",
+        "description": "app.tools.Tool",
+        "peekOfCode": "RawResult = Any\nclass Tool(ABC):\n    tool_name: ToolName\n    image_config_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"docker/image-config\"))\n    storage_path: str = os.path.abspath(os.path.join(os.path.dirname(__file__), \"storage\"))\n    tool_cfg: ImageConfig\n    valid_solcs: list[str] = ['0.8.21', '0.8.20', '0.8.19', '0.8.18', '0.8.17', '0.8.16', '0.8.15', '0.8.14', '0.8.13', '0.8.12', '0.8.11', '0.8.10', '0.8.9', '0.8.8', '0.8.7', '0.8.6', '0.8.5', '0.8.4', '0.8.3', '0.8.2', '0.8.1', '0.8.0', '0.7.6', '0.7.5', '0.7.4', '0.7.3', '0.7.2', '0.7.1', '0.7.0', '0.6.12', '0.6.11', '0.6.10', '0.6.9', '0.6.8', '0.6.7', '0.6.6', '0.6.5', '0.6.4', '0.6.3', '0.6.2', '0.6.1', '0.6.0', '0.5.17', '0.5.16', '0.5.15', '0.5.14', '0.5.13', '0.5.12', '0.5.11', '0.5.10', '0.5.9', '0.5.8', '0.5.7', '0.5.6', '0.5.5', '0.5.4', '0.5.3', '0.5.2', '0.5.1', '0.5.0', '0.4.26', '0.4.25', '0.4.24', '0.4.23', '0.4.22', '0.4.21', '0.4.20', '0.4.19', '0.4.18', '0.4.17', '0.4.16', '0.4.15', '0.4.14', '0.4.13', '0.4.12', '0.4.11', '0.4.10', '0.4.9', '0.4.8', '0.4.7', '0.4.6', '0.4.5', '0.4.3', '0.4.2', '0.4.1', '0.4.0']\n    valid_solcs_str = \",\".join(valid_solcs)\n    def __init__(\n        self",
+        "detail": "app.tools.Tool",
+        "documentation": {}
+    },
+    {
+        "label": "ToolName",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class ToolName(Enum):\n    Mythril = \"mythril\"\n    Slither = \"slither\"\n@unique\nclass ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnsupportedSolc = \"unsupported solc\"\n    UndefinedSolc = \"undefined solc\"\n    UnknownError = \"unknown error\"",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorClassification",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class ErrorClassification(Enum):\n    RuntimeOut = \"runtime out\"\n    CompileError = \"compile error\"\n    UnsupportedSolc = \"unsupported solc\"\n    UndefinedSolc = \"undefined solc\"\n    UnknownError = \"unknown error\"\n@dataclass\nclass ToolError:\n    error: ErrorClassification\n    msg: str",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolError",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class ToolError:\n    error: ErrorClassification\n    msg: str\n@dataclass\nclass AnalysisIssue:\n    contract: str\n    source_map: str\n    line_no: list[int]\n    code: str\n    description: str",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisIssue",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class AnalysisIssue:\n    contract: str\n    source_map: str\n    line_no: list[int]\n    code: str\n    description: str\n    hint: str\n    issue_title: str\n    swcID: str\n    swc_title: str",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "AnalysisResult",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class AnalysisResult:\n    errors: list[ToolError]\n    #combine here\n    issues: list[AnalysisIssue]\n@dataclass\nclass FinalResult:\n    file_id: str\n    file_name: str\n    tool_name: str\n    duration: float",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "FinalResult",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class FinalResult:\n    file_id: str\n    file_name: str\n    tool_name: str\n    duration: float\n    solc: str\n    analysis: AnalysisResult\n@dataclass\nclass ImageVolume:\n    bind: str",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ImageVolume",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class ImageVolume:\n    bind: str\n    mode: str\n@dataclass\nclass ImageConfig:\n    docker_image: str\n    analyze_cmd: str\n    options: str\n    volumes: ImageVolume\n    timeout: int",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ImageConfig",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class ImageConfig:\n    docker_image: str\n    analyze_cmd: str\n    options: str\n    volumes: ImageVolume\n    timeout: int\n@dataclass\nclass ToolAnalyzeArgs:\n    sub_container_file_path: str\n    file_name: str",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "ToolAnalyzeArgs",
+        "kind": 6,
+        "importPath": "app.tools.types",
+        "description": "app.tools.types",
+        "peekOfCode": "class ToolAnalyzeArgs:\n    sub_container_file_path: str\n    file_name: str\n    solc: str = \"\"\n    docker_image: str = \"\"\n    options: str = \"\"\n    timeout: int = -1",
+        "detail": "app.tools.types",
+        "documentation": {}
+    },
+    {
+        "label": "Tee",
+        "kind": 6,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "class Tee:\n    def __init__(self, file):\n        self.f = file\n    def write(self, what):\n        if self.f is not None:\n            try:\n                self.f.write(what.replace(\"\\n\", \"\\r\\n\"))\n            except IOError:\n                pass\n        tee_f.write(what)",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "CopyTo",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def CopyTo(desc, src, dest):\n    import win32api\n    import win32con\n    while 1:\n        try:\n            win32api.CopyFile(src, dest, 0)\n            return\n        except win32api.error as details:\n            if details.winerror == 5:  # access denied - user not admin.\n                raise",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "LoadSystemModule",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def LoadSystemModule(lib_dir, modname):\n    # See if this is a debug build.\n    import importlib.machinery\n    import importlib.util\n    suffix = \"_d\" if \"_d.pyd\" in importlib.machinery.EXTENSION_SUFFIXES else \"\"\n    filename = \"%s%d%d%s.dll\" % (\n        modname,\n        sys.version_info[0],\n        sys.version_info[1],\n        suffix,",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "SetPyKeyVal",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def SetPyKeyVal(key_name, value_name, value):\n    root_hkey = get_root_hkey()\n    root_key = winreg.OpenKey(root_hkey, root_key_name)\n    try:\n        my_key = winreg.CreateKey(root_key, key_name)\n        try:\n            winreg.SetValueEx(my_key, value_name, 0, winreg.REG_SZ, value)\n            if verbose:\n                print(\"-> %s\\\\%s[%s]=%r\" % (root_key_name, key_name, value_name, value))\n        finally:",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "UnsetPyKeyVal",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def UnsetPyKeyVal(key_name, value_name, delete_key=False):\n    root_hkey = get_root_hkey()\n    root_key = winreg.OpenKey(root_hkey, root_key_name)\n    try:\n        my_key = winreg.OpenKey(root_key, key_name, 0, winreg.KEY_SET_VALUE)\n        try:\n            winreg.DeleteValue(my_key, value_name)\n            if verbose:\n                print(\"-> DELETE %s\\\\%s[%s]\" % (root_key_name, key_name, value_name))\n        finally:",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterCOMObjects",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def RegisterCOMObjects(register=True):\n    import win32com.server.register\n    if register:\n        func = win32com.server.register.RegisterClasses\n    else:\n        func = win32com.server.register.UnregisterClasses\n    flags = {}\n    if not verbose:\n        flags[\"quiet\"] = 1\n    for module, klass_name in com_modules:",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterHelpFile",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def RegisterHelpFile(register=True, lib_dir=None):\n    if lib_dir is None:\n        lib_dir = sysconfig.get_paths()[\"platlib\"]\n    if register:\n        # Register the .chm help file.\n        chm_file = os.path.join(lib_dir, \"PyWin32.chm\")\n        if os.path.isfile(chm_file):\n            # This isn't recursive, so if 'Help' doesn't exist, we croak\n            SetPyKeyVal(\"Help\", None, None)\n            SetPyKeyVal(\"Help\\\\Pythonwin Reference\", None, chm_file)",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterPythonwin",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def RegisterPythonwin(register=True, lib_dir=None):\n    \"\"\"Add (or remove) Pythonwin to context menu for python scripts.\n    ??? Should probably also add Edit command for pys files also.\n    Also need to remove these keys on uninstall, but there's no function\n        like file_created to add registry entries to uninstall log ???\n    \"\"\"\n    import os\n    if lib_dir is None:\n        lib_dir = sysconfig.get_paths()[\"platlib\"]\n    classes_root = get_root_hkey()",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "get_shortcuts_folder",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def get_shortcuts_folder():\n    if get_root_hkey() == winreg.HKEY_LOCAL_MACHINE:\n        try:\n            fldr = get_special_folder_path(\"CSIDL_COMMON_PROGRAMS\")\n        except OSError:\n            # No CSIDL_COMMON_PROGRAMS on this platform\n            fldr = get_special_folder_path(\"CSIDL_PROGRAMS\")\n    else:\n        # non-admin install - always goes in this user's start menu.\n        fldr = get_special_folder_path(\"CSIDL_PROGRAMS\")",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "get_system_dir",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def get_system_dir():\n    import win32api  # we assume this exists.\n    try:\n        import pythoncom\n        import win32process\n        from win32com.shell import shell, shellcon\n        try:\n            if win32process.IsWow64Process():\n                return shell.SHGetSpecialFolderPath(0, shellcon.CSIDL_SYSTEMX86)\n            return shell.SHGetSpecialFolderPath(0, shellcon.CSIDL_SYSTEM)",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "fixup_dbi",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def fixup_dbi():\n    # We used to have a dbi.pyd with our .pyd files, but now have a .py file.\n    # If the user didn't uninstall, they will find the .pyd which will cause\n    # problems - so handle that.\n    import win32api\n    import win32con\n    pyd_name = os.path.join(os.path.dirname(win32api.__file__), \"dbi.pyd\")\n    pyd_d_name = os.path.join(os.path.dirname(win32api.__file__), \"dbi_d.pyd\")\n    py_name = os.path.join(os.path.dirname(win32con.__file__), \"dbi.py\")\n    for this_pyd in (pyd_name, pyd_d_name):",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "install",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def install(lib_dir):\n    import traceback\n    # The .pth file is now installed as a regular file.\n    # Create the .pth file in the site-packages dir, and use only relative paths\n    # We used to write a .pth directly to sys.prefix - clobber it.\n    if os.path.isfile(os.path.join(sys.prefix, \"pywin32.pth\")):\n        os.unlink(os.path.join(sys.prefix, \"pywin32.pth\"))\n    # The .pth may be new and therefore not loaded in this session.\n    # Setup the paths just in case.\n    for name in \"win32 win32\\\\lib Pythonwin\".split():",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "uninstall",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def uninstall(lib_dir):\n    # First ensure our system modules are loaded from pywin32_system, so\n    # we can remove the ones we copied...\n    LoadSystemModule(lib_dir, \"pywintypes\")\n    LoadSystemModule(lib_dir, \"pythoncom\")\n    try:\n        RegisterCOMObjects(False)\n    except Exception as why:\n        print(\"Failed to unregister COM objects: %s\" % (why,))\n    try:",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "verify_destination",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def verify_destination(location):\n    if not os.path.isdir(location):\n        raise argparse.ArgumentTypeError('Path \"{}\" does not exist!'.format(location))\n    return location\ndef main():\n    import argparse\n    parser = argparse.ArgumentParser(\n        formatter_class=argparse.RawDescriptionHelpFormatter,\n        description=\"\"\"A post-install script for the pywin32 extensions.\n    * Typical usage:",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "def main():\n    import argparse\n    parser = argparse.ArgumentParser(\n        formatter_class=argparse.RawDescriptionHelpFormatter,\n        description=\"\"\"A post-install script for the pywin32 extensions.\n    * Typical usage:\n    > python pywin32_postinstall.py -install\n    If you installed pywin32 via a .exe installer, this should be run\n    automatically after installation, but if it fails you can run it again.\n    If you installed pywin32 via PIP, you almost certainly need to run this to",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "tee_f",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "tee_f = open(os.path.join(tempfile.gettempdir(), \"pywin32_postinstall.log\"), \"w\")\nclass Tee:\n    def __init__(self, file):\n        self.f = file\n    def write(self, what):\n        if self.f is not None:\n            try:\n                self.f.write(what.replace(\"\\n\", \"\\r\\n\"))\n            except IOError:\n                pass",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stderr",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "sys.stderr = Tee(sys.stderr)\nsys.stdout = Tee(sys.stdout)\ncom_modules = [\n    # module_name,                      class_names\n    (\"win32com.servers.interp\", \"Interpreter\"),\n    (\"win32com.servers.dictionary\", \"DictionaryPolicy\"),\n    (\"win32com.axscript.client.pyscript\", \"PyScript\"),\n]\n# Is this a 'silent' install - ie, avoid all dialogs.\n# Different than 'verbose'",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "sys.stdout = Tee(sys.stdout)\ncom_modules = [\n    # module_name,                      class_names\n    (\"win32com.servers.interp\", \"Interpreter\"),\n    (\"win32com.servers.dictionary\", \"DictionaryPolicy\"),\n    (\"win32com.axscript.client.pyscript\", \"PyScript\"),\n]\n# Is this a 'silent' install - ie, avoid all dialogs.\n# Different than 'verbose'\nsilent = 0",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "com_modules",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "com_modules = [\n    # module_name,                      class_names\n    (\"win32com.servers.interp\", \"Interpreter\"),\n    (\"win32com.servers.dictionary\", \"DictionaryPolicy\"),\n    (\"win32com.axscript.client.pyscript\", \"PyScript\"),\n]\n# Is this a 'silent' install - ie, avoid all dialogs.\n# Different than 'verbose'\nsilent = 0\n# Verbosity of output messages.",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "silent",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "silent = 0\n# Verbosity of output messages.\nverbose = 1\nroot_key_name = \"Software\\\\Python\\\\PythonCore\\\\\" + sys.winver\ntry:\n    # When this script is run from inside the bdist_wininst installer,\n    # file_created() and directory_created() are additional builtin\n    # functions which write lines to Python23\\pywin32-install.log. This is\n    # a list of actions for the uninstaller, the format is inspired by what\n    # the Wise installer also creates.",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "verbose",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "verbose = 1\nroot_key_name = \"Software\\\\Python\\\\PythonCore\\\\\" + sys.winver\ntry:\n    # When this script is run from inside the bdist_wininst installer,\n    # file_created() and directory_created() are additional builtin\n    # functions which write lines to Python23\\pywin32-install.log. This is\n    # a list of actions for the uninstaller, the format is inspired by what\n    # the Wise installer also creates.\n    file_created\n    is_bdist_wininst = True",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "root_key_name",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_postinstall",
+        "description": "app.venv.Scripts.pywin32_postinstall",
+        "peekOfCode": "root_key_name = \"Software\\\\Python\\\\PythonCore\\\\\" + sys.winver\ntry:\n    # When this script is run from inside the bdist_wininst installer,\n    # file_created() and directory_created() are additional builtin\n    # functions which write lines to Python23\\pywin32-install.log. This is\n    # a list of actions for the uninstaller, the format is inspired by what\n    # the Wise installer also creates.\n    file_created\n    is_bdist_wininst = True\nexcept NameError:",
+        "detail": "app.venv.Scripts.pywin32_postinstall",
+        "documentation": {}
+    },
+    {
+        "label": "run_test",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_testall",
+        "description": "app.venv.Scripts.pywin32_testall",
+        "peekOfCode": "def run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.\n    cmd = [sys.executable, \"-u\", scriptname] + cmdline_extras\n    print(\"--- Running '%s' ---\" % script)\n    sys.stdout.flush()\n    result = subprocess.run(cmd, check=False, cwd=dirname)\n    print(\"*** Test script '%s' exited with %s\" % (script, result.returncode))\n    sys.stdout.flush()\n    if result.returncode:",
+        "detail": "app.venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "find_and_run",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_testall",
+        "description": "app.venv.Scripts.pywin32_testall",
+        "peekOfCode": "def find_and_run(possible_locations, extras):\n    for maybe in possible_locations:\n        if os.path.isfile(maybe):\n            run_test(maybe, extras)\n            break\n    else:\n        raise RuntimeError(\n            \"Failed to locate a test script in one of %s\" % possible_locations\n        )\ndef main():",
+        "detail": "app.venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "app.venv.Scripts.pywin32_testall",
+        "description": "app.venv.Scripts.pywin32_testall",
+        "peekOfCode": "def main():\n    import argparse\n    code_directories = [this_dir] + site_packages\n    parser = argparse.ArgumentParser(\n        description=\"A script to trigger tests in all subprojects of PyWin32.\"\n    )\n    parser.add_argument(\n        \"-no-user-interaction\",\n        default=False,\n        action=\"store_true\",",
+        "detail": "app.venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "this_dir",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_testall",
+        "description": "app.venv.Scripts.pywin32_testall",
+        "peekOfCode": "this_dir = os.path.dirname(__file__)\nsite_packages = [\n    site.getusersitepackages(),\n] + site.getsitepackages()\nfailures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)",
+        "detail": "app.venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "site_packages",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_testall",
+        "description": "app.venv.Scripts.pywin32_testall",
+        "peekOfCode": "site_packages = [\n    site.getusersitepackages(),\n] + site.getsitepackages()\nfailures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.",
+        "detail": "app.venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "failures",
+        "kind": 5,
+        "importPath": "app.venv.Scripts.pywin32_testall",
+        "description": "app.venv.Scripts.pywin32_testall",
+        "peekOfCode": "failures = []\n# Run a test using subprocess and wait for the result.\n# If we get an returncode != 0, we know that there was an error, but we don't\n# abort immediately - we run as many tests as we can.\ndef run_test(script, cmdline_extras):\n    dirname, scriptname = os.path.split(script)\n    # some tests prefer to be run from their directory.\n    cmd = [sys.executable, \"-u\", scriptname] + cmdline_extras\n    print(\"--- Running '%s' ---\" % script)\n    sys.stdout.flush()",
+        "detail": "app.venv.Scripts.pywin32_testall",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.app",
+        "description": "app.app",
+        "peekOfCode": "app = Flask(__name__)\ninit_database()\nsetup_app_config(app)\nif __name__ == \"__main__\":\n    PORT: int = int(get_env(\"PORT\"))\n    app.run(debug=(get_env(\"ENVIRONMENT\") == \"development\"), port=PORT)",
+        "detail": "app.app",
+        "documentation": {}
+    }
+]
