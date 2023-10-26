@@ -91,7 +91,7 @@ class Tool(ABC):
         cls,
         args: ToolAnalyzeArgs
     ) -> tuple[FinalResult, RawResult]:
-        Log.info(f'Running {cls.tool_name.value}')
+        # Log.info(f'Running {cls.tool_name.value}')
         start = time.time()
         solc: str | ErrorClassification = args.solc or Tool.get_solc_version(args.sub_container_file_path, args.file_name)
         if (isinstance(solc, ErrorClassification)):
@@ -119,13 +119,14 @@ class Tool(ABC):
 
     @staticmethod
     def merge_results(results: list[FinalResult], duration: float) -> FinalResult:
+        if len(results) == 1:
+            return results[0]
 
         file_name: str = results[0].file_name
         tool_name: str = "Mythril, Slither"
         solc: str = results[0].solc
         analysisResult: AnalysisResult = DuplicateIssue.merge(results[0], results[1])
         return FinalResult(
-            file_id="",
             file_name=file_name,
             tool_name=tool_name,
             duration=duration,
@@ -151,7 +152,6 @@ class Tool(ABC):
             errors += results[i].analysis.errors
             issues += results[i].analysis.issues
         return FinalResult(
-            file_id="",
             file_name=file_name,
             tool_name=tool_name,
             duration=duration,
@@ -202,7 +202,6 @@ class Tool(ABC):
             solc: str | ErrorClassification = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
             if (isinstance(solc, ErrorClassification)):
                 return FinalResult(
-                    file_id="",
                     file_name=args.file_name,
                     tool_name="",
                     duration=time.time() - start,
@@ -253,7 +252,6 @@ class Tool(ABC):
             solc: str | ErrorClassification = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
             if (isinstance(solc, ErrorClassification)):
                 return FinalResult(
-                    file_id="",
                     file_name=args.file_name,
                     tool_name="",
                     duration=time.time() - start,

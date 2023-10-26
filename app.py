@@ -1,16 +1,14 @@
-import sys
-import os
 from dotenv import load_dotenv
 
+load_dotenv()
+from server.v1.config.database_config import init_database
+init_database()
 from flask import Flask
 from server.v1.config.app_config import setup_app_config
 
-load_dotenv()
 from server.v1.api.utils.server_env import get_env
-from server.v1.config.database_config import init_database
 
 app = Flask(__name__)
-init_database()
 setup_app_config(app)
 
 if __name__ == "__main__":

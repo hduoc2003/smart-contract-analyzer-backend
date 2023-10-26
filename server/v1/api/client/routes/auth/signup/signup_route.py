@@ -2,7 +2,7 @@ from typing import Any
 from flask import Blueprint, Response, jsonify, request
 from datetime import datetime
 import uuid
-from server.v1.api.client.models.users_collection import UserDoc, username_exists
+from server.v1.api.client.models.user_collection import UserDoc, username_exists
 from server.v1.api.utils.StatusCode import StatusCode
 
 signup_route = Blueprint("signup", __name__, url_prefix="/signup")

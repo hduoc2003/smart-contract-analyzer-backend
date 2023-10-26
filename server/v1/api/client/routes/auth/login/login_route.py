@@ -1,6 +1,6 @@
 from typing import Any
 from flask import Blueprint, Response, jsonify, request
-from server.v1.api.client.models.users_collection import UserDoc
+from server.v1.api.client.models.user_collection import UserDoc
 from server.v1.api.utils.StatusCode import StatusCode
 
 login_route = Blueprint("login", __name__, url_prefix="/login")

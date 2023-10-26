@@ -121,12 +121,12 @@ class DuplicateIssue():
     @classmethod
     def merge(cls, final_slither: FinalResult, final_mythril: FinalResult) -> AnalysisResult:
         file_name = final_slither.file_name
-        if final_mythril.analysis.errors == '' and final_slither.analysis.errors != '':
+        if len(final_mythril.analysis.errors) == 0 and len(final_slither.analysis.errors) != 0:
             return AnalysisResult(
                 errors = final_slither.analysis.errors,
                 issues = final_mythril.analysis.issues
             )
-        if final_mythril.analysis.errors != '' and final_slither.analysis.errors == '':
+        if len(final_mythril.analysis.errors) != 0 and len(final_slither.analysis.errors) == 0:
             return AnalysisResult(
                 errors = final_mythril.analysis.errors,
                 issues = final_slither.analysis.issues
@@ -135,7 +135,7 @@ class DuplicateIssue():
         slither_issues = final_slither.analysis.issues
         mythril_issues = final_mythril.analysis.issues
         return AnalysisResult(
-            errors= [],
+            errors= final_mythril.analysis.errors + final_slither.analysis.errors,
             issues = cls.classifyIssues(slither_issues, mythril_issues, file_name)
         )
 

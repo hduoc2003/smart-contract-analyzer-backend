@@ -2,7 +2,7 @@ from typing import Any
 from flask import Blueprint, Response, jsonify, request
 from datetime import datetime
 import uuid
-from server.v1.api.client.models.users_collection import *
+from server.v1.api.client.models.user_collection import *
 from server.v1.api.utils.StatusCode import StatusCode
 
 def handle_signup() -> tuple[Response, int] | Response:
