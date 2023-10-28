@@ -7,15 +7,7 @@ from server.v1.api.client.models.user_collection import *
 from server.v1.api.utils.StatusCode import StatusCode
 bcrypt = Bcrypt()
 
-#set để dùng ưu tiên logging.info
-logging.basicConfig(level=logging.INFO)
-
-def generate_token() -> None:
-    # You can use any method to generate a token (JWT, session, etc.)
-    # For simplicity, we'll return a dummy token here
-    return # In a real application, you'd use a library like PyJWT
-
-def handle_login():
+def handle_signin():
     logging.info("Received a POST request to login")
     data: Any | None = request.json
 
@@ -34,12 +26,6 @@ def handle_login():
     if user is None:
         logging.error(f"No {username} username in DB")
         return jsonify({'message': 'No username found, please sign up or contact the admin'}), StatusCode.NotFound.value
-
-    #TODO: Làm JWT ở đây
-    if user and bcrypt.check_password_hash(user.password, password):
-        token: None = generate_token()
-        update_last_online(username)
-        return jsonify({"message": "Login successful", "token": token}), StatusCode.OK.value
 
     return jsonify({"message": "Invalid credentials"}), StatusCode.NotFound.value
 

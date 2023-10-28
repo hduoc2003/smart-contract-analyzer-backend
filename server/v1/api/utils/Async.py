@@ -1,3 +1,4 @@
+from ast import Call
 from concurrent.futures import ThreadPoolExecutor
 import concurrent.futures
 import threading
@@ -27,10 +28,15 @@ class Async:
             raise Exception(f"Async.run_functions: the length of arr_func is {len(arr_func)} \
                             is not equal to the length of arr_args which is {len(arr_args)}")
 
+        def wrapper(func: Callable, args: list):
+            return func(*args)
+
         if not detach:
-            with ThreadPoolExecutor() as executor:
-                futures = [executor.submit(func, *arr_args[i]) for i, func in enumerate(arr_func)]
-                return [future.result() for future in concurrent.futures.as_completed(futures)]
+            return cls.run_single_func(wrapper, [[func, arr_args[i]] for i, func in enumerate(arr_func)])
+            # with ThreadPoolExecutor() as executor:
+            #     futures = [executor.submit(func, *arr_args[i]) for i, func in enumerate(arr_func)]
+            #     return [future.result() for future in concurrent.futures.as_completed(futures)]
+
         else:
             threads: list[threading.Thread] = []
             for i, func in enumerate(arr_func):

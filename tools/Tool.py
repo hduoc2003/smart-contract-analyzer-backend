@@ -379,9 +379,11 @@ class Tool(ABC):
             lines: list[str] = source_code.splitlines()
             for line in lines:
                 line: str = line.split(r"//")[0]
-                match: re.Match[str] | None = re.search(r"pragma\s+solidity\s+([<>=^]*[\d]+.[\d]+.[\d]+)", line)
+                match: re.Match[str] | None = re.search(r"pragma\s+solidity\s+([<>=^]*[\d]+\.[\d]+(\.[\d]+)?)", line)
                 if match:
                     solc = match.group(1)
+                    if (solc.count('.') == 1):
+                        solc += '.0'
                     break
             if (solc == ""):
                 return ErrorClassification.UndefinedSolc
@@ -415,25 +417,5 @@ class Tool(ABC):
                             return ErrorClassification.UnsupportedSolc
                 case _:
                     return solc if solc in cls.valid_solcs else ErrorClassification.UndefinedSolc
-            return res
 
-    # @classmethod
-    # def run_tools(cls, files_name: List[str], tools: List[str], username: str) ->dict:
-    #     tools_literal = cls.convert_str_to_enum(tools)
-    #     files_directory = []
-    #     for file_name in files_name:
-    #         file = ToolAnalyzeArgs(
-    #             sub_container_file_path = f"{username}/contracts",
-    #             file_name = file_name
-    #         )
-    #         files_directory.append(file)
-    #     return obj_to_jsondict(cls.analyze_files_async(files_directory, tools_literal))
-
-    # @staticmethod
-    # def convert_str_to_enum(tools: List[str]) -> List[ToolName]:
-    #     tools_literal = []
-    #     for tool in tools:
-    #         if tool in ToolName.__members__:
-    #             tool_literal = ToolName[tool]
-    #             tools_literal.append(tool_literal)
-    #     return tools_literal
+            return res if res[0].isdigit() else ErrorClassification.UndefinedSolc
