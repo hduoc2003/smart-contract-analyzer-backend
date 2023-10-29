@@ -1,4 +1,5 @@
 import json
+import re
 from typing_extensions import override
 from tools.Tool import Tool
 from tools.Tool import FinalResult
@@ -83,6 +84,33 @@ class Slither(Tool):
         len = source_map["length"]
         return f'{start}:{len}'
 
+    @staticmethod
+    def purifying_description(description: str, file_name: str) -> str:
+        # rút gọn tên file
+        contract_positions: list[int] = [match.start() for match in re.finditer(file_name, description)]
+        start_cut_pos: list[int] = []
+        end_cut_pos: list[int] = []
+        for pos in contract_positions:
+            start: int = pos
+            while (start >= 0 and description[start] != '('):
+                start -= 1
+            if (start >= 0):
+                start_cut_pos.append(start + 1)
+                end_cut_pos.append(pos - 1)
+                # print(description[start:pos-1])
+        ptr = 0
+        res: str = ''
+        for i in range(0, len(description)):
+            if ptr >= len(start_cut_pos):
+                res += description[i]
+                continue
+
+            if not (start_cut_pos[ptr] <= i and i <= end_cut_pos[ptr]):
+                res += description[i]
+                if (end_cut_pos[ptr] < i):
+                    ptr += 1
+        return res
+
     @override
     @classmethod
     def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str, solc: str) -> FinalResult:
@@ -91,13 +119,13 @@ class Slither(Tool):
         for detector in detectors:
             elements = detector.get("elements")
             element = Slither.get_smallest_element(elements)
-            swcID= get_swc_no(detector['check'])
+            swcID: str = get_swc_no(detector['check'])
             issue = AnalysisIssue(
-                contract= Slither.get_contract(element) if element else "",
-                source_map= Slither.convert_source_map_represent(element["source_mapping"]) if element else "",
+                contract=Slither.get_contract(element) if element else "",
+                source_map=Slither.convert_source_map_represent(element["source_mapping"]) if element else "",
                 line_no=element["source_mapping"]["lines"] if element else [],
                 code="",
-                description=detector['description'] ,
+                description=cls.purifying_description(detector['description'], file_name),
                 hint= link_hint(detector["check"]),
                 issue_title= get_title_name(detector['check']),
                 swcID= swcID,
