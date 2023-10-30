@@ -1,6 +1,8 @@
+import datetime
 from enum import Enum
-from typing import Any
-from mongoengine import Document, StringField, FloatField, EnumField, DictField
+from typing import Any, Union
+from mongoengine import Document, StringField, FloatField, EnumField, DictField, DateTimeField, DateField
+from server.v1.api.utils.db_collection import get_document_excludes
 from server.v1.config.database_config import db
 
 file_collection = db.files
@@ -17,21 +19,30 @@ class FileDoc(Document):
     solc= StringField(required=True, default="")
     analysis = DictField(required=True, default={"error": [], "issues": []})
     source_code = StringField(required=True)
-
+    submit_id = StringField(required=True)
+    created_at = DateTimeField(required=True, default=datetime.datetime.now())
     meta: dict[str, str] = {
         "collection": "files"
     }
 
-    def get_dict(self) -> dict[str, Any]:
-        return {
-            "id": self.id,
-            "file_name": self.file_name,
-            "status": self.status,
-            "tool_name": self.tool_name,
-            "duration": self.duration,
-            "solc": self.solc,
-            "analysis": self.analysis,
-            "source_code": self.source_code,
-        }
+    # def minimize_self(
+    #     self,
+    #     excluded_fields:list[str]=['tool_name', 'created_at'],
+    #     json: bool = False,
+    #     json_str: bool = False
+    # ) -> Union["FileDoc", str, dict[str, Any]]:
+    #     if (not json) and (not json_str):
+    #         return FileDoc(
+
+    #         )
+
+    @staticmethod
+    def minimize(
+        id:str,
+        excluded_fields:list[str]=['tool_name'],
+        json: bool = False
+    ) -> Union["FileDoc", dict[str, Any], None]:
+        return get_document_excludes(FileDoc, id, excluded_fields, json=json)
+
 
 

@@ -10,11 +10,12 @@ from server.v1.api.utils.StatusCode import StatusCode
 from werkzeug.datastructures.file_storage import FileStorage
 from werkzeug.datastructures.structures import ImmutableMultiDict
 from _collections_abc import dict_keys
-from server.v1.api.utils.db_collection import update_one
+from server.v1.api.utils.db_collection import get_document, update_one
 
 from server.v1.api.utils.gen_id import gen_id
 from server.v1.api.utils.parsers import obj_to_json, obj_to_jsonstr
-from server.v1.api.utils.save_contract import save_file
+from server.v1.api.utils.path import get_subcontainer_file_path
+from server.v1.api.utils.save_contract import save_contract
 from tools.Tool import Tool
 from tools.types import AnalysisResult, FinalResult, ToolAnalyzeArgs
 
@@ -38,17 +39,14 @@ def handle_submit():
     Returns:
         _type_: _description_
     """
-    user_name = "tung123"
+    user_id = "tung123"
     submit_id = gen_id()
-
-    if request is None:
-        return jsonify({"message": "Nothing requested"}), StatusCode.BadRequest.value
 
     files_data: ImmutableMultiDict[str, FileStorage] = request.files
     file_keys: dict_keys[str, FileStorage] = files_data.keys()
 
     response_data: SubmitResponse = SubmitResponse(submit_id=submit_id, files_info=[])
-    files_ids: list[str] = []
+    files_sourcode: list[FileStorage] = []
 
     for file_key in file_keys:
         file_data: FileStorage = files_data[file_key]
@@ -56,30 +54,58 @@ def handle_submit():
         file_name: str | None = file_data.filename
         if (file_name is None):
             continue
-        source_code = save_file(submit_id, file_id, file_data, user_name)
         response_data.files_info.append(FileInfo(
             file_id=file_id,
             file_name=file_name
         ))
-        files_ids.append(file_id)
+        files_sourcode.append(file_data)
+        # FlaskLog.info(file_data.stream.read())
+    if len(files_sourcode) == 0:
+        return 'No file provided', StatusCode.BadRequest.value
+
+    start_analyzing(
+        submit_id=submit_id,
+        user_id=user_id,
+        files_ids=[file_info.file_id for file_info in response_data.files_info],
+        files_name=[file_info.file_name for file_info in response_data.files_info],
+        files_sourcode=files_sourcode
+    )
+
+    return jsonify(obj_to_jsonstr(response_data))
+
+def start_analyzing(
+    submit_id: str,
+    user_id,
+    files_ids: list[str],
+    files_name: list[str],
+    files_sourcode: list[FileStorage] | list[str],
+    detach: bool = True
+) -> None:
+    for i, file_id in enumerate(files_ids):
+        source_code: str = save_contract(
+            submit_id=submit_id,
+            file_id=file_id,
+            file_data=files_sourcode[i],
+            user_id=user_id
+        )
         FileDoc(
             id=file_id,
-            file_name=file_name,
+            file_name=files_name[i],
             status=AnalyzeStatus.ANALYZING,
-            source_code=source_code
+            source_code=source_code,
+            submit_id=submit_id
         ).save()
-        # FlaskLog.info(file_data.stream.read())
+    submit_doc: SubmitDoc | None = get_document(SubmitDoc, submit_id)
+    if submit_doc is None:
+        SubmitDoc(id=submit_id,files_ids=files_ids).save()
+    else:
+        submit_doc.update(push_all__files_ids=files_ids)
 
-    SubmitDoc(
-        id=submit_id,
-        files_ids=files_ids
-    ).save()
-
-    def start_analyzing():
+    def analyze():
         result_stream: Generator = Tool.analyze_files_async(
             files=[
                 ToolAnalyzeArgs(
-                    sub_container_file_path=f"{user_name}/{submit_id}/contracts/",
+                    sub_container_file_path=get_subcontainer_file_path(user_id, submit_id),
                     file_name=f"{file_id}.sol",
                 ) for file_id in files_ids
             ],
@@ -89,9 +115,7 @@ def handle_submit():
             final_result: FinalResult
             update_result(final_result, True)
 
-    Async.run_functions([start_analyzing], [[]], detach=True)
-
-    return jsonify(obj_to_jsonstr(response_data))
+    Async.run_functions([analyze], [[]], detach=detach)
 
 def update_result(result: FinalResult, detach: bool = False):
     def main():

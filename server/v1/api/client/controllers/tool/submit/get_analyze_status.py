@@ -2,6 +2,7 @@ from flask import jsonify, request
 
 from server.v1.api.client.models.file_collection import AnalyzeStatus, FileDoc
 from server.v1.api.client.models.submit_collection import SubmitDoc
+from server.v1.api.utils.StatusCode import StatusCode
 
 
 __all__ = ['get_analyze_status']
@@ -28,10 +29,13 @@ def get_analyze_status():
     if submit_id is None:
         return "No submit_id provided"
 
-    filesInfo: list[FileDoc] = SubmitDoc.get_all_files(
+    filesInfo: list[FileDoc] | None = SubmitDoc.get_all_files(
         submit_id=submit_id,
         needed_field=['id', 'file_name', 'status']
     )
+
+    if (filesInfo is None):
+        return 'Wrong submit id', StatusCode.BadRequest.value
 
     return jsonify(
         [create_response(
@@ -41,21 +45,3 @@ def get_analyze_status():
         ) for fileInfo in filesInfo]
     )
 
-    # pipeline = [
-    #     {
-    #         "$match": {
-    #             "updateDescription.updatedFields.status": {"$exists": True},
-    #             "documentKey._id": {"$in": analyzing_files}
-    #         }
-    #     }
-    # ]
-    # # FlaskLog.info(cnt_done)
-    # change_stream = file_collection.watch(pipeline=pipeline, full_document="updateLookup")
-    # for change in change_stream:
-    #     cnt_done += 1
-    #     file_result = change.get('fullDocument')
-    #     if (cnt_done == len(files_results)):
-    #         change_stream.close()
-    #         break
-
-    # return Response(temp())
