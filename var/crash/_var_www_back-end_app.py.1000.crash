@@ -1,0 +1,291 @@
+ProblemType: Crash
+Date: Tue Oct 31 17:30:27 2023
+ExecutablePath: /var/www/back-end/app.py
+ExecutableTimestamp: 1698747037
+InterpreterPath: /usr/bin/python3.10
+ProcCmdline: python3 app.py
+ProcCwd: /var/www/back-end
+ProcEnviron:
+ SHELL=/bin/bash
+ LANG=C.UTF-8
+ TERM=xterm-256color
+ XDG_RUNTIME_DIR=<set>
+ PATH=(custom, user)
+ProcMaps:
+ 561d3a312000-561d3a37f000 r--p 00000000 08:20 4231                       /usr/bin/python3.10
+ 561d3a37f000-561d3a630000 r-xp 0006d000 08:20 4231                       /usr/bin/python3.10
+ 561d3a630000-561d3a86f000 r--p 0031e000 08:20 4231                       /usr/bin/python3.10
+ 561d3a870000-561d3a877000 r--p 0055d000 08:20 4231                       /usr/bin/python3.10
+ 561d3a877000-561d3a8b6000 rw-p 00564000 08:20 4231                       /usr/bin/python3.10
+ 561d3a8b6000-561d3a8fc000 rw-p 00000000 00:00 0 
+ 561d3ad43000-561d3b261000 rw-p 00000000 00:00 0                          [heap]
+ 7f06fc1e8000-7f06fc2e8000 rw-p 00000000 00:00 0 
+ 7f06fc2e8000-7f06fc2ec000 r--p 00000000 08:20 6611                       /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1
+ 7f06fc2ec000-7f06fc302000 r-xp 00004000 08:20 6611                       /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1
+ 7f06fc302000-7f06fc30c000 r--p 0001a000 08:20 6611                       /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1
+ 7f06fc30c000-7f06fc30d000 r--p 00023000 08:20 6611                       /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1
+ 7f06fc30d000-7f06fc30e000 rw-p 00024000 08:20 6611                       /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1
+ 7f06fc30e000-7f06fc311000 r--p 00000000 08:20 6526                       /usr/lib/x86_64-linux-gnu/libcap.so.2.44
+ 7f06fc311000-7f06fc315000 r-xp 00003000 08:20 6526                       /usr/lib/x86_64-linux-gnu/libcap.so.2.44
+ 7f06fc315000-7f06fc317000 r--p 00007000 08:20 6526                       /usr/lib/x86_64-linux-gnu/libcap.so.2.44
+ 7f06fc317000-7f06fc318000 r--p 00008000 08:20 6526                       /usr/lib/x86_64-linux-gnu/libcap.so.2.44
+ 7f06fc318000-7f06fc319000 rw-p 00009000 08:20 6526                       /usr/lib/x86_64-linux-gnu/libcap.so.2.44
+ 7f06fc319000-7f06fc31b000 r--p 00000000 08:20 6873                       /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.1
+ 7f06fc31b000-7f06fc32a000 r-xp 00002000 08:20 6873                       /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.1
+ 7f06fc32a000-7f06fc32c000 r--p 00011000 08:20 6873                       /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.1
+ 7f06fc32c000-7f06fc32d000 r--p 00012000 08:20 6873                       /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.1
+ 7f06fc32d000-7f06fc32e000 rw-p 00013000 08:20 6873                       /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.1
+ 7f06fc32e000-7f06fc33d000 r--p 00000000 08:20 6591                       /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4
+ 7f06fc33d000-7f06fc423000 r-xp 0000f000 08:20 6591                       /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4
+ 7f06fc423000-7f06fc461000 r--p 000f5000 08:20 6591                       /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4
+ 7f06fc461000-7f06fc462000 ---p 00133000 08:20 6591                       /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4
+ 7f06fc462000-7f06fc465000 r--p 00133000 08:20 6591                       /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4
+ 7f06fc465000-7f06fc46b000 rw-p 00136000 08:20 6591                       /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4
+ 7f06fc46b000-7f06fc46c000 rw-p 00000000 00:00 0 
+ 7f06fc46c000-7f06fc47f000 r--p 00000000 08:20 6831                       /usr/lib/x86_64-linux-gnu/libsystemd.so.0.32.0
+ 7f06fc47f000-7f06fc4fe000 r-xp 00013000 08:20 6831                       /usr/lib/x86_64-linux-gnu/libsystemd.so.0.32.0
+ 7f06fc4fe000-7f06fc529000 r--p 00092000 08:20 6831                       /usr/lib/x86_64-linux-gnu/libsystemd.so.0.32.0
+ 7f06fc529000-7f06fc52a000 ---p 000bd000 08:20 6831                       /usr/lib/x86_64-linux-gnu/libsystemd.so.0.32.0
+ 7f06fc52a000-7f06fc531000 r--p 000bd000 08:20 6831                       /usr/lib/x86_64-linux-gnu/libsystemd.so.0.32.0
+ 7f06fc531000-7f06fc532000 rw-p 000c4000 08:20 6831                       /usr/lib/x86_64-linux-gnu/libsystemd.so.0.32.0
+ 7f06fc532000-7f06fc533000 rw-p 00000000 00:00 0 
+ 7f06fc533000-7f06fc537000 r--p 00000000 08:20 6844                       /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
+ 7f06fc537000-7f06fc551000 r-xp 00004000 08:20 6844                       /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
+ 7f06fc551000-7f06fc55a000 r--p 0001e000 08:20 6844                       /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
+ 7f06fc55a000-7f06fc55b000 ---p 00027000 08:20 6844                       /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
+ 7f06fc55b000-7f06fc55c000 r--p 00027000 08:20 6844                       /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
+ 7f06fc55c000-7f06fc55d000 rw-p 00028000 08:20 6844                       /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
+ 7f06fc55d000-7f06fc567000 r--p 00000000 08:20 6879                       /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ 7f06fc567000-7f06fc619000 r-xp 0000a000 08:20 6879                       /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ 7f06fc619000-7f06fc62a000 r--p 000bc000 08:20 6879                       /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ 7f06fc62a000-7f06fc62b000 r--p 000cc000 08:20 6879                       /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ 7f06fc62b000-7f06fc62c000 rw-p 000cd000 08:20 6879                       /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ 7f06fc62c000-7f06fc62e000 r--p 00000000 08:20 6678                       /usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3
+ 7f06fc62e000-7f06fc647000 r-xp 00002000 08:20 6678                       /usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3
+ 7f06fc647000-7f06fc649000 r--p 0001b000 08:20 6678                       /usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3
+ 7f06fc649000-7f06fc64a000 ---p 0001d000 08:20 6678                       /usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3
+ 7f06fc64a000-7f06fc64b000 r--p 0001d000 08:20 6678                       /usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3
+ 7f06fc64b000-7f06fc64c000 rw-p 0001e000 08:20 6678                       /usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3
+ 7f06fc64c000-7f06fc64f000 r--p 00000000 08:20 4284                       /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7f06fc64f000-7f06fc666000 r-xp 00003000 08:20 4284                       /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7f06fc666000-7f06fc66a000 r--p 0001a000 08:20 4284                       /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7f06fc66a000-7f06fc66b000 r--p 0001d000 08:20 4284                       /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7f06fc66b000-7f06fc66c000 rw-p 0001e000 08:20 4284                       /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7f06fc66c000-7f06fc706000 r--p 00000000 08:20 4097                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+ 7f06fc706000-7f06fc817000 r-xp 0009a000 08:20 4097                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+ 7f06fc817000-7f06fc886000 r--p 001ab000 08:20 4097                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+ 7f06fc886000-7f06fc887000 ---p 0021a000 08:20 4097                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+ 7f06fc887000-7f06fc892000 r--p 0021a000 08:20 4097                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+ 7f06fc892000-7f06fc895000 rw-p 00225000 08:20 4097                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+ 7f06fc895000-7f06fc898000 rw-p 00000000 00:00 0 
+ 7f06fc898000-7f06fc8ce000 r--p 00000000 08:20 6492                       /usr/lib/x86_64-linux-gnu/libapt-pkg.so.6.0.0
+ 7f06fc8ce000-7f06fca0b000 r-xp 00036000 08:20 6492                       /usr/lib/x86_64-linux-gnu/libapt-pkg.so.6.0.0
+ 7f06fca0b000-7f06fca53000 r--p 00173000 08:20 6492                       /usr/lib/x86_64-linux-gnu/libapt-pkg.so.6.0.0
+ 7f06fca53000-7f06fca5a000 r--p 001ba000 08:20 6492                       /usr/lib/x86_64-linux-gnu/libapt-pkg.so.6.0.0
+ 7f06fca5a000-7f06fca5b000 rw-p 001c1000 08:20 6492                       /usr/lib/x86_64-linux-gnu/libapt-pkg.so.6.0.0
+ 7f06fca5b000-7f06fca70000 r--p 00000000 08:20 2636                       /usr/lib/python3/dist-packages/apt_pkg.cpython-310-x86_64-linux-gnu.so
+ 7f06fca70000-7f06fca8f000 r-xp 00015000 08:20 2636                       /usr/lib/python3/dist-packages/apt_pkg.cpython-310-x86_64-linux-gnu.so
+ 7f06fca8f000-7f06fcaa6000 r--p 00034000 08:20 2636                       /usr/lib/python3/dist-packages/apt_pkg.cpython-310-x86_64-linux-gnu.so
+ 7f06fcaa6000-7f06fcaa8000 r--p 0004a000 08:20 2636                       /usr/lib/python3/dist-packages/apt_pkg.cpython-310-x86_64-linux-gnu.so
+ 7f06fcaa8000-7f06fcab1000 rw-p 0004c000 08:20 2636                       /usr/lib/python3/dist-packages/apt_pkg.cpython-310-x86_64-linux-gnu.so
+ 7f06fcab1000-7f06fcdb1000 rw-p 00000000 00:00 0 
+ 7f06fcdb1000-7f06fcdb5000 r--p 00000000 08:20 4368                       /usr/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+ 7f06fcdb5000-7f06fcdbd000 r-xp 00004000 08:20 4368                       /usr/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+ 7f06fcdbd000-7f06fcdc1000 r--p 0000c000 08:20 4368                       /usr/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+ 7f06fcdc1000-7f06fcdc2000 ---p 00010000 08:20 4368                       /usr/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+ 7f06fcdc2000-7f06fcdc3000 r--p 00010000 08:20 4368                       /usr/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+ 7f06fcdc3000-7f06fcdc5000 rw-p 00011000 08:20 4368                       /usr/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+ 7f06fcdc5000-7f06fcfc5000 rw-p 00000000 00:00 0 
+ 7f06fcfc5000-7f06fcfca000 r--p 00000000 08:20 6701                       /usr/lib/x86_64-linux-gnu/libmpdec.so.2.5.1
+ 7f06fcfca000-7f06fcfeb000 r-xp 00005000 08:20 6701                       /usr/lib/x86_64-linux-gnu/libmpdec.so.2.5.1
+ 7f06fcfeb000-7f06fcff2000 r--p 00026000 08:20 6701                       /usr/lib/x86_64-linux-gnu/libmpdec.so.2.5.1
+ 7f06fcff2000-7f06fcff3000 r--p 0002c000 08:20 6701                       /usr/lib/x86_64-linux-gnu/libmpdec.so.2.5.1
+ 7f06fcff3000-7f06fcff4000 rw-p 0002d000 08:20 6701                       /usr/lib/x86_64-linux-gnu/libmpdec.so.2.5.1
+ 7f06fcff4000-7f06fd185000 rw-p 00000000 00:00 0 
+ 7f06fd185000-7f06fd189000 r--p 00000000 08:20 4503                       /usr/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+ 7f06fd189000-7f06fd18f000 r-xp 00004000 08:20 4503                       /usr/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+ 7f06fd18f000-7f06fd193000 r--p 0000a000 08:20 4503                       /usr/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+ 7f06fd193000-7f06fd194000 r--p 0000d000 08:20 4503                       /usr/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+ 7f06fd194000-7f06fd196000 rw-p 0000e000 08:20 4503                       /usr/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+ 7f06fd196000-7f06fd296000 rw-p 00000000 00:00 0 
+ 7f06fd296000-7f06fd297000 r--p 00000000 08:20 6796                       /usr/lib/x86_64-linux-gnu/libpthread.so.0
+ 7f06fd297000-7f06fd298000 r-xp 00001000 08:20 6796                       /usr/lib/x86_64-linux-gnu/libpthread.so.0
+ 7f06fd298000-7f06fd299000 r--p 00002000 08:20 6796                       /usr/lib/x86_64-linux-gnu/libpthread.so.0
+ 7f06fd299000-7f06fd29a000 r--p 00002000 08:20 6796                       /usr/lib/x86_64-linux-gnu/libpthread.so.0
+ 7f06fd29a000-7f06fd29b000 rw-p 00003000 08:20 6796                       /usr/lib/x86_64-linux-gnu/libpthread.so.0
+ 7f06fd29b000-7f06fd34d000 r--p 00000000 08:20 50770                      /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 7f06fd34d000-7f06fd5ab000 r-xp 000b2000 08:20 50770                      /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 7f06fd5ab000-7f06fd67d000 r--p 00310000 08:20 50770                      /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 7f06fd67d000-7f06fd6d8000 r--p 003e1000 08:20 50770                      /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 7f06fd6d8000-7f06fd6db000 rw-p 0043c000 08:20 50770                      /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 7f06fd6db000-7f06fd6de000 rw-p 00000000 00:00 0 
+ 7f06fd6de000-7f06fd6fc000 r--p 00000000 08:20 50773                      /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 7f06fd6fc000-7f06fd757000 r-xp 0001e000 08:20 50773                      /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 7f06fd757000-7f06fd774000 r--p 00079000 08:20 50773                      /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 7f06fd774000-7f06fd77e000 r--p 00095000 08:20 50773                      /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 7f06fd77e000-7f06fd782000 rw-p 0009f000 08:20 50773                      /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 7f06fd782000-7f06fd794000 r--p 00000000 08:20 4505                       /usr/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+ 7f06fd794000-7f06fd7a1000 r-xp 00012000 08:20 4505                       /usr/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+ 7f06fd7a1000-7f06fd7af000 r--p 0001f000 08:20 4505                       /usr/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+ 7f06fd7af000-7f06fd7b0000 r--p 0002c000 08:20 4505                       /usr/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+ 7f06fd7b0000-7f06fd7b9000 rw-p 0002d000 08:20 4505                       /usr/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+ 7f06fd7b9000-7f06fd9b9000 rw-p 00000000 00:00 0 
+ 7f06fd9b9000-7f06fd9bc000 r--p 00000000 08:20 6680                       /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ 7f06fd9bc000-7f06fd9d7000 r-xp 00003000 08:20 6680                       /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ 7f06fd9d7000-7f06fd9e2000 r--p 0001e000 08:20 6680                       /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ 7f06fd9e2000-7f06fd9e3000 r--p 00028000 08:20 6680                       /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ 7f06fd9e3000-7f06fd9e4000 rw-p 00029000 08:20 6680                       /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ 7f06fd9ed000-7f06fd9ef000 r--p 00000000 08:20 6861                       /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
+ 7f06fd9ef000-7f06fd9f3000 r-xp 00002000 08:20 6861                       /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
+ 7f06fd9f3000-7f06fd9f4000 r--p 00006000 08:20 6861                       /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
+ 7f06fd9f4000-7f06fd9f5000 r--p 00006000 08:20 6861                       /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
+ 7f06fd9f5000-7f06fd9f6000 rw-p 00007000 08:20 6861                       /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
+ 7f06fd9fb000-7f06fd9fc000 r--p 00000000 08:20 4869                       /usr/lib/python3.10/lib-dynload/_uuid.cpython-310-x86_64-linux-gnu.so
+ 7f06fd9fc000-7f06fd9fd000 r-xp 00001000 08:20 4869                       /usr/lib/python3.10/lib-dynload/_uuid.cpython-310-x86_64-linux-gnu.so
+ 7f06fd9fd000-7f06fd9fe000 r--p 00002000 08:20 4869                       /usr/lib/python3.10/lib-dynload/_uuid.cpython-310-x86_64-linux-gnu.so
+ 7f06fd9fe000-7f06fd9ff000 r--p 00002000 08:20 4869                       /usr/lib/python3.10/lib-dynload/_uuid.cpython-310-x86_64-linux-gnu.so
+ 7f06fd9ff000-7f06fda00000 rw-p 00003000 08:20 4869                       /usr/lib/python3.10/lib-dynload/_uuid.cpython-310-x86_64-linux-gnu.so
+ 7f06fda00000-7f06fda08000 r--p 00000000 08:20 4729                       /usr/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+ 7f06fda08000-7f06fda1d000 r-xp 00008000 08:20 4729                       /usr/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+ 7f06fda1d000-7f06fda29000 r--p 0001d000 08:20 4729                       /usr/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+ 7f06fda29000-7f06fda2a000 r--p 00028000 08:20 4729                       /usr/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+ 7f06fda2a000-7f06fda2d000 rw-p 00029000 08:20 4729                       /usr/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+ 7f06fda2d000-7f06fda2f000 r--p 00000000 08:20 6520                       /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 7f06fda2f000-7f06fda3c000 r-xp 00002000 08:20 6520                       /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 7f06fda3c000-7f06fda3e000 r--p 0000f000 08:20 6520                       /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 7f06fda3e000-7f06fda3f000 r--p 00010000 08:20 6520                       /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 7f06fda3f000-7f06fda40000 rw-p 00011000 08:20 6520                       /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 7f06fda40000-7f06fda42000 r--p 00000000 08:20 4369                       /usr/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+ 7f06fda42000-7f06fda45000 r-xp 00002000 08:20 4369                       /usr/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+ 7f06fda45000-7f06fda47000 r--p 00005000 08:20 4369                       /usr/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+ 7f06fda47000-7f06fda48000 r--p 00006000 08:20 4369                       /usr/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+ 7f06fda48000-7f06fda49000 rw-p 00007000 08:20 4369                       /usr/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+ 7f06fda49000-7f06fdc49000 rw-p 00000000 00:00 0 
+ 7f06fdc4b000-7f06fdc4c000 r--p 00000000 08:20 4504                       /usr/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc4c000-7f06fdc4d000 r-xp 00001000 08:20 4504                       /usr/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc4d000-7f06fdc4e000 r--p 00002000 08:20 4504                       /usr/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc4e000-7f06fdc4f000 r--p 00002000 08:20 4504                       /usr/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc4f000-7f06fdc50000 rw-p 00003000 08:20 4504                       /usr/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc50000-7f06fdc51000 r--p 00000000 08:20 122077                     /home/phu/.local/lib/python3.10/site-packages/markupsafe/_speedups.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc51000-7f06fdc52000 r-xp 00001000 08:20 122077                     /home/phu/.local/lib/python3.10/site-packages/markupsafe/_speedups.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc52000-7f06fdc53000 r--p 00002000 08:20 122077                     /home/phu/.local/lib/python3.10/site-packages/markupsafe/_speedups.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc53000-7f06fdc54000 r--p 00002000 08:20 122077                     /home/phu/.local/lib/python3.10/site-packages/markupsafe/_speedups.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc54000-7f06fdc55000 rw-p 00003000 08:20 122077                     /home/phu/.local/lib/python3.10/site-packages/markupsafe/_speedups.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc55000-7f06fdc57000 r--p 00000000 08:20 4730                       /usr/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc57000-7f06fdc5e000 r-xp 00002000 08:20 4730                       /usr/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc5e000-7f06fdc60000 r--p 00009000 08:20 4730                       /usr/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc60000-7f06fdc61000 r--p 0000a000 08:20 4730                       /usr/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc61000-7f06fdc62000 rw-p 0000b000 08:20 4730                       /usr/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc62000-7f06fdc65000 r--p 00000000 08:20 4736                       /usr/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc65000-7f06fdc69000 r-xp 00003000 08:20 4736                       /usr/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc69000-7f06fdc6c000 r--p 00007000 08:20 4736                       /usr/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc6c000-7f06fdc6d000 r--p 00009000 08:20 4736                       /usr/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc6d000-7f06fdc6e000 rw-p 0000a000 08:20 4736                       /usr/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+ 7f06fdc6e000-7f06fded0000 rw-p 00000000 00:00 0 
+ 7f06fded0000-7f06fded7000 r--s 00000000 08:20 6292                       /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+ 7f06fded7000-7f06fdf2e000 r--p 00000000 08:20 2336                       /usr/lib/locale/C.utf8/LC_CTYPE
+ 7f06fdf2e000-7f06fdf30000 rw-p 00000000 00:00 0 
+ 7f06fdf30000-7f06fdf58000 r--p 00000000 08:20 6521                       /usr/lib/x86_64-linux-gnu/libc.so.6
+ 7f06fdf58000-7f06fe0ed000 r-xp 00028000 08:20 6521                       /usr/lib/x86_64-linux-gnu/libc.so.6
+ 7f06fe0ed000-7f06fe145000 r--p 001bd000 08:20 6521                       /usr/lib/x86_64-linux-gnu/libc.so.6
+ 7f06fe145000-7f06fe149000 r--p 00214000 08:20 6521                       /usr/lib/x86_64-linux-gnu/libc.so.6
+ 7f06fe149000-7f06fe14b000 rw-p 00218000 08:20 6521                       /usr/lib/x86_64-linux-gnu/libc.so.6
+ 7f06fe14b000-7f06fe158000 rw-p 00000000 00:00 0 
+ 7f06fe158000-7f06fe15a000 r--p 00000000 08:20 6877                       /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+ 7f06fe15a000-7f06fe16b000 r-xp 00002000 08:20 6877                       /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+ 7f06fe16b000-7f06fe171000 r--p 00013000 08:20 6877                       /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+ 7f06fe171000-7f06fe172000 ---p 00019000 08:20 6877                       /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+ 7f06fe172000-7f06fe173000 r--p 00019000 08:20 6877                       /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+ 7f06fe173000-7f06fe174000 rw-p 0001a000 08:20 6877                       /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+ 7f06fe174000-7f06fe178000 r--p 00000000 08:20 6570                       /usr/lib/x86_64-linux-gnu/libexpat.so.1.8.7
+ 7f06fe178000-7f06fe197000 r-xp 00004000 08:20 6570                       /usr/lib/x86_64-linux-gnu/libexpat.so.1.8.7
+ 7f06fe197000-7f06fe1a1000 r--p 00023000 08:20 6570                       /usr/lib/x86_64-linux-gnu/libexpat.so.1.8.7
+ 7f06fe1a1000-7f06fe1a2000 ---p 0002d000 08:20 6570                       /usr/lib/x86_64-linux-gnu/libexpat.so.1.8.7
+ 7f06fe1a2000-7f06fe1a4000 r--p 0002d000 08:20 6570                       /usr/lib/x86_64-linux-gnu/libexpat.so.1.8.7
+ 7f06fe1a4000-7f06fe1a5000 rw-p 0002f000 08:20 6570                       /usr/lib/x86_64-linux-gnu/libexpat.so.1.8.7
+ 7f06fe1a5000-7f06fe1b3000 r--p 00000000 08:20 6683                       /usr/lib/x86_64-linux-gnu/libm.so.6
+ 7f06fe1b3000-7f06fe22f000 r-xp 0000e000 08:20 6683                       /usr/lib/x86_64-linux-gnu/libm.so.6
+ 7f06fe22f000-7f06fe28a000 r--p 0008a000 08:20 6683                       /usr/lib/x86_64-linux-gnu/libm.so.6
+ 7f06fe28a000-7f06fe28b000 r--p 000e4000 08:20 6683                       /usr/lib/x86_64-linux-gnu/libm.so.6
+ 7f06fe28b000-7f06fe28c000 rw-p 000e5000 08:20 6683                       /usr/lib/x86_64-linux-gnu/libm.so.6
+ 7f06fe28c000-7f06fe28d000 r--p 00000000 08:20 4384                       /usr/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+ 7f06fe28d000-7f06fe28e000 r-xp 00001000 08:20 4384                       /usr/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+ 7f06fe28e000-7f06fe28f000 r--p 00002000 08:20 4384                       /usr/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+ 7f06fe28f000-7f06fe290000 r--p 00002000 08:20 4384                       /usr/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+ 7f06fe290000-7f06fe291000 rw-p 00003000 08:20 4384                       /usr/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+ 7f06fe291000-7f06fe293000 rw-p 00000000 00:00 0 
+ 7f06fe293000-7f06fe295000 r--p 00000000 08:20 6325                       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 7f06fe295000-7f06fe2bf000 r-xp 00002000 08:20 6325                       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 7f06fe2bf000-7f06fe2ca000 r--p 0002c000 08:20 6325                       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 7f06fe2cb000-7f06fe2cd000 r--p 00037000 08:20 6325                       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 7f06fe2cd000-7f06fe2cf000 rw-p 00039000 08:20 6325                       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 7ffc48e19000-7ffc48e3a000 rw-p 00000000 00:00 0                          [stack]
+ 7ffc48e40000-7ffc48e44000 r--p 00000000 00:00 0                          [vvar]
+ 7ffc48e44000-7ffc48e46000 r-xp 00000000 00:00 0                          [vdso]
+ProcStatus:
+ Name:	python3
+ Umask:	0022
+ State:	R (running)
+ Tgid:	561888
+ Ngid:	0
+ Pid:	561888
+ PPid:	561461
+ TracerPid:	0
+ Uid:	1000	1000	1000	1000
+ Gid:	1000	1000	1000	1000
+ FDSize:	256
+ Groups:	4 20 24 25 27 29 30 44 46 116 1000 1001 
+ NStgid:	561888
+ NSpid:	561888
+ NSpgid:	561888
+ NSsid:	561461
+ VmPeak:	   45072 kB
+ VmSize:	   45072 kB
+ VmLck:	       0 kB
+ VmPin:	       0 kB
+ VmHWM:	   34932 kB
+ VmRSS:	   34932 kB
+ RssAnon:	   20696 kB
+ RssFile:	   14236 kB
+ RssShmem:	       0 kB
+ VmData:	   21456 kB
+ VmStk:	     132 kB
+ VmExe:	    2756 kB
+ VmLib:	   10932 kB
+ VmPTE:	     132 kB
+ VmSwap:	       0 kB
+ HugetlbPages:	       0 kB
+ CoreDumping:	0
+ THP_enabled:	1
+ Threads:	1
+ SigQ:	1/15387
+ SigPnd:	0000000000000000
+ ShdPnd:	0000000000000000
+ SigBlk:	0000000000000000
+ SigIgn:	0000000001001000
+ SigCgt:	0000000000000002
+ CapInh:	0000000000000000
+ CapPrm:	0000000000000000
+ CapEff:	0000000000000000
+ CapBnd:	000001ffffffffff
+ CapAmb:	0000000000000000
+ NoNewPrivs:	0
+ Seccomp:	0
+ Seccomp_filters:	0
+ Speculation_Store_Bypass:	thread vulnerable
+ SpeculationIndirectBranch:	conditional enabled
+ Cpus_allowed:	fff
+ Cpus_allowed_list:	0-11
+ Mems_allowed:	1
+ Mems_allowed_list:	0
+ voluntary_ctxt_switches:	49
+ nonvoluntary_ctxt_switches:	1
+PythonArgs: ['app.py']
+Traceback:
+ Traceback (most recent call last):
+   File "/var/www/back-end/app.py", line 6, in <module>
+     from server.v1.config.app_config import setup_app_config
+   File "/var/www/back-end/server/v1/config/app_config.py", line 4, in <module>
+     from flask_session import Session
+ ImportError: cannot import name 'Session' from 'flask_session' (unknown location)
+UserGroups: adm audio cdrom dialout dip floppy netdev plugdev sudo video

@@ -1,0 +1,2 @@
+2023-08-30 13:30:13,191 INFO subiquity:163 Starting Subiquity server revision 967 of snap /snap/ubuntu-desktop-installer/967
+2023-08-30 13:30:13,191 INFO subiquity:164 Arguments passed: ['/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/cmd/server.py', '--use-os-prober', '--storage-version=2', '--postinst-hooks-dir=/snap/ubuntu-desktop-installer/967/etc/subiquity/postinst.d']

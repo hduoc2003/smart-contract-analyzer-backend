@@ -1,0 +1,2 @@
+2023-09-02 01:45:15,253 INFO subiquity:199 Starting Subiquity server revision 1223 of snap /snap/ubuntu-desktop-installer/1223
+2023-09-02 01:45:15,253 INFO subiquity:200 Arguments passed: ['/snap/ubuntu-desktop-installer/1223/bin/subiquity/subiquity/cmd/server.py', '--use-os-prober', '--storage-version=2', '--postinst-hooks-dir=/snap/ubuntu-desktop-installer/1223/etc/subiquity/postinst.d']

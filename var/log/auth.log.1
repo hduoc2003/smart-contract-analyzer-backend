@@ -1,0 +1,94 @@
+Aug 30 20:30:05 DESKTOP-AQ1M28G systemd-logind[144]: New seat seat0.
+Aug 30 20:30:15 DESKTOP-AQ1M28G login[506]: pam_unix(login:session): session opened for user root(uid=0) by (uid=0)
+Aug 30 20:30:15 DESKTOP-AQ1M28G systemd-logind[144]: New session c1 of user root.
+Aug 30 20:30:15 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user root(uid=0) by (uid=0)
+Aug 30 20:30:15 DESKTOP-AQ1M28G systemd: pam_systemd(systemd-user:session): Runtime directory '/run/user/0' is not owned by UID 0, as it should.
+Aug 30 20:30:15 DESKTOP-AQ1M28G systemd: pam_systemd(systemd-user:session): Not setting $XDG_RUNTIME_DIR, as the directory is not in order.
+Aug 30 20:30:15 DESKTOP-AQ1M28G login[506]: pam_systemd(login:session): Runtime directory '/run/user/0' is not owned by UID 0, as it should.
+Aug 30 20:30:15 DESKTOP-AQ1M28G login[506]: pam_systemd(login:session): Not setting $XDG_RUNTIME_DIR, as the directory is not in order.
+Aug 30 20:30:15 DESKTOP-AQ1M28G login[529]: ROOT LOGIN  on '/dev/pts/1'
+Aug 30 20:30:15 DESKTOP-AQ1M28G groupadd[528]: group added to /etc/group: name=phu, GID=1000
+Aug 30 20:30:15 DESKTOP-AQ1M28G groupadd[528]: group added to /etc/gshadow: name=phu
+Aug 30 20:30:15 DESKTOP-AQ1M28G groupadd[528]: new group: name=phu, GID=1000
+Aug 30 20:30:15 DESKTOP-AQ1M28G useradd[537]: new user: name=phu, UID=1000, GID=1000, home=/home/phu, shell=/bin/bash, from=/dev/pts/0
+Aug 30 20:30:19 DESKTOP-AQ1M28G passwd[557]: pam_unix(passwd:chauthtok): password changed for phu
+Aug 30 20:30:19 DESKTOP-AQ1M28G chfn[627]: changed user 'phu' information
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'adm'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'dialout'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'cdrom'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'floppy'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'sudo'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'audio'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'dip'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'video'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'plugdev'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to group 'netdev'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'adm'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'dialout'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'cdrom'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'floppy'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'sudo'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'audio'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'dip'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'video'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'plugdev'
+Aug 30 20:30:19 DESKTOP-AQ1M28G usermod[640]: add 'phu' to shadow group 'netdev'
+Aug 30 20:30:21 DESKTOP-AQ1M28G systemd-logind[187]: New seat seat0.
+Aug 30 20:30:23 DESKTOP-AQ1M28G login[374]: pam_unix(login:session): session opened for user root(uid=0) by (uid=0)
+Aug 30 20:30:24 DESKTOP-AQ1M28G systemd-logind[186]: New seat seat0.
+Aug 30 20:30:27 DESKTOP-AQ1M28G login[380]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Aug 30 20:30:27 DESKTOP-AQ1M28G systemd-logind[186]: New session c1 of user phu.
+Aug 30 20:30:27 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Aug 30 20:33:23 DESKTOP-AQ1M28G sudo:      phu : TTY=pts/0 ; PWD=/mnt/d/University/Laboratory/Blockchain/Mythril/mythril/data ; USER=root ; COMMAND=/usr/bin/apt update
+Aug 30 20:33:23 DESKTOP-AQ1M28G sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Aug 30 20:33:40 DESKTOP-AQ1M28G sudo: pam_unix(sudo:session): session closed for user root
+Aug 30 20:33:41 DESKTOP-AQ1M28G sudo:      phu : TTY=pts/0 ; PWD=/mnt/d/University/Laboratory/Blockchain/Mythril/mythril/data ; USER=root ; COMMAND=/usr/bin/apt install python3-pip
+Aug 30 20:33:41 DESKTOP-AQ1M28G sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Aug 30 20:34:38 DESKTOP-AQ1M28G sudo: pam_unix(sudo:session): session closed for user root
+Aug 30 21:17:01 DESKTOP-AQ1M28G CRON[3121]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Aug 30 21:17:01 DESKTOP-AQ1M28G CRON[3121]: pam_unix(cron:session): session closed for user root
+Aug 31 13:45:16 DESKTOP-AQ1M28G systemd-logind[148]: New seat seat0.
+Aug 31 13:45:55 DESKTOP-AQ1M28G systemd-logind[137]: New seat seat0.
+Aug 31 13:45:59 DESKTOP-AQ1M28G login[347]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Aug 31 13:45:59 DESKTOP-AQ1M28G systemd-logind[137]: New session c1 of user phu.
+Aug 31 13:45:59 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Aug 31 13:47:41 DESKTOP-AQ1M28G systemd-logind[141]: New seat seat0.
+Aug 31 13:47:43 DESKTOP-AQ1M28G login[361]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Aug 31 13:47:43 DESKTOP-AQ1M28G systemd-logind[141]: New session c1 of user phu.
+Aug 31 13:47:43 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Aug 31 13:49:23 DESKTOP-AQ1M28G systemd-logind[148]: New seat seat0.
+Aug 31 13:49:26 DESKTOP-AQ1M28G login[363]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Aug 31 13:49:26 DESKTOP-AQ1M28G systemd-logind[148]: New session c1 of user phu.
+Aug 31 13:49:26 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  1 18:21:54 DESKTOP-AQ1M28G systemd-logind[158]: New seat seat0.
+Sep  1 18:21:58 DESKTOP-AQ1M28G login[372]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  1 18:21:58 DESKTOP-AQ1M28G systemd-logind[158]: New session c1 of user phu.
+Sep  1 18:21:58 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  1 18:25:25 DESKTOP-AQ1M28G systemd-logind[154]: New seat seat0.
+Sep  1 19:36:58 DESKTOP-AQ1M28G systemd-logind[159]: New seat seat0.
+Sep  2 08:25:51 DESKTOP-AQ1M28G systemd-logind[180]: New seat seat0.
+Sep  2 08:25:54 DESKTOP-AQ1M28G login[369]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:25:54 DESKTOP-AQ1M28G systemd-logind[180]: New session c1 of user phu.
+Sep  2 08:25:54 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:30:23 DESKTOP-AQ1M28G systemd-logind[184]: New seat seat0.
+Sep  2 08:30:26 DESKTOP-AQ1M28G login[366]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:30:26 DESKTOP-AQ1M28G systemd-logind[184]: New session c1 of user phu.
+Sep  2 08:30:26 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:31:04 DESKTOP-AQ1M28G systemd-logind[146]: New seat seat0.
+Sep  2 08:32:40 DESKTOP-AQ1M28G systemd-logind[184]: New seat seat0.
+Sep  2 08:32:42 DESKTOP-AQ1M28G login[365]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:32:42 DESKTOP-AQ1M28G systemd-logind[184]: New session c1 of user phu.
+Sep  2 08:32:42 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:45:06 DESKTOP-AQ1M28G systemd-logind[187]: New seat seat0.
+Sep  2 08:45:12 DESKTOP-AQ1M28G login[375]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:45:12 DESKTOP-AQ1M28G systemd-logind[187]: New session c1 of user phu.
+Sep  2 08:45:12 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:49:54 DESKTOP-AQ1M28G systemd-logind[190]: New seat seat0.
+Sep  2 08:49:57 DESKTOP-AQ1M28G login[372]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:49:57 DESKTOP-AQ1M28G systemd-logind[190]: New session c1 of user phu.
+Sep  2 08:49:57 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:54:59 DESKTOP-AQ1M28G systemd-logind[193]: New seat seat0.
+Sep  2 08:55:04 DESKTOP-AQ1M28G login[390]: pam_unix(login:session): session opened for user phu(uid=1000) by (uid=0)
+Sep  2 08:55:04 DESKTOP-AQ1M28G systemd-logind[193]: New session c1 of user phu.
+Sep  2 08:55:04 DESKTOP-AQ1M28G systemd: pam_unix(systemd-user:session): session opened for user phu(uid=1000) by (uid=0)
+Oct 29 08:20:18 DESKTOP-AQ1M28G systemd-logind[150]: New seat seat0.

@@ -1,0 +1,84 @@
+2023-10-30 08:49:58,690 INFO subiquity:199 Starting Subiquity server revision 1271 of snap /snap/ubuntu-desktop-installer/1271
+2023-10-30 08:49:58,690 INFO subiquity:200 Arguments passed: ['/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/cmd/server.py', '--use-os-prober', '--storage-version=2', '--postinst-hooks-dir=/snap/ubuntu-desktop-installer/1271/etc/subiquity/postinst.d']
+2023-10-30 08:59:59,235 INFO root:30 start: subiquity/apply_autoinstall_config: 
+2023-10-30 08:59:59,250 INFO root:30 finish: subiquity/apply_autoinstall_config: SUCCESS: 
+2023-10-30 08:59:59,355 ERROR root:30 finish: subiquity/Refresh/check_for_update: FAIL: cancelled
+2023-10-30 08:59:59,392 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-10-30 08:59:59,395 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-10-30 08:59:59,432 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-10-30 08:59:59,556 ERROR root:30 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'pvscan'
+2023-10-30 08:59:59,556 ERROR block-discover:1288 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1282, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/context.py", line 149, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1250, in _probe_once
+    storage = await self.app.prober.get_storage(probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 66, in get_storage
+    return await run_in_thread(run_probert, probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/async_helpers.py", line 59, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 62, in run_probert
+    return asyncio.run(
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 246, in probe
+    await asyncio.gather(*coroutines)
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 237, in run_probe
+    result = await probe.pfunc(context=self.context,
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/lvm.py", line 200, in probe
+    lvm_scan()
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/lvm.py", line 98, in lvm_scan
+    subprocess.run(cmd, stdout=subprocess.DEVNULL,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pvscan'
+2023-10-30 08:59:59,731 ERROR root:30 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-10-30 08:59:59,732 ERROR block-discover:1288 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1282, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/context.py", line 149, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1250, in _probe_once
+    storage = await self.app.prober.get_storage(probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 66, in get_storage
+    return await run_in_thread(run_probert, probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/async_helpers.py", line 59, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 62, in run_probert
+    return asyncio.run(
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 246, in probe
+    await asyncio.gather(*coroutines)
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 237, in run_probe
+    result = await probe.pfunc(context=self.context,
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 159, in blockdev_probe
+    ptable = _extract_partition_table(devname)
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 117, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'

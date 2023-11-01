@@ -1,0 +1,298 @@
+2023-10-30 09:19:13,076 INFO subiquity:199 Starting Subiquity server revision 1271 of snap /snap/ubuntu-desktop-installer/1271
+2023-10-30 09:19:13,077 INFO subiquity:200 Arguments passed: ['/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/cmd/server.py', '--use-os-prober', '--storage-version=2', '--postinst-hooks-dir=/snap/ubuntu-desktop-installer/1271/etc/subiquity/postinst.d']
+2023-10-30 09:19:13,077 DEBUG subiquity:201 Kernel commandline: CommandLineParams(_raw='initrd=\\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=12 bonding.max_bonds=0 dummy.numdummies=0 fb_tunnels=none swiotlb=force console=hvc0 debug pty.legacy_count=0\n', _tokens={'debug'}, _values={'initrd': 'initrd.img', 'WSL_ROOT_INIT': '1', 'panic': '-1', 'nr_cpus': '12', 'bonding.max_bonds': '0', 'dummy.numdummies': '0', 'fb_tunnels': 'none', 'swiotlb': 'force', 'console': 'hvc0', 'pty.legacy_count': '0'})
+2023-10-30 09:19:13,077 DEBUG subiquity:202 Environment: environ({'SNAP_REVISION': '1271', 'SNAP_REAL_HOME': '/root', 'SNAP_USER_COMMON': '/root/snap/ubuntu-desktop-installer/common', 'PATH_ORIG': '/snap/ubuntu-desktop-installer/1271/usr/sbin:/snap/ubuntu-desktop-installer/1271/usr/bin:/snap/ubuntu-desktop-installer/1271/sbin:/snap/ubuntu-desktop-installer/1271/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SNAP_INSTANCE_KEY': '', 'SNAP_EUID': '0', 'PWD': '/snap/ubuntu-desktop-installer/1271/bin/subiquity', 'SYSTEMD_EXEC_PID': '205', 'SNAP_CONTEXT': 'p3wzTgoEB1oqB9NcIRpw2zOJAWtyyq_rW8DLuEGJIK8OsZkAJpKm', 'LANG': 'C.UTF-8', 'SNAP_ARCH': 'amd64', 'PY3OR2_PYTHON': '/snap/ubuntu-desktop-installer/1271/usr/bin/python3.10', 'SNAP_INSTANCE_NAME': 'ubuntu-desktop-installer', 'SNAP_USER_DATA': '/root/snap/ubuntu-desktop-installer/1271', 'INVOCATION_ID': '8c40808be71f4f9db15d48b06565b1f6', 'SNAP_REEXEC': '', 'SNAP_UID': '0', 'LD_LIBRARY_PATH_ORIG': '/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void:/snap/ubuntu-desktop-installer/1271/lib:/snap/ubuntu-desktop-installer/1271/usr/lib:/snap/ubuntu-desktop-installer/1271/lib/x86_64-linux-gnu:/snap/ubuntu-desktop-installer/1271/usr/lib/x86_64-linux-gnu', 'PYTHONPATH_ORIG': '', 'PYTHONPATH': '/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages:/snap/ubuntu-desktop-installer/1271/usr/lib/python3/dist-packages:/snap/ubuntu-desktop-installer/1271/usr/lib/python3/site-packages:', 'PYTHON': '/snap/ubuntu-desktop-installer/1271/usr/bin/python3.10', 'PYTHONIOENCODING': 'utf-8', 'SNAP': '/snap/ubuntu-desktop-installer/1271', 'SNAP_COMMON': '/var/snap/ubuntu-desktop-installer/common', 'SNAP_VERSION': '0+git.c030903a', 'DISPLAY': ':0', 'SHLVL': '1', 'SNAP_LIBRARY_PATH': '/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void', 'SNAP_COOKIE': 'p3wzTgoEB1oqB9NcIRpw2zOJAWtyyq_rW8DLuEGJIK8OsZkAJpKm', 'SNAP_DATA': '/var/snap/ubuntu-desktop-installer/1271', 'LD_LIBRARY_PATH': '/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void:/snap/ubuntu-desktop-installer/1271/lib:/snap/ubuntu-desktop-installer/1271/usr/lib:/snap/ubuntu-desktop-installer/1271/lib/x86_64-linux-gnu:/snap/ubuntu-desktop-installer/1271/usr/lib/x86_64-linux-gnu', 'SNAP_NAME': 'ubuntu-desktop-installer', 'JOURNAL_STREAM': '7:19581', 'PATH': '/snap/ubuntu-desktop-installer/1271/bin/subiquity/bin:/snap/ubuntu-desktop-installer/1271/bin/subiquity/usr/bin:/snap/ubuntu-desktop-installer/1271/bin:/snap/ubuntu-desktop-installer/1271/sbin:/snap/ubuntu-desktop-installer/1271/usr/sbin:/snap/ubuntu-desktop-installer/1271/usr/bin:/snap/ubuntu-desktop-installer/1271/sbin:/snap/ubuntu-desktop-installer/1271/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SUBIQUITY_ROOT': '/snap/ubuntu-desktop-installer/1271/bin/subiquity', 'OLDPWD': '/var/snap/ubuntu-desktop-installer/1271', '_': '/snap/ubuntu-desktop-installer/1271/usr/bin/python3.10', 'APPORT_DATA_DIR': '/snap/ubuntu-desktop-installer/1271/bin/subiquity/share/apport'})
+2023-10-30 09:19:13,077 DEBUG asyncio:54 Using selector: EpollSelector
+2023-10-30 09:19:13,079 DEBUG subiquitycore.prober:33 Prober() init finished, data:None
+2023-10-30 09:19:13,125 DEBUG curtin:95 Running command ['dpkg', '--print-architecture'] with allowed return codes [0] (capture=True)
+2023-10-30 09:19:13,153 DEBUG subiquitycore.utils:121 arun_command called: ['cloud-init', 'status', '--wait']
+2023-10-30 09:29:13,251 DEBUG subiquity.server.server:569 waited 600.0748307704926s for cloud-init
+2023-10-30 09:29:13,465 DEBUG subiquity.server.server:573 cloud-init status: '<timeout>', assumed disabled
+2023-10-30 09:29:13,501 DEBUG subiquity.server.server:470 load_autoinstall_config only_early True file None
+2023-10-30 09:29:13,502 DEBUG subiquity.server.server:470 load_autoinstall_config only_early False file None
+2023-10-30 09:29:13,689 DEBUG subiquitycore.core:118 starting controllers
+2023-10-30 09:29:13,771 DEBUG subiquity.server.controllers.kernel:66 Using default kernel linux-generic
+2023-10-30 09:29:14,073 DEBUG probert.network:585 event for link_change: NEW {'ifindex': 1, 'flags': 65609, 'arptype': 772, 'family': 0, 'is_vlan': False, 'name': b'lo'}
+2023-10-30 09:29:14,075 DEBUG probert.network:585 event for link_change: NEW {'ifindex': 2, 'flags': 69699, 'arptype': 1, 'family': 0, 'is_vlan': False, 'name': b'eth0'}
+2023-10-30 09:29:14,076 DEBUG probert.network:585 event for addr_change: NEW {'ifindex': 1, 'flags': 128, 'family': 2, 'scope': 254, 'local': b'127.0.0.1/8'}
+2023-10-30 09:29:14,077 DEBUG probert.network:585 event for addr_change: NEW {'ifindex': 2, 'flags': 128, 'family': 2, 'scope': 0, 'local': b'172.26.99.48/20'}
+2023-10-30 09:29:14,077 DEBUG probert.network:585 event for addr_change: NEW {'ifindex': 1, 'flags': 128, 'family': 10, 'scope': 254, 'local': b'::1'}
+2023-10-30 09:29:14,077 DEBUG probert.network:585 event for addr_change: NEW {'ifindex': 2, 'flags': 128, 'family': 10, 'scope': 253, 'local': b'fe80::215:5dff:fe98:8247/64'}
+2023-10-30 09:29:14,079 DEBUG probert.network:672 link_change NEW {'ifindex': 1, 'flags': 65609, 'arptype': 772, 'family': 0, 'is_vlan': False, 'name': b'lo'}
+2023-10-30 09:29:15,206 DEBUG subiquitycore.models.network:475 new_link 1 lo lo
+2023-10-30 09:29:15,207 DEBUG subiquitycore.models.network:477 ignoring based on type
+2023-10-30 09:29:15,207 DEBUG probert.network:672 link_change NEW {'ifindex': 2, 'flags': 69699, 'arptype': 1, 'family': 0, 'is_vlan': False, 'name': b'eth0'}
+2023-10-30 09:29:15,432 DEBUG subiquitycore.models.network:475 new_link 2 eth0 eth
+2023-10-30 09:29:15,449 DEBUG subiquitycore.models.network:506 new_link 2 eth0 with config {}
+2023-10-30 09:29:15,467 DEBUG root:30 start: subiquity/Network/_send_update: NEW eth0
+2023-10-30 09:29:15,502 DEBUG root:30 finish: subiquity/Network/_send_update: SUCCESS: NEW eth0
+2023-10-30 09:29:15,503 DEBUG probert.network:717 addr_change NEW {'ifindex': 1, 'flags': 128, 'family': 2, 'scope': 254, 'local': b'127.0.0.1/8'}
+2023-10-30 09:29:15,530 DEBUG probert.network:717 addr_change NEW {'ifindex': 2, 'flags': 128, 'family': 2, 'scope': 0, 'local': b'172.26.99.48/20'}
+2023-10-30 09:29:15,534 DEBUG root:30 start: subiquity/Network/_send_update: CHANGE eth0
+2023-10-30 09:29:15,536 DEBUG root:30 finish: subiquity/Network/_send_update: SUCCESS: CHANGE eth0
+2023-10-30 09:29:15,537 DEBUG probert.network:717 addr_change NEW {'ifindex': 1, 'flags': 128, 'family': 10, 'scope': 254, 'local': b'::1'}
+2023-10-30 09:29:15,548 DEBUG probert.network:717 addr_change NEW {'ifindex': 2, 'flags': 128, 'family': 10, 'scope': 253, 'local': b'fe80::215:5dff:fe98:8247/64'}
+2023-10-30 09:29:15,551 DEBUG root:30 start: subiquity/Network/_send_update: CHANGE eth0
+2023-10-30 09:29:15,553 DEBUG root:30 finish: subiquity/Network/_send_update: SUCCESS: CHANGE eth0
+2023-10-30 09:29:15,553 DEBUG probert.network:731 route_change NEW {'family': 2, 'type': 1, 'table': 254, 'dst': b'default', 'ifindex': 2}
+2023-10-30 09:29:15,902 DEBUG pyroute2.ndb.139625602581168.sources.localhost:74 init
+2023-10-30 09:29:15,914 DEBUG pyroute2.ndb.139625602581168.sources.localhost:384 starting the source
+2023-10-30 09:29:15,915 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:74 init
+2023-10-30 09:29:15,915 DEBUG pyroute2.ndb.139625602581168.sources.localhost:74 connecting
+2023-10-30 09:29:15,938 DEBUG pyroute2.ndb.139625602581168.sources.localhost:74 loading
+2023-10-30 09:29:15,943 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:384 starting the source
+2023-10-30 09:29:15,951 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:74 connecting
+2023-10-30 09:29:15,992 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:74 loading
+2023-10-30 09:29:16,056 DEBUG pyroute2.ndb.139625602581168.sources.localhost:74 running
+2023-10-30 09:29:16,059 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:74 running
+2023-10-30 09:29:16,066 DEBUG pyroute2.ndb.139625602581168.sources.localhost:399 source shutdown
+2023-10-30 09:29:16,068 DEBUG pyroute2.ndb.139625602581168.sources.localhost:374 sync
+2023-10-30 09:29:16,069 DEBUG pyroute2.ndb.139625602581168.sources.localhost:369 shutdown handled by the main thread
+2023-10-30 09:29:16,069 DEBUG pyroute2.ndb.139625602581168.sources.localhost:74 stopped
+2023-10-30 09:29:16,074 DEBUG pyroute2.ndb.139625602581168.main:851 flush DB for the target localhost
+2023-10-30 09:29:16,075 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:399 source shutdown
+2023-10-30 09:29:16,076 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:374 sync
+2023-10-30 09:29:16,077 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:369 shutdown handled by the main thread
+2023-10-30 09:29:16,077 DEBUG pyroute2.ndb.139625602581168.sources.localhost/nsmanager:74 stopped
+2023-10-30 09:29:16,078 DEBUG pyroute2.ndb.139625602581168.main:851 flush DB for the target localhost/nsmanager
+2023-10-30 09:29:16,101 DEBUG subiquitycore.controllers.network:102 default routes True
+2023-10-30 09:29:16,104 DEBUG probert.network:731 route_change NEW {'family': 2, 'type': 1, 'table': 254, 'dst': b'172.26.96.0/20', 'ifindex': 2}
+2023-10-30 09:29:16,104 DEBUG probert.network:731 route_change NEW {'family': 2, 'type': 2, 'table': 255, 'dst': b'127.0.0.0/8', 'ifindex': 1}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 2, 'type': 2, 'table': 255, 'dst': b'127.0.0.1', 'ifindex': 1}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 2, 'type': 3, 'table': 255, 'dst': b'127.255.255.255', 'ifindex': 1}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 2, 'type': 2, 'table': 255, 'dst': b'172.26.99.48', 'ifindex': 2}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 2, 'type': 3, 'table': 255, 'dst': b'172.26.111.255', 'ifindex': 2}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 10, 'type': 2, 'table': 254, 'dst': b'::1', 'ifindex': 1}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 10, 'type': 2, 'table': 254, 'dst': b'fe80::215:5dff:fe98:8247', 'ifindex': 2}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 10, 'type': 1, 'table': 254, 'dst': b'fe80::/64', 'ifindex': 2}
+2023-10-30 09:29:16,105 DEBUG probert.network:731 route_change NEW {'family': 10, 'type': 5, 'table': 254, 'dst': b'ff00::/8', 'ifindex': 2}
+2023-10-30 09:29:16,175 DEBUG probert.network:662 could not start wlan_listener
+2023-10-30 09:29:16,369 DEBUG subiquitycore.core:121 controllers started
+2023-10-30 09:29:16,370 INFO root:30 start: subiquity/apply_autoinstall_config: 
+2023-10-30 09:29:16,374 DEBUG root:30 start: subiquity/Early/apply_autoinstall_config: 
+2023-10-30 09:29:16,446 DEBUG root:30 finish: subiquity/Early/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,456 DEBUG root:30 start: subiquity/Reporting/apply_autoinstall_config: 
+2023-10-30 09:29:16,456 DEBUG root:30 finish: subiquity/Reporting/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,456 DEBUG root:30 start: subiquity/Error/apply_autoinstall_config: 
+2023-10-30 09:29:16,457 DEBUG root:30 finish: subiquity/Error/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,457 DEBUG root:30 start: subiquity/Userdata/apply_autoinstall_config: 
+2023-10-30 09:29:16,457 DEBUG root:30 finish: subiquity/Userdata/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,465 DEBUG subiquity.models.subiquity:256 model userdata for postinstall stage is configured, to go {'locale', 'packages', 'ubuntu_pro', 'drivers', 'ssh', 'identity', 'snaplist'}
+2023-10-30 09:29:16,468 DEBUG root:30 start: subiquity/Package/apply_autoinstall_config: 
+2023-10-30 09:29:16,468 DEBUG root:30 finish: subiquity/Package/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,469 DEBUG subiquity.models.subiquity:256 model packages for postinstall stage is configured, to go {'locale', 'ubuntu_pro', 'drivers', 'ssh', 'identity', 'snaplist'}
+2023-10-30 09:29:16,469 DEBUG root:30 start: subiquity/Debconf/apply_autoinstall_config: 
+2023-10-30 09:29:16,469 DEBUG root:30 finish: subiquity/Debconf/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,470 DEBUG subiquity.models.subiquity:256 model debconf_selections for install stage is configured, to go {'keyboard', 'kernel', 'filesystem', 'proxy', 'source'}
+2023-10-30 09:29:16,470 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Locale as interactive
+2023-10-30 09:29:16,470 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Refresh as interactive
+2023-10-30 09:29:16,470 DEBUG root:30 start: subiquity/Kernel/apply_autoinstall_config: 
+2023-10-30 09:29:16,471 DEBUG root:30 finish: subiquity/Kernel/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,471 DEBUG subiquity.models.subiquity:256 model kernel for install stage is configured, to go {'proxy', 'source', 'filesystem', 'keyboard'}
+2023-10-30 09:29:16,472 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Integrity as interactive
+2023-10-30 09:29:16,472 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Keyboard as interactive
+2023-10-30 09:29:16,473 DEBUG root:30 start: subiquity/Zdev/apply_autoinstall_config: 
+2023-10-30 09:29:16,473 DEBUG root:30 finish: subiquity/Zdev/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Source as interactive
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Network as interactive
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping UbuntuPro as interactive
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Proxy as interactive
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Mirror as interactive
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Filesystem as interactive
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Identity as interactive
+2023-10-30 09:29:16,474 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping SSH as interactive
+2023-10-30 09:29:16,475 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping SnapList as interactive
+2023-10-30 09:29:16,475 DEBUG root:30 start: subiquity/Ad/apply_autoinstall_config: 
+2023-10-30 09:29:16,475 DEBUG root:30 finish: subiquity/Ad/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,477 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Codecs as interactive
+2023-10-30 09:29:16,477 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Drivers as interactive
+2023-10-30 09:29:16,478 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping OEM as interactive
+2023-10-30 09:29:16,479 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping TimeZone as interactive
+2023-10-30 09:29:16,479 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Install as interactive
+2023-10-30 09:29:16,480 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Updates as interactive
+2023-10-30 09:29:16,480 DEBUG root:30 start: subiquity/Late/apply_autoinstall_config: 
+2023-10-30 09:29:16,480 DEBUG root:30 finish: subiquity/Late/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,483 DEBUG subiquity.server.server:461 apply_autoinstall_config: skipping Shutdown as interactive
+2023-10-30 09:29:16,484 INFO root:30 finish: subiquity/apply_autoinstall_config: SUCCESS: 
+2023-10-30 09:29:16,486 DEBUG subiquity.models.subiquity:256 model locale for postinstall stage is configured, to go {'ubuntu_pro', 'drivers', 'ssh', 'identity', 'snaplist'}
+2023-10-30 09:29:16,486 DEBUG root:30 start: subiquity/Refresh/configure_snapd: 
+2023-10-30 09:29:16,487 DEBUG root:30 start: subiquity/Refresh/configure_snapd/get_details: 
+2023-10-30 09:29:16,544 DEBUG root:30 start: subiquity/Refresh/check_for_update: 
+2023-10-30 09:29:16,595 DEBUG root:30 start: subiquity/OEM/load_metapackages_list: 
+2023-10-30 09:29:16,600 DEBUG root:30 start: subiquity/OEM/load_metapackages_list/wait_confirmation: 
+2023-10-30 09:29:16,611 DEBUG root:30 start: subiquity/Install/install: 
+2023-10-30 09:29:16,903 DEBUG subiquity.server.controllers.snaplist:79 loading list of snaps
+2023-10-30 09:29:17,336 DEBUG root:30 start: subiquity/Filesystem/_probe: 
+2023-10-30 09:29:17,595 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/snaps/ubuntu-desktop-installer HTTP/1.1" 200 1651
+2023-10-30 09:29:17,978 DEBUG root:30 start: subiquity/Refresh/check_for_update: 
+2023-10-30 09:29:17,979 DEBUG root:30 start: subiquity/SnapList/loader: 
+2023-10-30 09:29:17,983 DEBUG root:30 start: subiquity/Filesystem/_probe/probe_once: restricted=False
+2023-10-30 09:29:18,019 DEBUG asyncio:54 Using selector: EpollSelector
+2023-10-30 09:29:18,020 ERROR root:30 finish: subiquity/Refresh/check_for_update: FAIL: cancelled
+2023-10-30 09:29:18,029 DEBUG root:30 start: subiquity/SnapList/loader/list: 
+2023-10-30 09:29:18,077 DEBUG root:30 finish: subiquity/Refresh/configure_snapd/get_details: SUCCESS: current version of snap is: '0+git.c030903a'
+2023-10-30 09:29:18,079 DEBUG subiquity.server.controllers.refresh:175 get_refresh_channel: failed to find .disk/info file
+2023-10-30 09:29:18,079 DEBUG subiquity.server.controllers.refresh:131 no refresh channel found
+2023-10-30 09:29:18,079 DEBUG root:30 finish: subiquity/Refresh/configure_snapd: SUCCESS: 
+2023-10-30 09:29:18,184 DEBUG probert.dasd:134 Probing DASD devies
+2023-10-30 09:29:18,186 DEBUG probert.dasd:137 DASD devices only present on s390x, arch=x86_64
+2023-10-30 09:29:18,213 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-10-30 09:29:18,241 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-10-30 09:29:18,249 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-10-30 09:29:18,498 DEBUG probert.filesystems:140 swap volume size not found. Neither ID_PART_ENTRY_SIZE nor attrs:size present
+2023-10-30 09:29:19,043 ERROR root:30 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-10-30 09:29:19,044 ERROR block-discover:1288 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1282, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/context.py", line 149, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1250, in _probe_once
+    storage = await self.app.prober.get_storage(probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 66, in get_storage
+    return await run_in_thread(run_probert, probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/async_helpers.py", line 59, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 62, in run_probert
+    return asyncio.run(
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 246, in probe
+    await asyncio.gather(*coroutines)
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 237, in run_probe
+    result = await probe.pfunc(context=self.context,
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 159, in blockdev_probe
+    ptable = _extract_partition_table(devname)
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 117, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-10-30 09:29:19,148 DEBUG subiquity.server.controllers.filesystem:1297 block probing took 1.8 seconds
+2023-10-30 09:29:19,148 DEBUG subiquity.server.controllers.filesystem:1474 start_monitor
+2023-10-30 09:29:19,165 DEBUG root:30 start: subiquity/Filesystem/_probe/probe_once: restricted=True
+2023-10-30 09:29:19,175 DEBUG asyncio:54 Using selector: EpollSelector
+2023-10-30 09:29:19,710 ERROR root:30 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-10-30 09:29:19,710 ERROR block-discover:1288 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1282, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/context.py", line 149, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquity/server/controllers/filesystem.py", line 1250, in _probe_once
+    storage = await self.app.prober.get_storage(probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 66, in get_storage
+    return await run_in_thread(run_probert, probe_types)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/async_helpers.py", line 59, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/1271/bin/subiquity/subiquitycore/prober.py", line 62, in run_probert
+    return asyncio.run(
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 246, in probe
+    await asyncio.gather(*coroutines)
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 237, in run_probe
+    result = await probe.pfunc(context=self.context,
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 159, in blockdev_probe
+    ptable = _extract_partition_table(devname)
+  File "/snap/ubuntu-desktop-installer/1271/lib/python3.10/site-packages/probert/storage.py", line 117, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/1271/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-10-30 09:29:19,710 DEBUG subiquity.server.controllers.filesystem:1297 disk probing took 0.5 seconds
+2023-10-30 09:29:19,710 DEBUG subiquity.server.controllers.filesystem:1474 start_monitor
+2023-10-30 09:29:19,711 DEBUG root:30 finish: subiquity/Filesystem/_probe: SUCCESS: 
+2023-10-30 09:29:20,343 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?section=server HTTP/1.1" 200 None
+2023-10-30 09:29:20,351 DEBUG root:30 finish: subiquity/SnapList/loader/list: SUCCESS: 
+2023-10-30 09:29:20,352 DEBUG subiquity.server.controllers.snaplist:92 fetched list of 22 snaps
+2023-10-30 09:29:20,354 DEBUG root:30 start: subiquity/SnapList/loader/fetch/microk8s: 
+2023-10-30 09:29:20,632 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?select=refresh HTTP/1.1" 200 59
+2023-10-30 09:29:20,633 DEBUG subiquity.server.controllers.refresh:201 check_for_update received []
+2023-10-30 09:29:20,633 DEBUG root:30 finish: subiquity/Refresh/check_for_update: SUCCESS: no new version of snap available
+2023-10-30 09:29:21,568 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=microk8s HTTP/1.1" 200 None
+2023-10-30 09:29:21,625 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/microk8s: SUCCESS: 
+2023-10-30 09:29:21,625 DEBUG root:30 start: subiquity/SnapList/loader/fetch/nextcloud: 
+2023-10-30 09:29:23,128 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=nextcloud HTTP/1.1" 200 None
+2023-10-30 09:29:23,130 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/nextcloud: SUCCESS: 
+2023-10-30 09:29:23,130 DEBUG root:30 start: subiquity/SnapList/loader/fetch/wekan: 
+2023-10-30 09:29:23,677 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=wekan HTTP/1.1" 200 None
+2023-10-30 09:29:23,680 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/wekan: SUCCESS: 
+2023-10-30 09:29:23,681 DEBUG root:30 start: subiquity/SnapList/loader/fetch/kata-containers: 
+2023-10-30 09:29:24,114 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=kata-containers HTTP/1.1" 200 None
+2023-10-30 09:29:24,118 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/kata-containers: SUCCESS: 
+2023-10-30 09:29:24,119 DEBUG root:30 start: subiquity/SnapList/loader/fetch/docker: 
+2023-10-30 09:29:24,533 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=docker HTTP/1.1" 200 None
+2023-10-30 09:29:24,535 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/docker: SUCCESS: 
+2023-10-30 09:29:24,535 DEBUG root:30 start: subiquity/SnapList/loader/fetch/canonical-livepatch: 
+2023-10-30 09:29:25,013 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=canonical-livepatch HTTP/1.1" 200 None
+2023-10-30 09:29:25,015 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/canonical-livepatch: SUCCESS: 
+2023-10-30 09:29:25,016 DEBUG root:30 start: subiquity/SnapList/loader/fetch/rocketchat-server: 
+2023-10-30 09:29:25,489 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=rocketchat-server HTTP/1.1" 200 None
+2023-10-30 09:29:25,490 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/rocketchat-server: SUCCESS: 
+2023-10-30 09:29:25,491 DEBUG root:30 start: subiquity/SnapList/loader/fetch/mosquitto: 
+2023-10-30 09:29:25,901 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=mosquitto HTTP/1.1" 200 None
+2023-10-30 09:29:25,902 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/mosquitto: SUCCESS: 
+2023-10-30 09:29:25,902 DEBUG root:30 start: subiquity/SnapList/loader/fetch/etcd: 
+2023-10-30 09:29:26,375 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=etcd HTTP/1.1" 200 None
+2023-10-30 09:29:26,378 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/etcd: SUCCESS: 
+2023-10-30 09:29:26,379 DEBUG root:30 start: subiquity/SnapList/loader/fetch/powershell: 
+2023-10-30 09:29:26,791 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=powershell HTTP/1.1" 200 None
+2023-10-30 09:29:26,792 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/powershell: SUCCESS: 
+2023-10-30 09:29:26,792 DEBUG root:30 start: subiquity/SnapList/loader/fetch/sabnzbd: 
+2023-10-30 09:29:27,201 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=sabnzbd HTTP/1.1" 200 None
+2023-10-30 09:29:27,202 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/sabnzbd: SUCCESS: 
+2023-10-30 09:29:27,203 DEBUG root:30 start: subiquity/SnapList/loader/fetch/wormhole: 
+2023-10-30 09:29:27,604 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=wormhole HTTP/1.1" 200 None
+2023-10-30 09:29:27,606 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/wormhole: SUCCESS: 
+2023-10-30 09:29:27,607 DEBUG root:30 start: subiquity/SnapList/loader/fetch/aws-cli: 
+2023-10-30 09:29:28,042 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=aws-cli HTTP/1.1" 200 None
+2023-10-30 09:29:28,044 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/aws-cli: SUCCESS: 
+2023-10-30 09:29:28,045 DEBUG root:30 start: subiquity/SnapList/loader/fetch/google-cloud-sdk: 
+2023-10-30 09:29:28,482 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=google-cloud-sdk HTTP/1.1" 200 1799
+2023-10-30 09:29:28,483 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/google-cloud-sdk: SUCCESS: 
+2023-10-30 09:29:28,483 DEBUG root:30 start: subiquity/SnapList/loader/fetch/slcli: 
+2023-10-30 09:29:28,897 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=slcli HTTP/1.1" 200 None
+2023-10-30 09:29:28,899 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/slcli: SUCCESS: 
+2023-10-30 09:29:28,899 DEBUG root:30 start: subiquity/SnapList/loader/fetch/doctl: 
+2023-10-30 09:29:29,330 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=doctl HTTP/1.1" 200 None
+2023-10-30 09:29:29,334 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/doctl: SUCCESS: 
+2023-10-30 09:29:29,335 DEBUG root:30 start: subiquity/SnapList/loader/fetch/conjure-up: 
+2023-10-30 09:29:29,733 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=conjure-up HTTP/1.1" 200 None
+2023-10-30 09:29:29,737 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/conjure-up: SUCCESS: 
+2023-10-30 09:29:29,738 DEBUG root:30 start: subiquity/SnapList/loader/fetch/postgresql10: 
+2023-10-30 09:29:30,131 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=postgresql10 HTTP/1.1" 200 1523
+2023-10-30 09:29:30,134 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/postgresql10: SUCCESS: 
+2023-10-30 09:29:30,135 DEBUG root:30 start: subiquity/SnapList/loader/fetch/heroku: 
+2023-10-30 09:29:30,638 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=heroku HTTP/1.1" 200 None
+2023-10-30 09:29:30,642 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/heroku: SUCCESS: 
+2023-10-30 09:29:30,642 DEBUG root:30 start: subiquity/SnapList/loader/fetch/keepalived: 
+2023-10-30 09:29:31,117 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=keepalived HTTP/1.1" 200 None
+2023-10-30 09:29:31,119 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/keepalived: SUCCESS: 
+2023-10-30 09:29:31,120 DEBUG root:30 start: subiquity/SnapList/loader/fetch/prometheus: 
+2023-10-30 09:29:31,574 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=prometheus HTTP/1.1" 200 None
+2023-10-30 09:29:31,576 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/prometheus: SUCCESS: 
+2023-10-30 09:29:31,576 DEBUG root:30 start: subiquity/SnapList/loader/fetch/juju: 
+2023-10-30 09:29:32,154 DEBUG urllib3.connectionpool:452 http://localhost:None "GET /v2/find?name=juju HTTP/1.1" 200 None
+2023-10-30 09:29:32,158 DEBUG root:30 finish: subiquity/SnapList/loader/fetch/juju: SUCCESS: 
+2023-10-30 09:29:32,159 DEBUG root:30 finish: subiquity/SnapList/loader: SUCCESS: 

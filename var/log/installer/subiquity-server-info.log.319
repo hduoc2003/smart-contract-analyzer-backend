@@ -1,0 +1,446 @@
+2023-08-30 13:30:30,978 INFO subiquity:163 Starting Subiquity server revision 967 of snap /snap/ubuntu-desktop-installer/967
+2023-08-30 13:30:30,978 INFO subiquity:164 Arguments passed: ['/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/cmd/server.py', '--use-os-prober', '--storage-version=2', '--postinst-hooks-dir=/snap/ubuntu-desktop-installer/967/etc/subiquity/postinst.d']
+2023-08-30 13:40:31,421 INFO root:37 start: subiquity/apply_autoinstall_config: 
+2023-08-30 13:40:31,438 INFO root:37 finish: subiquity/apply_autoinstall_config: SUCCESS: 
+2023-08-30 13:40:31,532 ERROR root:37 finish: subiquity/Refresh/check_for_update: FAIL: cancelled
+2023-08-30 13:40:31,553 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-08-30 13:40:31,622 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-08-30 13:40:31,624 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-08-30 13:40:31,647 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:31,648 ERROR block-discover:928 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:31,662 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:31,662 ERROR block-discover:928 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:31,771 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-08-30 13:40:31,813 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-08-30 13:40:31,815 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-08-30 13:40:31,885 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:31,894 ERROR block-discover:928 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:31,901 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:31,902 ERROR block-discover:928 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,030 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-08-30 13:40:32,064 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-08-30 13:40:32,069 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-08-30 13:40:32,108 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,108 ERROR block-discover:928 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,121 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,121 ERROR block-discover:928 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,261 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-08-30 13:40:32,303 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-08-30 13:40:32,304 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-08-30 13:40:32,318 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,318 ERROR block-discover:928 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,325 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,325 ERROR block-discover:928 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,491 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-08-30 13:40:32,530 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-08-30 13:40:32,532 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-08-30 13:40:32,589 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,589 ERROR block-discover:928 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,596 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,596 ERROR block-discover:928 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,739 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-08-30 13:40:32,775 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-08-30 13:40:32,777 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-08-30 13:40:32,789 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,789 ERROR block-discover:928 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,796 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,796 ERROR block-discover:928 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:32,948 ERROR probert.raid:40 Failed mdadm_assemble, mdadm command not found: [Errno 2] No such file or directory: 'mdadm'
+2023-08-30 13:40:32,992 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'maps', 'raw', 'format', '%w,%d,%N']
+2023-08-30 13:40:32,993 ERROR probert.multipath:38 Failed to run cmd: ['multipathd', 'show', 'paths', 'raw', 'format', '%d,%z,%m,%N,%n,%R,%r,%a']
+2023-08-30 13:40:33,009 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:33,009 ERROR block-discover:928 block probing failed restricted=False
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:33,250 ERROR root:37 finish: subiquity/Filesystem/_probe/probe_once: FAIL: [Errno 2] No such file or directory: 'sfdisk'
+2023-08-30 13:40:33,251 ERROR block-discover:928 block probing failed restricted=True
+Traceback (most recent call last):
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 922, in _probe
+    await asyncio.wait_for(self._probe_once_task.task, 90.0)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/context.py", line 148, in decorated_async
+    return await meth(self, **kw)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquity/server/controllers/filesystem.py", line 890, in _probe_once
+    storage = await run_in_thread(
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/async_helpers.py", line 60, in run_in_thread
+    return await loop.run_in_executor(None, func, *args)
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/snap/ubuntu-desktop-installer/967/bin/subiquity/subiquitycore/prober.py", line 59, in get_storage
+    return Storage().probe(probe_types=probe_types)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 221, in probe
+    result = probe.pfunc(context=self.context, enabled_probes=to_probe)
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 144, in blockdev_probe
+    ptable = _extract_partition_table(device['DEVNAME'])
+  File "/snap/ubuntu-desktop-installer/967/lib/python3.10/site-packages/probert/storage.py", line 116, in _extract_partition_table
+    result = subprocess.run(cmd, stdout=subprocess.PIPE,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/snap/ubuntu-desktop-installer/967/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sfdisk'
