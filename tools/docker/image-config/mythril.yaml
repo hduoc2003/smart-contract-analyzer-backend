@@ -1,6 +1,6 @@
 docker_image: mythril/myth:0.23.24
 analyze_cmd: analyze
-options: -o json
+options: --solv {solc} -o json
 volumes:
   bind: /tmp
   mode: ro

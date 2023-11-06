@@ -1,14 +1,14 @@
 {
   "file_name": "swc-106.sol",
   "tool_name": "slither, mythril",
-  "duration": 20.19509768486023,
+  "duration": 18.3348445892334,
   "solc": "0.4.11",
   "analysis": {
     "errors": [],
     "issues": [
       {
         "contract": "SimpleSuicide",
-        "source_map": "57:63:0",
+        "source_map": "66:63:0",
         "line_no": [
           5,
           6,
@@ -25,12 +25,12 @@
       },
       {
         "contract": "",
-        "source_map": "0:23:0",
+        "source_map": "0:25:0",
         "line_no": [
           1
         ],
         "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
-        "description": "Pragma version0.4.11 (../../../tmp/user1/contracts/swc-106.sol#1) allows old versions\n",
+        "description": "Pragma version>=0.4.11 (../../../tmp/user1/contracts/swc-106.sol#1) allows old versions\n",
         "hint": "incorrect-versions-of-solidity",
         "issue_title": "solc-version",
         "swcID": "SWC-102",
@@ -53,7 +53,7 @@
       },
       {
         "contract": "SimpleSuicide",
-        "source_map": "27:98:0:-",
+        "source_map": "36:98:0:-",
         "line_no": 3,
         "code": "contract SimpleSuicide {\r\n\r\n  function sudicideAnyone() {\r\n    selfdestruct(msg.sender);\r\n  }\r\n\r\n}",
         "description": "An assertion violation was triggered.\nIt is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).",
@@ -66,7 +66,7 @@
       },
       {
         "contract": "SimpleSuicide",
-        "source_map": "27:98:0:-",
+        "source_map": "36:98:0:-",
         "line_no": 3,
         "code": "contract SimpleSuicide {\r\n\r\n  function sudicideAnyone() {\r\n    selfdestruct(msg.sender);\r\n  }\r\n\r\n}",
         "description": "An assertion violation was triggered.\nIt is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).",
@@ -79,7 +79,7 @@
       },
       {
         "contract": "SimpleSuicide",
-        "source_map": "90:24",
+        "source_map": "99:24",
         "line_no": 6,
         "code": "selfdestruct(msg.sender)",
         "description": "Any sender can cause the contract to self-destruct.\nAny sender can trigger execution of the SELFDESTRUCT instruction to destroy this contract account and withdraw its balance to an arbitrary address. Review the transaction trace generated for this issue and make sure that appropriate security controls are in place to prevent unrestricted access.",

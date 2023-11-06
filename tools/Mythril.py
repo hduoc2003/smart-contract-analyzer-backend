@@ -1,5 +1,4 @@
 import json
-from pydoc import doc
 from typing_extensions import override
 
 import requests
@@ -7,7 +6,7 @@ from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.docker.Docker import Docker
-from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
+from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, valid_swc
 
@@ -31,7 +30,7 @@ class Mythril(Tool):
                 raise Exception(f"{contract} in {file_name} has wrong swc-id: {swcID}")
             issues.append(AnalysisIssue(
                 contract=contract,
-                source_map=raw_issue['sourceMap'],
+                source_map=parse_source_map(raw_issue['sourceMap']),
                 line_no=raw_issue['lineno'],
                 code=raw_issue['code'],
                 description=raw_issue['description'],
@@ -143,3 +142,7 @@ class Mythril(Tool):
         container.remove() # type: ignore
 
         return (errors, logs)
+
+def parse_source_map(source_map) -> str:
+    src_map_shorten = source_map[:4]
+    return src_map_shorten

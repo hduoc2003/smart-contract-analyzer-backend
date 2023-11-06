@@ -1,102 +1,48 @@
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
+import datetime
+from re import sub
 import sys
 import os
-import pathlib
-import json
 import time
-from tools.Mythril import Mythril
-from tools.Slither import Slither
-from typing import List
-# from tools.Slither import Slither
+from server.v1.api.utils.dict_utils import exclude_fields, include_fields
+from server.v1.api.utils.path import get_all_files
 from tools.Tool import Tool
+from tools.types import ToolAnalyzeArgs, ToolName
+from tools.utils.Async import Async
+from tools.utils.parsers import obj_to_json, obj_to_jsonstr
+# from tools.Slither import Slither
 
-from tools.type import FinalResult, ToolAnalyzeArgs, ToolName
-from tools.utils.parsers import obj_to_jsonstr
-from tools.docker.Docker import Docker
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-g: List[FinalResult] = Tool.analyze_files_async(
-    files=[
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-106.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-107-modifier-reentrancy.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-107-reentrancy-eth.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-107-simple-dao.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-110-contructor-create-argument.sol",
-            # solc="0.4.13"
-        ),
-        
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-110-out-of-bounds-exception.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-110-return-memory.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-110-two-mapppings.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-110-sha-of-sha-collision.sol",
-            # sol,c="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-112-proxy.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-112-proxy-pattern-false-positive.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-120-guess-the-number.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-120-old-blockhash.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-120-random-number-generator.sol",
-            # solc="0.4.13"
-        ),
-        ToolAnalyzeArgs(
-            sub_container_file_path="user1/contracts",
-            file_name="swc-127.sol",
-            # solc="0.4.13"
-        )
-        
-    ],
-    tools=[ToolName.Slither, ToolName.Mythril]
-)
+# files = get_all_files(r'D:\SE_LAB\SE_Task\blockchain\tool\smart-contract-analyzer\smart-contract-analyzer-backend\tools\storage\user1\contracts')
+# files = ['shadowing_variable.sol', 'swc-107-reentrancy-eth.sol']
 
-print(g)
+# lengths = [len(g.analysis.issues) for g in Tool.analyze_files_async(
+#     files=[ToolAnalyzeArgs(
+#         sub_container_file_path='user1/contracts',
+#         file_name=file_name
+#     ) for file_name in files]
+# )]
+
+# for i in range(0, 50):
+#     temp = [len(g.analysis.issues) for g in Tool.analyze_files_async(
+#         files=[ToolAnalyzeArgs(
+#             sub_container_file_path='user1/contracts',
+#             file_name=file_name
+#         ) for file_name in files]
+#     )]
+
+#     done = False
+#     for i, length in enumerate(temp):
+#         if (temp[i] != lengths[i]):
+#             print(f'file: {files[i]}\ntemp[i]: {temp[i]}\nlengths[i]: ${lengths[i]}')
+#             done = True
+#             break
+#     if (done):
+#         break
+
+a = {
+    'a': 1,
+    'b': 2,
+}
+
+print(datetime.datetime.now())

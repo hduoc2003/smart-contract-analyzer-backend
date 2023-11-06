@@ -1,8 +1,7 @@
 
-from typing import Union, List
-from tools.type import FinalResult, AnalysisIssue, AnalysisResult
+from typing import List
+from tools.types import FinalResult, AnalysisIssue, AnalysisResult
 import os
-import json
 from tools.utils.Log import Log
 from tools.utils.parsers import obj_to_jsonstr
 import copy
@@ -18,14 +17,14 @@ class DuplicateIssue():
         # Add more mappings here
     ]
     merge_issues = ["false-positive", "duplicate"]
-        
+
     @classmethod
     def export_duplicate_result(cls, file_name: str, result):
         split_parts = file_name.split("-")
         swc_number = ''.join(filter(str.isdigit, split_parts[1]))
         directory_path = os.path.join("tools", "utils", "duplicate_issues", f"swc-{swc_number}",f"{os.path.splitext(file_name)[0]}")
         os.makedirs(directory_path, exist_ok=True)  # Create directories if they don't exist
-        
+
         try:
             # if isinstance(result, AnalysisIssue):
                 file_name1 = os.path.splitext(file_name)[0] + '-duplicate-issues.json'
@@ -37,7 +36,7 @@ class DuplicateIssue():
         except Exception as e:
             Log.err(f'Error occured when export duplicate of file {file_name}')
             Log.err(e)
-    
+
     @classmethod
     def checkFalsePositive(cls, slither_issue: AnalysisIssue, mythril_issue: AnalysisIssue) ->bool:
         if slither_issue.issue_title != "controlled-delegatecall":
@@ -50,7 +49,7 @@ class DuplicateIssue():
             if mythril_line_no in slither_issue.line_no:
                 return False
         return True
-    @classmethod 
+    @classmethod
     def classifyIssues(cls, slither_issues: List[AnalysisIssue], mythril_issues: List[AnalysisIssue], file_name) -> List[AnalysisIssue]:
         """_summary_
 
@@ -61,13 +60,13 @@ class DuplicateIssue():
 
         Returns:
             List[AnalysisIssue]: kết quả sau khi đã merge, sắp xếp theo merged->slither->mythril
-        """        
+        """
         analysis_issues: List[AnalysisIssue] = []
-        
+
         #các issue của từng tool không cần merge sẽ điền vào đây để xếp theo thứ tự merge-issue- slither-issue- mythril-issue
         slither_issues_left: List[AnalysisIssue] = copy.deepcopy(slither_issues)
-        mythril_issues_left: List[AnalysisIssue] = copy.deepcopy(mythril_issues)    
-           
+        mythril_issues_left: List[AnalysisIssue] = copy.deepcopy(mythril_issues)
+
         if len(slither_issues) == 0 and len(mythril_issues) ==0:
             return []
         if len(mythril_issues) == 0:
@@ -79,7 +78,7 @@ class DuplicateIssue():
             return mythril_issues
         #dùng để print, TODO: xoá khi confirm
         duplicate_issues_detected: List[AnalysisIssue] = []
-        
+
         for slither_issue in slither_issues:
             for mythril_issue in mythril_issues:
                 checkFP = cls.checkFalsePositive(slither_issue, mythril_issue)
@@ -89,13 +88,13 @@ class DuplicateIssue():
                     break
                 check= False
                 for mapping in cls.dup_issues:
-                    
+
                     if mapping["slither"] == slither_issue.issue_title and mapping["mythril"] == mythril_issue.issue_title :
                         if isinstance(mythril_issue.line_no, list) and len(mythril_issue.line_no) == 1:
                             mythril_line_no = mythril_issue.line_no[0]
                         else:
                             mythril_line_no = mythril_issue.line_no
-                        if mythril_line_no in slither_issue.line_no: #kiểm tra có cùng một đoạn lỗi   
+                        if mythril_line_no in slither_issue.line_no: #kiểm tra có cùng một đoạn lỗi
                             check = True
                             slither_issues_left.remove(slither_issue)
                             mythril_issues_left.remove(mythril_issue)
@@ -117,31 +116,28 @@ class DuplicateIssue():
         analysis_issues.extend(slither_issues_left)
         analysis_issues.extend(mythril_issues_left)
 
-        #export duplicate_issues_detected ra file
-        cls.export_duplicate_result(file_name, duplicate_issues_detected)
         return analysis_issues
-    
+
     @classmethod
-    def merge(cls, final_slither: FinalResult, final_mythril: FinalResult) -> AnalysisResult: 
+    def merge(cls, final_slither: FinalResult, final_mythril: FinalResult) -> AnalysisResult:
         file_name = final_slither.file_name
-        if final_mythril.analysis.errors == '' and final_slither.analysis.errors != '':
+        if len(final_mythril.analysis.errors) == 0 and len(final_slither.analysis.errors) != 0:
             return AnalysisResult(
                 errors = final_slither.analysis.errors,
                 issues = final_mythril.analysis.issues
             )
-        if final_mythril.analysis.errors != '' and final_slither.analysis.errors == '':
+        if len(final_mythril.analysis.errors) != 0 and len(final_slither.analysis.errors) == 0:
             return AnalysisResult(
                 errors = final_mythril.analysis.errors,
                 issues = final_slither.analysis.issues
             )
-        
+
         slither_issues = final_slither.analysis.issues
         mythril_issues = final_mythril.analysis.issues
         return AnalysisResult(
-            errors= [],
-            issues = cls.classifyIssues(slither_issues, mythril_issues, file_name)            
+            errors= final_mythril.analysis.errors + final_slither.analysis.errors,
+            issues = cls.classifyIssues(slither_issues, mythril_issues, file_name)
         )
 
-        
-        
-        
+
+

@@ -1,14 +1,13 @@
 import json
-from math import e
-from typing import Container
+import re
 from typing_extensions import override
 from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
 from tools.docker.Docker import Docker
-from tools.type import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
+from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
-from tools.utils.SWC import get_swc_link, get_swc_title, link_hint, map_slither_check_to_swc,get_swc_no
+from tools.utils.SWC import get_swc_link, get_swc_no, get_swc_title, get_title_name, link_hint
 
 
 class Slither(Tool):
@@ -83,8 +82,36 @@ class Slither(Tool):
     def convert_source_map_represent(source_map: dict) -> str:
         start = source_map["start"]
         len = source_map["length"]
-        return f'{start}:{len}:0'
+        return f'{start}:{len}'
 
+    @staticmethod
+    def purifying_description(description: str, file_name: str) -> str:
+        # rút gọn tên file
+        contract_positions: list[int] = [match.start() for match in re.finditer(file_name, description)]
+        start_cut_pos: list[int] = []
+        end_cut_pos: list[int] = []
+        for pos in contract_positions:
+            start: int = pos
+            while (start >= 0 and description[start] != '('):
+                start -= 1
+            if (start >= 0):
+                start_cut_pos.append(start + 1)
+                end_cut_pos.append(pos - 1)
+                # print(description[start:pos-1])
+        ptr = 0
+        res: str = ''
+        for i in range(0, len(description)):
+            if ptr >= len(start_cut_pos):
+                res += description[i]
+                continue
+
+            if not (start_cut_pos[ptr] <= i and i <= end_cut_pos[ptr]):
+                res += description[i]
+                if (end_cut_pos[ptr] < i):
+                    ptr += 1
+        return res
+
+    @override
     @classmethod
     def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str, solc: str) -> FinalResult:
         issues: list[AnalysisIssue] = []
@@ -92,15 +119,15 @@ class Slither(Tool):
         for detector in detectors:
             elements = detector.get("elements")
             element = Slither.get_smallest_element(elements)
-            swcID= get_swc_no(detector['check'])
+            swcID: str = get_swc_no(detector['check'])
             issue = AnalysisIssue(
-                contract= Slither.get_contract(element) if element else "",
-                source_map= Slither.convert_source_map_represent(element["source_mapping"]) if element else "",
+                contract=Slither.get_contract(element) if element else "",
+                source_map=Slither.convert_source_map_represent(element["source_mapping"]) if element else "",
                 line_no=element["source_mapping"]["lines"] if element else [],
-                code="Không có source code :(, FE tự điền ứng với sourcemap nhé",
-                description=detector['description'] ,
+                code="",
+                description=cls.purifying_description(detector['description'], file_name),
                 hint= link_hint(detector["check"]),
-                issue_title= detector['check'],
+                issue_title= get_title_name(detector['check']),
                 swcID= swcID,
                 swc_title=get_swc_title(swcID),
                 swc_link=get_swc_link(swcID),
@@ -120,7 +147,7 @@ class Slither(Tool):
         )
         return final_result
     @classmethod
-    def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str, solc:str) -> FinalResult:
+    def parse_error_result(cls, errors: list[ToolError], duration: float, file_name: str, solc: str) -> FinalResult:
         final_result = FinalResult(
             file_name=file_name,
             tool_name=Slither.tool_name.value,
@@ -146,7 +173,7 @@ class Slither(Tool):
             ))
             return errors
         raw_result_errors = raw_result_json["error"]
-        print(raw_result_errors)
+        # print(raw_result_errors)
         if (isinstance(raw_result_errors, str)):
             if (raw_result_errors.find('Source file requires different compiler version') != -1):
                 errors.append(Tool.get_tool_error(
@@ -177,7 +204,7 @@ class Slither(Tool):
         container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
         cmd = f"timeout {args.timeout}s {cls.tool_cfg.analyze_cmd} {container_file_path}/{args.file_name} {args.options}"
         # print(cmd)
-        print("CONTAINER ", cls.container)
+        # print("CONTAINER ", cls.container)
         logs = Docker.exec_run(
             container=cls.container,
             cmd=cmd
