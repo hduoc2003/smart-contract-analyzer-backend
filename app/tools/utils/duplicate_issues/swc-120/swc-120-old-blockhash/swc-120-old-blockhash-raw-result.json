@@ -1,0 +1,135 @@
+{
+  "file_name": "swc-120-old-blockhash.sol",
+  "tool_name": "slither, mythril",
+  "duration": 71.12116765975952,
+  "solc": "0.4.24",
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.24 is not recommended for deployment\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "0:24:0",
+        "line_no": [
+          1
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version^0.4.24 (../../../tmp/user1/contracts/swc-120-old-blockhash.sol#1) allows old versions\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "PredictTheBlockHashChallenge",
+        "source_map": "395:61:0",
+        "line_no": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Struct PredictTheBlockHashChallenge.guess (../../../tmp/user1/contracts/swc-120-old-blockhash.sol#7-10) is not in CapWords\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "PredictTheBlockHashChallenge",
+        "source_map": ":29",
+        "line_no": 27,
+        "code": "guesses[msg.sender].block +10",
+        "description": "The arithmetic operator can overflow.\nIt is possible to cause an integer overflow or underflow in the arithmetic operation. ",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Integer Arithmetic Bugs",
+        "swcID": "SWC-101",
+        "swc_title": "Integer Overflow and Underflow",
+        "swc_link": "https://swcregistry.io/docs/SWC-101/",
+        "severity": "High"
+      },
+      {
+        "contract": "PredictTheBlockHashChallenge",
+        "source_map": "884:53",
+        "line_no": 27,
+        "code": "require(block.number > guesses[msg.sender].block +10)",
+        "description": "A control flow decision is made based on The block.number environment variable.\nThe block.number environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Dependence on predictable environment variable",
+        "swcID": "SWC-120",
+        "swc_title": "Weak Sources of Randomness from Chain Attributes",
+        "swc_link": "https://swcregistry.io/docs/SWC-120/",
+        "severity": "Low"
+      },
+      {
+        "contract": "PredictTheBlockHashChallenge",
+        "source_map": ":40",
+        "line_no": 30,
+        "code": "guesses[msg.sender].block - block.number",
+        "description": "The arithmetic operator can underflow.\nIt is possible to cause an integer overflow or underflow in the arithmetic operation. ",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Integer Arithmetic Bugs",
+        "swcID": "SWC-101",
+        "swc_title": "Integer Overflow and Underflow",
+        "swc_link": "https://swcregistry.io/docs/SWC-101/",
+        "severity": "High"
+      },
+      {
+        "contract": "PredictTheBlockHashChallenge",
+        "source_map": "1164:370",
+        "line_no": 30,
+        "code": "if(guesses[msg.sender].block - block.number < 256){\r\n          bytes32 answer = blockhash(guesses[msg.sender].block);\r\n\r\n          guesses[msg.sender].block = 0;\r\n          if (guesses[msg.sender].guess == answer) {\r\n              msg.sender.transfer(2 ether);\r\n          }\r\n        }\r\n        else{\r\n          revert(\"Sorry your lottery ticket has expired\");\r\n        }",
+        "description": "A control flow decision is made based on The block.number environment variable.\nThe block.number environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Dependence on predictable environment variable",
+        "swcID": "SWC-120",
+        "swc_title": "Weak Sources of Randomness from Chain Attributes",
+        "swc_link": "https://swcregistry.io/docs/SWC-120/",
+        "severity": "Low"
+      },
+      {
+        "contract": "PredictTheBlockHashChallenge",
+        "source_map": "1395:28",
+        "line_no": 35,
+        "code": "msg.sender.transfer(2 ether)",
+        "description": "Any sender can withdraw Ether from the contract account.\nArbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Unprotected Ether Withdrawal",
+        "swcID": "SWC-105",
+        "swc_title": "Unprotected Ether Withdrawal",
+        "swc_link": "https://swcregistry.io/docs/SWC-105/",
+        "severity": "High"
+      },
+      {
+        "contract": "PredictTheBlockHashChallenge",
+        "source_map": ":16",
+        "line_no": 23,
+        "code": "block.number + 1",
+        "description": "The arithmetic operator can overflow.\nIt is possible to cause an integer overflow or underflow in the arithmetic operation. ",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Integer Arithmetic Bugs",
+        "swcID": "SWC-101",
+        "swc_title": "Integer Overflow and Underflow",
+        "swc_link": "https://swcregistry.io/docs/SWC-101/",
+        "severity": "High"
+      }
+    ]
+  }
+}

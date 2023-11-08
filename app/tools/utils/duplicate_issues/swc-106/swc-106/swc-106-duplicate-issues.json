@@ -1,0 +1,15 @@
+[
+  {
+    "contract": "SimpleSuicide",
+    "source_map": "99:24",
+    "line_no": 6,
+    "code": "selfdestruct(msg.sender)",
+    "description": "SimpleSuicide.sudicideAnyone() (../../../tmp/user1/contracts/swc-106.sol#5-7) allows anyone to destruct the contract\n\nAny sender can cause the contract to self-destruct.\nAny sender can trigger execution of the SELFDESTRUCT instruction to destroy this contract account and withdraw its balance to an arbitrary address. Review the transaction trace generated for this issue and make sure that appropriate security controls are in place to prevent unrestricted access.",
+    "hint": "suicidal",
+    "issue_title": "suicidal",
+    "swcID": "SWC-106",
+    "swc_title": "Unprotected SELFDESTRUCT Instruction",
+    "swc_link": "https://swcregistry.io/docs/SWC-106/",
+    "severity": "chua lam"
+  }
+]

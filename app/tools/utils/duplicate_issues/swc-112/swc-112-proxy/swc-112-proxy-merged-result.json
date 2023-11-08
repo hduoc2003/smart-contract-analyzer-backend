@@ -1,0 +1,99 @@
+{
+  "file_name": "swc-112-proxy.sol",
+  "tool_name": "slither",
+  "duration": 60.64287829399109,
+  "solc": "0.4.24",
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "Proxy",
+        "source_map": "198:26:0",
+        "line_no": 12,
+        "code": "callee.delegatecall(_data)",
+        "description": "Proxy.forward(address,bytes) (../../../tmp/user1/contracts/swc-112-proxy.sol#11-13) uses delegatecall to a input-controlled function id\n\t- require(bool)(callee.delegatecall(_data)) (../../../tmp/user1/contracts/swc-112-proxy.sol#12)\n\nThe contract delegates execution to another contract with a user-supplied address.\nThe smart contract delegates execution to a user-supplied address.This could allow an attacker to execute arbitrary code in the context of this contract account and manipulate the state of the contract account or execute actions on its behalf.",
+        "hint": "controlled-delegatecall",
+        "issue_title": "controlled-delegatecall",
+        "swcID": "SWC-112",
+        "swc_title": "Delegatecall to Untrusted Callee",
+        "swc_link": "https://swcregistry.io/docs/SWC-112/",
+        "severity": "chua lam"
+      },
+      {
+        "contract": "",
+        "source_map": "0:24:0",
+        "line_no": [
+          1
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version^0.4.24 (../../../tmp/user1/contracts/swc-112-proxy.sol#1) allows old versions\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.24 is not recommended for deployment\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Proxy",
+        "source_map": "190:35:0",
+        "line_no": [
+          12
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Low level call in Proxy.forward(address,bytes) (../../../tmp/user1/contracts/swc-112-proxy.sol#11-13):\n\t- require(bool)(callee.delegatecall(_data)) (../../../tmp/user1/contracts/swc-112-proxy.sol#12)\n",
+        "hint": "low-level-calls",
+        "issue_title": "low-level-calls",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Proxy",
+        "source_map": "163:11:0",
+        "line_no": [
+          11
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Parameter Proxy.forward(address,bytes)._data (../../../tmp/user1/contracts/swc-112-proxy.sol#11) is not in mixedCase\n",
+        "hint": "conformance-to-solidity-naming-conventions",
+        "issue_title": "naming-convention",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "Proxy",
+        "source_map": "130:101:0",
+        "line_no": [
+          11,
+          12,
+          13
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "forward(address,bytes) should be declared external:\n\t- Proxy.forward(address,bytes) (../../../tmp/user1/contracts/swc-112-proxy.sol#11-13)\n",
+        "hint": "public-function-that-could-be-declared-external",
+        "issue_title": "external-function",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Optimization"
+      }
+    ]
+  }
+}

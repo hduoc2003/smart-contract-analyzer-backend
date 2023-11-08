@@ -1,0 +1,77 @@
+{
+  "file_name": "swc-120-random-number-generator.sol",
+  "tool_name": "slither",
+  "duration": 24.894901990890503,
+  "solc": "0.4.25",
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "RandomNumberGenerator",
+        "source_map": "533:33:0",
+        "line_no": [
+          14
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "RandomNumberGenerator.random(uint256) (../../../tmp/user1/contracts/swc-120-random-number-generator.sol#7-15) uses a weak PRNG: \"uint256((h / x)) % max + 1 (../../../tmp/user1/contracts/swc-120-random-number-generator.sol#14)\" \n",
+        "hint": "weak-prng",
+        "issue_title": "weak-prng",
+        "swcID": "SWC-120",
+        "swc_title": "Weak Sources of Randomness from Chain Attributes",
+        "swc_link": "https://swcregistry.io/docs/SWC-120/",
+        "severity": "High"
+      },
+      {
+        "contract": "RandomNumberGenerator",
+        "source_map": "195:377:0",
+        "line_no": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "RandomNumberGenerator.random(uint256) (../../../tmp/user1/contracts/swc-120-random-number-generator.sol#7-15) is never used and should be removed\n",
+        "hint": "dead-code",
+        "issue_title": "dead-code",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "0:24:0",
+        "line_no": [
+          1
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version^0.4.25 (../../../tmp/user1/contracts/swc-120-random-number-generator.sol#1) allows old versions\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.25 is not recommended for deployment\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "file_name": "swc-107-modifier-reentrancy.sol",
+  "tool_name": "slither",
+  "duration": 13.229298114776611,
+  "solc": "0.5.0",
+  "analysis": {
+    "errors": [],
+    "issues": []
+  }
+}

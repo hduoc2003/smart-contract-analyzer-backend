@@ -1,0 +1,54 @@
+{
+  "file_name": "swc-110-two-mapppings.sol",
+  "tool_name": "slither, mythril",
+  "duration": 28.23607587814331,
+  "solc": "0.4.22",
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "TwoMappings",
+        "source_map": "85:21:0",
+        "line_no": [
+          6
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "TwoMappings.n (../../../tmp/user1/contracts/swc-110-two-mapppings.sol#6) is never initialized. It is used in:\n\t- TwoMappings.check(uint256) (../../../tmp/user1/contracts/swc-110-two-mapppings.sol#12-14)\n",
+        "hint": "uninitialized-state-variables",
+        "issue_title": "uninitialized-state",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "High"
+      },
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.22 is known to contain severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "0:24:0",
+        "line_no": [
+          1
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version^0.4.22 (../../../tmp/user1/contracts/swc-110-two-mapppings.sol#1) is known to contain severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      }
+    ]
+  }
+}

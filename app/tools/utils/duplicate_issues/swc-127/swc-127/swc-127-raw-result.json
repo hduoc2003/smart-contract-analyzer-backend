@@ -1,0 +1,117 @@
+{
+  "file_name": "swc-127.sol",
+  "tool_name": "slither, mythril",
+  "duration": 30.88587498664856,
+  "solc": "0.4.25",
+  "analysis": {
+    "errors": [],
+    "issues": [
+      {
+        "contract": "FunctionTypes",
+        "source_map": "337:51:0",
+        "line_no": [
+          14
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "FunctionTypes.withdraw() (../../../tmp/user1/contracts/swc-127.sol#12-15) sends eth to arbitrary user\n\tDangerous calls:\n\t- address(msg.sender).transfer(address(this).balance) (../../../tmp/user1/contracts/swc-127.sol#14)\n",
+        "hint": "functions-that-send-ether-to-arbitrary-destinations",
+        "issue_title": "arbitrary-send-eth",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "High"
+      },
+      {
+        "contract": "FunctionTypes",
+        "source_map": "653:68:0",
+        "line_no": [
+          26,
+          27
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "FunctionTypes.breakIt() (../../../tmp/user1/contracts/swc-127.sol#22-28) uses assembly\n\t- INLINE ASM (../../../tmp/user1/contracts/swc-127.sol#26-27)\n",
+        "hint": "assembly-usage",
+        "issue_title": "assembly",
+        "swcID": "SWC-127",
+        "swc_title": "Arbitrary Jump with Function Type Variable",
+        "swc_link": "https://swcregistry.io/docs/SWC-127/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "FunctionTypes",
+        "source_map": "404:49:0",
+        "line_no": [
+          17,
+          18
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "FunctionTypes.frwd() (../../../tmp/user1/contracts/swc-127.sol#17-18) is never used and should be removed\n",
+        "hint": "dead-code",
+        "issue_title": "dead-code",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "FunctionTypes",
+        "source_map": "244:152:0",
+        "line_no": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "FunctionTypes.withdraw() (../../../tmp/user1/contracts/swc-127.sol#12-15) is never used and should be removed\n",
+        "hint": "dead-code",
+        "issue_title": "dead-code",
+        "swcID": "N/A",
+        "swc_title": "N/A",
+        "swc_link": "N/A",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "",
+        "line_no": [],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "solc-0.4.25 is not recommended for deployment\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "",
+        "source_map": "119:24:0",
+        "line_no": [
+          6
+        ],
+        "code": "Kh\u00f4ng c\u00f3 source code :(, FE t\u1ef1 \u0111i\u1ec1n \u1ee9ng v\u1edbi sourcemap nh\u00e9",
+        "description": "Pragma version^0.4.25 (../../../tmp/user1/contracts/swc-127.sol#6) allows old versions\n",
+        "hint": "incorrect-versions-of-solidity",
+        "issue_title": "solc-version",
+        "swcID": "SWC-102",
+        "swc_title": "Outdated Compiler Version",
+        "swc_link": "https://swcregistry.io/docs/SWC-102/",
+        "severity": "Informational"
+      },
+      {
+        "contract": "FunctionTypes",
+        "source_map": ":::i",
+        "line_no": 27,
+        "code": "func.f()",
+        "description": "The caller can redirect execution to arbitrary bytecode locations.\nIt is possible to redirect the control flow to arbitrary locations in the code. This may allow an attacker to bypass security controls or manipulate the business logic of the smart contract. Avoid using low-level-operations and assembly to prevent this issue.",
+        "hint": "ch\u01b0a l\u00e0m ph\u1ea7n hint",
+        "issue_title": "Jump to an arbitrary instruction",
+        "swcID": "SWC-127",
+        "swc_title": "Arbitrary Jump with Function Type Variable",
+        "swc_link": "https://swcregistry.io/docs/SWC-127/",
+        "severity": "High"
+      }
+    ]
+  }
+}
