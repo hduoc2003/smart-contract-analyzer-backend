@@ -13,6 +13,7 @@ curl \
 ENV PATH="/opt/node-v18.17.0-linux-x64/bin:${PATH}"
 RUN curl https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.gz | tar xzf - -C /opt/
 # TODO: DONE
+# RUN curl -fsSL https://get.docker.com | sh
 
 # ENV OF BACKEND
 ENV ENVIRONMENT=production
@@ -26,6 +27,7 @@ COPY ./apache-flask.conf /etc/apache2/sites-available/apache-flask.conf
 COPY ./ /var/www/apache-flask/
 
 RUN mv /var/www/apache-flask/app/build /var/www/apache-flask/
+# RUN chmod -R 666 /var/run/docker.sock
 
 # install requirement for BE   
 RUN pip install -r /var/www/apache-flask/app/requirements.txt
@@ -41,8 +43,18 @@ RUN cd /var/www/apache-flask/front-end/smart-contract-analyzer-frontend/ && npm 
 RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
 ln -sf /proc/self/fd/1 /var/log/apache2/error.log
 
-#?? what does this do
-# RUN chmod -R 777 /var/www/apache-flask/static
+
+# ... (các bước cài đặt khác)
+
+# Sao chép script vào image
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Thiết lập script làm entrypoint
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+# Các bước cài đặt và cấu hình ứng dụng của bạn
+# ...
 
 EXPOSE 80
 
