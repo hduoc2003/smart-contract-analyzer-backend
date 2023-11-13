@@ -1,6 +1,5 @@
-Options -MultiViews
 RewriteEngine On
-
-# RewriteRule chỉ được áp dụng nếu không có Alias nào khớp
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ %{REQUEST_FILENAME}.html

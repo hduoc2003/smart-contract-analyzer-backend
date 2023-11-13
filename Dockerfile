@@ -26,7 +26,7 @@ COPY ./apache-flask.conf /etc/apache2/sites-available/apache-flask.conf
 #COPY files from frontend, backend UBUNTU to DOCKER 
 COPY ./ /var/www/apache-flask/
 
-RUN mv /var/www/apache-flask/app/build /var/www/apache-flask/
+# RUN mv /var/www/apache-flask/app/build /var/www/apache-flask/
 # RUN chmod -R 666 /var/run/docker.sock
 
 # install requirement for BE   
@@ -34,8 +34,10 @@ RUN pip install -r /var/www/apache-flask/app/requirements.txt
 RUN a2dissite 000-default.conf
 RUN a2ensite apache-flask.conf
 RUN a2enmod headers
+RUN a2enmod rewrite
 RUN echo 'ServerName localhost' >> /etc/apache2/apache2.conf
-    
+# RUN chown www-data:www-data /var/www/apache-flask/.htaccess
+
 
 # RUN front end
 RUN cd /var/www/apache-flask/front-end/smart-contract-analyzer-frontend/ && npm install && npm run build
