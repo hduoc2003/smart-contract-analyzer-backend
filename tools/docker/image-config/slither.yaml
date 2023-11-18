@@ -4,5 +4,5 @@ options: --solc-solcs-select {solc} --json -
 volumes:
   bind: /tmp
   mode: ro
-timeout: 1000
+timeout: 1000000000
 info: Slither is a Solidity static analysis framework written in Python 3. It runs a suite of vulnerability detectors and prints visual information about contract details. Slither enables developers to find vulnerabilities, enhance their code comphrehension, and quickly prototype custom analyses.

@@ -17,7 +17,7 @@ from server.v1.api.utils.parsers import obj_to_json, obj_to_jsonstr
 from server.v1.api.utils.path import get_subcontainer_file_path
 from server.v1.api.utils.save_contract import save_contract
 from tools.Tool import Tool
-from tools.types import AnalysisResult, FinalResult, ToolAnalyzeArgs
+from tools.tool_types import AnalysisResult, FinalResult, ToolAnalyzeArgs
 
 @dataclass
 class FileInfo:

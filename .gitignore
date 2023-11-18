@@ -1,5 +1,6 @@
 storage/
 flask_session/
+*.swp
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -122,10 +123,14 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+.env*
+!.env.example
 .venv
 env/
 venv/
+linux_venv/
+mythril_venv/
+win_venv/
 ENV/
 env.bak/
 venv.bak/

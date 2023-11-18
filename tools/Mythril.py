@@ -1,12 +1,12 @@
 import json
+import os
+import subprocess
 from typing_extensions import override
 
-import requests
 from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
-from tools.docker.Docker import Docker
-from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
+from tools.tool_types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_title, valid_swc
 
@@ -14,6 +14,7 @@ class Mythril(Tool):
 
     tool_name = ToolName.Mythril
     tool_cfg = Tool.load_default_cfg(tool_name)
+    tool_exec_path = os.path.join(os.path.dirname(__file__), 'mythril_venv/bin/myth')
 
     def __init__(self) -> None:
         super().__init__()
@@ -112,34 +113,18 @@ class Mythril(Tool):
 
         errors: list[ToolError] = []
         logs: str = ""
-        container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
-        cmd = f"{cls.tool_cfg.analyze_cmd} {container_file_path}/{args.file_name} {args.options}"
-        container = Docker.client.containers.run(
-            image=args.docker_image,
-            command=cmd,
-            detach=True,
-            volumes=Docker.create_volumes(
-                [Tool.storage_path],
-                [cls.tool_cfg.volumes.bind]
-            )
-        )
-        try:
-            container.wait(timeout=args.timeout) # type: ignore
-        except requests.exceptions.ConnectionError as e:
-            Log.info('#####################')
+        # container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
+        container_file_path = f"{Tool.storage_path}/{args.sub_container_file_path}"
+        cmd = f"timeout {args.timeout}s {cls.tool_exec_path} analyze {container_file_path}/{args.file_name} {args.options}"
+        # print(cmd)
+        # print("CONTAINER ", cls.container)
+        result = subprocess.run(cmd.split(" "), capture_output=True, text=True)
+        logs = result.stdout + result.stderr
+        if (len(logs) == 0):
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
-                msg=f"Time out while running image {args.docker_image} to analyze {args.file_name}"
+                msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Slither: timeout={args.timeout}"
             ))
-            Log.err(f"Time out while running image {args.docker_image} to analyze {args.file_name}")
-            Log.print_except(e)
-
-
-        # print(container.logs().decode("utf8"))
-        logs: str = container.logs().decode("utf8").strip() # type: ignore
-        # Log.info(logs)
-        #if My
-        container.remove() # type: ignore
 
         return (errors, logs)
 
