@@ -1,19 +1,32 @@
-from dotenv import load_dotenv
 from flask_socketio import SocketIO
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-load_dotenv()
+from server.v1.api.utils.server_env import get_env
+
+from dotenv import find_dotenv, load_dotenv
+dotenv_file = find_dotenv('.env.development')
+load_dotenv(dotenv_file if len(dotenv_file) > 0 else find_dotenv('.env.production'))
+
 from server.v1.config.database_config import init_database
 init_database()
 from flask import Flask
 from server.v1.config.app_config import setup_app_config
 
-from server.v1.api.utils.server_env import get_env
-
 app = Flask(__name__)
-setup_app_config(app)
+socketio: SocketIO = None # type: ignore
+setup_app_config(app, socketio)
 
-import server.v1.api.client.socket.events
-from server.v1.config.app_config import socketio
+def start_server() -> None:
+
+    app.run(
+        port=int(get_env("PORT")),
+        host="0.0.0.0",
+        debug=(get_env("ENVIRONMENT") == "development")
+    )
+    # socketio.run(app, use_reloader=True, log_output=True)
 
 if __name__ == "__main__":
-    socketio.run(app, use_reloader=True, log_output=True)
+    start_server()
+

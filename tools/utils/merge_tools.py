@@ -1,6 +1,6 @@
 
 from typing import List
-from tools.types import FinalResult, AnalysisIssue, AnalysisResult
+from tools.tool_types import FinalResult, AnalysisIssue, AnalysisResult
 import os
 from tools.utils.Log import Log
 from tools.utils.parsers import obj_to_jsonstr

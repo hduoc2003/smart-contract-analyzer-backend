@@ -4,7 +4,7 @@ import os
 import re
 import time
 from typing import Any, Callable, Generator
-from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, FinalResult, ImageConfig, ImageVolume, ToolAnalyzeArgs, ToolError, ToolName
+from tools.tool_types import AnalysisIssue, AnalysisResult, ErrorClassification, FinalResult, ImageConfig, ImageVolume, ToolAnalyzeArgs, ToolError, ToolName
 import yaml
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 from tools.utils.Async import Async

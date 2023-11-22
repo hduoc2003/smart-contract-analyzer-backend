@@ -13,8 +13,8 @@ class Data:
 
 def listen_analyze_status_change(data: Any) -> None:
     casted_data: Data = Data(**data)
-    print(data)
-    FlaskLog.info(casted_data)
+    # print(data)
+    # FlaskLog.info(casted_data)
     if (casted_data.cnt_analyzing == 0):
         emit('close-listen-analyze-status-change')
         return

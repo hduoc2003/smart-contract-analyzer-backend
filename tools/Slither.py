@@ -1,11 +1,13 @@
+from ast import arg
 import json
+import os
 import re
+import subprocess
 from typing_extensions import override
 from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
-from tools.docker.Docker import Docker
-from tools.types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
+from tools.tool_types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_no, get_swc_title, get_title_name, link_hint
 
@@ -14,37 +16,41 @@ class Slither(Tool):
 
     tool_name = ToolName.Slither
     tool_cfg = Tool.load_default_cfg(tool_name)
-    container_name = "slither-tool"
+    container_name = "slither-tool" + ('-' + (os.getenv('ENVIRONMENT') or ''))
+
 
     # create container
-    container = Docker.client.containers.get(container_name) \
-            if Docker.exists_container(container_name) \
-            else Docker.client.containers.run(
-                image=tool_cfg.docker_image,
-                command="",
-                detach=True,
-                name=container_name,
-                tty=True,
-                volumes=Docker.create_volumes(
-                    host_paths=[Tool.storage_path],
-                    container_paths=[tool_cfg.volumes.bind]
-                )
-            )
-    container.start() # type: ignore
+    # container = Docker.client.containers.get(container_name) \
+    #         if Docker.exists_container(container_name) \
+    #         else Docker.client.containers.run(
+    #             image=tool_cfg.docker_image,
+    #             command="",
+    #             detach=True,
+    #             name=container_name,
+    #             tty=True,
+    #             volumes=Docker.create_volumes(
+    #                 host_paths=[Tool.storage_path],
+    #                 container_paths=[tool_cfg.volumes.bind]
+    #             )
+    #         )
+    # print(Tool.storage_path)
+    # container.start() # type: ignore
 
     # load solcs
-    not_installed_solcs = Docker.exec_run(
-        container=container,
-        cmd="solc-select install"
-    ).output.decode("utf8").replace("Available versions to install:", "").split()
+    # not_installed_solcs = Docker.exec_run(
+    #     container=container,
+    #     cmd="solc-select install"
+    # ).output.decode("utf8").replace("Available versions to install:", "").split()
+
+    not_installed_solcs = subprocess.run(
+        ['solc-select', 'install'], capture_output=True, text=True
+    ).stdout.replace("Available versions to install:", "").split()
+
     if (len(not_installed_solcs) > 0):
         Log.info("Installing solcs for Slither...")
-        for solc in not_installed_solcs:
-            Docker.exec_run(
-                container=container,
-                cmd=f"solc-select install {solc}",
-                detach=True
-            )
+        processes = [subprocess.Popen(['solc-select', 'install', solc]) for solc in not_installed_solcs]
+        for process in processes:
+            process.wait()
 
     def __init__(self) -> None:
         super().__init__()
@@ -197,19 +203,21 @@ class Slither(Tool):
         cls,
         args: ToolAnalyzeArgs
     ) -> tuple[list[ToolError], str]:
+        if (args.timeout < 0):
+            args.timeout = cls.tool_cfg.timeout
+        if (len(args.options) == 0):
+            args.options = cls.tool_cfg.options
         if (args.options.find(r"{solc}") != -1):
             args.options = args.options.replace(r"{solc}", args.solc)
         errors: list[ToolError] = []
         logs: str = ""
-        container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
-        cmd = f"timeout {args.timeout}s {cls.tool_cfg.analyze_cmd} {container_file_path}/{args.file_name} {args.options}"
+        # container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
+        container_file_path = f"{Tool.storage_path}/{args.sub_container_file_path}"
+        cmd = f"timeout {args.timeout}s slither {container_file_path}/{args.file_name} {args.options}"
         # print(cmd)
         # print("CONTAINER ", cls.container)
-        logs = Docker.exec_run(
-            container=cls.container,
-            cmd=cmd
-        ).output.decode("utf8")
-
+        result = subprocess.run(cmd.split(" "), capture_output=True, text=True)
+        logs = result.stdout + result.stderr
         if (len(logs) == 0):
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
