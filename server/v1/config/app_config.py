@@ -11,8 +11,10 @@ from server.v1.api.test.test_route import test_route
 from server.v1.api.utils.server_env import get_env
 from tools.Tool import Tool
 from server.v1.api.client.socket.events import init_socket_events
+# from gevent import monkey
+# monkey.patch_all()
 
-print(get_env('ALLOWED_ORIGINS').split(','))
+# print(get_env('ALLOWED_ORIGINS').split(','))
 
 APP_CONFIG: dict[str, Any] = {
     "ALLOWED_ORIGINS": get_env('ALLOWED_ORIGINS').split(',')
@@ -28,7 +30,7 @@ def get_app_config(key: str) -> Any:
         raise Exception(f"APP_CONFIG with key {key} is not exists")
     return value
 
-def setup_app_config(app: Flask, socketio: SocketIO) -> None:
+def config_app(app: Flask) -> None:
     CORS(app, origins=get_app_config("ALLOWED_ORIGINS"),  supports_credentials=True)
 
     # apiPrefix = '/api' if get_env('ENVIRONMENT') == 'development' else ''
@@ -54,6 +56,9 @@ def setup_app_config(app: Flask, socketio: SocketIO) -> None:
 
     # print("\n".join(sorted(routes)))
 
+
+
+def get_socket(app: Flask) -> SocketIO:
     PORT: int = int(get_env("PORT"))
     socketio = SocketIO(
         app,
@@ -61,8 +66,8 @@ def setup_app_config(app: Flask, socketio: SocketIO) -> None:
         port=PORT,
         host="0.0.0.0",
         cors_allowed_origins=get_app_config("ALLOWED_ORIGINS"),
+        # async_mode="threading"
         # host="0.0.0.0"
     )
     init_socket_events(socketio)
-
-
+    return socketio

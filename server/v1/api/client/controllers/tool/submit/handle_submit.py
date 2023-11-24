@@ -1,7 +1,9 @@
 
 from dataclasses import dataclass
 from typing import Generator
-from flask import jsonify, request
+from flask import copy_current_request_context, jsonify, request
+from flask_socketio import emit
+from server.v1.api.client.controllers.tool.submit.get_analyze_status import create_response
 from server.v1.api.client.models.file_collection import AnalyzeStatus, FileDoc
 from server.v1.api.client.models.submit_collection import SubmitDoc
 from server.v1.api.utils.Async import Async
@@ -10,7 +12,7 @@ from server.v1.api.utils.StatusCode import StatusCode
 from werkzeug.datastructures.file_storage import FileStorage
 from werkzeug.datastructures.structures import ImmutableMultiDict
 from _collections_abc import dict_keys
-from server.v1.api.utils.db_collection import get_document, update_one
+from server.v1.api.utils.db_collection import get_document, get_document_includes, update_one
 
 from server.v1.api.utils.gen_id import gen_id
 from server.v1.api.utils.parsers import obj_to_json, obj_to_jsonstr
@@ -101,6 +103,7 @@ def start_analyzing(
     else:
         submit_doc.update(push_all__files_ids=files_ids)
 
+    @copy_current_request_context
     def analyze():
         result_stream: Generator = Tool.analyze_files_async(
             files=[
@@ -111,9 +114,20 @@ def start_analyzing(
             ],
             stream=True
         ) # type: ignore
+        from app import socketio
         for final_result in result_stream:
             final_result: FinalResult
-            update_result(final_result, True)
+            update_result(final_result, False)
+            file_id = final_result.file_name.replace(".sol", "")
+            info: FileDoc = get_document_includes(FileDoc, file_id, ['file_name', 'status']) # type: ignore
+            # FlaskLog.info('analyzing done')
+            socketio.emit('send-analyze-status-change', create_response(
+                file_id=file_id,
+                file_name=info.file_name, # type: ignore
+                status=info.status.value # type: ignore
+            ))
+            # FlaskLog.info('send status done')
+        socketio.emit('close-listen-analyze-status-change')
 
     Async.run_functions([analyze], [[]], detach=detach)
 

@@ -1,7 +1,7 @@
-version: '3.4'
+version: '3.3'
 services:
   sma-backend:
-    image: sma-backend:gunicorn
+    image: sma-backend:test
     build: .
     ports:
       - "5000:5000"
@@ -11,3 +11,12 @@ services:
     tty: true
     env_file:
       - .env.development
+    depends_on:
+      - db
+  db:
+    image: mongo:7.0.3
+    hostname: hduoc2003
+    ports:
+      - "27017:27017"
+    env_file:
+      - .env.mongodb

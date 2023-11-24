@@ -19,25 +19,25 @@ def listen_analyze_status_change(data: Any) -> None:
         emit('close-listen-analyze-status-change')
         return
 
-    pipeline = [
-        {
-            "$match": {
-                "updateDescription.updatedFields.status": {"$exists": True},
-                "documentKey._id": {"$in": casted_data.analyzing_files_id}
-            }
-        }
-    ]
-    # FlaskLog.info(cnt_done)
-    change_stream = file_collection.watch(pipeline=pipeline, full_document="updateLookup")
-    for change in change_stream:
-        casted_data.cnt_analyzing -= 1
-        file_result: dict[str, Any] = change.get('fullDocument')
-        emit('send-analyze-status-change', create_response(
-            file_id=file_result['_id'],
-            file_name=file_result['file_name'],
-            status=file_result['status']
-        ))
-        if (casted_data.cnt_analyzing == 0):
-            change_stream.close()
-            emit('close-listen-analyze-status-change')
-            break
+    # pipeline = [
+    #     {
+    #         "$match": {
+    #             "updateDescription.updatedFields.status": {"$exists": True},
+    #             "documentKey._id": {"$in": casted_data.analyzing_files_id}
+    #         }
+    #     }
+    # ]
+    # # FlaskLog.info(cnt_done)
+    # change_stream = file_collection.watch(pipeline=pipeline, full_document="updateLookup")
+    # for change in change_stream:
+    #     casted_data.cnt_analyzing -= 1
+    #     file_result: dict[str, Any] = change.get('fullDocument')
+    #     emit('send-analyze-status-change', create_response(
+    #         file_id=file_result['_id'],
+    #         file_name=file_result['file_name'],
+    #         status=file_result['status']
+    #     ))
+    #     if (casted_data.cnt_analyzing == 0):
+    #         change_stream.close()
+    #         emit('close-listen-analyze-status-change')
+    #         break

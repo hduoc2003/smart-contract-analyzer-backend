@@ -12,11 +12,11 @@ load_dotenv(dotenv_file if len(dotenv_file) > 0 else find_dotenv('.env.productio
 from server.v1.config.database_config import init_database
 init_database()
 from flask import Flask
-from server.v1.config.app_config import setup_app_config
+from server.v1.config.app_config import config_app, get_socket
 
 app = Flask(__name__)
-socketio: SocketIO = None # type: ignore
-setup_app_config(app, socketio)
+config_app(app)
+socketio: SocketIO = get_socket(app)
 
 def start_server() -> None:
 
