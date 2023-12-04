@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum, unique
+from typing import List
 
 @unique
 class ToolName(Enum):
@@ -15,10 +16,17 @@ class ErrorClassification(Enum):
     UnknownError = "unknown error"
 
 @dataclass
+class AnalysisError:
+    error_title: str
+    line_no: int
+    start_char_idx: int
+    description: str
+    typeDetect: str
+@dataclass
 class ToolError:
     error: ErrorClassification
-    msg: str
-
+    msg: str | List[AnalysisError] 
+    
 @dataclass
 class AnalysisIssue:
     contract: str

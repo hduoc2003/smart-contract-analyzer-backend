@@ -123,7 +123,7 @@ class Mythril(Tool):
         if (len(logs) == 0):
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
-                msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Slither: timeout={args.timeout}"
+                msg=f"Timeout while analyzing {args.file_name} using Slither: timeout={args.timeout}"
             ))
 
         return (errors, logs)

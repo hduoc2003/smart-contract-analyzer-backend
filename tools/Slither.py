@@ -3,11 +3,12 @@ import json
 import os
 import re
 import subprocess
+from typing import List, Tuple
 from typing_extensions import override
 from tools.Tool import Tool
 from tools.Tool import FinalResult
 from tools.Tool import RawResult
-from tools.tool_types import AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
+from tools.tool_types import AnalysisError, AnalysisIssue, AnalysisResult, ErrorClassification, ToolAnalyzeArgs, ToolError, ToolName
 from tools.utils.Log import Log
 from tools.utils.SWC import get_swc_link, get_swc_no, get_swc_title, get_title_name, link_hint
 
@@ -93,7 +94,7 @@ class Slither(Tool):
     @staticmethod
     def purifying_description(description: str, file_name: str) -> str:
         # rút gọn tên file
-        contract_positions: list[int] = [match.start() for match in re.finditer(file_name, description)]
+        contract_positions: list[int] = [match.end() for match in re.finditer(file_name, description)]
         start_cut_pos: list[int] = []
         end_cut_pos: list[int] = []
         for pos in contract_positions:
@@ -115,6 +116,15 @@ class Slither(Tool):
                 res += description[i]
                 if (end_cut_pos[ptr] < i):
                     ptr += 1
+        res = res.replace("#", "line ")
+        res = res.replace(':', ':\n')  
+        def decrement(match):
+            number = int(match.group(1))
+            return f'line {number - 1}'
+        pattern = r'line (\d+)'
+
+        res = re.sub(pattern, decrement, res)
+
         return res
 
     @override
@@ -126,10 +136,18 @@ class Slither(Tool):
             elements = detector.get("elements")
             element = Slither.get_smallest_element(elements)
             swcID: str = get_swc_no(detector['check'])
+            line_no: list[int] = []
+            if not element:
+                line_no = [] 
+            elif (link_hint(detector["check"]) == "conformance-to-solidity-naming-conventions"
+                  or link_hint(detector["check"]) == "dead-code"): 
+                line_no.append(element["source_mapping"]["lines"][0])
+            else:
+                line_no = element["source_mapping"]["lines"]
             issue = AnalysisIssue(
                 contract=Slither.get_contract(element) if element else "",
                 source_map=Slither.convert_source_map_represent(element["source_mapping"]) if element else "",
-                line_no=element["source_mapping"]["lines"] if element else [],
+                line_no=line_no,
                 code="",
                 description=cls.purifying_description(detector['description'], file_name),
                 hint= link_hint(detector["check"]),
@@ -185,18 +203,65 @@ class Slither(Tool):
                 errors.append(Tool.get_tool_error(
                     error=ErrorClassification.UnsupportedSolc,
                 ))
-            elif (raw_result_errors.find("Solc experienced a fatal error") != -1):
+            elif (raw_result_errors.find("Invalid solc compilation") != -1):
+                (title, msg_shortened, toolError) = Slither.analyze_msg_error(raw_result_errors,ErrorClassification.CompileError)
+                print("toolError", toolError)
+                print("msg_shortened", msg_shortened)
+                print("msg", raw_result_errors)
+                
                 errors.append(ToolError(
                     error=ErrorClassification.CompileError,
-                    msg=raw_result_errors
+                    msg=toolError,
                 ))
             else:
                 errors.append(ToolError(
                     error=ErrorClassification.UnknownError,
-                    msg=raw_result_errors
+                    msg=Slither.shorten_msg(raw_result_errors, ErrorClassification.UnknownError)
                 ))
         return errors
 
+    @override
+    @classmethod
+    def analyze_msg_error(cls, msg: str, type: ErrorClassification) -> tuple[ str, str, List[AnalysisError]]:
+        error_title: str =""
+        msg_shortened: str =""
+        toolErrorResults: List[AnalysisError] = []
+        if (type == ErrorClassification.CompileError):
+            match_title = re.search(r': ([\w\s]*[^\/\',])', msg)
+            if (match_title):                
+                error_title = match_title.group(1)    
+            pattern = r'.sol:([\d]+):(\d+): (.+)'
+            regex = re.compile(pattern)
+            matches = regex.finditer(msg)
+            for match in matches:
+                line_no = match.group(1)
+                start_char_idx = match.group(2)
+                description = match.group(3)
+                if (description.find("Warning") != -1):
+                    typeDetect = "Warning"
+                else:
+                    typeDetect = "Error"
+                toolErrorResults.append(AnalysisError(
+                    error_title= error_title, 
+                    line_no= int(line_no),
+                    start_char_idx = int(start_char_idx),
+                    description= description,
+                    typeDetect= typeDetect
+                ))
+            msg_shortened=Slither.shorten_msg(msg, type)
+        return error_title, msg_shortened, toolErrorResults
+    
+    @staticmethod
+    def shorten_msg(msg: str, type: ErrorClassification) -> str:
+        msg_shortened = ""
+        if (type == ErrorClassification.CompileError):
+            match_raise = re.search(r'raise\s+(.+)', msg, re.DOTALL)
+            if (match_raise):
+                msg_shortened = match_raise.group(1)
+        if (type == ErrorClassification.UnknownError):
+            print("UNKNOWN MESSAGE", msg)
+            msg_shortened = msg
+        return msg_shortened
     @override
     @classmethod
     def run_core(
@@ -221,6 +286,6 @@ class Slither(Tool):
         if (len(logs) == 0):
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
-                msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Slither: timeout={args.timeout}"
+                msg=f"Timeout while analyzing {args.file_name} using Slither: timeout={args.timeout}"
             ))
         return (errors, logs)

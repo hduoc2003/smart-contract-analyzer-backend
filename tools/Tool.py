@@ -11,7 +11,6 @@ from tools.utils.Async import Async
 from tools.utils.Log import Log
 from tools.utils.parsers import obj_to_jsonstr
 from tools.utils.merge_tools import DuplicateIssue
-
 RawResult = Any
 
 class Tool(ABC):
@@ -79,6 +78,10 @@ class Tool(ABC):
         return len(errors) > 0
 
     @classmethod
+    def analyze_msg_error(cls, msg: str):
+        pass
+
+    @classmethod
     @abstractmethod
     def run_core(
         cls,
@@ -104,6 +107,8 @@ class Tool(ABC):
             options=args.options or cls.tool_cfg.options,
             timeout=args.timeout if args.timeout > -1 else cls.tool_cfg.timeout
         ))
+        # raw_result_str = Tool.purifying_error_msg(raw_result_str, args.file_name)
+        # print('raw_result_str', raw_result_str)
         errors += cls.detect_errors(raw_result_str)
         final_result: FinalResult
         raw_result_json: RawResult
@@ -117,6 +122,23 @@ class Tool(ABC):
 
         return (final_result, raw_result_json)
 
+        
+    @staticmethod
+    def purifying_error_msg(description: str, file_name: str) -> str:
+        # rút gọn tên file'
+        print("des\n", description)
+        
+        res: str = ""
+        def decrement(match):
+            
+            return f''
+        pattern = r'\:\d:\d'
+
+        res = re.sub(pattern, decrement, description)
+        print("res\n", res)
+
+        return res
+    
     @staticmethod
     def merge_results(results: list[FinalResult], duration: float) -> FinalResult:
         if len(results) == 1:
@@ -194,49 +216,6 @@ class Tool(ABC):
                 raise Exception(f"Tool.get_tool_error: {error} is not processed yet.")
 
 
-    @classmethod
-    def analyze_single_file(cls, args: ToolAnalyzeArgs,tools: list[ToolName] = [ToolName.Mythril, ToolName.Slither]) -> FinalResult:
-            start: float = time.time()
-            from tools.Mythril import Mythril
-            from tools.Slither import Slither
-            solc: str | ErrorClassification = args.solc or cls.get_solc_version(args.sub_container_file_path, args.file_name)
-            if (isinstance(solc, ErrorClassification)):
-                return FinalResult(
-                    file_name=args.file_name,
-                    tool_name="",
-                    duration=time.time() - start,
-                    solc="",
-                    analysis=AnalysisResult(
-                        errors=[cls.get_tool_error(solc)],
-                        issues=[]
-                    )
-                )
-            Log.info(f"Analyzing {args.file_name} using solc {solc} ..................")
-            tasks: list[Callable] = []
-            arr_args: list[list] = []
-            for tool_name in tools:
-                match tool_name:
-                    case ToolName.Mythril:
-                        tasks.append(Mythril.analyze)
-                    case ToolName.Slither:
-                        tasks.append(Slither.analyze)
-                    case _:
-                        Log.warn(f'Function analyze_single_file: There are no tool named {tool_name}')
-                arr_args.append([ToolAnalyzeArgs(
-                    sub_container_file_path=args.sub_container_file_path,
-                    file_name=args.file_name,
-                    solc=solc
-                )])
-            if (len(tasks) != len(tools)):
-                raise Exception(f"Function analyze_single_file: the length of tasks is {len(tasks)} \
-                                is not equal to the length of tools which is {len(tools)}")
-
-            results: list[FinalResult] = [final for final, raw in Async.run_functions(tasks, arr_args)]
-            Log.info(f"Analyzing {args.file_name} finished ..............")
-            end:float = time.time()
-            # print(results)
-
-            return cls.merge_results(results, duration=end-start)
     @classmethod
     def analyze_files_async(
         cls,
