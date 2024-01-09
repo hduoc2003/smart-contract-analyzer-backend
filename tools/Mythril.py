@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+from sys import stdout
 from typing_extensions import override
 
 from tools.Tool import Tool
@@ -95,6 +96,10 @@ class Mythril(Tool):
                     error=ErrorClassification.CompileError,
                     msg=raw_result_errors
                 ))
+            elif (raw_result_errors.find('solcx.exceptions.UnsupportedVersionError') != -1):
+                errors.append(Tool.get_tool_error(
+                    ErrorClassification.UnsupportedSolc
+                ))
             else:
                 errors.append(ToolError(
                     error=ErrorClassification.UnknownError,
@@ -115,15 +120,15 @@ class Mythril(Tool):
         logs: str = ""
         # container_file_path = f"{cls.tool_cfg.volumes.bind}/{args.sub_container_file_path}"
         container_file_path = f"{Tool.storage_path}/{args.sub_container_file_path}"
-        cmd = f"timeout {args.timeout}s {cls.tool_exec_path} analyze {container_file_path}/{args.file_name} {args.options}"
+        cmd = f"{cls.tool_exec_path} analyze {container_file_path}/{args.file_name} {args.options} --execution-timeout {args.timeout}"
         # print(cmd)
         # print("CONTAINER ", cls.container)
         result = subprocess.run(cmd.split(" "), capture_output=True, text=True)
-        logs = result.stdout + result.stderr
+        logs = result.stdout if len(result.stdout) > 0 else result.stderr
         if (len(logs) == 0):
             errors.append(ToolError(
                 error=ErrorClassification.RuntimeOut,
-                msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Slither: timeout={args.timeout}"
+                msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Mythril: timeout={args.timeout}"
             ))
 
         return (errors, logs)
