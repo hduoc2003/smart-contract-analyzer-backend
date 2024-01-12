@@ -2,6 +2,7 @@ import json
 import os
 import subprocess
 from sys import stdout
+import traceback
 from typing_extensions import override
 
 from tools.Tool import Tool
@@ -25,24 +26,30 @@ class Mythril(Tool):
     def parse_raw_result(cls, raw_result: RawResult, duration: float, file_name: str, solc: str) -> FinalResult:
 
         issues: list[AnalysisIssue] = []
-        for raw_issue in raw_result['issues']:
-            (is_valid_swc, swcID) = valid_swc(raw_issue['swc-id'])
-            contract=raw_issue['contract']
-            if (not is_valid_swc):
-                raise Exception(f"{contract} in {file_name} has wrong swc-id: {swcID}")
-            issues.append(AnalysisIssue(
-                contract=contract,
-                source_map=parse_source_map(raw_issue['sourceMap']),
-                line_no=raw_issue['lineno'],
-                code=raw_issue['code'],
-                description=raw_issue['description'],
-                hint= "chưa làm phần hint",
-                issue_title=raw_issue['title'],
-                swcID=swcID,
-                swc_title=get_swc_title(swcID, validated=True),
-                swc_link=get_swc_link(swcID, validated=True),
-                severity=raw_issue['severity']
-            ))
+        if (isinstance(raw_result, dict)) and ('issues' in raw_result):
+            for raw_issue in raw_result['issues']:
+                (is_valid_swc, swcID) = valid_swc(raw_issue['swc-id'])
+                contract=raw_issue['contract']
+                if (not is_valid_swc):
+                    raise Exception(f"{contract} in {file_name} has wrong swc-id: {swcID}")
+                try:
+                    issues.append(AnalysisIssue(
+                    contract=contract,
+                    source_map=parse_source_map(raw_issue['sourceMap']),
+                    line_no=raw_issue['lineno'] if 'lineno' in raw_issue else [0],
+                    code=raw_issue['code'] if 'code' in raw_issue else "",
+                    description=raw_issue['description'],
+                    hint= "chưa làm phần hint",
+                    issue_title=raw_issue['title'],
+                    swcID=swcID,
+                    swc_title=get_swc_title(swcID, validated=True),
+                    swc_link=get_swc_link(swcID, validated=True),
+                    severity=raw_issue['severity']
+                ))
+                except Exception as e:
+                    print('error raw_issue: ', raw_issue)
+                    traceback.print_exc()
+                    raise e
 
         final_result = FinalResult(
             file_name=file_name,
@@ -124,15 +131,19 @@ class Mythril(Tool):
         # print(cmd)
         # print("CONTAINER ", cls.container)
         result = subprocess.run(cmd.split(" "), capture_output=True, text=True)
+        print('out:', result.stdout)
+        print('err:', result.stderr)
         logs = result.stdout if len(result.stdout) > 0 else result.stderr
-        if (len(logs) == 0):
-            errors.append(ToolError(
-                error=ErrorClassification.RuntimeOut,
-                msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Mythril: timeout={args.timeout}"
-            ))
+        # if (len(logs) == 0):
+        #     errors.append(ToolError(
+        #         error=ErrorClassification.RuntimeOut,
+        #         msg=f"Timeout while analyzing {container_file_path}/{args.file_name} using Mythril: timeout={args.timeout}"
+        #     ))
 
         return (errors, logs)
 
 def parse_source_map(source_map) -> str:
+    if not isinstance(source_map, str):
+        return "0:0"
     src_map_shorten = source_map[:4]
     return src_map_shorten
